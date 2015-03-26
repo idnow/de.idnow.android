@@ -1,0 +1,11 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="de.idnow.PhotoCheckActivity" >
+
+        <item
+        android:id="@+id/action_close_help"
+        android:orderInCategory="100"
+        android:showAsAction="always"
+        android:title="@string/photo_check_action_help"/>
+
+</menu>

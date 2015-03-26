@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="de.idnow.sdk"
+    android:versionCode="4"
+    android:versionName="0.5.0-beta1" >
+
+    <uses-sdk
+        android:minSdkVersion="14"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.READ_SMS" />
+
+    <uses-feature
+        android:name="android.hardware.telephony"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera.flash"
+        android:required="false" />
+    <uses-feature
+        android:name="android.hardware.camera"
+        android:required="true" />
+    <uses-feature
+        android:name="android.hardware.camera.autofocus"
+        android:required="false" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="de.idnow.sdk.Activities_StartActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" >
+			<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+            <intent-filter>
+                <data android:scheme="idnow" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="de.idnow.sdk.Activities_VideoLiveStreamActivity"
+            android:exported="true"
+            android:label="@string/title_live_stream_screen"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" >
+        </activity>
+        <activity
+            android:name="de.idnow.sdk.Activities_ResultActivity"
+            android:label="@string/title_activity_result"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="de.idnow.sdk.Activities_VideoOverviewCheckActivity"
+            android:label="@string/title_activity_second"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="stateHidden" >
+        </activity>
+        <activity
+            android:name="de.idnow.sdk.Activities_HelpDataActivity"
+            android:label="@string/title_activity_help_data"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="de.idnow.sdk.Activities_HelpIDActivity"
+            android:label="@string/title_activity_id_help"
+            android:screenOrientation="portrait" >
+        </activity>
+
+		<meta-data
+            android:name="com.crashlytics.ApiKey"
+            android:value="1157567b13dd1b98570a0fa32841bc765920e6c5" />
+
+        <activity
+            android:name="de.idnow.sdk.Activities_BaseActivity"
+            android:label="@string/title_activity_base" >
+        </activity>
+
+        <service android:name="de.idnow.sdk.Util_KillNotificationService" >
+        </service>
+
+        <activity
+            android:name="de.idnow.sdk.Activities_PhotoCountrySelectionActivity"
+            android:label="@string/title_activity_photo_country_selection"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="de.idnow.sdk.Activities_PhotoDocumentSelectionActivity"
+            android:label="@string/title_activity_photo_document_selection"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="de.idnow.sdk.Activities_PhotoProcessOverviewActivity"
+            android:label="@string/title_activity_photo_process_overview"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="de.idnow.sdk.Activities_PhotoLiveActivity"
+            android:configChanges="keyboardHidden|orientation"
+            android:label="@string/title_activity_photo_live"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="de.idnow.sdk.Activities_PhotoCheckActivity"
+            android:label="@string/title_activity_photo_check"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="de.idnow.sdk.Activities_PhotoUploadActivity"
+            android:label="@string/title_activity_photo_upload"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity
+            android:name="de.idnow.sdk.Activities_LegalNoticesActivity"
+            android:label="@string/title_activity_legal_notices"
+            android:screenOrientation="portrait" >
+        </activity>
+        <activity android:name="de.idnow.sdk.Activities_ZeroActivity"
+			android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" >
+        </activity>
+        <activity android:name="de.idnow.sdk.Activities_EntryActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize" >
+        </activity>
+    </application>
+
+</manifest>

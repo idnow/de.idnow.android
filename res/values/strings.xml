@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">IDnow Online-Ident</string>
+    <string name="title_activity_base">BaseActivity</string>
+    <string name="action_settings">Settings</string>
+    <string name="menu_legalnotices">Rechtliche Hinweise</string>
+
+    <!-- Start Screen -->
+    <string name="required_field">Ungültige Telefonnummer</string>
+    <string name="wrong_token">Ungültige Eingabe</string>
+    <string name="start_screen_accept">Bestätigen</string>
+    <string name="start_screen_placeholder">Vorgangs-ID eingeben</string>
+    <string name="start_screen_ident_explanation">Wie funktioniert die Identifizierung?</string>
+
+    <!-- Live Stream Screen -->
+    <string name="powered_by_idnow">powered by</string>
+    <string name="title_live_stream_screen">Verbinden ...</string>
+    <string name="swapStr">Swap camera</string>
+    <string name="endCall1">End call</string>
+    <string name="endCall2">End</string>
+    <string name="audioOnly">Audio only</string>
+    <string name="send">Send</string>
+    <string name="archivingOn">Archiving on</string>
+    <string name="archivingOff">Archiving off</string>
+    <string name="notification">Ongoing call</string>
+    <string name="notification_content">Aktiver Anruf</string>
+    <string name="menu_settings">Settings</string>
+    <string name="title_activity_result">IDnow</string>
+    <string name="step_1">Schritt 1/5</string>
+    <string name="step_2">Schritt 2/5</string>
+    <string name="step_3">Schritt 3/5</string>
+    <string name="step_4">Schritt 4/5</string>
+    <string name="step_5">Schritt 5/5</string>
+    <string name="ident_done_successful">Identifizierung abgeschlossen</string>
+    <string name="ident_done_failed">Identifizierung fehlgeschlagen</string>
+
+    <string-array name="steps">
+        <item>@string/step_1</item>
+        <item>@string/step_2</item>
+        <item>@string/step_3</item>
+        <item>@string/step_4</item>
+        <item>@string/step_5</item>
+    </string-array>
+
+    <!-- Error Dialog -->
+    <string name="network_dialog_title">Netzwerkfehler</string>
+    <string name="network_connection_failure">Für den Identifizierungsprozess wird eine Internetverbindung benötigt. Bitte stellen Sie eine Internetverbindung her und versuchen Sie es erneut.</string>
+    <string name="dialog_error_title">Verbindungsfehler</string>
+    <string name="dialog_error_content">Ein unerwarteter Fehler ist aufgetreten. Die Verbindung wird geschlossen.</string>
+    <string name="dialog_error_camera_title">Kamerafehler</string>
+    <string name="dialog_error_camera_content">Beim Versuch die Kamera anzusprechen ist leider ein Fehler aufgetreten. Versuchen Sie es zu einem späteren Zeitpunkt noch einmal.</string>
+
+    <!-- Dialog -->
+    <string name="ident_code_dialog_resend"><u>Ident-Code erneut als SMS zusenden.</u></string>
+    <string name="ident_code_dialog_hint">Bitte hier den Code eingeben.</string>
+    <string name="ident_code_dialog_title">Ident-Code eingeben</string>
+    <string name="dialog_cancel_identification_title">Identifizierung abbrechen</string>
+    <string name="dialog_cancel_identification">Wollen Sie den Identifizierungsvorgang wirklich abbrechen?</string>
+    <string name="rest_dialog_error_title">Fehler</string>
+    <string name="rest_dialog_error_content_400">Der eingegebene Ident-Code war leider nicht korrekt.</string>
+    <string name="rest_dialog_error_content_404">Bitte überprüfen Sie Ihre Vorgangs-ID und versuchen Sie es erneut.</string>
+    <string name="rest_dialog_error_content_412">Die Identifizierung mit dieser Vorgangs-ID wurde bereits abgeschlossen und kann nicht erneut durchgeführt werden.</string>
+    <string name="rest_dialog_error_content_500">Leider ist ein interner Fehler aufgetreten. Bitte wenden Sie sich an unseren Support support@idnow.de und geben Sie die nachfolgende Fehlernummer an: #exceptionID</string>
+    <string name="dialog_no_wifi_cancel">Abbrechen</string>
+    <string name="dialog_no_wifi_continue">Fortfahren</string>
+    <string name="dialog_no_wifi_content">Für den Identifizierungsprozess wird eine WIFI Verbindung empfohlen.</string>
+    <string name="dialog_retry">Erneut versuchen</string>
+    <string name="dialog_error">Die Identifikation ist leider fehlgeschlagen. Bitte überprüfen Sie Ihre Internetverbindung und versuchen Sie es erneut.</string>
+    <string name="dialog_error_mobile_no">Beim Versuch einen Ident-Code an Ihre Handynummer zu senden ist leider ein Fehler aufgetreten. Bitte versuchen Sie es erneut.</string>
+    <string name="dialog_error_tan">Der Ident-Code ist nicht korrekt. Bitte geben Sie den Code erneut ein.</string>
+    <string name="dialog_error_video">Die Identifikation ist leider fehlgeschlagen. Ein Problem mit der Videoverbindung ist aufgetreten. Bitte versuchen Sie es erneut.</string>
+    <string name="dialog_yes">Ja</string>
+    <string name="dialog_no">Nein</string>
+    <string name="dialog_office_hours_content_1">Aktuell befinden Sie sich außerhalb unserer Service-Zeiten für den Video-Ident Service.\n\nSie können Ihre Video-Identifizierung zu den folgenden Zeiten durchführen. Eine vorherige Terminvereinbarung ist nicht nötig.\n\nUnsere Service-Zeiten:\n\n</string>
+    <string name="dialog_office_hours_content_2">\nBitte starten Sie die Identifizierung während unserer Service-Zeiten erneut.</string>
+    <string name="dialog_office_hours_title">Service-Zeiten</string>
+
+    <!-- First Step -->
+    <string name="title_activity_first_step">IDnow</string>
+    <string name="first_step_intro_text">So funktioniert die Identifizierung: </string>
+    <string name="first_step_ident_text">Bitte geben Sie Ihre Vorgangs-ID ein und starten Sie die Identifizierung</string>
+    <string name="first_step_1_text">Bitte halten Sie Ihr Ausweisdokument bereit</string>
+    <string name="first_step_2_text">Geben Sie Ihre Vorgangs-ID oben ein und starten Sie die Identifizierung</string>
+    <string name="first_step_3_text">Folgen Sie den Anweisungen, die Sie durch die Identifizierung leiten</string>
+    <string name="first_step_4_text">Nach wenigen Minuten ist die Identifizierung abgeschlossen</string>
+    <string name="first_step_next">Weiter</string>
+
+    <!-- Second Step -->
+    <string name="title_activity_second">IDnow</string>
+    <string name="second_step_intro_text">Folgende Angaben werden benötigt bevor Sie sich identifizieren können.</string>
+    <string name="second_step_mobile_nr_title">Mobilfunknummer</string>
+    <string name="second_step_mobile_nr_text">An diese Nummer senden wir Ihnen während der Identifizierung einen Ident-Code per SMS zu.</string>
+    <string name="second_step_mobile_nr_hint">+4917610305431</string>
+    <string name="second_step_id_title">Personalausweis oder Reisepass</string>
+    <string name="second_step_id_text">Für die Identifizierung wird Ihr Ausweisdokument kontrolliert.</string>
+    <string name="second_step_recording_title">Einwilligung</string>
+    <string name="second_step_recording_text">Ich bin einverstanden, dass zum Zwecke der Identifizierung Foto-Aufnahmen meiner Person und meines Ausweisdokuments vorgenommen werden sowie eine Ton-Aufnahme des Gesprächs angefertigt wird.</string>
+    <string name="second_step_id_help">Welche Ausweisdokumente können verwendet werden?</string>
+    <string name="second_step_approval_title">Einwilligung</string>
+    <string name="second_step_approval_text">Ich stimme den <a href="https://www.idnow.de/nutzungsbedingungen">Nutzungsbedingungen</a> der IDnow GmbH zu und habe die</string>
+    <string name="second_step_approval_text2"><a href="https://www.idnow.de/datenschutz">Datenschutzerklärung</a> gelesen.</string>
+    <string name="second_step_approval_help">Was geschieht mit meinen Daten?</string>
+    <string name="second_step_start_ident">Identifizierung starten</string>
+    <string name="second_step_terms_of_use_url">https://www.idnow.de/nutzungsbedingungen</string>
+    <string name="second_step_privacy_policy_url">https://www.idnow.de/datenschutz</string>
+
+    <!-- Retrieve and Insert Tan -->
+    <string name="insert_tan_title">Ident-Code eingeben</string>
+    <string name="insert_tan_text">Bitte geben Sie Ihren Ident-Code ein. Diese wurde Ihnen als SMS-Nachricht an die Nummer xxx gesendet.</string>
+    <string name="insert_tan_button_send_again">Code nicht erhalten oder falsche Nummer angegeben?\nCode erneut anfordern</string>
+    <string name="insert_tan_hint_enter_code">Ident-Code eingeben</string>
+    <string name="insert_tan_accept">Bestätigen</string>
+    <string name="insert_tan_wrong_tan">Ungültiger Ident-Code</string>
+    <string name="retrieve_tan_title">4. Ident-Code anfordern</string>
+    <string name="retrieve_tan_content">Zum Abschluss geben Sie nun bitte den Ident-Code ein. Sie erhalten den Ident-Code per SMS auf Ihre Mobilnummer.\n\nÜberprüfen Sie Ihre Mobilnummer und fordern Sie den Code an.</string>
+    <string name="retrieve_tan_button">Ident-Code per SMS anfordern</string>
+
+    <!-- Complete Identification -->
+    <string name="complete_identification_title">Identifizierung wird abgeschlossen ...</string>
+    <string name="complete_identification_text">Bitte haben Sie einen Moment Geduld, während unser Agent Ihre Daten abgleicht. Sie werden automatisch weitergeleitet.</string>
+
+    <!-- Other Screens -->
+    <string name="title_activity_help_data">IDnow</string>
+    <string name="activity_id_data_text">As a result of a communicative act, a text may be defined as a relatively independent and hierarchically structured linguistic unit (macrostructure) which reflects a complex state of affairs and has a specific communicative intention. The state of affairs may refer to the real world or to the world of imagination and fiction.</string>
+    <string name="activity_id_help_text">Für IDnow Video-Ident benötigen Sie einen gültigen Personalausweis oder Reisepass.\n\nDabei werden eine Vielzahl moderner Ausweisdokumente mit holographischen Sicherheitsmerkmalen unterstützt.\n\nInsbesondere Personalausweise und Reisepässe aus der Europäischen Union, Türkei, Norwegen, Schweiz, Island und USA.</string>
+    <string name="title_activity_id_help">IDnow</string>
+
+    <!-- Result Screen -->
+    <string name="result_screen_status_success">Identifizierung abgeschlossen</string>
+    <string name="result_screen_status_failed">Identifizierung fehlgeschlagen</string>
+    <string name="result_screen_status_success_extra">Vielen Dank, dass Sie sich für die Online-Identifizierung entschieden haben!</string>
+    <string name="result_screen_transaction_nr_title">VORGANGS-ID</string>
+    <string name="result_screen_transaction_nr_content">270 303 123</string>
+    <string name="result_screen_transaction_name_title">NAME</string>
+    <string name="result_screen_transaction_name_content">Max Mustermann</string>
+    <string name="result_screen_success_text">Die Identifizierung ist nun beendet. </string>
+    <string name="result_screen_failed_text">Ihre Identifizierung konnte leider nicht abgeschlossen werden.\n\nBitte versuchen Sie es erneut oder mit einer alternativen Methode.</string>
+    <string name="result_screen_button_retry">Erneut versuchen</string>
+    <string name="result_screen_button_done">Identifizierung beenden</string>
+    <string name="result_screen_photo">Sie können die App nun schließen und werden über die nächsten Schritte informiert.</string>
+
+    <!-- ================ -->
+    <!-- PHOTO IDENT -->
+    <!-- ================ -->
+    <string name="title_activity_photo_country_selection">IDnow</string>
+    <string name="photo_country_selection_title">Land</string>
+    <string name="photo_country_selection_info">Wählen Sie das Land, das Ihr Ausweisdokument ausstellt.</string>
+    <string name="photo_country_selection_image_description">Landesflagge</string>
+
+    <!-- DOCUMENT SELECTION -->
+    <string name="title_activity_photo_document_selection">IDnow</string>
+    <string name="photo_document_selection_title">Dokument</string>
+    <string name="photo_document_selection_info">Wählen Sie die Art Ihres Dokuments.</string>
+    <string name="photo_document_selection_document_name_placeholder">Personalausweis</string>
+    <string name="photo_document_selection_document_extra_placeholder">ab 2006</string>
+
+    <!-- PHOTO PROCESS OVERVIEW -->
+    <string name="title_activity_photo_process_overview">IDnow</string>
+    <string name="photo_process_overview_text">Erstellen Sie alle Aufnahmen aus der folgenden Liste. Danach können Sie die Daten übertragen.</string>
+    <string name="photo_process_overview_send_data_text">Mit Klick auf den Button willigen Sie ein, dass die Aufnahmen übertragen und gespeichert werden.</string>
+    <string name="photo_process_overview_send_data_button">Daten übertragen</string>
+
+    <!-- PHOTO LIVE -->
+    <string name="title_activity_photo_live">IDnow</string>
+    <string name="photo_live_take_picture_button">Foto aufnehmen</string>
+    <string name="title_activity_photo_check">IDnow</string>
+    <string name="action_activity_photo_live_close_help">Starten</string>
+    <string name="action_activity_photo_live_show_help">Hilfe</string>
+
+    <!-- PHOTO CHECK -->
+    <string name="photo_check_image_description">Userfoto</string>
+    <string name="photo_check_retake_photo">Wiederholen</string>
+    <string name="photo_check_save_photo">Speichern</string>
+    <string name="photo_dialog_title">Daten übertragen.</string>
+    <string name="photo_dialog_content">Die Daten wurden verschlüsselt und werden nun an unseren Server übertragen.</string>
+    <string name="title_activity_photo_upload">IDnow</string>
+    <string name="photo_check_action_hide_help">Hilfe ausblenden</string>
+    <string name="photo_check_action_help">Hilfe</string>
+
+    <!-- PHOTO HELP OVERLAY -->
+    <string name="photo_help_overlay_example">Beispiel:</string>
+    <string name="photo_help_overlay_button_start">Foto aufnehmen</string>
+
+    <!-- FACE -->
+    <string name="photo_help_overlay_title_face">Gesicht</string>
+    <string name="photo_help_overlay_content_face">Positionieren Sie Ihr Gesicht im grünen Rahmen und erstellen Sie ein Foto (Selfie).</string>
+    <string name="photo_help_overlay_content_face_details">Das muss auf Ihrem Bild sichtbar sein:&lt;br /&gt;&lt;br /&gt;&#8226;     Gesicht gut erkennbar&lt;br /&gt;&#8226;     Nicht durch Finger oder Gegenstände verdeckt</string>
+
+    <!-- IDCARD -->
+    <string name="photo_help_overlay_title_id_front">Vorderseite</string>
+    <string name="photo_help_overlay_content_id_front">Legen Sie Ihren Ausweis auf eine neutrale Unterlage. Positionieren Sie den Ausweis im grünen Rahmen. Erstellen Sie ein Foto der Vorderseite.</string>
+    <string name="photo_help_overlay_content_id_front_details">Das muss auf dem Foto sichtbar sein:&lt;br /&gt;&lt;br /&gt;&#8226;     Vorderseite vollständig sichtbar&lt;br /&gt;&#8226;     Nicht durch Finger oder Gegenstände verdeckt&lt;br /&gt;&#8226;     Bild scharf und Schrift gut lesbar</string>
+    <string name="photo_help_overlay_title_id_back">Rückseite</string>
+    <string name="photo_help_overlay_content_id_back">Legen Sie Ihren Ausweis auf eine neutrale Unterlage. Positionieren Sie den Ausweis im grünen Rahmen. Erstellen Sie ein Foto der Rückseite.</string>
+    <string name="photo_help_overlay_content_id_back_details">Das muss auf dem Foto sichtbar sein:&lt;br /&gt;&lt;br /&gt;&#8226;     Rückseite vollständig sichtbar&lt;br /&gt;&#8226;     Nicht durch Finger oder Gegenstände verdeckt&lt;br /&gt;&#8226;     Bild scharf und Schrift gut lesbar</string>
+    <string name="photo_help_overlay_title_id_holograms">Hologramme</string>
+    <string name="photo_help_overlay_content_id_holograms">Nehmen Sie Ihren Ausweis in die Hand. Kippen Sie den Ausweis im Licht, so dass die Hologramme sichtbar sind. Sie können hierzu den Blitz einschalten. Erstellen Sie ein Foto der Hologramme.</string>
+    <string name="photo_help_overlay_content_id_holograms_details">Das muss auf dem Foto sichtbar sein:&lt;br /&gt;&lt;br /&gt;&#8226;     Ausweis vollständig sichtbar&lt;br /&gt;&#8226;     Hologramme deutlich erkennbar</string>
+
+    <!-- DRIVERS LICENSE -->
+    <string name="photo_help_overlay_title_drivers_license_front">Vorderseite</string>
+    <string name="photo_help_overlay_content_drivers_license_front">Legen Sie Ihren Führerschein auf eine neutrale Unterlage. Positionieren Sie ihn im grünen Rahmen. Erstellen Sie ein Foto der Vorderseite.</string>
+    <string name="photo_help_overlay_content_drivers_license_front_details">Das muss auf dem Foto sichtbar sein:&lt;br /&gt;&lt;br /&gt;&#8226;     Vorderseite vollständig sichtbar&lt;br /&gt;&#8226;     Nicht durch Finger oder Gegenstände verdeckt&lt;br /&gt;&#8226;     Bild scharf und Schrift gut lesbar</string>
+    <string name="photo_help_overlay_title_drivers_license_back">Rückseite</string>
+    <string name="photo_help_overlay_content_drivers_license_back">Legen Sie Ihren Führerschein auf eine neutrale Unterlage. Positionieren Sie ihn im grünen Rahmen. Erstellen Sie ein Foto der Rückseite.</string>
+    <string name="photo_help_overlay_content_drivers_license_back_details">Das muss auf dem Foto sichtbar sein:&lt;br /&gt;&lt;br /&gt;&#8226;     Rückseite vollständig sichtbar&lt;br /&gt;&#8226;     Nicht durch Finger oder Gegenstände verdeckt&lt;br /&gt;&#8226;     Bild scharf und Schrift gut lesbar</string>
+    <string name="photo_help_overlay_title_drivers_license_holograms">Hologramme</string>
+    <string name="photo_help_overlay_content_drivers_license_holograms">Nehmen Sie Ihren Führerschein in die Hand. Kippen Sie ihn im Licht, so dass die Hologramme sichtbar sind. Sie können hierzu den Blitz einschalten. Erstellen Sie ein Foto der Hologramme.</string>
+    <string name="photo_help_overlay_content_drivers_license_holograms_details">Das muss auf dem Foto sichtbar sein:&lt;br /&gt;&lt;br /&gt;&#8226;     Führerschein vollständig sichtbar&lt;br /&gt;&#8226;     Hologramme deutlich erkennbar</string>
+
+    <!-- PASSPORT -->
+    <string name="photo_help_overlay_title_passport_front">Datenseite</string>
+    <string name="photo_help_overlay_content_passport_front">Legen Sie Ihren Pass auf eine neutrale Unterlage. Positionieren Sie ihn im grünen Rahmen. Erstellen Sie ein Foto der Datenseite.</string>
+    <string name="photo_help_overlay_content_passport_front_details">Das muss auf dem Foto sichtbar sein:&lt;br /&gt;&lt;br /&gt;&#8226;     Datenseite vollständig sichtbar&lt;br /&gt;&#8226;     Nicht durch Finger oder Gegenstände verdeckt&lt;br /&gt;&#8226;     Bild scharf und Schrift gut lesbar</string>
+    <string name="photo_help_overlay_title_passport_back">Zweite Datenseite</string>
+    <string name="photo_help_overlay_content_passport_back">Legen Sie Ihren Pass auf eine neutrale Unterlage. Positionieren Sie ihn im grünen Rahmen. Erstellen Sie ein Foto der zweiten Datenseite.</string>
+    <string name="photo_help_overlay_content_passport_back_details">Das muss auf dem Foto sichtbar sein:&lt;br /&gt;&lt;br /&gt;&#8226;     Zweite Datenseite vollständig sichtbar&lt;br /&gt;&#8226;     Nicht durch Finger oder Gegenstände verdeckt&lt;br /&gt;&#8226;     Bild scharf und Schrift gut lesbar</string>
+    <string name="photo_help_overlay_title_passport_holograms">Hologramme</string>
+    <string name="photo_help_overlay_content_passport_holograms">Nehmen Sie Ihren Pass in die Hand. Kippen Sie die Datenseite im Licht, so dass die Hologramme sichtbar sind. Sie können hierzu den Blitz einschalten. Erstellen Sie ein Foto der Hologramme.</string>
+    <string name="photo_help_overlay_content_passport_holograms_details">Das muss auf dem Foto sichtbar sein:&lt;br /&gt;&lt;br /&gt;&#8226;     Pass vollständig sichtbar&lt;br /&gt;&#8226;     Hologramme deutlich erkennbar</string>
+
+    <!-- RESIDENCE -->
+    <string name="photo_help_overlay_title_residence_front">Vorderseite</string>
+    <string name="photo_help_overlay_content_residence_front">Legen Sie Ihren Aufenthaltstitel auf eine neutrale Unterlage. Positionieren Sie ihn im grünen Rahmen. Erstellen Sie ein Foto der Vorderseite.</string>
+    <string name="photo_help_overlay_content_residence_front_details">Das muss auf dem Foto sichtbar sein:&lt;br /&gt;&lt;br /&gt;&#8226;     Vorderseite vollständig sichtbar&lt;br /&gt;&#8226;     Nicht durch Finger oder Gegenstände verdeckt&lt;br /&gt;&#8226;     Bild scharf und Schrift gut lesbar</string>
+    <string name="photo_help_overlay_title_residence_back">Rückseite</string>
+    <string name="photo_help_overlay_content_residence_back">Legen Sie Ihren Aufenthaltstitel auf eine neutrale Unterlage. Positionieren Sie ihn im grünen Rahmen. Erstellen Sie ein Foto der Rückseite.</string>
+    <string name="photo_help_overlay_content_residence_back_details">Das muss auf dem Foto sichtbar sein:&lt;br /&gt;&lt;br /&gt;&#8226;     Rückseite vollständig sichtbar&lt;br /&gt;&#8226;     Nicht durch Finger oder Gegenstände verdeckt&lt;br /&gt;&#8226;     Bild scharf und Schrift gut lesbar</string>
+    <string name="photo_help_overlay_title_residence_holograms">Hologramme</string>
+    <string name="photo_help_overlay_content_residence_holograms">Nehmen Sie Ihren Aufenthaltstitel in die Hand. Kippen Sie ihn im Licht, so dass die Hologramme sichtbar sind. Sie können hierzu den Blitz einschalten. Erstellen Sie ein Foto der Hologramme.</string>
+    <string name="photo_help_overlay_content_residence_holograms_details">Das muss auf dem Foto sichtbar sein:&lt;br /&gt;&lt;br /&gt;&#8226;     Aufenthaltstitel vollständig sichtbar&lt;br /&gt;&#8226;     Hologramme deutlich erkennbar</string>
+
+    <!-- CONFIRM RESTART DIALOG -->
+    <string name="photo_confirm_restart_dialog_message">Möchten Sie diese Identifizierung wirklich neu starten?</string>
+    <string name="photo_confirm_restart_dialog_restart">Neu starten</string>
+    <string name="photo_confirm_restart_dialog_continue">Identifizierung fortsetzen</string>
+    <string name="title_activity_legal_notices">Open Source Lizenzen</string>
+
+</resources>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="grey">#363636</color>
+    <color name="dark_grey">#282828</color>
+    <color name="trans_dark_grey">#80282828</color>
+    <color name="white">#ffffff</color>
+    <color name="trans_white">#20ffffff</color>
+    <color name="light_gray">#d3d3d3</color>
+    <color name="semi_trans_white">#ccffffff</color>
+    <color name="trans">#00000000</color>
+    <color name="blue">#cc33b5e5</color>
+    
+    
+    <color name="apptheme_color">#f95602</color>
+    
+    <color name="idnow_orange">#F95602</color>
+    <color name="idnow_grey">#60605B</color>
+    <color name="idnow_green">#A4AC49</color>
+    <color name="idnow_red">#E0727A</color>
+    <color name="idnow_black">#4A4A4A</color>
+    <color name="idnow_background_orange_inactive">#77F95602</color>    
+    <color name="idnow_background_orange_selector">#33F95602</color>    
+    <color name="idnow_background_trans_white">#d9ffffff</color>
+    <color name="idnow_background_orange_pressed">#ffdc4d03</color>
+    <color name="idnow_background_dark_grey">#FF4A4A4A</color>
+
+</resources>

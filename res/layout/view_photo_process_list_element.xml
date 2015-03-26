@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/list_element_selector"
+    android:gravity="top"
+    android:orientation="horizontal"
+    android:paddingRight="8dp" >
+
+    <ImageView
+        android:id="@+id/imageViewPlaceholder"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:paddingTop="8dp"
+        android:src="@drawable/missing_image" />
+
+    <ImageView
+        android:id="@+id/imageViewCheck"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:paddingTop="8dp"
+        android:src="@drawable/action_check"
+        android:visibility="invisible" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_toLeftOf="@id/imageViewCheck"
+        android:layout_toRightOf="@id/imageViewPlaceholder"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/textViewPhotoType"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/idnow_orange"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/textViewPhotoTypeDescription"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+</RelativeLayout>

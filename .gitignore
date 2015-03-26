@@ -1,0 +1,27 @@
+bin
+gen
+proguard
+
+#built application files
+*.apk
+*.ap_
+
+# files for the dex VM
+*.dex
+
+# Java class files
+*.class
+
+# Office temp files
+.~lock.*
+.DS_Store
+
+# Crashlytics
+com_crashlytics_export_strings.xml
+crashlytics.properties
+crashlytics-build.properties
+
+#Eclipse
+.settings
+.classpath
+.project
