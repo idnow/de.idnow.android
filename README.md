@@ -94,7 +94,10 @@ try {
 	
 	// Same goes to the success screen. If none is shown, the app sends the results right back.
 	// The defaults for the both parameters are "true";
-	IDnowSDK.showErrorSuccessScreen(true, context); 
+	IDnowSDK.showErrorSuccessScreen(true, context);
+
+	// Optionally set against which environment the app has to test. Possibilities are DEV, TEST, LIVE, with LIVE being the default.
+	IDnowSDK.setEnvironment( Server.TEST ); 
 	
 	// To actually start the identification process, pass the transactionToken.
 	IDnowSDK.getInstance().start(IDnowSDK.getTransactionToken(context)); 
