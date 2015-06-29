@@ -50,6 +50,7 @@
     <string name="dialog_error_content">Ein unerwarteter Fehler ist aufgetreten. Die Verbindung wird geschlossen.</string>
     <string name="dialog_error_camera_title">Kamerafehler</string>
     <string name="dialog_error_camera_content">Beim Versuch die Kamera anzusprechen ist leider ein Fehler aufgetreten. Versuchen Sie es zu einem späteren Zeitpunkt noch einmal.</string>
+    <string name="wrong_entry">Ungültige Eingabe</string>
 
     <!-- Dialog -->
     <string name="ident_code_dialog_resend"><u>Ident-Code erneut als SMS zusenden.</u></string>
@@ -61,7 +62,7 @@
     <string name="rest_dialog_error_content_400">Der eingegebene Ident-Code war leider nicht korrekt.</string>
     <string name="rest_dialog_error_content_404">Bitte überprüfen Sie Ihre Vorgangs-ID und versuchen Sie es erneut.</string>
     <string name="rest_dialog_error_content_412">Die Identifizierung mit dieser Vorgangs-ID wurde bereits abgeschlossen und kann nicht erneut durchgeführt werden.</string>
-    <string name="rest_dialog_error_content_500">Leider ist ein interner Fehler aufgetreten. Bitte wenden Sie sich an unseren Support support@idnow.de und geben Sie die nachfolgende Fehlernummer an: #exceptionID</string>
+    <string name="rest_dialog_error_content_500">Leider ist ein interner Fehler aufgetreten. Bitte wenden Sie sich an unseren Support support@mail.idnow.de und geben Sie die nachfolgende Fehlernummer an: #exceptionID</string>
     <string name="dialog_no_wifi_cancel">Abbrechen</string>
     <string name="dialog_no_wifi_continue">Fortfahren</string>
     <string name="dialog_no_wifi_content">Für den Identifizierungsprozess wird eine WIFI Verbindung empfohlen.</string>
@@ -98,8 +99,9 @@
     <string name="second_step_recording_text">Ich bin einverstanden, dass zum Zwecke der Identifizierung Foto-Aufnahmen meiner Person und meines Ausweisdokuments vorgenommen werden sowie eine Ton-Aufnahme des Gesprächs angefertigt wird.</string>
     <string name="second_step_id_help">Welche Ausweisdokumente können verwendet werden?</string>
     <string name="second_step_approval_title">Einwilligung</string>
-    <string name="second_step_approval_text">Ich stimme den <a href="https://www.idnow.de/nutzungsbedingungen">Nutzungsbedingungen</a> der IDnow GmbH zu und habe die</string>
-    <string name="second_step_approval_text2"><a href="https://www.idnow.de/datenschutz">Datenschutzerklärung</a> gelesen.</string>
+    <string name="second_step_approval_text">Ich stimme den Nutzungsbedingungen der IDnow GmbH zu und habe die Datenschutzerklärung gelesen.</string>
+    <string name="second_step_terms_of_use"><a href="https://www.idnow.de/nutzungsbedingungen">Nutzungsbedingungen</a></string>
+    <string name="second_step_privacy_policy"><a href="https://www.idnow.de/datenschutz">Datenschutzerklärung</a></string>
     <string name="second_step_approval_help">Was geschieht mit meinen Daten?</string>
     <string name="second_step_start_ident">Identifizierung starten</string>
     <string name="second_step_terms_of_use_url">https://www.idnow.de/nutzungsbedingungen</string>
