@@ -18,11 +18,14 @@
 
             <ImageView
                 android:id="@+id/imageViewStatus"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/result_icon_height"
                 android:layout_gravity="center_horizontal"
-                android:layout_margin="32dp"
-                android:src="@drawable/green_check" >
+                android:layout_marginTop="@dimen/result_logo_margin_top"
+                android:layout_marginBottom="@dimen/result_logo_margin_bottom"
+                android:layout_marginLeft="@dimen/result_logo_margin_side"
+                android:layout_marginRight="@dimen/result_logo_margin_side"
+                android:src="@drawable/ic_result_success" >
             </ImageView>
 
             <TextView
@@ -30,7 +33,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/result_screen_status_success"
-                android:textColor="@color/idnow_green"
+                android:textColor="@color/success"
                 android:textSize="18sp"
                 android:textStyle="bold" />
 
@@ -47,7 +50,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/result_screen_transaction_nr_title"
-                android:textColor="@color/idnow_green"
+                android:textColor="@color/success"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -64,7 +67,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/result_screen_transaction_name_title"
-                android:textColor="@color/idnow_green"
+                android:textColor="@color/success"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:visibility="gone" />
@@ -92,7 +95,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
-                android:background="@drawable/button_selector"
                 android:text="@string/result_screen_button_retry"
                 android:textColor="@color/white" />
 
@@ -102,7 +104,6 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
-                android:background="@drawable/button_selector"
                 android:text="@string/result_screen_button_done"
                 android:textColor="@color/white" />
         </LinearLayout>
@@ -116,4 +117,4 @@
         android:layout_centerInParent="true"
         android:visibility="invisible" />
 
-</RelativeLayout>
+</RelativeLayout><!-- From: file:/D:/workspace/IDnow/SDK/src/main/res/layout/activity_result.xml -->

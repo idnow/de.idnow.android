@@ -28,4 +28,4 @@
             android:text="@string/activity_id_data_text" />
     </LinearLayout>
 
-</ScrollView>
+</ScrollView><!-- From: file:/D:/workspace/IDnow/SDK/src/main/res/layout/activity_help_data.xml -->

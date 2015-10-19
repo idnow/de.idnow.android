@@ -1,10 +1,10 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/relativeLayoutScreen"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/idnow_background_trans_white"
-    tools:context="de.idnow.sdk.Activities_PhotoCheckActivity" >
+<RelativeLayout android:id="@+id/relativeLayoutScreen"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/background_white_trans"
+                tools:context="de.idnow.sdk.Activities_PhotoCheckActivity">
 
     <ImageView
         android:id="@+id/imageViewPhoto"
@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:adjustViewBounds="true"
-        android:contentDescription="@string/photo_check_image_description" />
+        android:contentDescription="@string/photo_check_image_description"/>
 
     <LinearLayout
         android:id="@+id/linearLayoutHideHelp"
@@ -20,17 +20,16 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:animateLayoutChanges="true"
-        android:background="@color/idnow_background_trans_white" >
+        android:background="@color/background_white_trans">
 
         <Button
             android:id="@+id/buttonCloseHelp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/activity_vertical_margin"
-            android:background="@drawable/button_selector"
             android:text="@string/photo_help_overlay_button_start"
             android:textColor="@color/white"
-            android:visibility="gone" >
+            android:visibility="gone">
         </Button>
     </LinearLayout>
 
@@ -38,23 +37,23 @@
         android:id="@+id/linearLayoutHelpParent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@id/linearLayoutHideHelp" >
+        android:layout_above="@id/linearLayoutHideHelp">
 
         <LinearLayout
             android:id="@+id/completeHelpLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:animateLayoutChanges="true"
-            android:background="@color/idnow_background_trans_white"
+            android:background="@color/white"
             android:orientation="vertical"
-            android:padding="@dimen/activity_horizontal_margin" >
+            android:padding="@dimen/activity_horizontal_margin">
 
             <RelativeLayout
                 android:id="@+id/relativeLayoutTitleExpander"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/activity_vertical_margin"
-                android:gravity="center_vertical" >
+                android:gravity="center_vertical">
 
                 <ImageView
                     android:id="@+id/imageViewExpander"
@@ -62,7 +61,7 @@
                     android:layout_height="20dp"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:src="@drawable/action_expand" />
+                    android:src="@drawable/action_expand"/>
 
                 <TextView
                     android:id="@+id/textViewHelpTitle"
@@ -70,16 +69,16 @@
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
                     android:layout_toLeftOf="@id/imageViewExpander"
-                    android:textColor="@color/idnow_orange"
+                    android:textColor="@color/primary"
                     android:textSize="18sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"/>
             </RelativeLayout>
 
             <TextView
                 android:id="@+id/textViewHelpContent"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="16sp" />
+                android:textSize="16sp"/>
 
             <LinearLayout
                 android:id="@+id/linearLayoutHelp"
@@ -87,7 +86,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/activity_vertical_margin"
                 android:orientation="vertical"
-                android:visibility="gone" >
+                android:visibility="gone">
 
                 <TextView
                     android:id="@+id/textViewHelpDetail"
@@ -95,7 +94,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="@dimen/activity_vertical_margin"
                     android:layout_marginTop="@dimen/activity_vertical_margin"
-                    android:textSize="16sp" />
+                    android:textSize="16sp"/>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -104,14 +103,14 @@
                     android:layout_marginTop="@dimen/activity_vertical_margin"
                     android:text="@string/photo_help_overlay_example"
                     android:textSize="16sp"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"/>
 
                 <ImageView
                     android:id="@+id/imageViewDocumentImage"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
                     android:layout_gravity="left"
-                    android:src="@drawable/idcard" />
+                    android:src="@drawable/idcard"/>
             </LinearLayout>
         </LinearLayout>
     </ScrollView>
@@ -123,7 +122,7 @@
         android:layout_above="@id/linearLayoutHelpParent"
         android:layout_margin="@dimen/activity_vertical_margin"
         android:gravity="center_vertical"
-        android:orientation="horizontal" >
+        android:orientation="horizontal">
 
         <Button
             android:id="@+id/buttonRetakePhoto"
@@ -131,10 +130,9 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="4dp"
             android:layout_weight="1"
-            android:background="@drawable/retake_button_selector"
             android:enabled="false"
             android:text="@string/photo_check_retake_photo"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"/>
 
         <Button
             android:id="@+id/buttonSavePhoto"
@@ -142,9 +140,8 @@
             android:layout_height="wrap_content"
             android:layout_marginLeft="4dp"
             android:layout_weight="1"
-            android:background="@drawable/button_selector"
             android:text="@string/photo_check_save_photo"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"/>
     </LinearLayout>
 
-</RelativeLayout>
+</RelativeLayout><!-- From: file:/D:/workspace/IDnow/SDK/src/main/res/layout/activity_photo_check.xml -->
