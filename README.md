@@ -23,6 +23,13 @@ If Video-Ident will be used, the following permissions are required as well:
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
 ```
 
+Additional permissions for tokbox:
+
+```
+<uses-permission android:name="android.permission.BLUETOOTH"/>
+<uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+```
+
 Moreover, when using an Android LibraryProject, all the Activities, Services and <uses-feature> from the LibraryProject (SDK) have to be mentioned in your Apps AndroidManifest. The simplest way is just to copy the corresponding part of the IDnowSDK AndroidManifest.
 
 ## Preparation for Eclipse
