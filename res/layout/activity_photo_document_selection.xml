@@ -32,7 +32,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/photo_document_selection_title"
-                android:textColor="@color/idnow_black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -41,7 +40,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/activity_vertical_margin"
                 android:text="@string/photo_document_selection_info"
-                android:textColor="@color/idnow_black"
                 android:textSize="14sp" />
         </LinearLayout>
     </RelativeLayout>
@@ -52,4 +50,4 @@
         android:layout_height="wrap_content" >
     </ListView>
 
-</LinearLayout>
+</LinearLayout><!-- From: file:/D:/workspace/IDnow/SDK/src/main/res/layout/activity_photo_document_selection.xml -->

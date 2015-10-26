@@ -3,7 +3,7 @@
 
     <stroke
         android:width="2dp"
-        android:color="@color/idnow_green" />
+        android:color="@color/primary" />
 
     <padding
         android:bottom="2dp"
@@ -11,4 +11,4 @@
         android:right="2dp"
         android:top="2dp" />
 
-</shape>
+</shape><!-- From: file:/D:/workspace/IDnow/SDK/src/main/res/drawable/imageborder.xml -->

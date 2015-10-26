@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:animateLayoutChanges="true"
-    android:orientation="vertical" >
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:animateLayoutChanges="true"
+              android:orientation="vertical">
 
     <LinearLayout
         android:id="@+id/linearLayoutExplanationContent"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:animateLayoutChanges="true" >
+        android:animateLayoutChanges="true"
+        android:orientation="vertical">
 
         <TextView
             android:id="@+id/textViewExplanationTitle"
@@ -20,16 +20,16 @@
             android:paddingLeft="8dp"
             android:paddingRight="32dp"
             android:paddingTop="4dp"
-            android:textColor="@color/idnow_orange"
-            android:textSize="20sp" />
+            android:textColor="@color/primary"
+            android:textSize="20sp"/>
 
         <TextView
             android:id="@+id/textViewExplanationContent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="8dp"
-            android:textColor="@color/idnow_black"
-            android:textSize="18sp" />
+            android:text="@string/ident_start_text"
+            android:textSize="18sp"/>
     </LinearLayout>
 
-</LinearLayout>
+</LinearLayout><!-- From: file:/D:/workspace/IDnow/SDK/src/main/res/layout/view_live_screen_explanation.xml -->

@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/semi_trans_white"
+    android:background="@color/background_light_gray_trans"
     android:gravity="center" >
 
     <ProgressBar
@@ -10,4 +10,4 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 
-</LinearLayout>
+</LinearLayout><!-- From: file:/D:/workspace/IDnow/SDK/src/main/res/layout/view_spinner_overlay.xml -->

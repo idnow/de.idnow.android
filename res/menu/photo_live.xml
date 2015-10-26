@@ -8,3 +8,4 @@
         android:showAsAction="always"
         android:title="@string/action_activity_photo_live_close_help"/>
 </menu>
+<!-- From: file:/D:/workspace/IDnow/SDK/src/main/res/menu/photo_live.xml -->

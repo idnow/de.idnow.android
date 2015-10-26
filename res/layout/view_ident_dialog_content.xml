@@ -18,4 +18,4 @@
         android:layout_height="wrap_content"
         android:text="@string/ident_code_dialog_resend" />
 
-</LinearLayout>
+</LinearLayout><!-- From: file:/D:/workspace/IDnow/SDK/src/main/res/layout/view_ident_dialog_content.xml -->

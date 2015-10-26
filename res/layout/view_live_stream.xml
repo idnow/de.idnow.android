@@ -1,88 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<FrameLayout
     android:id="@+id/mainlayout"
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/idnow_background_trans_white"
+    android:background="@color/background_white_trans"
     android:descendantFocusability="beforeDescendants"
-    android:focusableInTouchMode="true" >
+    android:focusableInTouchMode="true">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
+        android:layout_height="match_parent">
 
         <RelativeLayout
             android:id="@+id/linLayoutBottom"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:background="@color/idnow_background_trans_white" >
+            android:background="@color/background_white_trans">
 
-            <RelativeLayout
-                android:id="@+id/subscriberView"
-                android:layout_width="120dp"
-                android:layout_height="160dp"
-                android:layout_alignParentRight="true"
-                android:layout_centerVertical="true" >
-
-                <ProgressBar
-                    android:id="@+id/loadingSpinner"
-                    style="?android:attr/progressBarStyleLarge"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerInParent="true"
-                    android:visibility="gone" />
-
-                <RelativeLayout
-                    android:id="@+id/audioOnlyView"
-                    android:layout_width="fill_parent"
-                    android:layout_height="fill_parent"
-                    android:layout_alignParentBottom="true"
-                    android:visibility="gone" >
-
-                    <ImageView
-                        android:id="@+id/noVideo"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignTop="@+id/avatar"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="28dp"
-                        android:src="@drawable/no_video" />
-
-                    <ImageView
-                        android:id="@+id/avatar"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_alignParentBottom="true"
-                        android:layout_centerHorizontal="true"
-                        android:src="@drawable/avatar" />
-                </RelativeLayout>
-            </RelativeLayout>
 
             <FrameLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_toLeftOf="@id/subscriberView" >
+                android:layout_height="wrap_content">
 
                 <View
                     android:id="@+id/dividerView"
                     android:layout_width="1dp"
                     android:layout_height="160dp"
                     android:layout_gravity="right|center_vertical"
-                    android:background="@color/light_gray" />
+                    android:background="@color/light_gray"/>
 
                 <include
                     android:id="@+id/view_complete_identification"
                     layout="@layout/view_complete_identification"
-                    android:visibility="gone" />
+                    android:visibility="gone"/>
 
                 <include
                     android:id="@+id/view_explanation"
+                    layout="@layout/view_live_screen_explanation"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    layout="@layout/view_live_screen_explanation"
-                    android:minHeight="160dp" >
+                    android:minHeight="160dp">
                 </include>
             </FrameLayout>
         </RelativeLayout>
@@ -90,12 +49,12 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_above="@id/linLayoutBottom" >
+            android:layout_above="@id/linLayoutBottom">
 
             <RelativeLayout
                 android:id="@+id/publisherView"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent" >
+                android:layout_height="match_parent">
             </RelativeLayout>
 
             <LinearLayout
@@ -105,33 +64,87 @@
                 android:layout_alignParentBottom="true"
                 android:layout_marginBottom="16dp"
                 android:layout_marginLeft="16dp"
-                android:orientation="vertical" >
+                android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginBottom="8dp"
                     android:text="@string/powered_by_idnow"
-                    android:textColor="@color/white" />
+                    android:textColor="@color/white"/>
 
                 <ImageView
                     android:id="@+id/icon0"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:src="@drawable/icon_placeholder_watermark" />
+                    android:src="@drawable/icon_placeholder_watermark"/>
             </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+    <include
+        android:id="@+id/eSignatureOverlay"
+        layout="@layout/view_overlay"
+        android:visibility="gone"/>
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="right|top"
+        android:layout_margin="16dp"
+        android:background="@color/light_gray">
+
+        <RelativeLayout
+            android:id="@+id/subscriberView"
+            android:layout_width="120dp"
+            android:layout_height="160dp"
+            android:padding="2dp">
+
+            <ProgressBar
+                android:id="@+id/loadingSpinner"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="gone"/>
+
+            <RelativeLayout
+                android:id="@+id/audioOnlyView"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignParentBottom="true"
+                android:visibility="gone">
+
+                <ImageView
+                    android:id="@+id/noVideo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignTop="@+id/avatar"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="28dp"
+                    android:src="@drawable/no_video"/>
+
+                <ImageView
+                    android:id="@+id/avatar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true"
+                    android:src="@drawable/avatar"/>
+            </RelativeLayout>
         </RelativeLayout>
     </RelativeLayout>
 
     <include
         android:id="@+id/view_retrieve_tan"
         layout="@layout/view_retrieve_tan"
-        android:visibility="gone" />
+        android:visibility="gone"/>
 
     <include
         android:id="@+id/view_insert_tan"
         layout="@layout/view_insert_tan"
-        android:visibility="gone" />
+        android:visibility="gone"/>
 
     <ProgressBar
         android:id="@+id/progressBarLoading"
@@ -139,6 +152,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|center_horizontal"
-        android:visibility="visible" />
+        android:visibility="visible"/>
 
-</FrameLayout>
+
+</FrameLayout><!-- From: file:/D:/workspace/IDnow/SDK/src/main/res/layout/view_live_stream.xml -->
