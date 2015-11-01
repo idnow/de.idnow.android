@@ -25,3 +25,5 @@ crashlytics-build.properties
 .settings
 .classpath
 .project
+*.iml
+.idea
