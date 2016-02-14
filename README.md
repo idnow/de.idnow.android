@@ -219,6 +219,9 @@ IDnowSDK.setEnvironment(IDnowSDK.Server.CUSTOM);
 IDnowSDK.setApiHost("https://api.yourserver.com", context);
 IDnowSDK.setWebHost("https://www.yourserver.com", context);
 IDnowSDK.setWebsocketHost("https://websocket.yourserver.com", context);
+IDnowSDK.setVideoHost("https://video.yourserver.com", context);
+IDnowSDK.setStunHost("video.yourserver.com", context);
+IDnowSDK.setStunPort(3478, context);
 ```
 
 ## Design configuration
