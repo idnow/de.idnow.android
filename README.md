@@ -70,13 +70,14 @@ and in the dependencies part of your app.gradle add:
     compile 'de.idnow.sdk:idnow-android-<version>@aar'
 
     compile 'com.android.support:support-v4:23.0.0'
-    compile 'com.google.code.gson:gson:2.2.4'
-    compile 'org.atmosphere:wasync:1.4.1'
-    compile 'org.slf4j:slf4j-android:1.7.12'
-    compile 'com.squareup.retrofit:retrofit:1.9.0'
-    compile 'com.fasterxml.jackson.core:jackson-core:2.6.0-rc3'
-    compile 'com.fasterxml.jackson.core:jackson-annotations:2.6.0-rc3'
-    compile 'com.fasterxml.jackson.core:jackson-databind:2.6.0-rc3'
+	compile 'com.google.code.gson:gson:2.2.4'
+	compile 'org.atmosphere:wasync:1.4.3'
+	compile 'org.slf4j:slf4j-android:1.7.12'
+	compile 'com.squareup.retrofit:retrofit:1.9.0'
+	compile 'com.fasterxml.jackson.core:jackson-core:2.6.5'
+	compile 'com.fasterxml.jackson.core:jackson-annotations:2.6.5'
+	compile 'com.fasterxml.jackson.core:jackson-databind:2.6.5'
+    
 ```
 
 ## Eclipse
@@ -101,7 +102,7 @@ Note: don't forget to add the meta-data with the crashlytics api-key into the ma
 Used libs (these are already added into the project, one doesn't have to set up anything more)
 - Socket Communication - Atmosphere: https://github.com/Atmosphere/wasync
 - okHttp and Retrofit: http://square.github.io/retrofit/
-- OpenTokAndroidSDK 2.4.1 (https://tokbox.com/opentok/libraries/client/android/)
+- OpenTokAndroidSDK 2.7.0 (https://tokbox.com/opentok/libraries/client/android/)
 
 The SDK is distributed as an Android Library Project.
 After importing the Project in your workspace, go to "Android" in your Project Preferences and add the project as a Library.
@@ -223,6 +224,30 @@ IDnowSDK.setVideoHost("https://video.yourserver.com", context);
 IDnowSDK.setStunHost("video.yourserver.com", context);
 IDnowSDK.setStunPort(3478, context);
 ```
+
+## Using IDnow with other native libraries (UnsatisfiedLinkError)
+
+For Videostreaming the Idnow SDK uses OpenTok / IceLink which come with native libs.
+
+If your app uses other 3rd party libs that come with their own native libs, it's possible that you get an UnsatisfiedLinkError.
+
+This means that the native lib folders shipped by your 3rd party lib don't match the native lib folders shipped by the Idnow SDK.
+Currently the Idnow SDK comes with the following folders: armeabi, armeabi-v7a, arm64-v8a, x86 and x86_64.
+If your 3rd party lib only supports some of the architectures but not others (e.g. armeabi, x86 and x86_64 but not armeabi-v7a and arm64-v8a), you have to exclude the other folders of the Idnow SDK in your build.gradle (in this example: armeabi-v7a and arm64-v8a) with the following command:
+
+android {
+//...
+packagingOptions {
+exclude "lib/armeabi-v7a/"
+exclude "lib/arm64-v8a/"
+//...
+}
+
+If it's the other way round (your 3rd party lib ships more than armeabi, armeabi-v7a, arm64-v8a, x86 and x86_64, you have to exclude these folders, so the remaining folders match the Idnow SDK folders.
+
+For further reading:
+http://developer.android.com/ndk/guides/abis.html
+https://forums.tokbox.com/android/64-bit-native-library-t45973
 
 ## Design configuration
 
