@@ -107,6 +107,10 @@ Used libs (these are already added into the project, one doesn't have to set up 
 The SDK is distributed as an Android Library Project.
 After importing the Project in your workspace, go to "Android" in your Project Preferences and add the project as a Library.
 
+## Multidex support
+
+Your project might require the usage of multidex if it comes over 65k methods. Please see http://developer.android.com/tools/building/multidex.html for details
+
 ## Proguard support
 
 A proguard file is supplied in this project as well.
