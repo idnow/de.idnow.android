@@ -12,7 +12,7 @@ Please see https://github.com/idnow/de.idnow.android-sample for a sample applica
 ### Requirements
 
 - minSdkVersion: 14  (Android 4.0 IceCreamSandwich)
-- targetSdkVersion:	19 (Android 4.2 Kitkat)
+- targetSdkVersion:	23 (Android 6.0 Marshmallow)
 - Internet connection, communication via standard SSL port 443
 
 ### AndroidManifest
@@ -125,8 +125,8 @@ Set the static parameters for the SDK usage. Context has to be passed, as parame
 You also can decide if after the identification the IDnow Error/SuccessScreen is shown, or if the callback to your app is triggered right after identification is finished.
 
 ```
-IDnowSDK.showVideoOverviewCheck(<true/false>, <Context>);
-IDnowSDK.showErrorSuccessScreen(<true/false>, <Context>);
+IDnowSDK.setShowVideoOverviewCheck(<true/false>, <Context>);
+IDnowSDK.setShowErrorSuccessScreen(<true/false>, <Context>);
 ```
 
 To actually start the identification pass your transaction token.
@@ -170,33 +170,44 @@ The SDK checks the input parameters and throws an Exception if something is deem
 To handle the results of the identification, implement the standard onActivityResult function in your activity.:
 
 ```
-protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-    if (requestCode == IDnowSDK.REQUEST_IDNOW_SDK) {
-        switch(resultCode) {
-            case IDnowSDK.RESULT_CODE_SUCCESS:
-                If (data != null) {
+	@Override
+	protected void onActivityResult( int requestCode, int resultCode, Intent data )
+	{
+		if ( requestCode == IDnowSDK.REQUEST_ID_NOW_SDK )
+		{
+			if ( resultCode == IDnowSDK.RESULT_CODE_SUCCESS )
+			{
+                If ( data != null )
+                {
                     String transactionToken = data.getStringExtra(IDnowSDK.RESULT_DATA_TRANSACTION_TOKEN);
                     Log.v(TAG, "success, transaction token: " + transactionToken);
                 }
-                break;
-            case IDnowSDK.RESULT_CODE_CANCEL:
-                if (data != null) {
+			}
+			else if ( resultCode == IDnowSDK.RESULT_CODE_CANCEL )
+			{
+                if ( data != null )
+                {
                     String transactionToken = data.getStringExtra(IDnowSDK.RESULT_DATA_TRANSACTION_TOKEN);
                     String errorMessage = data.getStringExtra(IDnowSDK.RESULT_DATA_ERROR);
                     Log.v(TAG, "canceled, transaction token: " + transactionToken + “, error: “ + errorMessage);
                 }
-                break;
-            case IDnowSDK.RESULT_CODE_FAILED:
-                if (data != null) {
-                    String transactionToken = data.getStringExtra(IDnowSDK.RESULT_DATA_TRANSACTION_NUMBER);
+			}
+			else if ( resultCode == IDnowSDK.RESULT_CODE_FAILED )
+			{
+                if ( data != null )
+                {
+                    String transactionToken = data.getStringExtra(IDnowSDK.RESULT_DATA_TRANSACTION_TOKEN);
                     String errorMessage = data.getStringExtra(IDnowSDK.RESULT_DATA_ERROR);
-                    Log.v(TAG, "failed, transaction Token: " + transactionToken + “, error: “ + errorMessage);
+                    Log.v(TAG, "failed, transaction token: " + transactionToken + “, error: “ + errorMessage);
                 }
-                break;
-            }
-        }
-    }
-}
+			}
+			else
+			{
+				Log.v(TAG, "Result Code: " + resultCode);
+			}
+		}
+	}
+
 ```
 
 ## Additional settings

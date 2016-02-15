@@ -1,0 +1,19 @@
+<resources>
+
+    <!-- IdnowSdkTheme is used when no other theme is applied. See documentation if you want to apply a different theme. -->
+
+    <!-- Apply color "text_default" for text elements -->
+    <style name="IdnowSdkTheme"
+           parent="@android:style/Theme.Holo.Light">
+        <!-- applying color "text_default" for common text elements -->
+        <item name="android:textColor">@color/text_default</item>
+        <item name="android:editTextStyle">@style/IdnowSdkTheme.EditText</item>
+    </style>
+
+    <style name="IdnowSdkTheme.EditText"
+           parent="android:Widget.EditText">
+        <!-- applying color "text_default" for edit text fields as text color -->
+        <item name="android:textColor">@color/text_default</item>
+    </style>
+
+</resources>
