@@ -2,7 +2,6 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/list_element_selector"
     android:gravity="top"
     android:orientation="horizontal"
     android:paddingRight="8dp" >
@@ -40,7 +39,7 @@
             android:id="@+id/textViewPhotoType"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@color/idnow_orange"
+            android:textColor="@color/primary"
             android:textSize="16sp" />
 
         <TextView

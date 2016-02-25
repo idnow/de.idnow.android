@@ -12,7 +12,7 @@ Please see https://github.com/idnow/de.idnow.android-sample for a sample applica
 ### Requirements
 
 - minSdkVersion: 14  (Android 4.0 IceCreamSandwich)
-- targetSdkVersion:	19 (Android 4.2 Kitkat)
+- targetSdkVersion:	23 (Android 6.0 Marshmallow)
 - Internet connection, communication via standard SSL port 443
 
 ### AndroidManifest
@@ -70,13 +70,14 @@ and in the dependencies part of your app.gradle add:
     compile 'de.idnow.sdk:idnow-android-<version>@aar'
 
     compile 'com.android.support:support-v4:23.0.0'
-    compile 'com.google.code.gson:gson:2.2.4'
-    compile 'org.atmosphere:wasync:1.4.1'
-    compile 'org.slf4j:slf4j-android:1.7.12'
-    compile 'com.squareup.retrofit:retrofit:1.9.0'
-    compile 'com.fasterxml.jackson.core:jackson-core:2.6.0-rc3'
-    compile 'com.fasterxml.jackson.core:jackson-annotations:2.6.0-rc3'
-    compile 'com.fasterxml.jackson.core:jackson-databind:2.6.0-rc3'
+	compile 'com.google.code.gson:gson:2.2.4'
+	compile 'org.atmosphere:wasync:1.4.3'
+	compile 'org.slf4j:slf4j-android:1.7.12'
+	compile 'com.squareup.retrofit:retrofit:1.9.0'
+	compile 'com.fasterxml.jackson.core:jackson-core:2.6.5'
+	compile 'com.fasterxml.jackson.core:jackson-annotations:2.6.5'
+	compile 'com.fasterxml.jackson.core:jackson-databind:2.6.5'
+    
 ```
 
 ## Eclipse
@@ -101,10 +102,14 @@ Note: don't forget to add the meta-data with the crashlytics api-key into the ma
 Used libs (these are already added into the project, one doesn't have to set up anything more)
 - Socket Communication - Atmosphere: https://github.com/Atmosphere/wasync
 - okHttp and Retrofit: http://square.github.io/retrofit/
-- OpenTokAndroidSDK 2.4.1 (https://tokbox.com/opentok/libraries/client/android/)
+- OpenTokAndroidSDK 2.7.0 (https://tokbox.com/opentok/libraries/client/android/)
 
 The SDK is distributed as an Android Library Project.
 After importing the Project in your workspace, go to "Android" in your Project Preferences and add the project as a Library.
+
+## Multidex support
+
+Your project might require the usage of multidex if it comes over 65k methods. Please see http://developer.android.com/tools/building/multidex.html for details
 
 ## Proguard support
 
@@ -124,8 +129,8 @@ Set the static parameters for the SDK usage. Context has to be passed, as parame
 You also can decide if after the identification the IDnow Error/SuccessScreen is shown, or if the callback to your app is triggered right after identification is finished.
 
 ```
-IDnowSDK.showVideoOverviewCheck(<true/false>, <Context>);
-IDnowSDK.showErrorSuccessScreen(<true/false>, <Context>);
+IDnowSDK.setShowVideoOverviewCheck(<true/false>, <Context>);
+IDnowSDK.setShowErrorSuccessScreen(<true/false>, <Context>);
 ```
 
 To actually start the identification pass your transaction token.
@@ -169,33 +174,44 @@ The SDK checks the input parameters and throws an Exception if something is deem
 To handle the results of the identification, implement the standard onActivityResult function in your activity.:
 
 ```
-protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-    if (requestCode == IDnowSDK.REQUEST_IDNOW_SDK) {
-        switch(resultCode) {
-            case IDnowSDK.RESULT_CODE_SUCCESS:
-                If (data != null) {
+	@Override
+	protected void onActivityResult( int requestCode, int resultCode, Intent data )
+	{
+		if ( requestCode == IDnowSDK.REQUEST_ID_NOW_SDK )
+		{
+			if ( resultCode == IDnowSDK.RESULT_CODE_SUCCESS )
+			{
+                If ( data != null )
+                {
                     String transactionToken = data.getStringExtra(IDnowSDK.RESULT_DATA_TRANSACTION_TOKEN);
                     Log.v(TAG, "success, transaction token: " + transactionToken);
                 }
-                break;
-            case IDnowSDK.RESULT_CODE_CANCEL:
-                if (data != null) {
+			}
+			else if ( resultCode == IDnowSDK.RESULT_CODE_CANCEL )
+			{
+                if ( data != null )
+                {
                     String transactionToken = data.getStringExtra(IDnowSDK.RESULT_DATA_TRANSACTION_TOKEN);
                     String errorMessage = data.getStringExtra(IDnowSDK.RESULT_DATA_ERROR);
                     Log.v(TAG, "canceled, transaction token: " + transactionToken + “, error: “ + errorMessage);
                 }
-                break;
-            case IDnowSDK.RESULT_CODE_FAILED:
-                if (data != null) {
-                    String transactionToken = data.getStringExtra(IDnowSDK.RESULT_DATA_TRANSACTION_NUMBER);
+			}
+			else if ( resultCode == IDnowSDK.RESULT_CODE_FAILED )
+			{
+                if ( data != null )
+                {
+                    String transactionToken = data.getStringExtra(IDnowSDK.RESULT_DATA_TRANSACTION_TOKEN);
                     String errorMessage = data.getStringExtra(IDnowSDK.RESULT_DATA_ERROR);
-                    Log.v(TAG, "failed, transaction Token: " + transactionToken + “, error: “ + errorMessage);
+                    Log.v(TAG, "failed, transaction token: " + transactionToken + “, error: “ + errorMessage);
                 }
-                break;
-            }
-        }
-    }
-}
+			}
+			else
+			{
+				Log.v(TAG, "Result Code: " + resultCode);
+			}
+		}
+	}
+
 ```
 
 ## Additional settings
@@ -219,7 +235,35 @@ IDnowSDK.setEnvironment(IDnowSDK.Server.CUSTOM);
 IDnowSDK.setApiHost("https://api.yourserver.com", context);
 IDnowSDK.setWebHost("https://www.yourserver.com", context);
 IDnowSDK.setWebsocketHost("https://websocket.yourserver.com", context);
+IDnowSDK.setVideoHost("https://video.yourserver.com", context);
+IDnowSDK.setStunHost("video.yourserver.com", context);
+IDnowSDK.setStunPort(3478, context);
 ```
+
+## Using IDnow with other native libraries (UnsatisfiedLinkError)
+
+For Videostreaming the Idnow SDK uses OpenTok / IceLink which come with native libs.
+
+If your app uses other 3rd party libs that come with their own native libs, it's possible that you get an UnsatisfiedLinkError.
+
+This means that the native lib folders shipped by your 3rd party lib don't match the native lib folders shipped by the Idnow SDK.
+Currently the Idnow SDK comes with the following folders: armeabi, armeabi-v7a, x86 and x86_64.
+If your 3rd party lib only supports some of the architectures but not others (e.g. armeabi, x86 and x86_64 but not armeabi-v7a), you have to exclude the other folders of the Idnow SDK in your build.gradle (in this example: armeabi-v7a) with the following command:
+
+```
+android {
+//...
+packagingOptions {
+exclude "lib/armeabi-v7a/"
+//...
+}
+```
+
+If it's the other way round (your 3rd party lib ships more than armeabi, armeabi-v7a, arm64-v8a, x86 and x86_64, you have to exclude these folders, so the remaining folders match the Idnow SDK folders.
+
+For further reading:
+http://developer.android.com/ndk/guides/abis.html
+https://forums.tokbox.com/android/64-bit-native-library-t45973
 
 ## Design configuration
 

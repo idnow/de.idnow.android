@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- These colors must not be overwritten by host app -->
+
+    <color name="white">#ffffff</color>
+    <color name="background_white_trans">#d9ffffff</color>
+
+    <color name="light_gray">#d3d3d3</color>
+    <color name="background_light_gray_trans">#ccd3d3d3</color>
+
+</resources>
