@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- These colors may be overwritten by host app to brand the IDnow sdk -->
+
+    <!-- Used by theme as default color for display and editable texts -->
+    <color name="text_default">#4A4A4A</color>
+
+    <!-- Primary color is used for different colored elements throughout the app, which are not covered by the other following explicit elements.
+    Other elements refer to primary color by default. -->
+    <color name="primary">#F95602</color>
+
+    <!-- Used for screens' headlines -->
+    <color name="headline">@color/primary</color>
+
+    <!-- Clickable links -->
+    <color name="link">@color/primary</color>
+
+    <!-- Tint color for check icons on video ident check screen (just before video stream is started) -->
+    <color name="check_icon">@color/primary</color>
+
+    <!-- Background color for confirmation/continue button, which is usually placed at the bottom of a screen -->
+    <color name="proceed_button_background">@color/primary</color>
+
+    <!-- "Wiederholen" button when a photo was taken in photo ident -->
+    <color name="photo_ident_retake_button_background">@color/text_default</color>
+
+    <!-- Colors of the result screen -->
+    <color name="success">#A4AC49</color>
+    <color name="failure">#E0727A</color>
+
+</resources>

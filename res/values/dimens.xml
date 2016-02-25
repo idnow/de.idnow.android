@@ -5,4 +5,10 @@
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="auto_focus_icon_size">100dp</dimen>
 
+    <dimen name="result_icon_height">80dp</dimen>
+    <dimen name="result_logo_margin_top">32dp</dimen>
+    <dimen name="result_logo_margin_bottom">32dp</dimen>
+    <dimen name="result_logo_margin_side">32dp</dimen>
+    <dimen name="result_vertical_margin">40dp</dimen>
+
 </resources>

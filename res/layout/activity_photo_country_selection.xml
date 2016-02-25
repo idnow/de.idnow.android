@@ -22,7 +22,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/activity_vertical_margin"
                 android:text="@string/photo_country_selection_title"
-                android:textColor="@color/idnow_black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -31,7 +30,6 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="@dimen/activity_vertical_margin"
                 android:text="@string/photo_country_selection_info"
-                android:textColor="@color/idnow_black"
                 android:textSize="14sp" />
 
             <RelativeLayout
@@ -67,7 +65,6 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/button_selector"
         android:text="@string/first_step_next"
         android:textColor="@color/white" >
     </Button>
