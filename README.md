@@ -250,12 +250,14 @@ This means that the native lib folders shipped by your 3rd party lib don't match
 Currently the Idnow SDK comes with the following folders: armeabi, armeabi-v7a, x86 and x86_64.
 If your 3rd party lib only supports some of the architectures but not others (e.g. armeabi, x86 and x86_64 but not armeabi-v7a), you have to exclude the other folders of the Idnow SDK in your build.gradle (in this example: armeabi-v7a) with the following command:
 
+```
 android {
 //...
 packagingOptions {
 exclude "lib/armeabi-v7a/"
 //...
 }
+```
 
 If it's the other way round (your 3rd party lib ships more than armeabi, armeabi-v7a, arm64-v8a, x86 and x86_64, you have to exclude these folders, so the remaining folders match the Idnow SDK folders.
 
