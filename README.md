@@ -247,14 +247,13 @@ For Videostreaming the Idnow SDK uses OpenTok / IceLink which come with native l
 If your app uses other 3rd party libs that come with their own native libs, it's possible that you get an UnsatisfiedLinkError.
 
 This means that the native lib folders shipped by your 3rd party lib don't match the native lib folders shipped by the Idnow SDK.
-Currently the Idnow SDK comes with the following folders: armeabi, armeabi-v7a, arm64-v8a, x86 and x86_64.
-If your 3rd party lib only supports some of the architectures but not others (e.g. armeabi, x86 and x86_64 but not armeabi-v7a and arm64-v8a), you have to exclude the other folders of the Idnow SDK in your build.gradle (in this example: armeabi-v7a and arm64-v8a) with the following command:
+Currently the Idnow SDK comes with the following folders: armeabi, armeabi-v7a, x86 and x86_64.
+If your 3rd party lib only supports some of the architectures but not others (e.g. armeabi, x86 and x86_64 but not armeabi-v7a), you have to exclude the other folders of the Idnow SDK in your build.gradle (in this example: armeabi-v7a) with the following command:
 
 android {
 //...
 packagingOptions {
 exclude "lib/armeabi-v7a/"
-exclude "lib/arm64-v8a/"
 //...
 }
 
