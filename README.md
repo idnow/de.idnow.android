@@ -413,3 +413,8 @@ Here an example on how to set custom action bar colors when using Holo Light the
 
 </resources>
 ```
+## Texts
+Warning: Adapting texts is only allowed if you have the permissions from IDnow.
+
+The SDK provides English and German texts.
+If you got approval from IDnow you will be provided the texts (along with their identifier names) you can overwrite in your own XML files.
