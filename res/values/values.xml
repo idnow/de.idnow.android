@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- From: file:/Users/abauer/Desktop/de.idnow.sdk/src/main/res/values/colors_do_not_overwrite.xml -->
+    <eat-comment/>
+    <color name="background_light_gray_trans">#ccd3d3d3</color>
+    <color name="background_white_trans">#d9ffffff</color>
+    <!-- From: file:/Users/abauer/Desktop/de.idnow.sdk/src/main/res/values/colors_brandable.xml -->
+    <eat-comment/>
+    <color name="check_icon">@color/primary</color>
+    <color name="failure">#E0727A</color>
+    <color name="headline">@color/primary</color>
+    <!-- From: file:/Users/abauer/Desktop/de.idnow.sdk/src/main/res/values/colors_do_not_overwrite.xml -->
+    <eat-comment/>
+    <color name="light_gray">#d3d3d3</color>
+    <!-- From: file:/Users/abauer/Desktop/de.idnow.sdk/src/main/res/values/colors_brandable.xml -->
+    <eat-comment/>
+    <color name="link">@color/primary</color>
+    <color name="photo_ident_retake_button_background">@color/text_default</color>
+    <color name="primary">#F95602</color>
+    <color name="proceed_button_background">@color/primary</color>
+    <color name="success">#A4AC49</color>
+    <color name="text_default">#4A4A4A</color>
+    <!-- From: file:/Users/abauer/Desktop/de.idnow.sdk/src/main/res/values/colors_do_not_overwrite.xml -->
+    <eat-comment/>
+    <color name="white">#ffffff</color>
+    <!-- From: file:/Users/abauer/Desktop/de.idnow.sdk/src/main/res/values/dimens.xml -->
+    <eat-comment/>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="auto_focus_icon_size">100dp</dimen>
+    <dimen name="result_icon_height">80dp</dimen>
+    <dimen name="result_logo_margin_bottom">32dp</dimen>
+    <dimen name="result_logo_margin_side">32dp</dimen>
+    <dimen name="result_logo_margin_top">32dp</dimen>
+    <dimen name="result_vertical_margin">40dp</dimen>
+    <!-- From: file:/Users/abauer/Desktop/de.idnow.sdk/src/main/res/values/strings.xml -->
+    <eat-comment/>
+    <string name="action_activity_photo_live_close_help">Start</string>
+    <string name="action_activity_photo_live_show_help">Help</string>
+    <string name="action_settings">Settings</string>
+    <string name="activity_id_data_text">You need a valid identity card or passport for IDnow Online-Ident.\nWe support a wide range of modern identity documents with security holograms. In particular identity cards and passports from the European Union, Turkey, Norway, Switzerland, Iceland and the USA.</string>
+    <string name="activity_id_help_text">You need a valid identity card or passport for IDnow Online-Ident.\nWe support a wide range of modern identity documents with security holograms. In particular identity cards and passports from the European Union, Turkey, Norway, Switzerland, Iceland and the USA.</string>
+    <string name="app_name">IDnow Online-Ident</string>
+    <string name="archivingOff">Archiving off</string>
+    <string name="archivingOn">Archiving on</string>
+    <string name="audioOnly">Audio only</string>
+    <string name="complete_identification_text">Please wait while our Identification Expert checks your data. You will be put through automatically.</string>
+    <string name="complete_identification_title">Identification is being completed …</string>
+    <string name="dialog_cancel_identification">Do you really want to cancel the identification?</string>
+    <string name="dialog_cancel_identification_title">Cancel Identification</string>
+    <string name="dialog_error">Identification failed. Please check your internet connection and try again.</string>
+    <string name="dialog_error_camera_content">An error occurred while trying to access your camera. Please try again later.</string>
+    <string name="dialog_error_camera_title">Camera Error</string>
+    <string name="dialog_error_content">An unexpected error occurred. The connection is being shut down.</string>
+    <string name="dialog_error_mobile_no">Your request for an Ident-Code to be sent to your mobile phone failed. Please try again.</string>
+    <string name="dialog_error_tan">The Ident-Code is incorrect. Please re-enter your Ident-Code.</string>
+    <string name="dialog_error_title">Connection Error</string>
+    <string name="dialog_error_video">Identification failed. A problem has occurred with the video connection. Please try again.</string>
+    <string name="dialog_no">No</string>
+    <string name="dialog_no_wifi_cancel">Cancel</string>
+    <string name="dialog_no_wifi_content">We advice you to use a WiFi connection for the video identification.</string>
+    <string name="dialog_no_wifi_continue">Continue</string>
+    <string name="dialog_office_hours_content_1">You are calling the Video-Ident Service outside our opening hours.\n\nYou can start your identification during the following times. An appointment is not necessary.\n\nOur Opening Hours:\n\n</string>
+    <string name="dialog_office_hours_content_2">\nPlease restart your identification during our opening hours.</string>
+    <string name="dialog_office_hours_title">Opening Hours</string>
+    <string name="dialog_play_store">Go to Play Store</string>
+    <string name="dialog_retry">Try again</string>
+    <string name="dialog_yes">Yes</string>
+    <string name="e_signature_accept_contract_button">Sign contract</string>
+    <string name="e_signature_back_to_signing">Confirm</string>
+    <string name="e_signature_check_contract">Check contract</string>
+    <string name="e_signature_decline_contract">Decline contract</string>
+    <string name="e_signature_hash">Contract ID</string>
+    <string name="e_signature_resign_contract">Sign again</string>
+    <string name="e_signature_sign_contract_description">Please draw your signature in the field above and tap the button to proceed.</string>
+    <string name="e_signature_sign_contract_header">Sign here</string>
+    <string name="e_signature_warning_content">The Android version used by your mobile device seems to be incompatible with our PDF Viewer. This might result in an empty page being displayed during the identification instead of your pdf document.</string>
+    <string name="e_signature_warning_title">Warning</string>
+    <string name="endCall1">End call</string>
+    <string name="endCall2">End</string>
+    <string name="error_flash">The camera flash couldn\'t be activated.</string>
+    <string name="first_step_1_text">Please have your identity document readily available.</string>
+    <string name="first_step_2_text">Enter your transaction number above and start the identification.</string>
+    <string name="first_step_3_text">Follow the instructions that will guide you through the identification.</string>
+    <string name="first_step_4_text">Your identification will be completed in a matter of minutes.</string>
+    <string name="first_step_ident_text">Please enter and confirm your transaction number to start the identification.</string>
+    <string name="first_step_intro_text">How it works: </string>
+    <string name="first_step_next">Confirm</string>
+    <string name="ident_done_failed">Identification Failed</string>
+    <string name="ident_done_successful">Identification Completed</string>
+    <string name="image_description">Image Description</string>
+    <string name="insert_tan_accept">Confirm</string>
+    <string name="insert_tan_button_send_again">Request your Ident-Code again.</string>
+    <string name="insert_tan_forgot_tan">Didn\'t receive an Ident-Code or entered a wrong number?</string>
+    <string name="insert_tan_hint_enter_code">Enter Ident-Code</string>
+    <string name="insert_tan_text">Your Ident-Code has been sent to the following phone number by SMS: xxx. Please enter and confirm your Ident-Code to continue.</string>
+    <string name="insert_tan_title">Enter Ident-Code</string>
+    <string name="insert_tan_wrong_tan">Invalid Ident-Code</string>
+    <string name="menu_legalnotices">Legal Notices</string>
+    <string name="menu_settings">Settings</string>
+    <string name="message_id_failed">Identification failed.</string>
+    <string name="message_id_failed_no_connection">Identification failed, no internet connection.</string>
+    <string name="message_user_canceled">User aborted the identification.</string>
+    <string name="network_connection_failure">An Internet Connection is required for the identification. Please connect to your mobile device to the internet and try again.</string>
+    <string name="network_dialog_title">Network Error</string>
+    <string name="notification">Ongoing call</string>
+    <string name="notification_content">Aktiver Anruf</string>
+    <string name="permission_audio">Create audio files</string>
+    <string name="permission_camera">Use camera</string>
+    <string name="permission_failed_break">In order to continue with the identification you need to grant the required permissions. The process was aborted.</string>
+    <string name="permission_failed_continue">Please grant the required permissions in order to continue with the identification.</string>
+    <string name="permission_storage">Temporarily save photos on your mobile device</string>
+    <string name="permissions_intro_end">.\nPlease confirm the permissions in order to use this function.</string>
+    <string name="permissions_intro_photo">Please grant the required permissions in order to continue with the photo identification: \n</string>
+    <string name="permissions_intro_video">The following permissions are necessary to continue with the identification: \n</string>
+    <string name="photo_check_action_help">Help</string>
+    <string name="photo_check_action_hide_help">Hide help</string>
+    <string name="photo_check_image_description">Userfoto</string>
+    <string name="photo_check_retake_photo">Retake Picture</string>
+    <string name="photo_check_save_photo">Save</string>
+    <string name="photo_confirm_restart_dialog_continue">Continue identification</string>
+    <string name="photo_confirm_restart_dialog_message">Do you really want to start over?</string>
+    <string name="photo_confirm_restart_dialog_restart">Start over</string>
+    <string name="photo_country_selection_image_description">Flag</string>
+    <string name="photo_country_selection_info">Choose the country that issued your identity document.</string>
+    <string name="photo_country_selection_title">Country</string>
+    <string name="photo_dialog_content">Your data has been encrypted and is being transferred to our secure servers.</string>
+    <string name="photo_dialog_title">Submit Data.</string>
+    <string name="photo_document_selection_document_extra_placeholder">2006 or later</string>
+    <string name="photo_document_selection_document_name_placeholder">Identity Card</string>
+    <string name="photo_document_selection_info">Choose your type of identity document.</string>
+    <string name="photo_document_selection_title">Document</string>
+    <string name="photo_help_overlay_button_start">Take Picture</string>
+    <string name="photo_help_overlay_content_drivers_license_back">Place your driving license on a neutral surface. Align the document\'s back side within the green frame. Take a picture.</string>
+    <string name="photo_help_overlay_content_drivers_license_back_details">Photo requirements:&lt;br />&lt;br />•     Back side fully visible&lt;br />•     Photo not covered by fingers or objects&lt;br />•     Clear photo and sharp letters</string>
+    <string name="photo_help_overlay_content_drivers_license_front">Place your driving license on a neutral surface. Align the document\'s front side within the green frame. Take a picture.</string>
+    <string name="photo_help_overlay_content_drivers_license_front_details">Photo requirements:&lt;br />&lt;br />•     Front side fully visible&lt;br />•     Photo not covered by fingers or objects&lt;br />•     Clear photo and sharp letters</string>
+    <string name="photo_help_overlay_content_drivers_license_holograms">Hold the driving license in your hand and tilt it, so that the holograms become clearly visible. Use the flash if needed. Take a picture.</string>
+    <string name="photo_help_overlay_content_drivers_license_holograms_details">Photo requirements:&lt;br />&lt;br />•     Driving license fully visible&lt;br />•     Holograms clearly visible</string>
+    <string name="photo_help_overlay_content_face">Place your face in the green outline and take a picture (selfie).</string>
+    <string name="photo_help_overlay_content_face_details">Photo requirements:&lt;br />&lt;br />•     Your face is clearly visible&lt;br />•     Photo not covered by fingers or objects</string>
+    <string name="photo_help_overlay_content_id_back">Place your ID card on a neutral surface. Align the document\'s back side within the green frame. Take a picture.</string>
+    <string name="photo_help_overlay_content_id_back_details">Photo requirements:&lt;br />&lt;br />•     Back side fully visible&lt;br />•     Photo not covered by fingers or objects&lt;br />•     Clear photo and sharp letters</string>
+    <string name="photo_help_overlay_content_id_front">Place your ID card on a neutral surface. Align the document\'s front side within the green frame. Take a picture.</string>
+    <string name="photo_help_overlay_content_id_front_details">Photo requirements:&lt;br />&lt;br />•     Front side fully visible&lt;br />•     Photo not covered by fingers or object&lt;br />•     Clear photo and sharp letters</string>
+    <string name="photo_help_overlay_content_id_holograms">Hold the ID card in your hand and tilt it, so that the holograms become clearly visible. Use the flash if needed. Take a picture.</string>
+    <string name="photo_help_overlay_content_id_holograms_details">Photo requirements:&lt;br />&lt;br />•     ID card fully visible&lt;br />•     Holograms clearly visible</string>
+    <string name="photo_help_overlay_content_passport_back">Place your passport on a neutral surface. Align the passport\'s second page within the green frame. Take a picture.</string>
+    <string name="photo_help_overlay_content_passport_back_details">Photo requirements:&lt;br />&lt;br />•     Second page fully visible&lt;br />•     Photo not covered by fingers or objects&lt;br />•     Clear photo and sharp letters</string>
+    <string name="photo_help_overlay_content_passport_front">Place your passport on a neutral surface. Align the passport\'s photo page within the green frame. Take a picture.</string>
+    <string name="photo_help_overlay_content_passport_front_details">Photo requirements:&lt;br />&lt;br />•     Photo page fully visible&lt;br />•     Photo not covered by fingers or objects&lt;br />•     Clear photo and sharp letters</string>
+    <string name="photo_help_overlay_content_passport_holograms">Hold the passport\'s photo page in your hand and tilt it, so that the holograms become clearly visible. Use the flash if needed. Take a picture.</string>
+    <string name="photo_help_overlay_content_passport_holograms_details">Photo requirements:&lt;br />&lt;br />•     Photo page fully visible&lt;br />•     Holograms clearly visible</string>
+    <string name="photo_help_overlay_content_residence_back">Place your residence permit on a neutral surface. Align the document\'s back side within the green frame. Take a picture.</string>
+    <string name="photo_help_overlay_content_residence_back_details">Photo requirements:&lt;br />&lt;br />•     Back side fully visible&lt;br />•     Photo not covered by fingers or objects&lt;br />•     Clear photo and sharp letters</string>
+    <string name="photo_help_overlay_content_residence_front">Place your residence permit on a neutral surface. Align the document\'s front side within the green frame. Take a picture.</string>
+    <string name="photo_help_overlay_content_residence_front_details">Photo requirements:&lt;br />&lt;br />•     Front side fully visible&lt;br />•     Photo not covered by fingers or objects&lt;br />•     Clear photo and sharp letters</string>
+    <string name="photo_help_overlay_content_residence_holograms">Hold the residence permit in your hand and tilt it, so that the holograms become clearly visible. Use the flash if needed. Take a picture.</string>
+    <string name="photo_help_overlay_content_residence_holograms_details">Photo requirements:&lt;br />&lt;br />•     Residence permit fully visible&lt;br />•     Holograms clearly visible</string>
+    <string name="photo_help_overlay_example">Beispiel:</string>
+    <string name="photo_help_overlay_title_drivers_license_back">Back Side</string>
+    <string name="photo_help_overlay_title_drivers_license_front">Front Side</string>
+    <string name="photo_help_overlay_title_drivers_license_holograms">Holograms</string>
+    <string name="photo_help_overlay_title_face">Face</string>
+    <string name="photo_help_overlay_title_id_back">Back Side</string>
+    <string name="photo_help_overlay_title_id_front">Front Side</string>
+    <string name="photo_help_overlay_title_id_holograms">Holograms</string>
+    <string name="photo_help_overlay_title_passport_back">Second Page</string>
+    <string name="photo_help_overlay_title_passport_front">Photo Page</string>
+    <string name="photo_help_overlay_title_passport_holograms">Holograms</string>
+    <string name="photo_help_overlay_title_residence_back">Back Side</string>
+    <string name="photo_help_overlay_title_residence_front">Front Side</string>
+    <string name="photo_help_overlay_title_residence_holograms">Holograms</string>
+    <string name="photo_live_take_picture_button">Take a Picture</string>
+    <string name="photo_process_overview_send_data_button">Submit data</string>
+    <string name="photo_process_overview_send_data_text">By tapping the button, you accept that the images will be transmitted and stored.</string>
+    <string name="photo_process_overview_text">Please make all the photos listed below before submitting your data.</string>
+    <string name="please_wait">Please wait ...</string>
+    <string name="powered_by_idnow">powered by</string>
+    <string name="required_field">Invalid phone number</string>
+    <string name="rest_dialog_error_content_400">The Ident-Code is incorrect. Please re-enter your Ident-Code.</string>
+    <string name="rest_dialog_error_content_404">Your transaction number is not correct. Please check and try again.</string>
+    <string name="rest_dialog_error_content_410">Your version of this app is outdated. Please update your app to the latest version in the app store and try again.</string>
+    <string name="rest_dialog_error_content_412">The identification for this transaction number has already been completed and cannot be restarted</string>
+    <string name="rest_dialog_error_content_500">Unfortunately an internal error has occurred. Please contact our support under support@mail.idnow.de and state the following error number: #exceptionID</string>
+    <string name="rest_dialog_error_content_503">IDnow is currently under maintenance and will be available again soon. Please be patient and come back in a few minutes.</string>
+    <string name="rest_dialog_error_title">Error</string>
+    <string name="result_screen_button_done">Close app</string>
+    <string name="result_screen_button_retry">Try again</string>
+    <string name="result_screen_info_failure">Your identification couldn\'t be completed.\n\nPlease use an alternative method to identify yourself or try again.</string>
+    <string name="result_screen_info_success_default">Thank you for using our online identification service! You can now close the app und will be informed about the next steps.</string>
+    <string name="result_screen_info_success_photo_ident">@string/result_screen_info_success_default</string>
+    <string name="result_screen_info_success_video_ident">@string/result_screen_info_success_default</string>
+    <string name="result_screen_status_failed">Identification Failed</string>
+    <string name="result_screen_status_success">Identification Completed</string>
+    <string name="result_screen_transaction_name_content">John Doe</string>
+    <string name="result_screen_transaction_name_title">Name</string>
+    <string name="result_screen_transaction_nr_content">270 303 123</string>
+    <string name="result_screen_transaction_nr_title">Transaction Number</string>
+    <string name="retrieve_tan_button">Request Ident-Code by SMS</string>
+    <string name="retrieve_tan_content">Please check your mobile number and request your Ident-Code by SMS.</string>
+    <string name="retrieve_tan_title">Request Ident-Code</string>
+    <string name="second_step_approval_help">What is my data used for?</string>
+    <string name="second_step_approval_text">I agree to the IDnow Terms of Service and have read the Privacy Policy.</string>
+    <string name="second_step_approval_title">Consent</string>
+    <string name="second_step_id_help">Which identity documents are supported?</string>
+    <string name="second_step_id_text">Your identity document will be checked during the identification, so please have it ready and at hand.</string>
+    <string name="second_step_id_title">Your readily available identity document</string>
+    <string name="second_step_intro_text">In order to start the identification, the following is required:</string>
+    <string name="second_step_mobile_nr_hint">+4917610305431</string>
+    <string name="second_step_mobile_nr_text">We will send you an Ident-Code to this mobile number by SMS during the identification.</string>
+    <string name="second_step_mobile_nr_title">Your mobile phone number</string>
+    <string name="second_step_privacy_policy"><a href="http://www.idnow.eu/privacy">Privacy Policy</a></string>
+    <string name="second_step_privacy_policy_url">http://www.idnow.eu/privacy</string>
+    <string name="second_step_recording_text">By starting the Identification, you agree to the making of the following: images of yourself, your identity document and a sound recording of the conversation.</string>
+    <string name="second_step_recording_title">Your consent</string>
+    <string name="second_step_start_ident">Start Identification</string>
+    <string name="second_step_terms_of_use"><a href="http://www.idnow.eu/terms">Terms of Service</a></string>
+    <string name="second_step_terms_of_use_url">http://www.idnow.eu/terms</string>
+    <string name="send">Send</string>
+    <string name="start_screen_accept">Confirm</string>
+    <string name="start_screen_ident_explanation">How does the identification work?</string>
+    <string name="start_screen_placeholder">Enter your transaction number</string>
+    <string name="step_esigning_wait">One moment please …</string>
+    <string name="step_finished">Thank you for using our online identification service!</string>
+    <string name="step_id_back">Please hold the back side of your identity document into the camera, so we can read the details.</string>
+    <string name="step_id_empty_string"/>
+    <string name="step_id_front">Please hold the front side of your identity document into the camera, so we can read the details.</string>
+    <string name="step_id_read_no">Please read out loud the number of your identity document. You\'ll find it on the front in the top right corner.</string>
+    <string name="step_id_wiggle">Please tilt your document up and down, so we can see it\'s security features.</string>
+    <string name="step_say_name">Please look into the camera and state your first names and surname in full.</string>
+    <string name="step_start">Please wait while you are being connected with one of our Identification Experts. This can take up to two minutes.</string>
+    <string name="step_title_finished">Identification completed</string>
+    <string name="step_title_id_back">Back side of ID document</string>
+    <string name="step_title_id_front">Front side of ID document</string>
+    <string name="step_title_ident_code">Enter Ident-Code</string>
+    <string name="step_title_please_wait">Please wait …</string>
+    <string name="step_title_say_name">Name and photo</string>
+    <string name="step_title_start">You are being connected.</string>
+    <string name="step_wait_long">All our Identification Experts are busy due to high demand. This will result in longer waiting times than usual. The identification service is available Monday to Sunday from 8 a.m. to 12 a.m.</string>
+    <string name="swapStr">Swap camera</string>
+    <string name="title_activity_activities__video_live_stream_activity__ice_link">Activities_VideoLiveStreamActivity_IceLink</string>
+    <string name="title_activity_base">BaseActivity</string>
+    <string name="title_activity_first_step">IDnow</string>
+    <string name="title_activity_help_data">IDnow</string>
+    <string name="title_activity_id_help">IDnow</string>
+    <string name="title_activity_legal_notices">Open Source licenses</string>
+    <string name="title_activity_photo_check">IDnow</string>
+    <string name="title_activity_photo_country_selection">IDnow</string>
+    <string name="title_activity_photo_document_selection">IDnow</string>
+    <string name="title_activity_photo_live">IDnow</string>
+    <string name="title_activity_photo_process_overview">IDnow</string>
+    <string name="title_activity_photo_upload">IDnow</string>
+    <string name="title_activity_result">IDnow</string>
+    <string name="title_activity_second">IDnow</string>
+    <string name="title_live_stream_screen">Connect …</string>
+    <string name="wrong_entry">Invalid Entry</string>
+    <string name="wrong_token">Invalid entry</string>
+    <!-- From: file:/Users/abauer/Desktop/de.idnow.sdk/src/main/res/values/themes.xml -->
+    <eat-comment/>
+    <style name="IdnowSdkTheme" parent="@android:style/Theme.Holo.Light">
+        <!-- applying color "text_default" for common text elements -->
+        <item name="android:textColor">@color/text_default</item>
+        <item name="android:editTextStyle">@style/IdnowSdkTheme.EditText</item>
+    </style>
+    <style name="IdnowSdkTheme.EditText" parent="android:Widget.EditText">
+        <!-- applying color "text_default" for edit text fields as text color -->
+        <item name="android:textColor">@color/text_default</item>
+    </style>
+</resources>

@@ -288,4 +288,4 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|center_horizontal"/>
 
-</FrameLayout>
+</FrameLayout><!-- From: file:/Users/abauer/Desktop/de.idnow.sdk/src/main/res/layout/activity_overview_check.xml -->

@@ -8,3 +8,4 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="de.idnow.sdk.BaseActivities_BaseActivity" >
 </RelativeLayout>
+<!-- From: file:/Users/abauer/Desktop/de.idnow.sdk/src/main/res/layout/activity_base.xml -->

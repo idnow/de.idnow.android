@@ -158,4 +158,4 @@
         android:layout_gravity="center_vertical|center_horizontal"
         android:visibility="visible"/>
 
-</FrameLayout>
+</FrameLayout><!-- From: file:/Users/abauer/Desktop/de.idnow.sdk/src/main/res/layout/view_live_stream.xml -->

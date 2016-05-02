@@ -2,6 +2,27 @@
 
 This SDK supports AndroidStudio and Eclipse. Please note that the Eclipse support might have less features than the Android Studio version. If possible please use the Android Studio version.
 
+### Changelog
+
+#### 2.2.0
+
+Improvements
+- Dont allow screenshots during identification due to security considerations
+- Success and failure redirects now support custom fields
+- Better handling of volume controls of headset plugged in
+- During check data, half of the screen is not covered anymore
+- Support for swiss environment
+- Possibility to change the example mobile number
+- Additional customization options: color of proceed_button_text, branded dialogs, color of video_subscriber_border_color and more
+
+Bugfixes
+- Fixed wrong SSL certificate validation
+
+#### 2.1.0
+Improvements
+- Added echo cancellation
+
+
 ### Examples
 
 Please see https://github.com/idnow/de.idnow.android-sample for a sample applications
