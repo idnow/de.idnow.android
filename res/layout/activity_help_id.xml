@@ -27,4 +27,4 @@
         android:text="@string/activity_id_help_text" />
     </LinearLayout>
 
-</ScrollView>
+</ScrollView><!-- From: file:/Users/abauer/Desktop/de.idnow.sdk/src/main/res/layout/activity_help_id.xml -->

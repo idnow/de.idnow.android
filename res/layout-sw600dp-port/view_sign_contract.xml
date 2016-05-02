@@ -56,4 +56,4 @@
             android:text="@string/e_signature_sign_contract_description"/>
     </LinearLayout>
 
-</RelativeLayout>
+</RelativeLayout><!-- From: file:/Users/abauer/Desktop/de.idnow.sdk/src/main/res/layout-sw600dp-port/view_sign_contract.xml -->

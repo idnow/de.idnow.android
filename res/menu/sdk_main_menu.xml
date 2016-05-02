@@ -6,4 +6,4 @@
         android:showAsAction="never"
         android:title="@string/menu_legalnotices"/>
 
-</menu>
+</menu><!-- From: file:/Users/abauer/Desktop/de.idnow.sdk/src/main/res/menu/sdk_main_menu.xml -->

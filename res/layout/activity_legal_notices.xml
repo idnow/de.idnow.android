@@ -18,4 +18,4 @@
         android:indeterminate="true"
         android:id="@+id/licensesFragmentIndeterminateProgress" />
 
-</RelativeLayout>
+</RelativeLayout><!-- From: file:/Users/abauer/Desktop/de.idnow.sdk/src/main/res/layout/activity_legal_notices.xml -->
