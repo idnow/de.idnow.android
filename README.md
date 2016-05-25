@@ -4,6 +4,16 @@ This SDK supports AndroidStudio and Eclipse. Please note that the Eclipse suppor
 
 ### Changelog
 
+#### 2.3.0
+
+Improvements
+- Better handling of connection loss during the video chat
+- Logging now enabled by default. Call IDnowSDK.disableLogging() to disable logging
+- Removed Jackson dependency
+
+Bugfixes
+- Removed app_name string from SDK
+
 #### 2.2.0
 
 Improvements
@@ -19,6 +29,7 @@ Bugfixes
 - Fixed wrong SSL certificate validation
 
 #### 2.1.0
+
 Improvements
 - Added echo cancellation
 
@@ -95,9 +106,6 @@ and in the dependencies part of your app.gradle add:
 	compile 'org.atmosphere:wasync:1.4.3'
 	compile 'org.slf4j:slf4j-android:1.7.12'
 	compile 'com.squareup.retrofit:retrofit:1.9.0'
-	compile 'com.fasterxml.jackson.core:jackson-core:2.6.5'
-	compile 'com.fasterxml.jackson.core:jackson-annotations:2.6.5'
-	compile 'com.fasterxml.jackson.core:jackson-databind:2.6.5'
     
 ```
 
@@ -247,6 +255,12 @@ You can force one of the environments to use. Default is to determine this by th
 
 ```
 IDnowSDK.setEnvironment(IDnowSDK.Server.TEST);
+```
+
+You can disable logging of the SDK by using
+
+```
+IDnowSDK.disableLogging();
 ```
 
 You can set to use your own servers. When this setting is enabled, apiHost, webHost and websocketHost must also be set.
