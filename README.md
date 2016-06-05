@@ -4,6 +4,14 @@ This SDK supports AndroidStudio and Eclipse. Please note that the Eclipse suppor
 
 ### Changelog
 
+#### 2.3.1
+
+Improvements
+- Handling additional cases of packet loss during video chat
+
+Bugfixes
+- Fixed problem uploading images on Android 5.x and Samsung S5 devices
+
 #### 2.3.0
 
 Improvements
