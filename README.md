@@ -4,6 +4,11 @@ This SDK supports AndroidStudio and Eclipse. Please note that the Eclipse suppor
 
 ### Changelog
 
+### 2.3.2
+
+Improvements:
+- Better candidate gathering over slow connections
+
 #### 2.3.1
 
 Improvements
