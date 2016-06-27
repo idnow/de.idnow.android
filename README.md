@@ -4,6 +4,16 @@ This SDK supports AndroidStudio and Eclipse. Please note that the Eclipse suppor
 
 ### Changelog
 
+### 2.4.0
+
+Improvements:
+- Added jailbreak / rooting detection
+- Better wording for Ident-ID
+
+Bugs:
+- Fixed focus problem with Samsung devices
+- Fixed problems with new google keyboard
+
 ### 2.3.2
 
 Improvements:
