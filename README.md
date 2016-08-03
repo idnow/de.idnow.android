@@ -159,6 +159,27 @@ Used libs (these are already added into the project, one doesn't have to set up 
 The SDK is distributed as an Android Library Project.
 After importing the Project in your workspace, go to "Android" in your Project Preferences and add the project as a Library.
 
+### SDK size
+
+By default the SDK has a size of roughly 26 mb. This especially includes the necessary native code for WebRTC. If you need to lower the size of your delivered APK for some reason, we advice to use APK splitting (see https://developer.android.com/google/play/publishing/multiple-apks.html)
+
+You can do that by adding the following code to your project:
+
+```
+android {
+    // Some other configuration here...
+
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'x86', 'armeabi', 'armeabi-v7a', 'mips'
+            universalApk false
+        }
+    }
+}
+```
+
 ## Multidex support
 
 Your project might require the usage of multidex if it comes over 65k methods. Please see http://developer.android.com/tools/building/multidex.html for details
