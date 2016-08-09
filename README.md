@@ -4,6 +4,19 @@ This SDK supports AndroidStudio and Eclipse. Please note that the Eclipse suppor
 
 ### Changelog
 
+### 2.5.0
+
+Improvements
+- Added support for spatial and temporal resampling of the video stream
+- Better handling slow STUN requests
+- Prevent parallel uploading of images for faster uploads
+- Return success if user aborts on the goodbye screen instead of failure
+- Sample mobile number is now "e.g. 0176123..."
+
+Bugfixes
+- Fixed crash on some devices when switch from back to front camera
+- Fixed bug where audio was not reconnected if user temporarily lost connection
+
 ### 2.4.0
 
 Improvements:
