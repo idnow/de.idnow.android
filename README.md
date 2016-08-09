@@ -4,6 +4,19 @@ This SDK supports AndroidStudio and Eclipse. Please note that the Eclipse suppor
 
 ### Changelog
 
+### 2.5.0
+
+Improvements
+- Added support for spatial and temporal resampling of the video stream
+- Better handling slow STUN requests
+- Prevent parallel uploading of images for faster uploads
+- Return success if user aborts on the goodbye screen instead of failure
+- Sample mobile number is now "e.g. 0176123..."
+
+Bugfixes
+- Fixed crash on some devices when switch from back to front camera
+- Fixed bug where audio was not reconnected if user temporarily lost connection
+
 ### 2.4.0
 
 Improvements:
@@ -158,6 +171,27 @@ Used libs (these are already added into the project, one doesn't have to set up 
 
 The SDK is distributed as an Android Library Project.
 After importing the Project in your workspace, go to "Android" in your Project Preferences and add the project as a Library.
+
+### SDK size
+
+By default the SDK has a size of roughly 26 mb. This especially includes the necessary native code for WebRTC. If you need to lower the size of your delivered APK for some reason, we advice to use APK splitting (see https://developer.android.com/google/play/publishing/multiple-apks.html)
+
+You can do that by adding the following code to your project:
+
+```
+android {
+    // Some other configuration here...
+
+    splits {
+        abi {
+            enable true
+            reset()
+            include 'x86', 'armeabi', 'armeabi-v7a', 'mips'
+            universalApk false
+        }
+    }
+}
+```
 
 ## Multidex support
 
