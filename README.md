@@ -4,6 +4,15 @@ This SDK supports AndroidStudio and Eclipse. Please note that the Eclipse suppor
 
 ### Changelog
 
+### 2.6.0
+
+Bugfixes
+- Correctly applied custom colors also for certain popups
+- Improved connection handling of the initial websocket
+- Fixed crash related to VP8 encoding
+- Fixed performance problems when performing severals idents in a row
+- Better echo cancellation
+
 ### 2.5.0
 
 Improvements
