@@ -4,6 +4,11 @@ This SDK supports AndroidStudio and Eclipse. Please note that the Eclipse suppor
 
 ### Changelog
 
+### 2.6.1
+
+Bugfixes
+- Fixed a rare crash when initializing the camera using the IDnow videoserver
+
 ### 2.6.0
 
 Bugfixes
