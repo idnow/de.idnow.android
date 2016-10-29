@@ -4,6 +4,18 @@ This SDK supports AndroidStudio and Eclipse. Please note that the Eclipse suppor
 
 ### Changelog
 
+### 2.7.0
+
+Improvements
+- Switched to OkHttp for websockets which increased speed and stability
+- Updated proguard rules for OkHttp
+- Gson updated to 2.4
+
+### 2.6.1
+
+Bugfixes
+- Fixed a rare crash when initializing the camera using the IDnow videoserver
+
 ### 2.6.0
 
 Bugfixes
@@ -88,8 +100,8 @@ Please see https://github.com/idnow/de.idnow.android-sample for a sample applica
 
 ### Requirements
 
-- minSdkVersion: 14  (Android 4.0 IceCreamSandwich)
-- targetSdkVersion:	23 (Android 6.0 Marshmallow)
+- minSdkVersion: 16  (Android 4.1 Jelly Bean)
+- targetSdkVersion:	25 (Android 7.0 Nougat)
 - Internet connection, communication via standard SSL port 443
 
 ### AndroidManifest
@@ -146,12 +158,12 @@ and in the dependencies part of your app.gradle add:
 ```
     compile 'de.idnow.sdk:idnow-android-<version>@aar'
 
-    compile 'com.android.support:support-v4:23.0.0'
-	compile 'com.google.code.gson:gson:2.2.4'
-	compile 'org.atmosphere:wasync:1.4.3'
-	compile 'org.slf4j:slf4j-android:1.7.12'
-	compile 'com.squareup.retrofit:retrofit:1.9.0'
-    
+    compile 'com.android.support:support-v4:25.0.0'
+    compile 'com.google.code.gson:gson:2.4'
+    compile 'org.slf4j:slf4j-android:1.7.12'
+    compile 'com.squareup.retrofit:retrofit:1.9.0'
+    compile 'com.squareup.okhttp3:okhttp:3.4.1'
+    compile 'com.squareup.okhttp3:okhttp-ws:3.4.1'
 ```
 
 ## Eclipse
@@ -174,7 +186,6 @@ This plugin tracks crashes and will be removed in the final SDK version.
 Note: don't forget to add the meta-data with the crashlytics api-key into the manifest.
 
 Used libs (these are already added into the project, one doesn't have to set up anything more)
-- Socket Communication - Atmosphere: https://github.com/Atmosphere/wasync
 - okHttp and Retrofit: http://square.github.io/retrofit/
 - OpenTokAndroidSDK 2.7.0 (https://tokbox.com/opentok/libraries/client/android/)
 
@@ -515,7 +526,5 @@ Here an example on how to set custom action bar colors when using Holo Light the
 </resources>
 ```
 ## Texts
-Warning: Adapting texts is only allowed if you have the permissions from IDnow.
 
-The SDK provides English and German texts.
-If you got approval from IDnow you will be provided the texts (along with their identifier names) you can overwrite in your own XML files.
+The SDK provides English, German, French, Spanish and Italian texts.
