@@ -4,6 +4,28 @@ This SDK supports AndroidStudio and Eclipse. Please note that the Eclipse suppor
 
 ### Changelog
 
+### 2.8.0
+
+Improvements:
+- Added support for text chat between user and agent
+- Improved behaviour of the reconnect screen if connection is lost
+- Upgraded Tokbox to version 2.9.x
+- Use Tokbox directly from maven repository, it has now been removed as static aar
+
+Bugs:
+- Fixed race condition which could result in broken image uploads
+
+Migration Guide:
+- Add the following entry to the repositories in your build.gradle:
+```
+maven { url  "http://tokbox.bintray.com/maven" }
+```
+- Add the following entry to your dependencies:
+```
+compile 'com.opentok.android:opentok-android-sdk:2.9.+'
+```
+- Update reference to IDnow SDK to 2.8.0 in your dependencies
+
 ### 2.7.0
 
 Improvements
@@ -141,6 +163,7 @@ Copy the idnow-android-<version>.aar into the apps libs folder.
 In your app.gradle add:
 ```java
 repositories {
+    maven { url  "http://tokbox.bintray.com/maven" }
     flatDir {
         dirs 'libs' //this way we can find the .aar file in libs folder
     }
@@ -160,10 +183,10 @@ and in the dependencies part of your app.gradle add:
 
     compile 'com.android.support:support-v4:25.0.0'
     compile 'com.google.code.gson:gson:2.4'
-    compile 'org.slf4j:slf4j-android:1.7.12'
     compile 'com.squareup.retrofit:retrofit:1.9.0'
     compile 'com.squareup.okhttp3:okhttp:3.4.1'
     compile 'com.squareup.okhttp3:okhttp-ws:3.4.1'
+    compile 'com.opentok.android:opentok-android-sdk:2.9.+'
 ```
 
 ## Eclipse
