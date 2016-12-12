@@ -4,6 +4,20 @@ This SDK supports AndroidStudio and Eclipse. Please note that the Eclipse suppor
 
 ### Changelog
 
+### 2.8.2
+
+Improvements:
+- Improved images sizes for high-resoltion cameras
+- Added dedicated support for arm64-v8a to reflect new library loading from Android 6
+
+Bugfixes
+- Fixed a crash under Android 7 and Arm64
+
+Migration Guide:
+- Update reference to IDnow SDK to 2.8.2 in your dependencies
+- Removed x86_64 architecture
+- Added arm64-v8a
+
 ### 2.8.0
 
 Improvements:
@@ -382,8 +396,8 @@ For Videostreaming the Idnow SDK uses OpenTok / IceLink which come with native l
 If your app uses other 3rd party libs that come with their own native libs, it's possible that you get an UnsatisfiedLinkError.
 
 This means that the native lib folders shipped by your 3rd party lib don't match the native lib folders shipped by the Idnow SDK.
-Currently the Idnow SDK comes with the following folders: armeabi, armeabi-v7a, x86 and x86_64.
-If your 3rd party lib only supports some of the architectures but not others (e.g. armeabi, x86 and x86_64 but not armeabi-v7a), you have to exclude the other folders of the Idnow SDK in your build.gradle (in this example: armeabi-v7a) with the following command:
+Currently the Idnow SDK comes with the following folders: armeabi, armeabi-v7a, arm64-v8a and x86.
+If your 3rd party lib only supports some of the architectures but not others (e.g. armeabi, x86 but not armeabi-v7a), you have to exclude the other folders of the Idnow SDK in your build.gradle (in this example: armeabi-v7a) with the following command:
 
 ```
 android {
@@ -394,7 +408,7 @@ exclude "lib/armeabi-v7a/"
 }
 ```
 
-If it's the other way round (your 3rd party lib ships more than armeabi, armeabi-v7a, arm64-v8a, x86 and x86_64, you have to exclude these folders, so the remaining folders match the Idnow SDK folders.
+If it's the other way round (your 3rd party lib ships more than armeabi, armeabi-v7a, arm64-v8a and x86, you have to exclude these folders, so the remaining folders match the Idnow SDK folders.
 
 For further reading:
 http://developer.android.com/ndk/guides/abis.html
