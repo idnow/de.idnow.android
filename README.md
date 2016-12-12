@@ -4,6 +4,18 @@ This SDK supports AndroidStudio and Eclipse. Please note that the Eclipse suppor
 
 ### Changelog
 
+### 2.8.2
+
+Improvements:
+- Improved images sizes for high-resoltion cameras
+
+Bugfixes
+- Fixed a crash under Android 7 and Arm64
+
+Migration Guide:
+- Update reference to IDnow SDK to 2.8.2 in your dependencies
+
+
 ### 2.8.0
 
 Improvements:
