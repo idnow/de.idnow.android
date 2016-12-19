@@ -4,6 +4,14 @@ This SDK supports AndroidStudio and Eclipse. Please note that the Eclipse suppor
 
 ### Changelog
 
+### 2.9.0
+
+Improvements:
+- Show the current position in the queue and the estimated waiting time
+
+Migration Guide:
+- Update reference to IDnow SDK to 2.9.0 in your dependencies
+
 ### 2.8.2
 
 Improvements:
