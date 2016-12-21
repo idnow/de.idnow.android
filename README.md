@@ -4,6 +4,14 @@ This SDK supports AndroidStudio and Eclipse. Please note that the Eclipse suppor
 
 ### Changelog
 
+### 2.10.0
+
+Improvements:
+- Added ability to send ident code also by email (configurable, not active by default)
+
+Migration Guide:
+- Update reference to IDnow SDK to 2.10.0 in your dependencies
+
 ### 2.9.0
 
 Improvements:
