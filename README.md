@@ -4,6 +4,14 @@ This SDK supports AndroidStudio and Eclipse. Please note that the Eclipse suppor
 
 ### Changelog
 
+### 2.11.0
+Improvements:
+- Added interface to use custom DTLS certificates for the WebRTC connection
+- Improved reconnect behavior in case the server is unavailable for any reason
+
+Migration Guide:
+- Update reference to IDnow SDK to 2.11.0 in your dependencies
+
 ### 2.10.0
 
 Improvements:
