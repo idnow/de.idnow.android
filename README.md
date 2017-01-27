@@ -4,6 +4,10 @@ This SDK supports AndroidStudio and Eclipse. Please note that the Eclipse suppor
 
 ### Changelog
 
+### 2.11.1
+Improvements:
+- Echo cancelation support for Samsung devices with an ARM64 architecture
+
 ### 2.11.0
 Improvements:
 - Added interface to use custom DTLS certificates for the WebRTC connection
