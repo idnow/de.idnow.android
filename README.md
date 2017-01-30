@@ -4,6 +4,16 @@ This SDK supports AndroidStudio and Eclipse. Please note that the Eclipse suppor
 
 ### Changelog
 
+### 2.11.2
+Bugfixes:
+- Fixed audio problems on certain ARM64 Samsung devices
+- Fixed problem where audio settings would persist after closing the app
+- Fixed audio problem where volume was not correctly adjusted sometimes if headsets are plugged in
+
+Migration Guide:
+- Audio is now played in MODE_IN_COMMUNICATION instead of MODE_NORMAL
+- Update reference to IDnow SDK to 2.11.2 in your dependencies
+
 ### 2.11.0
 Improvements:
 - Added interface to use custom DTLS certificates for the WebRTC connection
