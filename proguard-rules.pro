@@ -63,6 +63,10 @@ public void set*(...);
 -dontwarn org.bouncycastle.**
 -dontwarn okio.**
 -dontwarn okhttp3.**
+-dontwarn com.google.**
+-dontwarn avp8.**
+-dontwarn aopus.**
+-dontwarn aaudioprocessing.**
 
 -keep class retrofit.** { *; }
 -keepclasseswithmembers class * {
@@ -85,7 +89,10 @@ public void set*(...);
 -keep class com.ning.http.** { *; }
 -keep class fm.** { *; }
 -keep class org.bouncycastle.** { *; }
-
+-keep class com.google.** { *; }
+-keep class avp8.** { *; }
+-keep class aopus.** { *; }
+-keep class aaudioprocessing.** { *; }
 
 -keepattributes *Annotation*
 -keepattributes Signature
