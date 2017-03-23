@@ -4,6 +4,16 @@ This SDK supports AndroidStudio and Eclipse. Please note that the Eclipse suppor
 
 ### Changelog
 
+### 3.0.0
+Improvementes:
+- custom client certificate
+- server certificate pinning
+- removed unneccessary OpenTok library
+
+Migration Guide:
+- Update reference to IDnow SDK to 3.0.0 in your dependencies
+- Make sure to remove any project refernces to OpenTok
+
 ### 2.11.2
 Bugfixes:
 - Fixed audio problems on certain ARM64 Samsung devices
