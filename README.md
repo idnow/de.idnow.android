@@ -1,8 +1,20 @@
 ## Overview
 
-This SDK supports AndroidStudio and Eclipse. Please note that the Eclipse support might have less features than the Android Studio version. If possible please use the Android Studio version.
+This SDK supports AndroidStudio.
 
 ### Changelog
+
+### 3.0.0
+Improvementes:
+- custom client certificate
+- server certificate pinning
+- reduced overall size of the SDK (OpenTok is not included anymore)
+- Removed Eclipse support
+
+Migration Guide:
+- Update reference to IDnow SDK to 3.0.0 in your dependencies
+- Remove build dependency of OpenTok (compile 'com.opentok.android:opentok-android-sdk:2.9.+')
+- Remove "http://tokbox.bintray.com/maven" from maven repositories
 
 ### 2.11.2
 Bugfixes:
@@ -165,9 +177,6 @@ Improvements
 
 Please see https://github.com/idnow/de.idnow.android-sample for a sample applications
 
-- For Eclipse: https://github.com/idnow/de.idnow.android-sample/tree/Eclipse
-- For Android Studio: https://github.com/idnow/de.idnow.android-sample
-
 ### Requirements
 
 - minSdkVersion: 16  (Android 4.1 Jelly Bean)
@@ -211,7 +220,6 @@ Copy the idnow-android-<version>.aar into the apps libs folder.
 In your app.gradle add:
 ```java
 repositories {
-    maven { url  "http://tokbox.bintray.com/maven" }
     flatDir {
         dirs 'libs' //this way we can find the .aar file in libs folder
     }
@@ -234,38 +242,11 @@ and in the dependencies part of your app.gradle add:
     compile 'com.squareup.retrofit:retrofit:1.9.0'
     compile 'com.squareup.okhttp3:okhttp:3.4.1'
     compile 'com.squareup.okhttp3:okhttp-ws:3.4.1'
-    compile 'com.opentok.android:opentok-android-sdk:2.9.+'
 ```
-
-## Eclipse
-
-### Preparation for Eclipse
-
-The project directory is ready to use for Eclipse.
-If you haven't installed Eclipse, download and install Eclipse, the Android SDK and the Eclipse ADT
-plugin (see http://code.google.com/android/intro/installing.html for more details)
-then start Eclipse.
-
-Import the SDK into your workspace:
-For importing select the "existing projects into workspace" option, and browse to the directory of the IDnowSDK-project.
-The SDK should then be imported as a library project and should be ready to use.
-
-### BUILDING
-
-For the betaVersion of the SDK, the Crashlytics Plugin has to be installed in Eclipse (http://download.crashlytics.com/android/eclipse/).
-This plugin tracks crashes and will be removed in the final SDK version. 
-Note: don't forget to add the meta-data with the crashlytics api-key into the manifest.
-
-Used libs (these are already added into the project, one doesn't have to set up anything more)
-- okHttp and Retrofit: http://square.github.io/retrofit/
-- OpenTokAndroidSDK 2.7.0 (https://tokbox.com/opentok/libraries/client/android/)
-
-The SDK is distributed as an Android Library Project.
-After importing the Project in your workspace, go to "Android" in your Project Preferences and add the project as a Library.
 
 ### SDK size
 
-By default the SDK has a size of roughly 26 mb. This especially includes the necessary native code for WebRTC. If you need to lower the size of your delivered APK for some reason, we advice to use APK splitting (see https://developer.android.com/google/play/publishing/multiple-apks.html)
+By default the SDK has a size of roughly 17 mb. This especially includes the necessary native code for WebRTC. If you need to lower the size of your delivered APK for some reason, we advice to use APK splitting (see https://developer.android.com/google/play/publishing/multiple-apks.html)
 
 You can do that by adding the following code to your project:
 
@@ -425,7 +406,7 @@ IDnowSDK.setStunPort(3478, context);
 
 ## Using IDnow with other native libraries (UnsatisfiedLinkError)
 
-For Videostreaming the Idnow SDK uses OpenTok / IceLink which come with native libs.
+For Videostreaming the Idnow SDK uses IceLink which come with native libs.
 
 If your app uses other 3rd party libs that come with their own native libs, it's possible that you get an UnsatisfiedLinkError.
 
@@ -446,7 +427,6 @@ If it's the other way round (your 3rd party lib ships more than armeabi, armeabi
 
 For further reading:
 http://developer.android.com/ndk/guides/abis.html
-https://forums.tokbox.com/android/64-bit-native-library-t45973
 
 ## Design configuration
 
