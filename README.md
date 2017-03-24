@@ -1,8 +1,18 @@
-## Overview
+### Overview
 
 This SDK supports AndroidStudio and Eclipse. Please note that the Eclipse support might have less features than the Android Studio version. If possible please use the Android Studio version.
 
 ### Changelog
+
+### 3.0.0
+Improvementes:
+- custom client certificate
+- server certificate pinning
+- reduced overall size of the SDK (OpenTok is not included anymore)
+
+Migration Guide:
+- Update reference to IDnow SDK to 3.0.0 in your dependencies
+- Make sure to remove any project refernces to OpenTok
 
 ### 2.11.2
 Bugfixes:
