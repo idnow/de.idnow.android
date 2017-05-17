@@ -4,6 +4,16 @@ This SDK supports AndroidStudio.
 
 ### Changelog
 
+### 3.1.1
+Improvements
+- Added support for waiting list
+
+Bugfixes
+- Fixed wrong translations on success screen
+
+Migration Guide:
+- Update reference to IDnow SDK to 3.1.1 in your dependencies
+
 ### 3.0.0
 Improvementes:
 - custom client certificate
