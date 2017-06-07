@@ -4,6 +4,16 @@ This SDK supports AndroidStudio.
 
 ### Changelog
 
+### 3.1.2
+Improvements
+- Added support for portugese
+
+Bugfixes
+- Correctly handle case of server certificate mismatch in case that certificate pinning is used
+
+Migration Guide:
+- Update reference to IDnow SDK to 3.1.2 in your dependencies
+
 ### 3.1.1
 Improvements
 - Added support for waiting list
