@@ -4,6 +4,13 @@ This SDK supports AndroidStudio.
 
 ### Changelog
 
+### 3.1.3
+Improvements
+- Support for larger DTLS serverside keys
+
+Bugfixes
+- Fixed not correct handling of closing longpolling websocket connections
+
 ### 3.1.2
 Improvements
 - Added support for portugese
