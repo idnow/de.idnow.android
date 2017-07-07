@@ -217,7 +217,7 @@ Please see https://github.com/idnow/de.idnow.android-sample for a sample applica
 
 ### Requirements
 
-- minSdkVersion: 16  (Android 4.1 Jelly Bean)
+- minSdkVersion: 18  (Android 4.3)
 - targetSdkVersion:	25 (Android 7.0 Nougat)
 - Internet connection, communication via standard SSL port 443
 
