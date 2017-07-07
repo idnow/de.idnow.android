@@ -282,6 +282,10 @@ and in the dependencies part of your app.gradle add:
     compile 'com.squareup.okhttp3:okhttp-ws:3.4.1'
 ```
 
+### App Bar
+
+During the use of the SDK the app is NOT showing an App Bar since the ident follows exact predefined steps the user can't influence and because there is nothing to search for.
+
 ### SDK size
 
 By default the SDK has a size of roughly 17 mb. This especially includes the necessary native code for WebRTC. If you need to lower the size of your delivered APK for some reason, we advice to use APK splitting (see https://developer.android.com/google/play/publishing/multiple-apks.html)
