@@ -4,6 +4,17 @@ This SDK supports AndroidStudio.
 
 ### Changelog
 
+### 3.2.0
+Improvements
+- Added support for Android 4.3 (VideoIdent only) / Android 4.4
+- Improved network stability
+
+Bugfixes
+- fixed lock of audio resources (microphone/speakers)
+
+Migration Guide:
+- Update reference to IDnow SDK to 3.2.0 in your dependencies
+
 ### 3.1.3
 Improvements
 - Support for larger DTLS serverside keys
