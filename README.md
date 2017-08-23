@@ -217,7 +217,7 @@ Please see https://github.com/idnow/de.idnow.android-sample for a sample applica
 
 ### Requirements
 
-- minSdkVersion: 16  (Android 4.1 Jelly Bean)
+- minSdkVersion: 18  (Android 4.3)
 - targetSdkVersion:	25 (Android 7.0 Nougat)
 - Internet connection, communication via standard SSL port 443
 
@@ -281,6 +281,10 @@ and in the dependencies part of your app.gradle add:
     compile 'com.squareup.okhttp3:okhttp:3.4.1'
     compile 'com.squareup.okhttp3:okhttp-ws:3.4.1'
 ```
+
+### App Bar
+
+During the use of the SDK the app is NOT showing an App Bar since the ident follows exact predefined steps the user can't influence and because there is nothing to search for.
 
 ### SDK size
 
