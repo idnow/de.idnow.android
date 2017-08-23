@@ -4,6 +4,17 @@ This SDK supports AndroidStudio.
 
 ### Changelog
 
+### 3.2.1
+Improvements
+- removed not needed file write permission
+- updated OkHttp to 3.8.1 
+
+Bugfixes
+- minor bugfixes
+
+Migration Guide
+- Update reference to IDnow SDK to 3.2.1 and to OkHttp 3.8.1
+
 ### 3.2.0
 Improvements
 - Added support for Android 4.3 (VideoIdent only) / Android 4.4
@@ -12,7 +23,7 @@ Improvements
 Bugfixes
 - fixed lock of audio resources (microphone/speakers)
 
-Migration Guide:
+Migration Guide
 - Update reference to IDnow SDK to 3.2.0 in your dependencies
 
 ### 3.1.3
