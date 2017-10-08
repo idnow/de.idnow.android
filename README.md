@@ -4,6 +4,20 @@ This SDK supports AndroidStudio.
 
 ### Changelog
 
+### 3.3.0
+Improvements
+- Support for qualified signatures in switzerland
+- Improved support for the waiting queue
+- Added possibility to control the focus from the agent side
+
+Bugfixes
+- Made some fixed to the proguard definition
+- minor bugfixes
+
+Migration Guide
+- Update reference to IDnow SDK to 3.3.0
+- Update the proguard definition if necessary
+
 ### 3.2.1
 Improvements
 - removed not needed file write permission

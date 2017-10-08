@@ -81,8 +81,10 @@ public void set*(...);
 -keep class com.squareup.okhttp.** { *; }
 -keep interface com.squareup.okhttp.** { *; }
 
-
--keep class de.idnow.sdk.**{ *; }
+-keep class com.viewpagerindicator.** { *; }
+-keep class okio.** { *; }
+-keep class okhttp3.** { *; }
+-keep class de.idnow.sdk.** { *; }
 -keep class com.opentok.** { *; }
 -keep class org.webrtc.** { *; }
 -keep class com.fasterxml.jackson.** { *; }
