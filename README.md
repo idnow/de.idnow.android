@@ -4,6 +4,19 @@ This SDK supports AndroidStudio.
 
 ### Changelog
 
+### 3.4.0
+Improvements
+- Sends foreground/background state to the backend
+- provides a positioning rectangle during id card front and backside steps
+- improves the user interface during the call
+
+Bugfixes
+- adds missing translations
+- minor bugfixes
+
+Migration Guide
+- Update reference to IDnow SDK to 3.4.0
+
 ### 3.3.0
 Improvements
 - Support for qualified signatures in switzerland
