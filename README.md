@@ -4,6 +4,19 @@ This SDK supports AndroidStudio.
 
 ### Changelog
 
+### 3.4.4
+Improvements
+- textual changes
+- dynamic gtu and privacy policy links
+
+Bugfixes
+- fixes a problem with the navigation after the user has finished an ident
+- other small bugfixes
+
+Migration Guide
+- Update reference to IDnow SDK to 3.4.4
+
+
 ### 3.4.0
 Improvements
 - Sends foreground/background state to the backend
