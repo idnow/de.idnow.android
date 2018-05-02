@@ -4,6 +4,17 @@ This SDK supports AndroidStudio.
 
 ### Changelog
 
+### 3.9.0
+Improvements:
+- Now supporting Russian and Chinese
+
+Migration Guide:
+- Update reference to IDnow SDK to 3.9.0
+
+Bugfixes:
+- minor bugfixes
+
+
 ### 3.4.4
 Improvements
 - textual changes
