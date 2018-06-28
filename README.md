@@ -4,6 +4,15 @@ This SDK supports AndroidStudio.
 
 ### Changelog
 
+### 3.10.0
+Migration Guide:
+- Update reference to IDnow SDK to 3.10.0
+- Please see updated dependencies
+
+Bugfixes:
+- minor bugfixes
+
+
 ### 3.9.2
 Migration Guide:
 - Update reference to IDnow SDK to 3.9.2
@@ -345,11 +354,11 @@ and in the dependencies part of your app.gradle add:
 ```
     compile 'de.idnow.sdk:idnow-android-<version>@aar'
 
-    compile 'com.android.support:support-v4:25.0.0'
+    compile 'com.android.support:support-v4:25.3.1'
     compile 'com.google.code.gson:gson:2.4'
     compile 'com.squareup.retrofit:retrofit:1.9.0'
-    compile 'com.squareup.okhttp3:okhttp:3.4.1'
-    compile 'com.squareup.okhttp3:okhttp-ws:3.4.1'
+    compile 'com.squareup.okhttp3:okhttp:3.8.1'
+    compile 'com.googlecode.libphonenumber:libphonenumber:8.4.2'
 ```
 
 ### App Bar
