@@ -4,6 +4,17 @@ This SDK supports AndroidStudio.
 
 ### Changelog
 
+### 3.15.0
+Migration Guide:
+- Update reference to IDnow SDK to 3.15.0
+
+Improvements:
+- removed SMS permission
+- minor improvements
+
+Bugfixes:
+- minor bugfixes
+
 ### 3.14.0
 Migration Guide:
 - Update reference to IDnow SDK to 3.14.0
