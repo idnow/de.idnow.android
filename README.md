@@ -4,6 +4,14 @@ This SDK supports AndroidStudio.
 
 ### Changelog
 
+### 3.16.2
+Migration Guide:
+- Update reference to IDnow SDK to 3.16.2
+
+Bugfixes:
+- Fixed callback parameter
+- Minor bugfixes
+
 ### 3.16.1
 Migration Guide:
 - Update reference to IDnow SDK to 3.16.1
