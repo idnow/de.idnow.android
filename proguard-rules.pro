@@ -51,6 +51,7 @@ public void set*(...);
 # DEBUG MODE: set line numbers and also stacktrace
 -printmapping outputfile.txt
 
+-dontwarn com.viewpagerindicator.**
 -dontwarn org.jboss.**
 -dontwarn com.ning.http.**
 -dontwarn org.apache.http.**

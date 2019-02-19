@@ -4,6 +4,15 @@ This SDK supports AndroidStudio.
 
 ### Changelog
 
+### 3.17.0
+Migration Guide:
+- Update reference to IDnow SDK to 3.17.0
+- Change minSdkVersion to 21
+- Update okhttp3 dependency to 3.12.1
+
+Bugfixes:
+- Minor bugfixes & improvements
+
 ### 3.16.2
 Migration Guide:
 - Update reference to IDnow SDK to 3.16.2
