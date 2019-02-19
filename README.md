@@ -442,10 +442,9 @@ and in the dependencies part of your app.gradle add:
 ```
     compile 'de.idnow.sdk:idnow-android-<version>@aar'
 
-    compile 'com.android.support:support-v4:25.3.1'
-    compile 'com.google.code.gson:gson:2.4'
+    compile 'org.slf4j:slf4j-android:1.7.12'
     compile 'com.squareup.retrofit:retrofit:1.9.0'
-    compile 'com.squareup.okhttp3:okhttp:3.8.1'
+    compile 'com.squareup.okhttp3:okhttp:3.12.1'
     compile 'com.googlecode.libphonenumber:libphonenumber:8.4.2'
 ```
 
