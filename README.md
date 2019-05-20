@@ -4,6 +4,15 @@ This SDK supports AndroidStudio.
 
 ### Changelog
 
+### 3.18.0
+Changes:
+- Wallet
+- New languages
+- Minor bugfixes & improvements
+
+Migration Guide:
+- Update reference to IDnow SDK to 3.18.0
+
 ### 3.17.1
 Migration Guide:
 - Update reference to IDnow SDK to 3.17.1
