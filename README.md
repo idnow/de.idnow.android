@@ -4,6 +4,13 @@ This SDK supports AndroidStudio.
 
 ### Changelog
 
+### 3.19.1
+Changes:
+- Fix for 64-bit support
+
+Migration Guide:
+- Update reference to IDnow SDK to 3.19.1
+
 ### 3.19.0
 Changes:
 - Enabled 64-bit support
