@@ -68,6 +68,7 @@ public void set*(...);
 -dontwarn avp8.**
 -dontwarn aopus.**
 -dontwarn aaudioprocessing.**
+-dontwarn io.sentry.**
 
 -keep class retrofit.** { *; }
 -keepclasseswithmembers class * {
@@ -96,6 +97,7 @@ public void set*(...);
 -keep class avp8.** { *; }
 -keep class aopus.** { *; }
 -keep class aaudioprocessing.** { *; }
+-keep class io.sentry.** { *; }
 
 -keepattributes *Annotation*
 -keepattributes Signature
