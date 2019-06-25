@@ -4,7 +4,7 @@ This SDK supports AndroidStudio.
 
 ### Changelog
 
-Changelog are keeped inside the CHANGELOG.md file
+Changelog are keeped inside the [CHANGELOG.md](CHANGELOG.md) file
 
 ### Examples
 
