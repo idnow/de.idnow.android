@@ -1,5 +1,46 @@
 # Changelog
 
+### 3.20.0
+Changes:
+- Added possibility to use Sentry logging
+- Minor improvements & bugfixes
+
+Migration Guide:
+- New dependency added: io.sentry:sentry-android:1.7.16
+- Update reference to IDnow SDK to 3.20.0
+
+### 3.19.1
+Changes:
+- Fix for 64-bit support
+
+Migration Guide:
+- Update reference to IDnow SDK to 3.19.1
+
+### 3.19.0
+Changes:
+- Enabled 64-bit support
+- Disabled support for x86 architecture
+- Minor bugfixes & improvements
+
+Migration Guide:
+- Update reference to IDnow SDK to 3.19.0
+
+### 3.18.0
+Changes:
+- Wallet
+- New languages
+- Minor bugfixes & improvements
+
+Migration Guide:
+- Update reference to IDnow SDK to 3.18.0
+
+### 3.17.1
+Migration Guide:
+- Update reference to IDnow SDK to 3.17.1
+
+Bugfixes:
+- Minor bugfixes
+
 ### 3.17.0
 Migration Guide:
 - Update reference to IDnow SDK to 3.17.0
