@@ -35,6 +35,13 @@ This SDK supports AndroidStudio.
 
 ### Changelog
 
+### 3.21.0
+Changes:
+- Minor improvements & bugfixes
+
+Migration Guide:
+- Update reference to IDnow SDK to 3.21.0
+
 ### 3.20.0
 Changes:
 - Added possibility to use Sentry logging
