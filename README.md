@@ -35,6 +35,16 @@ This SDK supports AndroidStudio.
 
 ### Changelog
 
+### 3.22.0
+Changes:
+- Added waiting screens.
+- Minor improvements & bugfixes
+
+Migration Guide:
+- New dependency added: androidx.constraintlayout:constraintlayout:1.1.3
+- New dependency added: me.relex:circleindicator:1.3.2
+- Update reference to IDnow SDK to 3.22.0
+
 ### 3.21.1
 Changes:
 - Minor improvements & bugfixes
