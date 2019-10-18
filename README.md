@@ -487,6 +487,8 @@ and in the dependencies part of your app.gradle add:
     compile 'com.squareup.retrofit:retrofit:1.9.0'
     compile 'com.squareup.okhttp3:okhttp:3.12.1'
     compile 'com.googlecode.libphonenumber:libphonenumber:8.4.2'
+    compile 'androidx.constraintlayout:constraintlayout:1.1.3'
+    compile 'me.relex:circleindicator:1.3.2'
 ```
 
 ### App Bar
