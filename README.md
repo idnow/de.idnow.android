@@ -1,8 +1,63 @@
+# Table of Contents
+
+- [Overview](#overview)
+  - [Changelog](#changelog)
+  - [Examples](#examples)
+  - [Requirements](#requirements)
+  - [AndroidManifest](#androidmanifest)
+- [Android Studio](#android-studio)
+  - [How to use the .aar file:](#how-to-use-the-aar-file)
+  - [Additional dependencies to add in your app.gradle](#additional-dependencies-to-add-in-your-appgradle)
+  - [App Bar](#app-bar)
+  - [SDK size](#sdk-size)
+- [Multidex support](#multidex-support)
+- [Proguard support](#proguard-support)
+- [Usage](#usage)
+- [Additional settings](#additional-settings)
+- [Using IDnow with other native libraries (UnsatisfiedLinkError)](#using-idnow-with-other-native-libraries-unsatisfiedlinkerror)
+- [Design configuration](#design-configuration)
+  - [App icon and logo](#app-icon-and-logo)
+    - [Colors](#colors)
+    - [text_default](#text_default)
+    - [primary](#primary)
+    - [proceed_button_background](#proceed_button_background)
+    - [failure](#failure)
+    - [success](#success)
+    - [screenshots](#screenshots)
+    - [overwriting default colors](#overwriting-default-colors)
+  - [App theme](#app-theme)
+    - [Action bar](#action-bar)
+- [Texts](#texts)
+
 ## Overview
 
 This SDK supports AndroidStudio.
 
 ### Changelog
+
+### 3.22.0
+Changes:
+- Added waiting screens.
+- Minor improvements & bugfixes
+
+Migration Guide:
+- New dependency added: androidx.constraintlayout:constraintlayout:1.1.3
+- New dependency added: me.relex:circleindicator:1.3.2
+- Update reference to IDnow SDK to 3.22.0
+
+### 3.21.1
+Changes:
+- Minor improvements & bugfixes
+
+Migration Guide:
+- Update reference to IDnow SDK to 3.21.1
+
+### 3.21.0
+Changes:
+- Minor improvements & bugfixes
+
+Migration Guide:
+- Update reference to IDnow SDK to 3.21.0
 
 ### 3.20.0
 Changes:
@@ -488,6 +543,8 @@ and in the dependencies part of your app.gradle add:
     compile 'com.squareup.okhttp3:okhttp:3.12.1'
     compile 'com.googlecode.libphonenumber:libphonenumber:8.4.2'
     compile 'io.sentry:sentry-android:1.7.16'
+    compile 'androidx.constraintlayout:constraintlayout:1.1.3'
+    compile 'me.relex:circleindicator:1.3.2'
 ```
 
 ### App Bar
