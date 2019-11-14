@@ -6,7 +6,7 @@
   - [Requirements](#requirements)
   - [AndroidManifest](#androidmanifest)
 - [Android Studio](#android-studio)
-  - [How to import the SDK:](#how-to-import-the-sdk)
+  - [How to import the SDK](#how-to-import-the-sdk)
   - [App Bar](#app-bar)
   - [SDK size](#sdk-size)
 - [Multidex support](#multidex-support)
@@ -520,7 +520,7 @@ Moreover, when using an Android LibraryProject, all the Activities, Services and
 
 ## Android Studio
 
-### How to import the SDK :
+### How to import the SDK
 
 In your top-level build.gradle project file add the following url under repositories block :
 
