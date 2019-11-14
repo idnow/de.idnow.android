@@ -35,6 +35,13 @@ This SDK supports AndroidStudio.
 
 ### Changelog
 
+### 3.22.1
+Changes:
+- Update the way to import SDK
+
+Migration Guide:
+- Update reference to IDnow SDK to 3.22.1 (dependency : de.idnow.sdk:idnow-android-sdk:3.22.1 )
+
 ### 3.22.0
 Changes:
 - Added waiting screens.
