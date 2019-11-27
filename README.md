@@ -36,7 +36,7 @@ This SDK supports AndroidStudio.
 
 ### 3.22.1
 Changes:
-- Update the way to import SDK
+- Update the way how to import SDK
 
 Migration Guide:
 - Update reference to IDnow SDK to 3.22.1 (dependency : de.idnow.sdk:idnow-android-sdk:3.22.1 )
@@ -528,7 +528,7 @@ In your top-level build.gradle project file add the following url under reposito
 repositories {
 ..
 maven {
-url "https://raw.githubusercontent.com/idnow/de.idnow.android/support/sdk3.22.1"
+url "https://raw.githubusercontent.com/idnow/de.idnow.android/"
 }
 ..
 }
