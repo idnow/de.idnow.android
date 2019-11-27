@@ -6,8 +6,7 @@
   - [Requirements](#requirements)
   - [AndroidManifest](#androidmanifest)
 - [Android Studio](#android-studio)
-  - [How to use the .aar file:](#how-to-use-the-aar-file)
-  - [Additional dependencies to add in your app.gradle](#additional-dependencies-to-add-in-your-appgradle)
+  - [How to import the SDK](#how-to-import-the-sdk)
   - [App Bar](#app-bar)
   - [SDK size](#sdk-size)
 - [Multidex support](#multidex-support)
@@ -34,6 +33,13 @@
 This SDK supports AndroidStudio.
 
 ### Changelog
+
+### 3.22.1
+Changes:
+- Update the way how to import SDK
+
+Migration Guide:
+- Update reference to IDnow SDK to 3.22.1 (dependency : de.idnow.sdk:idnow-android-sdk:3.22.1 )
 
 ### 3.22.0
 Changes:
@@ -514,37 +520,28 @@ Moreover, when using an Android LibraryProject, all the Activities, Services and
 
 ## Android Studio
 
-### How to use the .aar file:
+### How to import the SDK
 
-Copy the idnow-android-<version>.aar into the apps libs folder.
+In your top-level build.gradle project file add the following url under repositories block :
 
-In your app.gradle add:
-```java
+```allprojects {
 repositories {
-    flatDir {
-        dirs 'libs' //this way we can find the .aar file in libs folder
-    }
+..
+maven {
+url "https://raw.githubusercontent.com/idnow/de.idnow.android/"
+}
+..
+}
 }
 ```
 
-and in the dependencies part of your app.gradle add:
+and in the dependencies part of your app.gradle add :   
 
-```
-    compile 'com.example.library:idnow-android-<version>@aar' (replace the 'com.example.library' with your packagename)
-```
-
-### Additional dependencies to add in your app.gradle
-
-```
-    compile 'de.idnow.sdk:idnow-android-<version>@aar'
-
-    compile 'org.slf4j:slf4j-android:1.7.12'
-    compile 'com.squareup.retrofit:retrofit:1.9.0'
-    compile 'com.squareup.okhttp3:okhttp:3.12.1'
-    compile 'com.googlecode.libphonenumber:libphonenumber:8.4.2'
-    compile 'io.sentry:sentry-android:1.7.16'
-    compile 'androidx.constraintlayout:constraintlayout:1.1.3'
-    compile 'me.relex:circleindicator:1.3.2'
+```dependencies {
+..
+implementation 'de.idnow.sdk:idnow-android-sdk:3.22.1'
+..
+}
 ```
 
 ### App Bar
