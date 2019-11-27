@@ -528,7 +528,7 @@ In your top-level build.gradle project file add the following url under reposito
 repositories {
 ..
 maven {
-url "https://raw.githubusercontent.com/idnow/de.idnow.android/"
+url "https://raw.githubusercontent.com/idnow/de.idnow.android/master"
 }
 ..
 }
