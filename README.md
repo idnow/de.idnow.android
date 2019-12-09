@@ -36,7 +36,7 @@ This SDK supports AndroidStudio.
 
 ### 4.0.0
 Changes:
-- Migrate to Icelink 3.
+- Migrate to Icelink 3
 - Minor improvements & bugfixes
 
 Migration Guide:
@@ -547,7 +547,7 @@ and in the dependencies part of your app.gradle add :
 
 ```dependencies {
 ..
-implementation 'de.idnow.sdk:idnow-android-sdk:3.22.1'
+implementation 'de.idnow.sdk:idnow-android-sdk:4.x.x'
 ..
 }
 ```
