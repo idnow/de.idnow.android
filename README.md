@@ -494,8 +494,8 @@ Please see https://github.com/idnow/de.idnow.android-sample for a sample applica
 
 ### Requirements
 
-- minSdkVersion: 18  (Android 4.3)
-- targetSdkVersion:	25 (Android 7.0 Nougat)
+- minSdkVersion: 21  (Android 5.0)
+- targetSdkVersion:	28 (Android 9.0 Pie)
 - Internet connection, communication via standard SSL port 443
 
 ### AndroidManifest
@@ -511,6 +511,7 @@ The following permissions are required:
 ```
 
 If Video-Ident will be used, the following permissions are required as well:
+
 
 ```
 <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
@@ -890,4 +891,4 @@ Here an example on how to set custom action bar colors when using Holo Light the
 ```
 ## Texts
 
-The SDK provides English, German, French, Spanish and Italian texts.
+The SDK provides English, German, French, Spanish, Italian, Hungarian, Georgian, Korean, Dutch, Polish, Portuguese, Russian and Chinese    texts.
