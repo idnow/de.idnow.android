@@ -4,46 +4,48 @@
 ### 4.0.0
 Changes:
 
-Migrate to Icelink 3
-Minor improvements & bugfixes
+- Migrate to Icelink 3
+- Minor improvements & bugfixes
+
 Migration Guide:
 
-Update reference to IDnow SDK to 4.0.0
+- Update reference to IDnow SDK to 4.0.0
 
 ### 3.22.1
 Changes:
 
-Update the way how to import SDK
+- Update the way how to import SDK
+
 Migration Guide:
 
-Update reference to IDnow SDK to 3.22.1 (dependency : de.idnow.sdk:idnow-android-sdk:3.22.1 )
+- Update reference to IDnow SDK to 3.22.1 (dependency : de.idnow.sdk:idnow-android-sdk:3.22.1 )
 
 ### 3.22.0
 Changes:
 
-Added waiting screens.
-Minor improvements & bugfixes
-Migration Guide:
+- Added waiting screens.
+- Minor improvements & bugfixes
 
-New dependency added: androidx.constraintlayout:constraintlayout:1.1.3
-New dependency added: me.relex:circleindicator:1.3.2
-Update reference to IDnow SDK to 3.22.0
+Migration Guide:
+- New dependency added: androidx.constraintlayout:constraintlayout:1.1.3
+- New dependency added: me.relex:circleindicator:1.3.2
+- Update reference to IDnow SDK to 3.22.0
 
 ### 3.21.1
 Changes:
 
-Minor improvements & bugfixes
-Migration Guide:
+- Minor improvements & bugfixes
 
-Update reference to IDnow SDK to 3.21.1
+Migration Guide:
+- Update reference to IDnow SDK to 3.21.1
 
 ### 3.21.0
 Changes:
 
-Minor improvements & bugfixes
-Migration Guide:
+- Minor improvements & bugfixes
 
-Update reference to IDnow SDK to 3.21.0
+Migration Guide:
+- Update reference to IDnow SDK to 3.21.0
 
 ### 3.20.0
 Changes:
