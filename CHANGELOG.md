@@ -1,5 +1,13 @@
 # Changelog
 
+### 4.1.0
+Changes:
+
+- Minor improvements & bugfixes
+
+Migration Guide:
+
+- Update reference to IDnow SDK to 4.1.0
 
 ### 4.0.0
 Changes:
