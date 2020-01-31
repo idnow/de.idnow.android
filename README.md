@@ -6,6 +6,7 @@
   - [AndroidManifest](#androidmanifest)
 - [Android Studio](#android-studio)
   - [How to import the SDK](#how-to-import-the-sdk)
+  - [How to use the .aar file](#how-to-use-the-aar-file)
   - [App Bar](#app-bar)
   - [SDK size](#sdk-size)
 - [Multidex support](#multidex-support)
@@ -94,6 +95,35 @@ and in the dependencies part of your app.gradle add :
 implementation 'de.idnow.sdk:idnow-android-sdk:4.x.x'
 ..
 }
+```
+
+### How to use the .aar file:
+
+Copy the idnow-android-.aar into the apps libs folder.
+
+In your app.gradle add:
+
+```repositories {
+flatDir {
+dirs 'libs' //this way we can find the .aar file in libs folder
+}
+}
+```
+
+Additional dependencies to add in your app.gradle :
+
+``` compile 'org.slf4j:slf4j-android:1.7.12'
+compile 'com.squareup.retrofit:retrofit:1.9.0'
+compile 'com.squareup.okhttp3:okhttp:3.12.1'
+compile 'com.googlecode.libphonenumber:libphonenumber:8.4.2'
+compile 'io.sentry:sentry-android:1.7.16'
+comile "androidx.constraintlayout:constraintlayout:1.1.3"
+compile 'me.relex:circleindicator:1.3.2'
+debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.0'
+api 'com.android.support:support-v4:28.0.0'
+api 'com.android.support:support-annotations:26.1.0'
+api 'com.googlecode.libphonenumber:libphonenumber:8.4.2'
+
 ```
 
 ### App Bar
