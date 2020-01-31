@@ -77,7 +77,8 @@ Moreover, when using an Android LibraryProject, all the Activities, Services and
 
 In your top-level build.gradle project file add the following url under repositories block :
 
-```allprojects {
+```
+allprojects {
 repositories {
 ..
 maven {
@@ -90,7 +91,8 @@ url "https://raw.githubusercontent.com/idnow/de.idnow.android/master"
 
 and in the dependencies part of your app.gradle add :   
 
-```dependencies {
+```
+dependencies {
 ..
 implementation 'de.idnow.sdk:idnow-android-sdk:4.x.x'
 ..
@@ -112,7 +114,9 @@ dirs 'libs' //this way we can find the .aar file in libs folder
 
 Additional dependencies to add in your app.gradle :
 
-``` implementation 'de.idnow.sdk:idnow-android-x.x.x@aar'
+``` 
+dependencies {
+implementation 'de.idnow.sdk:idnow-android-x.x.x@aar'
     implementation 'com.squareup.retrofit:retrofit:1.9.0'
     implementation 'com.squareup.okhttp3:okhttp:3.12.1'
     implementation 'com.android.support:support-v4:28.0.0'
@@ -122,7 +126,7 @@ Additional dependencies to add in your app.gradle :
     implementation "androidx.constraintlayout:constraintlayout:1.1.3"
     implementation 'me.relex:circleindicator:1.3.2'
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.0'
-
+    }
 ```
 
 ### App Bar
