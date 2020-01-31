@@ -75,6 +75,9 @@ Moreover, when using an Android LibraryProject, all the Activities, Services and
 
 ### How to import the SDK
 
+[![Watch the video](http://i3.ytimg.com/vi/KUtcXqgo3F8/maxresdefault.jpg)](https://youtu.be/T-D1KVIuvjA)
+
+
 In your top-level build.gradle project file add the following url under repositories block :
 
 ```
