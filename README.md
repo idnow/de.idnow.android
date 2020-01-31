@@ -103,6 +103,8 @@ implementation 'de.idnow.sdk:idnow-android-sdk:4.x.x'
 
 ### How to use the .aar file:
 
+[![Watch the video](https://github.com/idnow/de.idnow.android/blob/souheib93-patch-1/docs/Screenshot_video2.png)](https://youtu.be/_ti2lbcfIqM)
+
 Copy the idnow-android-.aar into the apps libs folder.
 
 In your app.gradle add:
