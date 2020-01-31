@@ -112,7 +112,8 @@ dirs 'libs' //this way we can find the .aar file in libs folder
 
 Additional dependencies to add in your app.gradle :
 
-```implementation 'com.squareup.retrofit:retrofit:1.9.0'
+``` implementation 'de.idnow.sdk:idnow-android-x.x.x@aar'
+    implementation 'com.squareup.retrofit:retrofit:1.9.0'
     implementation 'com.squareup.okhttp3:okhttp:3.12.1'
     implementation 'com.android.support:support-v4:28.0.0'
     implementation 'com.android.support:support-annotations:26.1.0'
