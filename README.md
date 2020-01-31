@@ -112,17 +112,15 @@ dirs 'libs' //this way we can find the .aar file in libs folder
 
 Additional dependencies to add in your app.gradle :
 
-``` compile 'org.slf4j:slf4j-android:1.7.12'
-compile 'com.squareup.retrofit:retrofit:1.9.0'
-compile 'com.squareup.okhttp3:okhttp:3.12.1'
-compile 'com.googlecode.libphonenumber:libphonenumber:8.4.2'
-compile 'io.sentry:sentry-android:1.7.16'
-comile "androidx.constraintlayout:constraintlayout:1.1.3"
-compile 'me.relex:circleindicator:1.3.2'
-debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.0'
-api 'com.android.support:support-v4:28.0.0'
-api 'com.android.support:support-annotations:26.1.0'
-api 'com.googlecode.libphonenumber:libphonenumber:8.4.2'
+```implementation 'com.squareup.retrofit:retrofit:1.9.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.12.1'
+    implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.android.support:support-annotations:26.1.0'
+    implementation 'com.googlecode.libphonenumber:libphonenumber:8.4.2'
+    implementation 'io.sentry:sentry-android:1.7.16'
+    implementation "androidx.constraintlayout:constraintlayout:1.1.3"
+    implementation 'me.relex:circleindicator:1.3.2'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.0'
 
 ```
 
