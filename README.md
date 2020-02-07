@@ -75,7 +75,7 @@ Moreover, when using an Android LibraryProject, all the Activities, Services and
 
 ### How to import the SDK
 
-[![Watch the video](https://github.com/idnow/de.idnow.android/blob/souheib93-patch-1/docs/screenshot_video1.png)](https://youtu.be/yKOu-luc1x8)
+[![Watch the video](https://github.com/idnow/de.idnow.android/tree/master/docs/docs/screenshot_video1.png)](https://youtu.be/yKOu-luc1x8)
 
 In your top-level build.gradle project file add the following url under repositories block :
 
@@ -103,7 +103,7 @@ implementation 'de.idnow.sdk:idnow-android-sdk:4.x.x'
 
 ### How to use the .aar file:
 
-[![Watch the video](https://github.com/idnow/de.idnow.android/blob/souheib93-patch-1/docs/Screenshot_video2.png)](https://youtu.be/yMIpthcLRnw)
+[![Watch the video](https://github.com/idnow/de.idnow.android/tree/master/docs/Screenshot_video2.png)](https://youtu.be/yMIpthcLRnw)
 
 Copy the idnow-android-.aar into the apps libs folder.
 
