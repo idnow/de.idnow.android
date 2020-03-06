@@ -3,10 +3,10 @@
   <groupId>de.idnow.sdk</groupId>
   <artifactId>idnow-android-sdk</artifactId>
   <versioning>
-    <release>4.1.1</release>
+    <release>4.1.2</release>
     <versions>
-      <version>4.1.1</version>
+      <version>4.1.2</version>
     </versions>
-    <lastUpdated>20200214142424</lastUpdated>
+    <lastUpdated>20200306095439</lastUpdated>
   </versioning>
 </metadata>

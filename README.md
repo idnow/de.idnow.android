@@ -127,7 +127,6 @@ dependencies {
     implementation 'com.android.support:support-v4:28.0.0'
     implementation 'com.android.support:support-annotations:26.1.0'
     implementation 'com.googlecode.libphonenumber:libphonenumber:8.4.2'
-    implementation 'io.sentry:sentry-android:1.7.16'
     implementation "androidx.constraintlayout:constraintlayout:1.1.3"
     implementation 'me.relex:circleindicator:1.3.2'
     debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.0'
