@@ -1,5 +1,15 @@
 # Changelog
 
+### 4.1.6
+Changes:
+
+- Minor improvements & bugfixes
+- Update library libphonenumber to 8.10.9
+
+Migration Guide:
+
+- Update reference to IDnow SDK to 4.1.6
+
 ### 4.1.5
 Changes:
 
