@@ -129,7 +129,6 @@ dependencies {
     implementation 'com.googlecode.libphonenumber:libphonenumber:8.10.9'
     implementation "androidx.constraintlayout:constraintlayout:1.1.3"
     implementation 'me.relex:circleindicator:1.3.2'
-    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.0'
     }
 ```
 
