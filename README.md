@@ -1,4 +1,4 @@
-# Table of Contents
+    # Table of Contents
 
 - [Overview](#overview)
   - [Examples](#examples)
@@ -27,6 +27,18 @@
   - [App theme](#app-theme)
     - [Action bar](#action-bar)
 - [Texts](#texts)
+- [IDnow eID SDK](#idnoweidsdk)
+  - [Requirements](#requirements)
+  - [Installation](#installation)
+     - [Host App settings](#hostappsettings)
+        - [How to import the SDK](#how-to-import-the-sdk)
+        - [Import the SDK as .aar file](#import-the-sdk-as-.aar-file)
+  - [Colors](#colors)
+     - [Title Color](#title-color)
+     - [Text Color](#text-color)
+     - [Layout button color (Switch to video ident)](#layout-button-color-(Switchtovideoident))
+     - [Text Redirection Color](#text-redirection-color)
+     - [Button Color](#button-color)
 
 ## Overview
 
@@ -471,3 +483,150 @@ Here an example on how to set custom action bar colors when using Holo Light the
 ## Texts
 
 The SDK provides English, German, French, Spanish, Italian, Hungarian, Georgian, Korean, Dutch, Polish, Portuguese, Russian and Chinese    texts.
+
+## IDnow eID SDK
+
+IDnow eID feature is a seperate module in Video ident Product.
+
+## Requirements
+
+- `public.electronicID ` set to true in customer config
+- Device supporting NFC feature
+
+## Installation
+
+### Host App settings
+
+#### How to import the SDK
+
+in `build.gradle` file add the following instructions :
+
+```
+`android {
+defaultConfig {
+….
+multiDexEnabled true
+…
+}
+compileOptions {
+    sourceCompatibility 1.8
+    targetCompatibility 1.8
+}
+packagingOptions {
+    exclude 'META-INF/*.kotlin_module'
+}
+}`
+
+`allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven {
+            url = uri("https://repo.authada.de/public/")
+            authentication {
+                basic(BasicAuthentication)
+            }
+            credentials {
+                username "*********"
+                password "*********"
+            }
+        }
+        maven {
+            url "https://raw.githubusercontent.com/idnow/de.idnow.android/master"
+        }
+    }
+}` 
+
+`Dependencies {
+compile 'de.idnow.sdk:idnow-android:x.x.x'
+compile 'de.idnow.android.eid:idnow-android-eid-sdk:x.x.x'
+}` 
+```
+
+#### Import the SDK as .aar file 
+
+We offer the possibility to import the SDK as an .aar file instead.
+
+Copy the `idnow-android-x.x.x.aar` and `idnow-android-eid-sdk-x.x.x`.aar files into the apps libs folder.
+
+```
+`android {
+defaultConfig {
+….
+multiDexEnabled true
+…
+}
+compileOptions {
+    sourceCompatibility 1.8
+    targetCompatibility 1.8
+}
+packagingOptions {
+    exclude 'META-INF/*.kotlin_module'
+}
+}`
+
+`allprojects {
+    repositories {
+        google()
+        jcenter()
+        maven {
+            url = uri("https://repo.authada.de/public/")
+            authentication {
+                basic(BasicAuthentication)
+            }
+            credentials {
+                username "*********"
+                password "*********"
+            }
+        }
+        flatDir {
+        dirs 'libs' //this way we can find the .aar file in libs folder
+        }
+    }
+}` 
+
+`Dependencies {
+implementation 'de.idnow.sdk:idnow-android-x.x.x@aar'
+implementation 'de.idnow.android.sdk:idnow-android-eid:x.x.x@aar'
+implementation 'com.squareup.retrofit:retrofit:1.9.0'
+implementation 'com.squareup.okhttp3:okhttp:3.12.1'
+implementation 'com.android.support:support-v4:28.0.0'
+implementation 'com.android.support:support-annotations:26.1.0'
+implementation 'com.googlecode.libphonenumber:libphonenumber:8.10.9'
+implementation "androidx.constraintlayout:constraintlayout:1.1.3"
+implementation 'me.relex:circleindicator:1.3.2'
+}` 
+```
+### Colors
+
+colors are customisable by overriding the values of a specific key
+
+#### Title Color 
+
+Key : `eid_title`
+
+default color in the sdk : <color name="eid_title">#1E1E1E</color>
+
+#### Text color
+
+Key : `text_default`
+
+default color in the sdk : <color name="text_default">#4A4A4A</color>
+
+#### Layout button color (Switch to video ident)
+
+Key : `error_layout_button`
+
+default color in the sdk : <color name="error_layout_button">#FDEFEB</color>
+
+#### Text redirection color
+
+Key : `error_layout_button`
+
+default color in the sdk : <color name="eid_text_link">#4285F4</color>
+
+#### Button color
+
+Key : `primary`
+
+default color in the sdk : <color name="primary">#F95602</color>
