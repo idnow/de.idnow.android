@@ -502,7 +502,7 @@ IDnow eID feature is a seperate module in Video ident Product.
 in `build.gradle` file add the following instructions :
 
 ```
-`android {
+android {
 defaultConfig {
 ….
 multiDexEnabled true
@@ -515,9 +515,9 @@ compileOptions {
 packagingOptions {
     exclude 'META-INF/*.kotlin_module'
 }
-}`
+}
 
-`allprojects {
+allprojects {
     repositories {
         google()
         jcenter()
@@ -535,12 +535,12 @@ packagingOptions {
             url "https://raw.githubusercontent.com/idnow/de.idnow.android/master"
         }
     }
-}` 
+} 
 
-`Dependencies {
+Dependencies {
 compile 'de.idnow.sdk:idnow-android:x.x.x'
 compile 'de.idnow.android.eid:idnow-android-eid-sdk:x.x.x'
-}` 
+}
 ```
 
 #### Import the SDK as .aar file 
@@ -550,7 +550,7 @@ We offer the possibility to import the SDK as an .aar file instead.
 Copy the `idnow-android-x.x.x.aar` and `idnow-android-eid-sdk-x.x.x`.aar files into the apps libs folder.
 
 ```
-`android {
+android {
 defaultConfig {
 ….
 multiDexEnabled true
@@ -563,9 +563,9 @@ compileOptions {
 packagingOptions {
     exclude 'META-INF/*.kotlin_module'
 }
-}`
+}
 
-`allprojects {
+allprojects {
     repositories {
         google()
         jcenter()
@@ -583,9 +583,9 @@ packagingOptions {
         dirs 'libs' //this way we can find the .aar file in libs folder
         }
     }
-}` 
+}
 
-`Dependencies {
+Dependencies {
 implementation 'de.idnow.sdk:idnow-android-x.x.x@aar'
 implementation 'de.idnow.android.sdk:idnow-android-eid:x.x.x@aar'
 implementation 'com.squareup.retrofit:retrofit:1.9.0'
@@ -595,7 +595,7 @@ implementation 'com.android.support:support-annotations:26.1.0'
 implementation 'com.googlecode.libphonenumber:libphonenumber:8.10.9'
 implementation "androidx.constraintlayout:constraintlayout:1.1.3"
 implementation 'me.relex:circleindicator:1.3.2'
-}` 
+} 
 ```
 ### eID Colors
 
