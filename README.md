@@ -1,5 +1,5 @@
-    # Table of Contents
-
+ # Table of Contents
+   
 - [Overview](#overview)
   - [Examples](#examples)
   - [Requirements](#requirements)
@@ -28,12 +28,12 @@
     - [Action bar](#action-bar)
 - [Texts](#texts)
 - [IDnow eID SDK](#idnoweidsdk)
-  - [Requirements](#requirements)
-  - [Installation](#installation)
+  - [eID Requirements](#eid-requirements)
+  - [eID Installation](#eid-installation)
      - [Host App settings](#hostappsettings)
-        - [How to import the SDK](#how-to-import-the-sdk)
+        - [How to import eID SDK](#how-to-import-eid-sdk)
         - [Import the SDK as .aar file](#import-the-sdk-as-.aar-file)
-  - [Colors](#colors)
+  - [eID Colors](#colors)
      - [Title Color](#title-color)
      - [Text Color](#text-color)
      - [Layout button color (Switch to video ident)](#layout-button-color-(Switchtovideoident))
@@ -488,16 +488,16 @@ The SDK provides English, German, French, Spanish, Italian, Hungarian, Georgian,
 
 IDnow eID feature is a seperate module in Video ident Product.
 
-## Requirements
+## eID Requirements
 
 - `public.electronicID ` set to true in customer config
 - Device supporting NFC feature
 
-## Installation
+## eID Installation
 
 ### Host App settings
 
-#### How to import the SDK
+#### How to import eID SDK
 
 in `build.gradle` file add the following instructions :
 
@@ -597,7 +597,7 @@ implementation "androidx.constraintlayout:constraintlayout:1.1.3"
 implementation 'me.relex:circleindicator:1.3.2'
 }` 
 ```
-### Colors
+### eID Colors
 
 colors are customisable by overriding the values of a specific key
 
