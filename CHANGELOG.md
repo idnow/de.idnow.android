@@ -1,5 +1,26 @@
 # Changelog
 
+### 4.2.1
+
+Changes:
+
+- Minor improvements & bugfixes
+
+Migration Guide:
+
+- Update reference to IDnow SDK to 4.2.1
+- Update reference to eID IDnow SDK 1.0.2 "de.idnow.android.eid:idnow-android-eid-sdk:1.0.2"
+### 4.2.0
+
+Changes:
+
+- EID new feature.
+
+Migration Guide:
+
+- Update reference to IDnow SDK 4.2.0
+- Add IDnow eID SDK 1.0.0 "de.idnow.android.eid:idnow-android-eid-sdk:1.0.0"
+
 ### 4.1.6
 Changes:
 
