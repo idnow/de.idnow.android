@@ -587,7 +587,7 @@ allprojects {
 
 Dependencies {
 implementation 'de.idnow.sdk:idnow-android-x.x.x@aar'
-implementation 'de.idnow.android.sdk:idnow-android-eid:x.x.x@aar'
+implementation 'de.idnow.android.sdk:idnow-android-eid:1.0.2@aar'
 implementation 'com.squareup.retrofit:retrofit:1.9.0'
 implementation 'com.squareup.okhttp3:okhttp:3.12.1'
 implementation 'com.android.support:support-v4:28.0.0'
