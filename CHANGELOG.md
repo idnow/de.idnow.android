@@ -1,5 +1,15 @@
 # Changelog
 
+### 4.3.0
+
+Changes:
+
+- Video Ident Plus ney feature
+
+Migration Guide:
+
+- Update reference to IDnow SDK to 4.3.0
+
 ### 4.2.2
 
 Changes:
