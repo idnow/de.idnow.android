@@ -278,10 +278,10 @@ To handle the results of the identification, implement the standard onActivityRe
 
 ## Additional settings
 
-You can set the connection type to use: Either use websockets (default) or long polling.
+You can set the connection type to use: websockets.
 
 ```
-IDnowSDK.setConnectionType(IDnowSDK.ConnectionType.LONG_POLLING, context);
+IDnowSDK.setConnectionType(IDnowSDK.ConnectionType.WEBSOCKET, context);
 ```
 
 You can force one of the environments to use. Default is to determine this by the token used.
