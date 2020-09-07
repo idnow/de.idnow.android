@@ -15,6 +15,7 @@
 - [Additional settings](#additional-settings)
 - [Using IDnow with other native libraries (UnsatisfiedLinkError)](#using-idnow-with-other-native-libraries-unsatisfiedlinkerror)
 - [Design configuration](#design-configuration)
+  - [Languages](#languages)
   - [App icon and logo](#app-icon-and-logo)
     - [Colors](#colors)
     - [text_default](#text_default)
@@ -333,6 +334,15 @@ For further reading:
 http://developer.android.com/ndk/guides/abis.html
 
 ## Design configuration
+
+### Languages
+
+In case you would like to change the language used by the IDnow SDK at runtime you can do the following in the host App during the initialization : 
+
+```
+IDnowSDK.getInstance().initialize( StartActivity.this, "", language);
+```
+Language values are : en (English), de (German), fr (French), es (Spanish), it (Italian), pt (Portugese), et (Estonian), hr (Croatian), hu (Hungarian), ka (Georgian), ko(Korean), lt(Lithuanian), lv (Latvian), nl (Dutch), pl (Polish),  ru (Russian), zh (Chinese).
 
 
 ### App icon and logo
