@@ -10,6 +10,16 @@ Migration Guide:
 
 - Update reference to IDnow SDK to 4.3.0
 
+### 4.2.3
+
+Changes:
+
+- Minor improvements & bugfixes
+
+Migration Guide:
+
+- Update reference to IDnow SDK to 4.2.3
+
 ### 4.2.2
 
 Changes:
