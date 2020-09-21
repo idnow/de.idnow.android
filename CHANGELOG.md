@@ -1,10 +1,20 @@
 # Changelog
 
+### 4.3.1
+
+Changes:
+
+- Minor improvements & bugfixes
+
+Migration Guide:
+
+- Update reference to IDnow SDK to 4.3.1
+
 ### 4.3.0
 
 Changes:
 
-- Video Ident Plus ney feature
+- Video Ident Plus new feature
 
 Migration Guide:
 
