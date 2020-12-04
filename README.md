@@ -138,10 +138,13 @@ dependencies {
     implementation 'com.squareup.retrofit:retrofit:1.9.0'
     implementation 'com.squareup.okhttp3:okhttp:3.12.1'
     implementation 'com.android.support:support-v4:28.0.0'
+    implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support:support-annotations:26.1.0'
     implementation 'com.googlecode.libphonenumber:libphonenumber:8.10.9'
     implementation "androidx.constraintlayout:constraintlayout:1.1.3"
     implementation 'me.relex:circleindicator:1.3.2'
+    implementation 'com.android.support:recyclerview-v7:28.0.0'
+    
     }
 ```
 
@@ -308,6 +311,12 @@ IDnowSDK.setVideoHost("https://video.yourserver.com", context);
 IDnowSDK.setStunHost("video.yourserver.com", context);
 IDnowSDK.setStunPort(3478, context);
 ```
+You can set the new branding 
+
+```
+IDnowSDK.setNewBrand(TRUE);
+```
+
 
 ## Using IDnow with other native libraries (UnsatisfiedLinkError)
 
