@@ -4,7 +4,7 @@
   <groupId>de.idnow.sdk</groupId>
   <artifactId>idnow-android-sdk</artifactId>
   <versioning>
-      <release>4.4.1</release>
+      <release>4.5.0</release>
     <versions>
     <version>3.22.1</version>
     <version>4.0.0</version>
@@ -26,7 +26,8 @@
     <version>4.3.4</version>
     <version>4.4.0</version>
     <version>4.4.1</version>
+    <version>4.5.0</version>
     </versions>
-    <lastUpdated>20201112130059</lastUpdated>
+    <lastUpdated>20201204101334</lastUpdated>
   </versioning>
 </metadata>
