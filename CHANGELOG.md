@@ -1,5 +1,16 @@
 # Changelog
 
+### 4.5.0
+
+Changes:
+
+- Dark mode support
+- Minor improvements & bugfixes
+
+Migration Guide:
+
+- Update reference to IDnow SDK to 4.5.0
+
 ### 4.4.1
 
 Changes:
