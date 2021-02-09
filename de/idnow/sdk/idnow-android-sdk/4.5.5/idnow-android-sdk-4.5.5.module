@@ -1,0 +1,217 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "de.idnow.sdk",
+    "module": "idnow-android-sdk",
+    "version": "4.5.5",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.5",
+      "buildId": "6budaio5mfc3fbkvngstorl7jy"
+    }
+  },
+  "variants": [
+    {
+      "name": "runtime",
+      "attributes": {
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "com.squareup.retrofit",
+          "module": "retrofit",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "okhttp",
+          "version": {
+            "requires": "3.12.1"
+          }
+        },
+        {
+          "group": "androidx.legacy",
+          "module": "legacy-support-v4",
+          "version": {
+            "requires": "1.0.0"
+          }
+        },
+        {
+          "group": "androidx.annotation",
+          "module": "annotation",
+          "version": {
+            "requires": "1.1.0"
+          }
+        },
+        {
+          "group": "androidx.constraintlayout",
+          "module": "constraintlayout",
+          "version": {
+            "requires": "2.0.4"
+          }
+        },
+        {
+          "group": "androidx.appcompat",
+          "module": "appcompat",
+          "version": {
+            "requires": "1.2.0"
+          }
+        },
+        {
+          "group": "androidx.recyclerview",
+          "module": "recyclerview",
+          "version": {
+            "requires": "1.1.0"
+          }
+        },
+        {
+          "group": "com.googlecode.libphonenumber",
+          "module": "libphonenumber",
+          "version": {
+            "requires": "8.10.9"
+          }
+        },
+        {
+          "group": "me.relex",
+          "module": "circleindicator",
+          "version": {
+            "requires": "1.3.2"
+          }
+        },
+        {
+          "group": null,
+          "module": "insights-1.2",
+          "excludes": [
+            {
+              "group": "*",
+              "module": "*"
+            }
+          ],
+          "thirdPartyCompatibility": {
+            "artifactSelector": {
+              "name": "insights-1.2",
+              "type": "aar",
+              "extension": "aar"
+            }
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "idnow-android-sdk-4.5.5.aar",
+          "url": "idnow-android-sdk-4.5.5.aar",
+          "size": 35630374,
+          "sha512": "6a67fec0b8ee359ae78d566e2c5e68726f67986c80b797c59b1727622f1b57770bd2ffa72e1c3f9ed4ba0225f50af99b4b6c72fb7ebb27216d3a56f4449050ed",
+          "sha256": "66ee2c7fcf6834c94c6f3758a05619ebe659a4d708eb18dbf3749a95f8c75951",
+          "sha1": "fead0159c05a2777d15f95f07c642f7a3277e78c",
+          "md5": "14f4545892cf9063e6a54ab6d497f805"
+        }
+      ]
+    },
+    {
+      "name": "api",
+      "attributes": {
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "com.squareup.retrofit",
+          "module": "retrofit",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "okhttp",
+          "version": {
+            "requires": "3.12.1"
+          }
+        },
+        {
+          "group": "androidx.legacy",
+          "module": "legacy-support-v4",
+          "version": {
+            "requires": "1.0.0"
+          }
+        },
+        {
+          "group": "androidx.annotation",
+          "module": "annotation",
+          "version": {
+            "requires": "1.1.0"
+          }
+        },
+        {
+          "group": "androidx.constraintlayout",
+          "module": "constraintlayout",
+          "version": {
+            "requires": "2.0.4"
+          }
+        },
+        {
+          "group": "androidx.appcompat",
+          "module": "appcompat",
+          "version": {
+            "requires": "1.2.0"
+          }
+        },
+        {
+          "group": "androidx.recyclerview",
+          "module": "recyclerview",
+          "version": {
+            "requires": "1.1.0"
+          }
+        },
+        {
+          "group": "com.googlecode.libphonenumber",
+          "module": "libphonenumber",
+          "version": {
+            "requires": "8.10.9"
+          }
+        },
+        {
+          "group": "me.relex",
+          "module": "circleindicator",
+          "version": {
+            "requires": "1.3.2"
+          }
+        },
+        {
+          "group": null,
+          "module": "insights-1.2",
+          "excludes": [
+            {
+              "group": "*",
+              "module": "*"
+            }
+          ],
+          "thirdPartyCompatibility": {
+            "artifactSelector": {
+              "name": "insights-1.2",
+              "type": "aar",
+              "extension": "aar"
+            }
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "idnow-android-sdk-4.5.5.aar",
+          "url": "idnow-android-sdk-4.5.5.aar",
+          "size": 35630374,
+          "sha512": "6a67fec0b8ee359ae78d566e2c5e68726f67986c80b797c59b1727622f1b57770bd2ffa72e1c3f9ed4ba0225f50af99b4b6c72fb7ebb27216d3a56f4449050ed",
+          "sha256": "66ee2c7fcf6834c94c6f3758a05619ebe659a4d708eb18dbf3749a95f8c75951",
+          "sha1": "fead0159c05a2777d15f95f07c642f7a3277e78c",
+          "md5": "14f4545892cf9063e6a54ab6d497f805"
+        }
+      ]
+    }
+  ]
+}
