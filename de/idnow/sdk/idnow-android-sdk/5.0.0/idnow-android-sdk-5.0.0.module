@@ -1,0 +1,183 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "de.idnow.sdk",
+    "module": "idnow-android-sdk",
+    "version": "5.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.5",
+      "buildId": "i5hrdwi2sbeyxllpwjm7zmqrue"
+    }
+  },
+  "variants": [
+    {
+      "name": "runtime",
+      "attributes": {
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "com.squareup.retrofit",
+          "module": "retrofit",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "okhttp",
+          "version": {
+            "requires": "3.12.1"
+          }
+        },
+        {
+          "group": "androidx.legacy",
+          "module": "legacy-support-v4",
+          "version": {
+            "requires": "1.0.0"
+          }
+        },
+        {
+          "group": "androidx.annotation",
+          "module": "annotation",
+          "version": {
+            "requires": "1.1.0"
+          }
+        },
+        {
+          "group": "androidx.constraintlayout",
+          "module": "constraintlayout",
+          "version": {
+            "requires": "2.0.4"
+          }
+        },
+        {
+          "group": "androidx.appcompat",
+          "module": "appcompat",
+          "version": {
+            "requires": "1.2.0"
+          }
+        },
+        {
+          "group": "androidx.recyclerview",
+          "module": "recyclerview",
+          "version": {
+            "requires": "1.1.0"
+          }
+        },
+        {
+          "group": "com.googlecode.libphonenumber",
+          "module": "libphonenumber",
+          "version": {
+            "requires": "8.10.9"
+          }
+        },
+        {
+          "group": "me.relex",
+          "module": "circleindicator",
+          "version": {
+            "requires": "1.3.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "idnow-android-sdk-5.0.0.aar",
+          "url": "idnow-android-sdk-5.0.0.aar",
+          "size": 35589074,
+          "sha512": "f945b2310bf662513e6b81d593fecc90c8d1d2994f990437646ac332e867d1a88ecaa793003224d48e7f41dbeafd55f9db12288bc33a31b9d59902c3d07fbeaf",
+          "sha256": "eac6ede79d6e5f38919a13c71b4ab797425ec8dab6aa53cdeeaaed89ec8575a4",
+          "sha1": "d1a72efdd81ffad149a375f440bd3202ec4c6502",
+          "md5": "3ae27081caa698ea44707d387b912f6b"
+        }
+      ]
+    },
+    {
+      "name": "api",
+      "attributes": {
+        "org.gradle.usage": "java-api"
+      },
+      "dependencies": [
+        {
+          "group": "com.squareup.retrofit",
+          "module": "retrofit",
+          "version": {
+            "requires": "1.9.0"
+          }
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "okhttp",
+          "version": {
+            "requires": "3.12.1"
+          }
+        },
+        {
+          "group": "androidx.legacy",
+          "module": "legacy-support-v4",
+          "version": {
+            "requires": "1.0.0"
+          }
+        },
+        {
+          "group": "androidx.annotation",
+          "module": "annotation",
+          "version": {
+            "requires": "1.1.0"
+          }
+        },
+        {
+          "group": "androidx.constraintlayout",
+          "module": "constraintlayout",
+          "version": {
+            "requires": "2.0.4"
+          }
+        },
+        {
+          "group": "androidx.appcompat",
+          "module": "appcompat",
+          "version": {
+            "requires": "1.2.0"
+          }
+        },
+        {
+          "group": "androidx.recyclerview",
+          "module": "recyclerview",
+          "version": {
+            "requires": "1.1.0"
+          }
+        },
+        {
+          "group": "com.googlecode.libphonenumber",
+          "module": "libphonenumber",
+          "version": {
+            "requires": "8.10.9"
+          }
+        },
+        {
+          "group": "me.relex",
+          "module": "circleindicator",
+          "version": {
+            "requires": "1.3.2"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "idnow-android-sdk-5.0.0.aar",
+          "url": "idnow-android-sdk-5.0.0.aar",
+          "size": 35589074,
+          "sha512": "f945b2310bf662513e6b81d593fecc90c8d1d2994f990437646ac332e867d1a88ecaa793003224d48e7f41dbeafd55f9db12288bc33a31b9d59902c3d07fbeaf",
+          "sha256": "eac6ede79d6e5f38919a13c71b4ab797425ec8dab6aa53cdeeaaed89ec8575a4",
+          "sha1": "d1a72efdd81ffad149a375f440bd3202ec4c6502",
+          "md5": "3ae27081caa698ea44707d387b912f6b"
+        }
+      ]
+    }
+  ]
+}
