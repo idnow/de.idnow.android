@@ -368,7 +368,35 @@ You must not declare it again in your app manifest.
 
 ### Colors
 
-The IDnow SDK is designed with colors following the IDnow corperate design. You can use the SDK without making any adaptions to the colors at all. If, however you want the SDK screens to appear in different colors you can make the following adaptions:
+The IDnow SDK is designed with colors following the IDnow corperate design. You can use the SDK without making any adaptions to the colors at all. If, however you want the SDK screens to appear in different colors.
+
+Our SDK supports Light Mode as well as the Dark Mode version. Currently, if dark mode is enabled on the user's mobile device, the SDK will automatically appear in Dark Mode.
+
+you can make the following adaptions for Light Mode and Dark Mode :
+
+Video Ident Plus enabled :
+
+#### primaryColor
+Used as default color of the App and the component such as the buttons
+
+#### primaryVariantColor
+Useed as a desactivated color for the buttons, it should use same value as primaryColor with a transparent code.
+
+#### primarytextColor
+Useed as a text color for the whole App
+
+#### bgPrimaryColor
+Used as background color for the screens.
+
+#### bgSecondaryColor
+Used as background color for the textfields
+
+#### basicInputField
+Used as text color color for the textfields
+
+#### overwriting default colors
+
+Video Ident Plus disbled :
 
 #### text_default
 Used as default color for display and editable texts
@@ -395,14 +423,20 @@ Default: A green color
 
 #### screenshots
 Since pictures say more than words, here are some screenshots:
-|![overview check screen](docs/screenshot_colors1.png) | ![connecting to video ident](docs/screenshot_colors2.png) | ![succesful ident](docs/screenshot_colors3.png) |
-
-#### overwriting default colors
+|![overview check screen](docs/screenshot_colors1.png) | ![connecting to video ident](docs/screenshot_colors2.png) | ![succesful ident](docs/screenshot_colors3.png)
 
 This is how the colors.xml can look like:
 ```
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+
+    <color name="primaryColor">#DE6240</color>
+    <color name="primaryVariantColor">#80DE6240</color>
+    <color name="bgPrimaryColor">#32343F</color>
+    <color name="bgSecondaryColor">#39414A</color>
+    <color name="primarytextColor">#FFFFFF</color>
+    <color name="basicInputField">#AAA7A8</color>
 
     <!-- Used by theme as default color for display and editable texts -->
     <color name="text_default">#4A4A4A</color>
@@ -499,6 +533,18 @@ Here an example on how to set custom action bar colors when using Holo Light the
 
 </resources>
 ```
+
+#### Fonts
+Here an example on how to set custom font (themes.xml):
+
+```
+    <style name="MyAppTheme"
+        parent="IdnowSdkTheme">
+        <!-- Your definitions here -->
+        <item name="android:fontFamily">@font/wotfard_regular</item>
+    </style>
+```
+
 ## Texts
 
 The SDK provides English, German, French, Spanish, Italian, Hungarian, Georgian, Korean, Dutch, Polish, Portuguese, Russian and Chinese    texts.
