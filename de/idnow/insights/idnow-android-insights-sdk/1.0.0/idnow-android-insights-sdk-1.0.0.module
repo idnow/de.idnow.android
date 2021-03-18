@@ -1,0 +1,69 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "de.idnow.insights",
+    "module": "idnow-android-insights-sdk",
+    "version": "1.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.5",
+      "buildId": "776rllkyifdshiofpegorkzmyi"
+    }
+  },
+  "variants": [
+    {
+      "name": "runtime",
+      "attributes": {
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.appcompat",
+          "module": "appcompat",
+          "version": {
+            "requires": "1.2.0"
+          }
+        },
+        {
+          "group": "com.google.android.material",
+          "module": "material",
+          "version": {
+            "requires": "1.3.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "idnow-android-insights-sdk-1.0.0.aar",
+          "url": "idnow-android-insights-sdk-1.0.0.aar",
+          "size": 240818,
+          "sha512": "8692127d52714ac2660a3e888e3fc98e5f849181fd797c4b123bda12c5eb0185e5bce3acb2220e2634618ad30cc0191d841429b93aa8f1928f48625546cdae60",
+          "sha256": "ad7b72f35deddb79f396a8bb731f949a98c240b09f65e7950ad0fa65c1c5a48d",
+          "sha1": "c7a1ca786c2ea26aa3dbbbd9bea247358ad2fd48",
+          "md5": "a5553f136a54fd7b053608de735c735c"
+        }
+      ]
+    },
+    {
+      "name": "api",
+      "attributes": {
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "idnow-android-insights-sdk-1.0.0.aar",
+          "url": "idnow-android-insights-sdk-1.0.0.aar",
+          "size": 240818,
+          "sha512": "8692127d52714ac2660a3e888e3fc98e5f849181fd797c4b123bda12c5eb0185e5bce3acb2220e2634618ad30cc0191d841429b93aa8f1928f48625546cdae60",
+          "sha256": "ad7b72f35deddb79f396a8bb731f949a98c240b09f65e7950ad0fa65c1c5a48d",
+          "sha1": "c7a1ca786c2ea26aa3dbbbd9bea247358ad2fd48",
+          "md5": "a5553f136a54fd7b053608de735c735c"
+        }
+      ]
+    }
+  ]
+}
