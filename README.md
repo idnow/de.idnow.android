@@ -3,6 +3,7 @@
 - [Overview](#overview)
   - [Examples](#examples)
   - [Requirements](#requirements)
+  -  [Supported versions](#supported-versions)
   - [AndroidManifest](#androidmanifest)
 - [Android Studio](#android-studio)
   - [How to import the SDK](#how-to-import-the-sdk)
@@ -54,6 +55,11 @@ Please see https://github.com/idnow/de.idnow.android-sample for a sample applica
 - minSdkVersion: 21  (Android 5.0)
 - targetSdkVersion:	28 (Android 9.0 Pie)
 - Internet connection, communication via standard SSL port 443
+
+### Supported versions
+
+- Your current SDK will stop receiving further support by May 21 (VideoIdent SDKs of version 4.2.0 and lower; 4.2.1 and higher continue to be supported)
+- After this time, the old SDK will continue to be operational, but we won’t provide any more updates and maintenance only with additional reimbursement
 
 ### AndroidManifest
 
