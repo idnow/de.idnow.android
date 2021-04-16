@@ -1,6 +1,6 @@
 # Changelog
 
-### 5.0.4
+### 5.0.5
 
 Changes:
 
@@ -8,7 +8,7 @@ Changes:
 
 Migration Guide:
 
-- Update reference to IDnow SDK to 5.0.4
+- Update reference to IDnow SDK to 5.0.5
 
 ### 5.0.3
 
