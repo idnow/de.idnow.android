@@ -53,7 +53,7 @@ Please see https://github.com/idnow/de.idnow.android-sample for a sample applica
 ### Requirements
 
 - minSdkVersion: 21  (Android 5.0)
-- targetSdkVersion:	28 (Android 9.0 Pie)
+- targetSdkVersion:	30 (Android 11.0 Red Velvet Cake)
 - Internet connection, communication via standard SSL port 443
 
 ### Supported versions
