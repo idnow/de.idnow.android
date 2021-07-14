@@ -1,5 +1,15 @@
 # Changelog
 
+### 5.0.8
+
+Changes:
+
+- Minor improvements & bugfixes
+
+Migration Guide:
+
+- Update reference to IDnow SDK to 5.0.8
+
 ### 5.0.7.1
 
 Changes:
