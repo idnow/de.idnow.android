@@ -339,7 +339,7 @@ You can set a certificateProvider
 	
 ```
 	
-IDnowSDK.setCertificateProvider(customerCertificateProvide)
+IDnowSDK.setCertificateProvider(customerCertificateProvider)
 	
 ```	
 	
