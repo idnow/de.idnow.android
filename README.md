@@ -334,9 +334,14 @@ You can set the new branding
 IDnowSDK.setNewBrand(TRUE);
 	
 ```
+		
+You can set a certificateProvider
+	
+```
+	
+IDnowSDK.setCertificateProvider(customerCertificateProvide)
 	
 ```	
-IDnowSDK.setCertificateProvider(customerCertificateProvide)
 	
 Support by the SDK version 3.22.1 or less
 	
@@ -347,7 +352,7 @@ It is used to provide custom DTLS certificates used by the WebRTC connection.
 	- featureFingerPrint = true
 	- featureServerCert = true
 
-```
+
 
 ## Using IDnow with other native libraries (UnsatisfiedLinkError)
 
