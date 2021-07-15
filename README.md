@@ -243,6 +243,10 @@ try {
 
 	// Optionally set against which environment the app has to test. Possibilities are DEV, TEST, LIVE, with LIVE being the default.
 	IDnowSDK.setEnvironment( Server.TEST );
+	
+	
+	// Set the custom certificate provider
+	IDnowSDK.setCertificateProvider(new CustomerCertificateProvider(this.context))
 
 	// To actually start the identification process, pass the transactionToken.
 	IDnowSDK.getInstance().start(IDnowSDK.getTransactionToken(context));
