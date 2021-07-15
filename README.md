@@ -343,7 +343,7 @@ IDnowSDK.setCertificateProvider(customerCertificateProvider)
 	
 ```	
 	
-Support by the SDK version 3.22.1 or less
+Supported by the SDK version 3.22.1 or less
 	
 It is used to provide custom DTLS certificates used by the WebRTC connection.
 
