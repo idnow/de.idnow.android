@@ -644,7 +644,7 @@ allprojects {
 
 Dependencies {
 compile 'de.idnow.sdk:idnow-android:x.x.x'
-compile 'de.idnow.android.eid:idnow-android-eid-sdk:1.0.2'
+compile 'de.idnow.android.eid:idnow-android-eid-sdk:x.x.x'
 }
 ```
 
