@@ -1,5 +1,14 @@
 # Changelog
 
+### 5.0.12
+
+Changes:
+
+- Minor improvements & bugfixes
+
+Migration Guide:
+
+- Update reference to IDnow SDK to 5.0.12
 
 ### 5.0.11.1
 
