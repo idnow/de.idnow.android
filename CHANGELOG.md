@@ -1,5 +1,15 @@
 # Changelog
 
+### 5.1.0
+
+Changes:
+
+- Minor improvements & bugfixes
+- eID QES feature
+
+Migration Guide:
+
+- Update reference to IDnow SDK to 5.1.0
 
 ### 5.0.12.1
 
