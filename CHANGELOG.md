@@ -1,5 +1,17 @@
 # Changelog
 
+### 5.1.2
+
+Changes:
+
+- Minor improvements & bugfixes
+
+- Maintainance - API level 31
+
+Migration Guide:
+
+- Update reference to IDnow SDK to 5.1.2
+
 ### 5.1.1
 
 Changes:
