@@ -1,5 +1,18 @@
 # Changelog
 
+
+### 5.1.3
+
+Changes:
+
+- Minor improvements & bugfixes
+
+- Add a new feature "wallet expired"
+
+Migration Guide:
+
+- Update reference to IDnow SDK to 5.1.3
+
 ### 5.1.2
 
 Changes:
