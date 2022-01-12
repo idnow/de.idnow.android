@@ -575,12 +575,17 @@ Here an example on how to set custom action bar colors when using Holo Light the
 ```
 
 #### Fonts
-Here an example on how to set custom font (themes.xml):
 
 ```
    setDefaultFont(Context context, String staticTypefaceFieldName, String fontAssetName)
 ```
-
+Here an example on how to set custom font
+	
+```
+  FontsOverride.setDefaultFont(this, "SERIF", "roboto_thin_italic.ttf");
+	
+```
+	
 ## Texts
 
 The SDK provides English, German, French, Spanish, Italian, Hungarian, Georgian, Korean, Dutch, Polish, Portuguese, Russian and Chinese    texts.
