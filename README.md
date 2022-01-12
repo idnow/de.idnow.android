@@ -578,11 +578,7 @@ Here an example on how to set custom action bar colors when using Holo Light the
 Here an example on how to set custom font (themes.xml):
 
 ```
-    <style name="MyAppTheme"
-        parent="IdnowSdkTheme">
-        <!-- Your definitions here -->
-        <item name="android:fontFamily">@font/wotfard_regular</item>
-    </style>
+   setDefaultFont(Context context, String staticTypefaceFieldName, String fontAssetName)
 ```
 
 ## Texts
