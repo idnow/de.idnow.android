@@ -1,5 +1,17 @@
 # Changelog
 
+### 5.1.7
+
+Changes:
+
+- Support specific camera resolution
+- Add more info for the client
+- Minor improvements & bugfixes
+
+Migration Guide:
+
+- Update reference to IDnow SDK to 5.1.7
+
 ### 5.1.5
 
 Changes:
