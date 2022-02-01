@@ -414,7 +414,7 @@ Our SDK supports Light Mode as well as the Dark Mode version. Currently, if dark
 
 you can make the following adaptions for Light Mode and Dark Mode :
 
-Video Ident Plus enabled :
+### Video Ident Plus enabled :
 
 #### primaryColor
 Used as default color of the App and the component such as the buttons
@@ -436,7 +436,7 @@ Used as text color color for the textfields
 
 #### overwriting default colors
 
-Video Ident Plus disbled :
+### Video Ident Plus disbled :
 
 #### text_default
 Used as default color for display and editable texts
