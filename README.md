@@ -391,7 +391,7 @@ In case you would like to change the language used by the IDnow SDK at runtime y
 ```
 IDnowSDK.getInstance().initialize( StartActivity.this, "", language);
 ```
-Language values are : en (English), de (German), fr (French), es (Spanish), it (Italian), pt (Portugese), et (Estonian), hr (Croatian), hu (Hungarian), ka (Georgian), ko(Korean), lt(Lithuanian), lv (Latvian), nl (Dutch), pl (Polish),  ru (Russian), zh (Chinese), uk (Ukrainian)
+Language values are : en (English), de (German), fr (French), es (Spanish), it (Italian), pt (Portuguese), et (Estonian), hr (Croatian), hu (Hungarian), ka (Georgian), ko(Korean), lt(Lithuanian), lv (Latvian), nl (Dutch), pl (Polish),  ru (Russian), zh (Chinese), uk (Ukrainian)
 
 
 ### App icon and logo
