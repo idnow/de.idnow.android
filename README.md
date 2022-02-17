@@ -441,7 +441,7 @@ Used as text color for the text fields
 #### text_default
 Used as default color for display and editable texts
 Default: a nearly black color
-Recommendation: Should be some kind of a dark color that does not collide with white color.
+Recommendation: Should be some kind of dark color that does not collide with white color.
 
 #### primary
 Optional color, that replaces the default brand color.
