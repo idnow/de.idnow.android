@@ -408,7 +408,7 @@ You must not declare it again in your app manifest.
 
 ### Colors
 
-The IDnow SDK is designed with colors following the IDnow corperate design. You can use the SDK without making any adaptions to the colors at all. If, however you want the SDK screens to appear in different colors.
+The IDnow SDK is designed with colors following the IDnow corporate design. You can use the SDK without making any adaptions to the colors at all. If, however you want the SDK screens to appear in different colors.
 
 Our SDK supports Light Mode as well as the Dark Mode version. Currently, if dark mode is enabled on the user's mobile device, the SDK will automatically appear in Dark Mode.
 
