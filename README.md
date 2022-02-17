@@ -420,7 +420,7 @@ you can make the following adaptions for Light Mode and Dark Mode :
 Used as default color of the App and the component such as the buttons
 
 #### primaryVariantColor
-Used as a desactivated color for the buttons, it should use same value as primaryColor with a transparent code.
+Used as a deactivated color for the buttons, it should use same value as primaryColor with a transparent code.
 
 #### primarytextColor
 Used as a text color for the whole App
