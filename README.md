@@ -436,7 +436,7 @@ Used as text color for the text fields
 
 #### overwriting default colors
 
-### Video Ident Plus disbled :
+### Video Ident Plus disabled :
 
 #### text_default
 Used as default color for display and editable texts
