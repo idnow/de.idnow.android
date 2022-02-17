@@ -429,10 +429,10 @@ Used as a text color for the whole App
 Used as background color for the screens.
 
 #### bgSecondaryColor
-Used as background color for the textfields
+Used as background color for the text fields
 
 #### basicInputField
-Used as text color color for the textfields
+Used as text color for the text fields
 
 #### overwriting default colors
 
