@@ -40,7 +40,7 @@ Changes:
 
 - Minor improvements & bugfixes
 
-- Maintainance - API level 31
+- Maintenance - API level 31
 
 Migration Guide:
 
