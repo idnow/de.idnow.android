@@ -1,5 +1,17 @@
 # Changelog
 
+### 5.1.8
+
+Changes:
+
+- Updating customised waiting screen
+- Updating dependencies
+- Minor improvements & bugfixes
+
+Migration Guide:
+
+- Update reference to IDnow SDK to 5.1.8
+
 ### 5.1.7
 
 Changes:

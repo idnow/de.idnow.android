@@ -147,21 +147,22 @@ Additional dependencies to add in your app.gradle :
 dependencies {
     implementation 'de.idnow.sdk:idnow-android-x.x.x@aar'
     implementation 'com.squareup.retrofit:retrofit:1.9.0'
-    implementation 'com.squareup.okhttp3:okhttp:3.12.1'
-    implementation 'com.googlecode.libphonenumber:libphonenumber:8.10.9'
-    implementation 'me.relex:circleindicator:1.3.2
-    implementation 'de.idnow.insights:idnow-android-insights-sdk:1.0.0'
-    implementation 'com.airbnb.android:lottie:3.6.1'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.1'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.annotation:annotation:1.1.0'
-    implementation "androidx.constraintlayout:constraintlayout:2.0.4'
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.recyclerview:recyclerview:1.1.0'
-    implementation 'androidx.preference:preference:1.1.1'
-    implementation 'androidx.percentlayout:percentlayout:1.0.0'
+    implementation 'androidx.annotation:annotation:1.3.0'
+    implementation "androidx.constraintlayout:constraintlayout:2.1.3"
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    implementation 'com.googlecode.libphonenumber:libphonenumber:8.10.9'
+    implementation 'me.relex:circleindicator:1.3.2'
+    implementation 'de.idnow.insights:idnow-android-insights-sdk:1.0.0'
+    compileOnly 'de.idnow.android.eid:idnow-android-eid-sdk:2.2.2'
+    implementation 'com.airbnb.android:lottie:3.6.1'
+    implementation 'androidx.preference:preference:1.2.0'
+    implementation "androidx.percentlayout:percentlayout:1.0.0"
     implementation  'com.google.code.gson:gson:2.8.6'
     implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
-    implementation 'de.idnow.insights:idnow-android-insights-sdk:1.0.0'
+    implementation 'com.google.android.material:material:1.5.0'
     }
 ```
 
