@@ -96,7 +96,7 @@ Moreover, when using an Android LibraryProject, all the Activities, Services and
 
 [![Watch the video](https://github.com/idnow/de.idnow.android/blob/master/docs/screenshot_video1.png)](https://youtu.be/yKOu-luc1x8)
 
-In your top-level build.gradle project file add the following url under repositories block :
+In your top-level build.gradle project file add the following url under repositories block:
 
 ```
 allprojects {
@@ -110,7 +110,7 @@ url "https://raw.githubusercontent.com/idnow/de.idnow.android/master"
 }
 ```
 
-and in the dependencies part of your app.gradle add :   
+and in the dependencies part of your app.gradle add:   
 
 ```
 dependencies {
@@ -141,7 +141,7 @@ dirs 'libs' //this way we can find the .aar file in libs folder
 }
 ```
 
-Additional dependencies to add in your app.gradle :
+Additional dependencies to add in your app.gradle:
 
 ``` 
 dependencies {
@@ -387,12 +387,12 @@ http://developer.android.com/ndk/guides/abis.html
 
 ### Languages
 
-In case you would like to change the language used by the IDnow SDK at runtime you can do the following in the host App during the initialization : 
+In case you would like to change the language used by the IDnow SDK at runtime you can do the following in the host App during the initialization: 
 
 ```
 IDnowSDK.getInstance().initialize( StartActivity.this, "", language);
 ```
-Language values are : en (English), de (German), fr (French), es (Spanish), it (Italian), pt (Portugese), et (Estonian), hr (Croatian), hu (Hungarian), ka (Georgian), ko(Korean), lt(Lithuanian), lv (Latvian), nl (Dutch), pl (Polish),  ru (Russian), zh (Chinese), uk (Ukrainian)
+Language values are: en (English), de (German), fr (French), es (Spanish), it (Italian), pt (Portuguese), et (Estonian), hr (Croatian), hu (Hungarian), ka (Georgian), ko(Korean), lt(Lithuanian), lv (Latvian), nl (Dutch), pl (Polish),  ru (Russian), zh (Chinese), uk (Ukrainian)
 
 
 ### App icon and logo
@@ -409,40 +409,40 @@ You must not declare it again in your app manifest.
 
 ### Colors
 
-The IDnow SDK is designed with colors following the IDnow corperate design. You can use the SDK without making any adaptions to the colors at all. If, however you want the SDK screens to appear in different colors.
+The IDnow SDK is designed with colors following the IDnow corporate design. You can use the SDK without making any adaptions to the colors at all. If, however you want the SDK screens to appear in different colors.
 
 Our SDK supports Light Mode as well as the Dark Mode version. Currently, if dark mode is enabled on the user's mobile device, the SDK will automatically appear in Dark Mode.
 
-you can make the following adaptions for Light Mode and Dark Mode :
+you can make the following adaptions for Light Mode and Dark Mode:
 
-### Video Ident Plus enabled :
+### Video Ident Plus enabled:
 
 #### primaryColor
 Used as default color of the App and the component such as the buttons
 
 #### primaryVariantColor
-Useed as a desactivated color for the buttons, it should use same value as primaryColor with a transparent code.
+Used as a deactivated color for the buttons, it should use same value as primaryColor with a transparent code.
 
 #### primarytextColor
-Useed as a text color for the whole App
+Used as a text color for the whole App
 
 #### bgPrimaryColor
 Used as background color for the screens.
 
 #### bgSecondaryColor
-Used as background color for the textfields
+Used as background color for the text fields
 
 #### basicInputField
-Used as text color color for the textfields
+Used as text color for the text fields
 
 #### overwriting default colors
 
-### Video Ident Plus disbled :
+### Video Ident Plus disabled:
 
 #### text_default
 Used as default color for display and editable texts
 Default: a nearly black color
-Recommendation: Should be some kind of a dark color that does not collide with white color.
+Recommendation: Should be some kind of dark color that does not collide with white color.
 
 #### primary
 Optional color, that replaces the default brand color.
@@ -606,7 +606,7 @@ IDnow eID feature is a seperate module in Video ident Product.
 
 #### How to import eID SDK
 
-in `build.gradle` file add the following instructions :
+in `build.gradle` file add the following instructions:
 
 ```
 android {
@@ -710,30 +710,30 @@ colors are customisable by overriding the values of a specific key
 
 #### Title Color 
 
-Key : `eid_title`
+Key: `eid_title`
 
-default color in the sdk : <color name="eid_title">#1E1E1E</color>
+default color in the sdk: <color name="eid_title">#1E1E1E</color>
 
 #### Text color
 
-Key : `text_default`
+Key: `text_default`
 
-default color in the sdk : <color name="text_default">#4A4A4A</color>
+default color in the sdk: <color name="text_default">#4A4A4A</color>
 
 #### Layout button color (Switch to video ident)
 
-Key : `error_layout_button`
+Key: `error_layout_button`
 
-default color in the sdk : <color name="error_layout_button">#FDEFEB</color>
+default color in the sdk: <color name="error_layout_button">#FDEFEB</color>
 
 #### Text redirection color
 
-Key : `error_layout_button`
+Key: `error_layout_button`
 
-default color in the sdk : <color name="eid_text_link">#4285F4</color>
+default color in the sdk: <color name="eid_text_link">#4285F4</color>
 
 #### Button color
 
-Key : `primary`
+Key: `primary`
 
-default color in the sdk : <color name="primary">#F95602</color>
+default color in the sdk: <color name="primary">#F95602</color>

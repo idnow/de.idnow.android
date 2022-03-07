@@ -52,7 +52,7 @@ Changes:
 
 - Minor improvements & bugfixes
 
-- Maintainance - API level 31
+- Maintenance - API level 31
 
 Migration Guide:
 
@@ -444,7 +444,7 @@ Changes:
 
 Migration Guide:
 
-- Update reference to IDnow SDK to 3.22.1 (dependency : de.idnow.sdk:idnow-android-sdk:3.22.1 )
+- Update reference to IDnow SDK to 3.22.1 (dependency: de.idnow.sdk:idnow-android-sdk:3.22.1 )
 
 ### 3.22.0
 Changes:
