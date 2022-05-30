@@ -1,5 +1,16 @@
 # Changelog
 
+### 5.1.10
+
+Changes:
+
+- Lottie upgrade to 5.1.1
+- eID standalone via customer config 
+
+Migration Guide:
+
+- Update reference to IDnow SDK to 5.1.8
+
 ### 5.1.8
 
 Changes:
