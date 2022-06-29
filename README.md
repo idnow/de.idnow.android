@@ -81,7 +81,7 @@ If Video-Ident will be used, the following permissions are required as well:
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
 ```
 
-If EID will be used, the following permissions is required as well:
+If EID will be used, the following permission is required as well:
 
 ```
 <uses-permission android:name="android.permission.NFC" />
@@ -138,7 +138,7 @@ In your app.gradle add:
 repositories {
 	
 maven {
-  url "https://raw.githubusercontent.com/idnow/de.idnow.android/master" // needed for 'de.idnow.insights:idnow-android-insights-sdk:1.0.0'
+  url "https://raw.githubusercontent.com/idnow/de.idnow.android/master"
        }
 	
 flatDir {
@@ -162,7 +162,7 @@ dependencies {
     implementation 'com.googlecode.libphonenumber:libphonenumber:8.10.9'
     implementation 'me.relex:circleindicator:1.3.2'
     implementation 'de.idnow.insights:idnow-android-insights-sdk:1.0.0'
-    compileOnly 'de.idnow.android.eid:idnow-android-eid-sdk:2.2.2'
+    compileOnly 'de.idnow.android.eid:idnow-android-eid-sdk:2.4.0'
     implementation 'com.airbnb.android:lottie:5.1.1'
     implementation 'androidx.preference:preference:1.2.0'
     implementation "androidx.percentlayout:percentlayout:1.0.0"
@@ -178,24 +178,7 @@ During the use of the SDK the app is NOT showing an App Bar since the ident foll
 
 ### SDK size
 
-By default the SDK has a size of roughly 15 mb. This especially includes the necessary native code for WebRTC. If you need to lower the size of your delivered APK for some reason, we advice to use APK splitting (see https://developer.android.com/google/play/publishing/multiple-apks.html)
-
-You can do that by adding the following code to your project:
-
-```
-android {
-    // Some other configuration here...
-
-    splits {
-        abi {
-            enable true
-            reset()
-            include 'x86', 'armeabi', 'armeabi-v7a', 'mips'
-            universalApk false
-        }
-    }
-}
-```
+By default the SDK has a size of roughly 15 mb.
 
 ## Multidex support
 
@@ -440,29 +423,7 @@ Used as background color for the text fields
 #### basicInputField
 Used as text color for the text fields
 
-We offer as well a customisation for specif screens only for VI (VI+ disabled) such as Overview Check Screen, Call Quality Screen and Success&Error Screen, the color keys for each screen could be provided seperately on demand.  
-
-
-#### screenshots
-Since pictures say more than words, here are some screenshots:
-|![overview check screen](docs/screenshot_colors1.png) | ![connecting to video ident](docs/screenshot_colors2.png) | ![succesful ident](docs/screenshot_colors3.png)
-
-This is how the colors.xml can look like:
-```
-<?xml version="1.0" encoding="utf-8"?>
-    <!-- Primary color is used for the brand color -->
-    <color name="primaryColor">#DE6240</color>
-     <!-- PrimaryVariant color is used for the transparent brand color  -->
-    <color name="primaryVariantColor">#80DE6240</color>
-    <!-- background primary color is used for the background color -->
-    <color name="bgPrimaryColor">#32343F</color>
-    <!-- background secondary color is used for the text field background -->
-    <color name="bgSecondaryColor">#39414A</color>
-    <!-- background primarytext color is used for the main text color -->
-    <color name="primarytextColor">#FFFFFF</color>
-    <!-- basic inputfield color is used for the textfield text color -->
-    <color name="basicInputField">#AAA7A8</color>
-```
+We offer as well a customisation for specific screens only for VI (VI+ disabled) such as Overview Check Screen, Call Quality Screen and Success&Error Screen, the color keys for each screen could be provided seperately on demand.  
 
 ### App theme
 
@@ -638,7 +599,10 @@ Dependencies {
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'com.googlecode.libphonenumber:libphonenumber:8.10.9'
     implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+    implementation group: 'de.authada.library', name: 'aal', version: '4.15.2'
     testImplementation 'junit:junit:4.12'
+	
+	
 } 
 ```
 ### eID Colors
