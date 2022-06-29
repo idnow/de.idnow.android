@@ -58,7 +58,7 @@ Please see https://github.com/idnow/de.idnow.android-sample for a sample applica
 
 ### Supported versions
 
-- Your current SDK will stop receiving further support by May 21 (VideoIdent SDKs of version 4.2.0 and lower; 4.2.1 and higher continue to be supported)
+- Your current SDK will stop receiving further support by May 21 2020 (VideoIdent SDKs of version 4.2.0 and lower; 4.2.1 and higher continue to be supported)
 - After this time, the old SDK will continue to be operational, but we won’t provide any more updates and maintenance only with additional reimbursement
 
 ### AndroidManifest
@@ -79,6 +79,12 @@ If Video-Ident will be used, the following permissions are required as well:
 ```
 <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
+```
+
+If EID will be used, the following permissions is required as well:
+
+```
+<uses-permission android:name="android.permission.NFC" />
 ```
 
 Additional permissions for certain audio devices:
@@ -115,7 +121,7 @@ and in the dependencies part of your app.gradle add:
 ```
 dependencies {
 ..
-implementation 'de.idnow.sdk:idnow-android-sdk:4.x.x'
+implementation 'de.idnow.sdk:idnow-android-sdk:5.x.x'
 ..
 }
 ```
@@ -157,7 +163,7 @@ dependencies {
     implementation 'me.relex:circleindicator:1.3.2'
     implementation 'de.idnow.insights:idnow-android-insights-sdk:1.0.0'
     compileOnly 'de.idnow.android.eid:idnow-android-eid-sdk:2.2.2'
-    implementation 'com.airbnb.android:lottie:3.6.1'
+    implementation 'com.airbnb.android:lottie:5.1.1'
     implementation 'androidx.preference:preference:1.2.0'
     implementation "androidx.percentlayout:percentlayout:1.0.0"
     implementation  'com.google.code.gson:gson:2.8.6'
@@ -172,7 +178,7 @@ During the use of the SDK the app is NOT showing an App Bar since the ident foll
 
 ### SDK size
 
-By default the SDK has a size of roughly 17 mb. This especially includes the necessary native code for WebRTC. If you need to lower the size of your delivered APK for some reason, we advice to use APK splitting (see https://developer.android.com/google/play/publishing/multiple-apks.html)
+By default the SDK has a size of roughly 15 mb. This especially includes the necessary native code for WebRTC. If you need to lower the size of your delivered APK for some reason, we advice to use APK splitting (see https://developer.android.com/google/play/publishing/multiple-apks.html)
 
 You can do that by adding the following code to your project:
 
@@ -333,7 +339,7 @@ IDnowSDK.setVideoHost("https://video.yourserver.com", context);
 IDnowSDK.setStunHost("video.yourserver.com", context);
 IDnowSDK.setStunPort(3478, context);
 ```
-You can set the new branding 
+You can set the new branding (Circular background for the buttons)
 
 ```
 IDnowSDK.setNewBrand(TRUE);
@@ -366,7 +372,7 @@ For Videostreaming the Idnow SDK uses IceLink which come with native libs.
 If your app uses other 3rd party libs that come with their own native libs, it's possible that you get an UnsatisfiedLinkError.
 
 This means that the native lib folders shipped by your 3rd party lib don't match the native lib folders shipped by the Idnow SDK.
-Currently the Idnow SDK comes with the following folders: armeabi, armeabi-v7a, arm64-v8a and x86.
+Currently the Idnow SDK comes with the following folders: armeabi, armeabi-v7a, arm64-v8a.
 If your 3rd party lib only supports some of the architectures but not others (e.g. armeabi, x86 but not armeabi-v7a), you have to exclude the other folders of the Idnow SDK in your build.gradle (in this example: armeabi-v7a) with the following command:
 
 ```
@@ -415,7 +421,6 @@ Our SDK supports Light Mode as well as the Dark Mode version. Currently, if dark
 
 you can make the following adaptions for Light Mode and Dark Mode:
 
-### Video Ident Plus enabled:
 
 #### primaryColor
 Used as default color of the App and the component such as the buttons
@@ -435,32 +440,8 @@ Used as background color for the text fields
 #### basicInputField
 Used as text color for the text fields
 
-#### overwriting default colors
+We offer as well a customisation for specif screens only for VI (VI+ disabled) such as Overview Check Screen, Call Quality Screen and Success&Error Screen, the color keys for each screen could be provided seperately on demand.  
 
-### Video Ident Plus disabled:
-
-#### text_default
-Used as default color for display and editable texts
-Default: a nearly black color
-Recommendation: Should be some kind of dark color that does not collide with white color.
-
-#### primary
-Optional color, that replaces the default brand color.
-Default: an orange color
-Used in headlines, checkboxes, links, alerts etc.
-Recommendation: Should be a color that does not collide with white color.
-
-#### proceed_button_background
-Background color for confirmation/continue button, which is usually placed at the bottom of a screen
-Default: the primary color (see above)
-
-#### failure
-Replaces the text color in the result screen, when an identification failed.
-Default: A red color
-
-#### success
-Replaces the text color in the result screen, when an identification was successful.
-Default: A green color
 
 #### screenshots
 Since pictures say more than words, here are some screenshots:
@@ -469,33 +450,18 @@ Since pictures say more than words, here are some screenshots:
 This is how the colors.xml can look like:
 ```
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-
+    <!-- Primary color is used for the brand color -->
     <color name="primaryColor">#DE6240</color>
+     <!-- PrimaryVariant color is used for the transparent brand color  -->
     <color name="primaryVariantColor">#80DE6240</color>
+    <!-- background primary color is used for the background color -->
     <color name="bgPrimaryColor">#32343F</color>
+    <!-- background secondary color is used for the text field background -->
     <color name="bgSecondaryColor">#39414A</color>
+    <!-- background primarytext color is used for the main text color -->
     <color name="primarytextColor">#FFFFFF</color>
+    <!-- basic inputfield color is used for the textfield text color -->
     <color name="basicInputField">#AAA7A8</color>
-
-    <!-- Used by theme as default color for display and editable texts -->
-    <color name="text_default">#4A4A4A</color>
-
-    <!-- Primary color is used for headlines and links -->
-    <color name="primary">#F95602</color>
-
-    <!-- background color for confirmation/continue button, which is usually placed at the bottom of a screen -->
-    <color name="proceed_button_background">@color/primary</color>
-
-    <!-- "Wiederholen" button when a photo was taken in photo ident -->
-    <color name="photo_ident_retake_button_background">@color/text_default</color>
-
-    <!-- Colors of the result screen -->
-    <color name="success">#A4AC49</color>
-    <color name="failure">#E0727A</color>
-
-</resources>
 ```
 
 ### App theme
@@ -505,28 +471,26 @@ This is themes.xml of the SDK:
 ```
 <resources>
 
-    <!-- IdnowSdkTheme is used when no other theme is applied. See documentation if you want to apply a different theme. -->
+    <!-- IdnowSdkTheme is used when no other theme is applied. You are free to adapt the SDK theme in the App or use your own theme.
 
-    <!-- Apply color "text_default" for text elements -->
-    <style name="IdnowSdkTheme"
-           parent="@android:style/Theme.Holo.Light">
-        <!-- applying color "text_default" for common text elements -->
-        <item name="android:textColor">@color/text_default</item>
+    <style name="IdnowSdkTheme" parent="IdnowSdkThemeWithoutBackround">
+        <item name="android:background">@color/bgPrimaryColor</item>
+        <item name ="android:colorBackground">@color/bgPrimaryColor</item>
+    </style>
+    
+        <style name="IdnowSdkThemeWithoutBackround"
+        parent="Theme.AppCompat.DayNight">
+        <item name="android:textColor">@color/primarytextColor</item>
         <item name="android:editTextStyle">@style/IdnowSdkTheme.EditText</item>
     </style>
 
-    <style name="IdnowSdkTheme.EditText"
-           parent="android:Widget.EditText">
-        <!-- applying color "text_default" for edit text fields as text color -->
-        <item name="android:textColor">@color/text_default</item>
+        <style name="IdnowSdkTheme.EditText" parent="android:Widget.EditText">
+        <item name="android:textColor">@color/primarytextColor</item>
+        <item name="android:colorBackground">@color/bgSecondaryColor</item>
     </style>
 
 </resources>
 ```
-
-As you can see, the theme is based on Holo Light. The only changes made here are applying color "text_default" to standard text elements and edit text fields.
-
-You have three options:
 
 - By not specifying a theme at all, the SDK's theme is used for the whole app.
 - Inheriting from the SDK's theme. Here is a usage example (themes.xml):
@@ -538,38 +502,6 @@ You have three options:
     <style name="MyAppTheme"
            parent="@style/﻿﻿IdnowSdkTheme﻿">
     <!-- Your definitions here -->
-    </style>
-
-</resources>
-```
-
-- Applying own theme. In this case, it is your own responsibility to apply color "text_default" for standard and edit text elements.
-
-
-#### Action bar
-
-Here an example on how to set custom action bar colors when using Holo Light theme (themes.xml):
-```
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <style name="MyAppTheme"
-           parent="@style/﻿﻿IdnowSdkTheme﻿">
-        <!-- applying custom actionbar style -->
-        <item name="android:actionBarStyle">@style/MyAppTheme.ActionBar</item>
-    </style>
-
-    <style name="MyAppTheme.ActionBar"
-           parent="@android:style/Widget.Holo.Light.ActionBar">
-        <!-- Specify background color of actionbar -->
-        <item name="android:background">@color/primary</item>
-        <item name="android:titleTextStyle">@style/MyAppTheme.ActionBar.Title</item>
-    </style>
-
-    <style name="MyAppTheme.ActionBar.Title"
-           parent="@android:style/TextAppearance.Holo.Widget.ActionBar.Title">
-        <!-- Specify text color of actionbar -->
-        <item name="android:textColor">@color/white</item>
     </style>
 
 </resources>
@@ -693,47 +625,59 @@ allprojects {
 }
 
 Dependencies {
-implementation 'de.idnow.sdk:idnow-android-x.x.x@aar'
-implementation 'de.idnow.android.sdk:idnow-android-eid:1.0.2@aar'
-implementation 'com.squareup.retrofit:retrofit:1.9.0'
-implementation 'com.squareup.okhttp3:okhttp:3.12.1'
-implementation 'com.android.support:support-v4:28.0.0'
-implementation 'com.android.support:support-annotations:26.1.0'
-implementation 'com.googlecode.libphonenumber:libphonenumber:8.10.9'
-implementation "androidx.constraintlayout:constraintlayout:1.1.3"
-implementation 'me.relex:circleindicator:1.3.2'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.annotation:annotation:1.3.0'
+    implementation 'androidx.appcompat:appcompat:1.4.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
+    implementation 'com.squareup.retrofit:retrofit:1.9.0'
+    implementation 'com.squareup.okhttp3:okhttp:3.12.1'
+    implementation  'com.google.code.gson:gson:2.8.6'
+    implementation 'de.idnow.insights:idnow-android-insights-sdk:1.0.0'
+    implementation 'com.airbnb.android:lottie:5.1.1'
+    implementation 'androidx.cardview:cardview:1.0.0'
+    implementation 'com.google.android.material:material:1.5.0'
+    implementation 'com.googlecode.libphonenumber:libphonenumber:8.10.9'
+    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+    testImplementation 'junit:junit:4.12'
 } 
 ```
 ### eID Colors
 
 colors are customisable by overriding the values of a specific key
 
-#### Title Color 
+#### primaryColor
+Used as default color of the App and the component such as the buttons
 
-Key: `eid_title`
+#### primaryVariantColor
+Used as a deactivated color for the buttons, it should use same value as primaryColor with a transparent code.
 
-default color in the sdk: <color name="eid_title">#1E1E1E</color>
+#### primarytextColor
+Used as a text color for the whole App
 
-#### Text color
+#### bgPrimaryColor
+Used as background color for the screens.
 
-Key: `text_default`
+#### bgSecondaryColor
+Used as background color for the text fields
 
-default color in the sdk: <color name="text_default">#4A4A4A</color>
+#### basicInputField
+Used as text color for the text fields
 
-#### Layout button color (Switch to video ident)
 
-Key: `error_layout_button`
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
 
-default color in the sdk: <color name="error_layout_button">#FDEFEB</color>
+    <!-- Primary color is used for the brand color -->
+    <color name="primaryColor">#DE6240</color>
+     <!-- PrimaryVariant color is used for the transparent brand color  -->
+    <color name="primaryVariantColor">#80DE6240</color>
+    <!-- background primary color is used for the background color -->
+    <color name="bgPrimaryColor">#32343F</color>
+    <!-- background secondary color is used for the text field background -->
+    <color name="bgSecondaryColor">#39414A</color>
+    <!-- background primarytext color is used for the main text color -->
+    <color name="primarytextColor">#FFFFFF</color>
+    <!-- basic inputfield color is used for the textfield text color -->
+    <color name="basicInputField">#AAA7A8</color>
 
-#### Text redirection color
-
-Key: `error_layout_button`
-
-default color in the sdk: <color name="eid_text_link">#4285F4</color>
-
-#### Button color
-
-Key: `primary`
-
-default color in the sdk: <color name="primary">#F95602</color>
+</resources>
