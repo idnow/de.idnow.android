@@ -1,5 +1,16 @@
 # Changelog
 
+
+### 5.1.11
+
+Changes:
+
+- Minor improvements & bugfixes
+
+Migration Guide:
+
+- Update reference to IDnow SDK to 5.1.11
+- Update reference to eID SDK to 2.4.0
 ### 5.1.10
 
 Changes:
