@@ -1,5 +1,17 @@
 # Changelog
 
+### 5.1.12
+
+Changes:
+
+- Show/Hide IDnow logo via customer config 
+- Minor improvements & bugfixes
+
+
+Migration Guide:
+
+- Update reference to IDnow SDK to 5.1.12
+- Update reference to eID SDK to 2.5.0
 
 ### 5.1.11
 
