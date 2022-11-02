@@ -6,6 +6,7 @@
 Changes:
 
 - Minor improvements & bugfixes
+- Support Android 13
 
 Migration Guide:
 
