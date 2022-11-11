@@ -1,5 +1,8 @@
 # Changelog
 
+### 6.0.0
+
+- Upgrade to Liveswitch.
 
 ### 5.3.0
 
