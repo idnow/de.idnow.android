@@ -1,5 +1,11 @@
 # Changelog
 
+### 6.1.0
+
+Changes:
+
+- Minor improvements & bugfixes
+
 ### 6.0.0
 
 - Upgrade to Liveswitch.
