@@ -5,6 +5,7 @@
 Changes:
 
 - Minor improvements & bugfixes
+- Upgrade to retrofit 2.9.0
 
 ### 6.0.0
 
