@@ -222,7 +222,7 @@ try {
 	IDnowSDK.getInstance().initialize(StartActivity.this, "ihreBank");
 
 	// Set the transactionToken, for example from a TextField
-	IDnowSDK.setTransactionToken(editTextToken.getText().toString(), context);
+	IDnowSDK.setTransactionToken(editTextToken.getText().toString());
 
 	// You can decide whether to let the user confirm the legal points.
 	IDnowSDK.setShowVideoOverviewCheck(true, context);
