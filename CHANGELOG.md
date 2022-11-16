@@ -7,9 +7,19 @@ Changes:
 - Minor improvements & bugfixes
 - Upgrade to retrofit 2.9.0
 
+Migration Guide:
+
+Update reference to IDnow SDK to 6.1.0 Update reference eID SDK to 2.5.3
+
 ### 6.0.0
 
+Changes:
+
 - Upgrade to Liveswitch.
+
+Migration Guide:
+
+Update reference to IDnow SDK to 6.0.0 Update reference eID SDK to 2.5.1
 
 ### 5.3.0
 
