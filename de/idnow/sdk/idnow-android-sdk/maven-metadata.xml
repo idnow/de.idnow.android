@@ -3,7 +3,7 @@
   <groupId>de.idnow.sdk</groupId>
   <artifactId>idnow-android-sdk</artifactId>
   <versioning>
-      <latest>5.3.0</latest>
+      <latest>5.2.0.2</latest>
       <versions>
     <version>3.22.1</version>
     <version>4.0.0</version>
@@ -56,8 +56,9 @@
     <version>5.1.10</version>
     <version>5.1.12</version>
     <version>5.2.0</version>
+    <version>5.2.0.2</version>
     <version>5.3.0</version>
     </versions>
-    <lastUpdated>20221102084659</lastUpdated>
+    <lastUpdated>20221118140414</lastUpdated>
   </versioning>
 </metadata>
