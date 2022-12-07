@@ -1,5 +1,27 @@
 # Changelog
 
+
+### 6.1.2
+
+Changes:
+
+- Implement a mechanism to avoid the clean up of host app files while using the IDnow SDK
+
+Migration Guide:
+
+Update reference to IDnow SDK to 6.1.0 Update reference eID SDK to 2.5.3
+
+### 6.1.1
+
+Changes:
+
+- Minor improvements & bugfixes
+
+Migration Guide:
+
+Update reference to IDnow SDK to 6.1.0 Update reference eID SDK to 2.5.3
+
+
 ### 6.1.0
 
 Changes:
