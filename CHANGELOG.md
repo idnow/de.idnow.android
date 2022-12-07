@@ -5,7 +5,7 @@
 
 Changes:
 
-- Minor improvements & bugfixes
+- Implement a mechanism to avoid the clean up of host app files while using the IDnow SDK
 
 Migration Guide:
 
