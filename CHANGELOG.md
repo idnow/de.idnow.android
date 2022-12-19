@@ -1,5 +1,14 @@
 # Changelog
 
+### 6.1.3
+
+Changes:
+
+- Improved user experience, enhanced security and support for customer requests
+
+Migration Guide:
+
+Update reference to IDnow SDK to 6.1.0 Update reference eID SDK to 2.5.3
 
 ### 6.1.2
 
