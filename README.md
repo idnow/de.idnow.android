@@ -27,6 +27,8 @@
     - [screenshots](#screenshots)
     - [overwriting default colors](#overwriting-default-colors)
   - [App theme](#app-theme)
+  - [Fonts](#fonts)
+  
     - [Action bar](#action-bar)
 - [Texts](#texts)
 - [IDnow eID SDK](#idnow-eid-sdk)
