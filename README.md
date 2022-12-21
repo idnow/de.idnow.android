@@ -123,7 +123,7 @@ and in the dependencies part of your app.gradle add:
 ```
 dependencies {
 ..
-implementation 'de.idnow.sdk:idnow-android-sdk:5.x.x'
+implementation 'de.idnow.sdk:idnow-android-sdk:x.x.x'
 ..
 }
 ```
@@ -241,7 +241,7 @@ try {
 	IDnowSDK.setCertificateProvider(new CustomerCertificateProvider(this.context))
 
 	// To actually start the identification process, pass the transactionToken.
-	IDnowSDK.getInstance().start(IDnowSDK.getTransactionToken(context));
+	IDnowSDK.getInstance().start(IDnowSDK.getTransactionToken());
 } catch (Exception e) {
 	// The SDK checks the input parameters and throws an exception if they don't seem right.
 	e.printStackTrace();
