@@ -381,8 +381,9 @@ http://developer.android.com/ndk/guides/abis.html
 The WebRTC used by our SDK is using the Bouncy Castle third-party dependency. This implies that if the same dependency is being used on the integrator’s part, the two versions will conflict. The Bouncy castle version being used in this SDK version is 1.51.
 As a temporary solution to this, we previously had to generate a ‘custom’ version of the SDK, which had this Bouncy Castle dependency removed.
 Starting with one of our upcoming versions (yet to be specified), we will begin offering a more feasible solution to this problem: We will remove the third-party Bouncy Castle dependency, and it will have to be added directly from the integrator app. This implies that in the app.gradle file of the integrator app’s project, we will need to add the following dependency in addition to the existing list of dependencies: 
+```	
 implementation 'org.bouncycastle:bcpkix-jdk15on:1.71’
-
+```
 	
 ## Animations
 	
