@@ -1,0 +1,62 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "de.idnow.insights",
+    "module": "idnow-android-insights-sdk",
+    "version": "2.0.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "6.5",
+      "buildId": "ey53xqk6lvbihiqktzj7brca4y"
+    }
+  },
+  "variants": [
+    {
+      "name": "runtime",
+      "attributes": {
+        "org.gradle.usage": "java-runtime"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.annotation",
+          "module": "annotation",
+          "version": {
+            "requires": "1.3.0"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "idnow-android-insights-sdk-2.0.0.aar",
+          "url": "idnow-android-insights-sdk-2.0.0.aar",
+          "size": 230881,
+          "sha512": "0b42bedf3bc036f3e53137bd492feacb02ea8a0082073044f489b5df19299e8af1f93c6c651afb7f51c7efaeedfef9a5cd935bdf4f93525f7285f60c22a89fbf",
+          "sha256": "c0ce3159317aeb954c7569bdbc23289c3413b008bd35f72e21da2e743ac23993",
+          "sha1": "5b499fb54a6c98403c7d924ca4649cee0a107bba",
+          "md5": "c6be23aa53202ab6c58ef6d505c387c5"
+        }
+      ]
+    },
+    {
+      "name": "api",
+      "attributes": {
+        "org.gradle.usage": "java-api"
+      },
+      "files": [
+        {
+          "name": "idnow-android-insights-sdk-2.0.0.aar",
+          "url": "idnow-android-insights-sdk-2.0.0.aar",
+          "size": 230881,
+          "sha512": "0b42bedf3bc036f3e53137bd492feacb02ea8a0082073044f489b5df19299e8af1f93c6c651afb7f51c7efaeedfef9a5cd935bdf4f93525f7285f60c22a89fbf",
+          "sha256": "c0ce3159317aeb954c7569bdbc23289c3413b008bd35f72e21da2e743ac23993",
+          "sha1": "5b499fb54a6c98403c7d924ca4649cee0a107bba",
+          "md5": "c6be23aa53202ab6c58ef6d505c387c5"
+        }
+      ]
+    }
+  ]
+}
