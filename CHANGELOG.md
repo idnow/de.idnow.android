@@ -1,5 +1,43 @@
 # Changelog
 
+### 6.1.5
+
+Improvements:
+
+For the signing process, we allow additional checkboxes to be configured and displayed to the end-user in case our customers have any regulatory requirement to do so
+
+A library that was not required anymore has been removed to ensure it does not cause any unnecessary risk to the SDK and/or our customers' applications that are using our SDK
+
+AndroidX is a major improvement to the original Android Support Library (the latter is no longer maintained). It fully replaces the Support Library by providing feature parity and new libraries. Therefore, we have migrated to AndroidX so that our customers that are also looking to migrate can do so without any difficulty
+
+Bug fixes:
+
+Some clients reported that they were seeing some NullPointerException crashes on Android. These have now been fixed as part of this release
+
+Our SDK contains Lottie animations, which are required in order for the flow to work as expected. In cases where users had the animations setting disabled in their device, the app was crashing. This has been fixed whereby if animations are disabled in the device, then the screens that contain animations will only display the first frame of the animation as a static image - allowing the user to seamlessly continue with the flow
+
+Migration Guide:
+
+Update reference to IDnow SDK to 6.1.5
+Update reference eID SDK to 2.5.5
+
+
+### 6.1.4
+
+Minor UX improvements:
+
+Automatically opening the keypad upon launching the app
+Better positioning of animations in VideoIdent Plus
+Reduction of the time it takes animations to finish and allow the user to continue
+
+Bug fixes:
+We observed an issue with the eID image capture feature with customers with a certain setup. This has been fixed and it is working as expected now
+
+Migration Guide:
+
+Update reference to IDnow SDK to 6.1.4
+Update reference eID SDK to 2.5.4
+
 ### 6.1.3
 
 Changes:
