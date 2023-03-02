@@ -1,5 +1,11 @@
 # Changelog
 
+### 6.2.0
+
+Improvement:
+
+We have upgraded the libraries responsible for enabling the video call in order to offer end-users and identification experts a seamless experience.
+
 ### 6.1.5
 
 Improvements:
