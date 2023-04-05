@@ -1,5 +1,16 @@
 # Changelog
 
+### 6.4.0
+
+- Removed PhotoIdent: PhotoIdent was an identification method that was offered as part of our SDK. However, this identification method is obsolete now and no longer being used by our customers. Therefore, we have removed it to reduce the overall SDK size. This will make the integration process easier for our customers.
+- Enhanced security: We have taken some steps to enhance the level of security in our product. These concern the following activities: IDnowForegroundService & NetworkStatusReceiver
+
+### 6.3.0
+
+Improvement:
+
+The host URL for a third-party service provider required for the eID identification process has been updated upon the service provider's request. Previously, this URL had been statically specified inside our SDK. As part of this release, not only have we updated it to the new one, we have also made it configurable, so that in the future any changes can be taken care of without the need for a release.
+
 ### 6.2.0
 
 Improvement:
