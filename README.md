@@ -376,7 +376,7 @@ Feature flags for certificate provider allow usage of the corresponding features
 ```    
     
 
-N.B You can checkout the Sample App https://github.com/idnow/de.idnow.android-sample to see the implementation
+N.B You can checkout the Sample App https://github.com/idnow/de.idnow.android-sample (branch : set_certificate_provider ) to see the implementation
 
 
 ## Using IDnow with other native libraries (UnsatisfiedLinkError)
