@@ -349,7 +349,34 @@ It is used to provide custom DTLS certificates used by the WebRTC connection.
 	- featureCertificate = true
 	- featureFingerPrint = true
 	- featureServerCert = true
+ 
+ 
+ Starting from SDK version 6.5.0 we offer MTLS support for API connections
+ 
+ MTLS enables server/client certificate validation. 
+ SDK can provide custom client certificate and several server certificates
+ 
+ What has changed:
 
+ - Certificate provider now can validate multiple server certificates/fingerprints
+ - REST supports MTLS
+ - WebSocket supports MTLS. For this purpose, SRWebsocket implementation was slightly updated. So, now we have a local version of SRWebsocket.
+ 
+ How to do it:
+ 
+ 1 - Create class similar class to MyMtlsCertificateProvider in android folder
+ 2 - Do IDnowSDK.setCertificateProvider(new MyMtlsCertificateProvider(context));
+
+Feature flags for certificate provider allow usage of the corresponding features:
+
+```
+    public boolean featureCertificate() { return true; }  // use client certificate
+    public boolean featureFingerPrint() { return true; } // use server certificate fingerprints
+    public boolean featureServerCert()  { return true; }  // use server certificates
+```    
+    
+
+N.B You can checkout the Sample App https://github.com/idnow/de.idnow.android-sample to see the implementation
 
 
 ## Using IDnow with other native libraries (UnsatisfiedLinkError)
