@@ -14,6 +14,12 @@
 - [Proguard support](#proguard-support)
 - [Usage](#usage)
 - [Additional settings](#additional-settings)
+  - [Connection type](#connection-type)
+  - [Environment](#environment)
+  - [Logging](#logging)
+  - [Servers](#servers)
+  - [Branding](#branding)
+  - [Certificate provider](#certificate-provider)
 - [Bouncy castle](#bouncy-castle)
 - [Animations](#animations)
 - [Using IDnow with other native libraries (UnsatisfiedLinkError)](#using-idnow-with-other-native-libraries-unsatisfiedlinkerror)
@@ -30,7 +36,6 @@
     - [overwriting default colors](#overwriting-default-colors)
   - [App theme](#app-theme)
   - [Fonts](#fonts)
-  
     - [Action bar](#action-bar)
 - [Texts](#texts)
 - [IDnow eID SDK](#idnow-eid-sdk)
@@ -297,11 +302,15 @@ To handle the results of the identification, implement the standard onActivityRe
 
 ## Additional settings
 
+### Connection type
+
 You can set the connection type to use: websockets.
 
 ```
 IDnowSDK.setConnectionType(IDnowSDK.ConnectionType.WEBSOCKET, context);
 ```
+
+### Environment
 
 You can force one of the environments to use. Default is to determine this by the token used.
 
@@ -309,11 +318,15 @@ You can force one of the environments to use. Default is to determine this by th
 IDnowSDK.setEnvironment(IDnowSDK.Server.TEST);
 ```
 
+### Logging
+
 You can disable logging of the SDK by using
 
 ```
 IDnowSDK.disableLogging();
 ```
+
+### Servers
 
 You can set to use your own servers. When this setting is enabled, apiHost, webHost and websocketHost must also be set.
 
@@ -326,12 +339,18 @@ IDnowSDK.setVideoHost("https://video.yourserver.com", context);
 IDnowSDK.setStunHost("video.yourserver.com", context);
 IDnowSDK.setStunPort(3478, context);
 ```
+
+### branding
+
 You can set the new branding (Circular background for the buttons)
 
 ```
 IDnowSDK.setNewBrand(TRUE);
 	
 ```
+
+### Certificate Provider
+
 		
 You can set a certificateProvider
 	
