@@ -381,7 +381,22 @@ It is used to provide custom DTLS certificates used by the WebRTC connection.
  - REST supports MTLS
  - WebSocket supports MTLS. For this purpose, SRWebsocket implementation was slightly updated. So, now we have a local version of SRWebsocket.
  
- How to do it:
+ Certificate Generation :
+Client certificate and private key pair can be generated in a number of ways, for example, with Certificate Sign Request on Mac OS X Keychain.
+
+Client Certificates :
+
+
+- client certificate (x509/ASN.1) should be imported in DER-format. For example, conversion from PEM:
+
+```
+openssl x509 -outform der -in yourcertificate.pem -out yourcertificate.der
+```
+
+- private key (RSA) should also be imported in DER-format
+
+ 
+How to do it:
  
  1 - Create class similar class to MyMtlsCertificateProvider in android folder
  2 - Do IDnowSDK.setCertificateProvider(new MyMtlsCertificateProvider(context));
