@@ -1,5 +1,13 @@
 # Changelog
 
+
+### 6.6.0
+
+- Treating the user's PII data with more care: We have introduced a configurable option to hide the user's PII data so that if a user's Ident ID is somehow accessed by someone else, the user's PII data is not exposed
+- Fixed various various leading to NullPointerException: We had come across some instances where a NullPointerException was thrown and we have fixed those as part of this release.
+- Network logging issue: We have made sure that the logging functionality works as expected i.e. Data is logged based on whether logging is enabled/disabled
+
+
 ### 6.5.0
 
 Changes have been made to the SDK in order to enhance the security of the communication that takes place between the client and SDK
