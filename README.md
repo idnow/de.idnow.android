@@ -22,6 +22,9 @@
   - [Certificate provider](#certificate-provider)
 - [Bouncy castle](#bouncy-castle)
 - [Animations](#animations)
+- [Supported Architecture](#Supported-Architecture)
+  - [arm64-v8a](#arm64-v8a)
+  - [armeabi-v7a](#armeabi-v7a)
 - [Using IDnow with other native libraries (UnsatisfiedLinkError)](#using-idnow-with-other-native-libraries-unsatisfiedlinkerror)
 - [Design configuration](#design-configuration)
   - [Languages](#languages)
@@ -411,7 +414,23 @@ Feature flags for certificate provider allow usage of the corresponding features
     
 
 N.B You can checkout the Sample App https://github.com/idnow/de.idnow.android-sample (branch : set_certificate_provider ) to see the implementation
+	
+	
+## Supported Architecture
 
+Different Android devices use different CPUs, which in turn support different instruction sets.
+
+As Our SDK is using a 3rd party lib wchich is limiting us to support the same instruction sets.
+	
+Today we don't support the architecture x86_64 and x64 and we only support the following architecture :
+	
+### arm64-v8a
+	
+This ABI is for ARMv8-A based CPUs, which support the 64-bit AArch64 architecture. It includes the Advanced SIMD (Neon) architecture extensions.
+	
+### armeabi-v7a
+	
+This ABI is for 32-bit ARM-based CPUs. The Android variant includes Thumb-2 and the VFP hardware floating point instructions, specifically VFPv3-D16, which includes 16 dedicated 64-bit floating point registers.
 
 ## Using IDnow with other native libraries (UnsatisfiedLinkError)
 
@@ -420,8 +439,8 @@ For Videostreaming the Idnow SDK uses IceLink which come with native libs.
 If your app uses other 3rd party libs that come with their own native libs, it's possible that you get an UnsatisfiedLinkError.
 
 This means that the native lib folders shipped by your 3rd party lib don't match the native lib folders shipped by the Idnow SDK.
-Currently the Idnow SDK comes with the following folders: armeabi, armeabi-v7a, arm64-v8a.
-If your 3rd party lib only supports some of the architectures but not others (e.g. armeabi, x86 but not armeabi-v7a), you have to exclude the other folders of the Idnow SDK in your build.gradle (in this example: armeabi-v7a) with the following command:
+Currently the Idnow SDK comes with the following folders: armeabi-v7a, arm64-v8a.
+If your 3rd party lib only supports some of the architectures but not others (e.g. armeabi, but not armeabi-v7a), you have to exclude the other folders of the Idnow SDK in your build.gradle (in this example: armeabi-v7a) with the following command:
 
 ```
 android {
@@ -432,7 +451,7 @@ exclude "lib/armeabi-v7a/"
 }
 ```
 
-If it's the other way round (your 3rd party lib ships more than armeabi, armeabi-v7a, arm64-v8a and x86, you have to exclude these folders, so the remaining folders match the Idnow SDK folders.
+If it's the other way round (your 3rd party lib ships more than armeabi, armeabi-v7a, arm64-v8a, you have to exclude these folders, so the remaining folders match the Idnow SDK folders.
 
 For further reading:
 http://developer.android.com/ndk/guides/abis.html
