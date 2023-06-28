@@ -175,7 +175,6 @@ dependencies {
     implementation 'com.googlecode.libphonenumber:libphonenumber:8.10.9'
     implementation 'me.relex:circleindicator:2.1.6'
     implementation 'de.idnow.insights:idnow-android-insights-sdk:1.2.0'
-    compileOnly 'de.idnow.android.eid:idnow-android-eid-sdk:2.5.5'
     implementation 'com.airbnb.android:lottie:5.1.1'
     implementation 'androidx.preference:preference:1.2.0'
     implementation "androidx.percentlayout:percentlayout:1.0.0"
