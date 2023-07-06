@@ -1,5 +1,10 @@
 # Changelog
 
+### 6.7.0
+
+- Configurability for the use of Bluetooth devices: We have now made it possible to configure whether end-users are allowed to perform the VideoIdent and/or eSign process, while being connected to a Bluetooth device. This configurability exists on an OS-level.  
+- Better control over WebSocket communication: We have enhanced the way we manage WebSocket communication to reduce connectivity issues once the call gets connected to the identification expert.
+- Some crashes have also been identified and fixed to offer end-users a seamless experience
 
 ### 6.6.0
 
