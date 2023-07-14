@@ -65,7 +65,7 @@ Please see https://github.com/idnow/de.idnow.android-sample for a sample applica
 ### Requirements
 
 - minSdkVersion: 21  (Android 5.0)
-- targetSdkVersion:	31 (Android 12.0 Snow Cone)
+- targetSdkVersion:	34 (Android 14.0 beta Upside-Down Cake)
 - Internet connection, communication via standard SSL port 443
 
 ### Supported versions
