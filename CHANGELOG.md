@@ -1,5 +1,12 @@
 # Changelog
 
+### 6.8.0-beta1
+
+Android has announced the release of a new upcoming Android version i.e. Android 14. We have made changes to our Android SDK to make it compatible with the Android 14 beta version that is currently available for testing. Our goal is to proactively take all the necessary steps to ensure that our Android SDK is compatible with the upcoming version, Android 14. However, please note that the only time we can claim with certainty that our SDK is compatible with Android 14, is when it has been officially released. Therefore, for now we are uploading a beta SDK version that is compatible with the Android 14 beta version. Once Android officially releases the new version, we will test it against our SDK to check for compatibility and make any changes, if necessary.
+The following changes have been made as part of this release:
+- Update compileSdkVersion and targetSdkVersion to 34 in the build configuration file
+- Declare new permission to use foreground service types
+
 ### 6.7.0
 
 - Configurability for the use of Bluetooth devices: We have now made it possible to configure whether end-users are allowed to perform the VideoIdent and/or eSign process, while being connected to a Bluetooth device. This configurability exists on an OS-level.  
