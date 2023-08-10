@@ -64,7 +64,7 @@ Please see https://github.com/idnow/de.idnow.android-sample for a sample applica
 
 ### Requirements
 
-- minSdkVersion: 21  (Android 5.0)
+- minSdkVersion: 23  (Android 6.0)
 - targetSdkVersion:	34 (Android 14.0 beta Upside-Down Cake)
 - Internet connection, communication via standard SSL port 443
 
@@ -152,7 +152,9 @@ repositories {
 maven {
   url "https://raw.githubusercontent.com/idnow/de.idnow.android/master"
        }
-	
+       
+maven { url 'https://jitpack.io' }
+       	
 flatDir {
 dirs 'libs' //this way we can find the .aar file in libs folder
 }
@@ -181,6 +183,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
     implementation 'com.google.android.material:material:1.5.0'
+    implementation 'com.github.murgupluoglu:flagkit-android:1.0.2'
     }
 ```
 
@@ -664,6 +667,7 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven { url 'https://jitpack.io' }
         maven {
             url = uri("https://repo.authada.de/public/")
             authentication {

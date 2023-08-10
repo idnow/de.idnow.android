@@ -1,5 +1,22 @@
 # Changelog
 
+### 6.8.0 
+
+Improvements:
+
+- Android 14 compatibility: In order to proactively ensure that our SDK is compatible with the upcoming Android release i.e. Android 14, we have made the following changes as per instructions specified by Android:
+    - Increase compileSdkVersion and targetSdkVersion to 34 in the build configuration file.
+    - The minSdkVersion has also been increased to 23 since Android has mentioned that a targetSdkVersion of lower than 23 will not be supported.
+    - Declare new permission to use foreground service types.
+    
+- Language selector feature: We have introduced a new feature that will allow end-users to choose their preferred language of identification at the beginning of the flow. The choice will be offered depending on the language(s) configured for each customer and the languages supported by the IDnow call center.
+
+Bug fixes:
+
+- The permissions' popup in dark mode was not easily readable for the users. We have made a slight UI adjustment to make it easier for users to read the content.
+- Fix for scroll issue: On some devices we noticed that scrolling was not working as expected on the Terms and Conditions screen. This has been fixed to offer users a seamless experience
+
+
 ### 6.8.0-beta1
 
 Android has announced the release of a new upcoming Android version i.e. Android 14. We have made changes to our Android SDK to make it compatible with the Android 14 beta version that is currently available for testing. Our goal is to proactively take all the necessary steps to ensure that our Android SDK is compatible with the upcoming version, Android 14. However, please note that the only time we can claim with certainty that our SDK is compatible with Android 14, is when it has been officially released. Therefore, for now we are uploading a beta SDK version that is compatible with the Android 14 beta version. Once Android officially releases the new version, we will test it against our SDK to check for compatibility and make any changes, if necessary.
