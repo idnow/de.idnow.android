@@ -489,15 +489,13 @@ http://developer.android.com/ndk/guides/abis.html
 	
 ## Bouncy castle
 	
-The WebRTC used by our SDK is using the Bouncy Castle third-party dependency. This implies that if the same dependency is being used on the integrator’s part, the two versions will conflict.  we are offering a more feasible solution to this problem: We removed the third-party Bouncy Castle dependency, and it will have to be added directly from the integrator app. This implies that in the app.gradle file of the integrator app’s project, we will need to add the following dependency in addition to the existing list of dependencies: 
+The WebRTC used by our SDK is using the Bouncy Castle third-party dependency. This implies that if the same dependency is being used on the integrator’s part, the two versions will conflict. As a solution to this problem, we are using a custom version of our WebRTC that allows us to set BouncyCastle as an external dependency. This implies that the following dependency will also have to be added directly in the app.gradle file of the integrator app’s project, along with other listed dependencies:
 
 ```    
    implementation files ('libs/bcprov-jdk15to18-x,x.jar')
    implementation files ('libs/bctls-jdk15to18-x.x.jar')
    implementation files ('libs/bcutil-jdk15to18-x.x.jar')
 ```
-
-Please check the section  "How to import the SDK" for more details how to integrate the SDK with bouncycastle as an external library
 
 ### Supported BouncyCastle versions 
 
