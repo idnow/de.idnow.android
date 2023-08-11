@@ -2,18 +2,19 @@
 
 ### 7.0.0 
 
-Improvements:
+<strong>Improvements:</strong>
+
 The WebRTC used by our SDK is using the BouncyCastle library as a third-party dependency. As a result, previously, if the same library was being used on the integrator’s part, the two versions would end up in a conflict. In the past, as a temporary solution to this problem, we had to generate a custom version of our SDK, in order to set BouncyCastle as an external dependency.
 Starting with our upcoming version (v7.0.0), we will begin offering a more feasible solution to this problem:
 We will be using the custom version of our WebRTC that allows us to set BouncyCastle as an external dependency, without having to provide custom SDKs to our clients that are also using this library. This implies that this dependency will have to be added directly in the app.gradle file of the integrator app’s project.
 
-Migration Guide:
+<strong>Migration Guide:</strong>
 - Update reference to IDnow SDK 7.0.0
 - Update reference eID SDK to 2.7.1
 - Add BouncyCastle libs
 
-IMPORTANT:
-- This is not the actual release for v7.0.0, instead, this is just a pre-release SDK upload. We are simply uploading this SDK so that our customers can try to integrate it and let us know if they face any trouble before we go through with the actual release. The official release is expected to take place at the beginning of September.
+<strong>IMPORTANT:</strong>
+- This is not the actual release for v7.0.0, instead, this is just a <strong>pre-release SDK upload</strong>. We are simply uploading this SDK so that our customers can try to integrate it and let us know if they face any trouble before we go through with the actual release. The official release is expected to take place at the beginning of September.
 - Please refer to this link to see how to integrate this SDK: https://github.com/idnow/de.idnow.android/tree/sdk_7.0.0#how-to-import-the-sdk
 
 
