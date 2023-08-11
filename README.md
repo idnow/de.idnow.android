@@ -115,8 +115,8 @@ Moreover, when using an Android LibraryProject, all the Activities, Services and
 
 [![Watch the video](https://github.com/idnow/de.idnow.android/blob/master/docs/screenshot_video1.png)](https://youtu.be/yKOu-luc1x8)
 
-Starting with SDK version 7.0.0 we offer the possibility to integrate bouncycastle as an external library
-We offer the bouncycastle version 1.64 as a default used version ,therefore integrating bouncycastle as external library is optional, in case it's not needed you can skip adding bouncycastle versions into the dependencies 
+Starting with SDK version 7.0.0 we offer the possibility to integrate bouncycastle as an external library.
+We offer the bouncycastle version 1.64 as a default used version, therefore integrating bouncycastle as external library is optional, in case it's not needed you can skip adding bouncycastle versions into the dependencies 
 
 In your top-level build.gradle project file add the following url under repositories block:
 
@@ -161,8 +161,8 @@ implementation files ('libs/bcutil-jdk15to18-x.x.jar')
 
 [![Watch the video](https://github.com/idnow/de.idnow.android/blob/master/docs/Screenshot_video2.png)](https://youtu.be/yMIpthcLRnw)
 
-Starting with SDK version 7.0.0 we offer the possibility to integrate bouncycastle as an external library
-We offer the bouncycastle version 1.64 as a default used version ,therefore integrating bouncycastle as external library is optional, in case it's not needed you can skip adding bouncycastle versions into the dependencies 
+Starting with SDK version 7.0.0 we offer the possibility to integrate bouncycastle as an external library.
+We offer the bouncycastle version 1.64 as a default used version, therefore integrating bouncycastle as external library is optional, in case it's not needed you can skip adding bouncycastle versions into the dependencies 
 
 Copy the idnow-android-sdk.7.0.0 and bouncycastle libraries(Optional as mentioned above) into the apps libs folder.
 
