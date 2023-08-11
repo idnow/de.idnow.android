@@ -21,7 +21,7 @@
   - [Branding](#branding)
   - [Certificate provider](#certificate-provider)
 - [Bouncy castle](#bouncy-castle)
-  - [Supported BC versions](#supported-BC-versions)
+  - [Supported BC versions](#Supported-BC-versions)
 - [Animations](#animations)
 - [Supported Architecture](#Supported-Architecture)
   - [arm64-v8a](#arm64-v8a)
