@@ -13,8 +13,8 @@ Migration Guide:
 - Add BouncyCastle libs
 
 IMPORTANT:
-This is not the actual release for v7.0.0, instead, this is just a pre-release SDK upload. We are simply uploading this SDK so that our customers can try to integrate it and let us know if they face any trouble before we go through with the actual release. The official release is expected to take place at the beginning of September.
-Please refer to this link to see how to integrate this SDK: https://github.com/idnow/de.idnow.android/tree/sdk_7.0.0#how-to-import-the-sdk
+-  is not the actual release for v7.0.0, instead, this is just a pre-release SDK upload. We are simply uploading this SDK so that our customers can try to integrate it and let us know if they face any trouble before we go through with the actual release. The official release is expected to take place at the beginning of September.
+- Please refer to this link to see how to integrate this SDK: https://github.com/idnow/de.idnow.android/tree/sdk_7.0.0#how-to-import-the-sdk
 
 
 ### 6.8.0 
