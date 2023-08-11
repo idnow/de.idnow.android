@@ -499,7 +499,7 @@ The WebRTC used by our SDK is using the Bouncy Castle third-party dependency. Th
 
 Please check the section  "How to import the SDK" for more details how to integrate the SDK with bouncycastle as an external library
 
-### Supported BC versions :
+### Supported BC versions 
 
 Starting with IDnow SDK version 7.0.0, we are supporting bouncycastle as an external library. The default bouncycastle version used into the sdk is 1.64
 
