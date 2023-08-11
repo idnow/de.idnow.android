@@ -123,6 +123,7 @@ repositories {
 maven {
 url "https://raw.githubusercontent.com/idnow/de.idnow.android/master"
 }
+maven { url 'https://jitpack.io' }
 ..
 }
 }
