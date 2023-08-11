@@ -1,6 +1,6 @@
 # Changelog
 
-### 7.0.0 
+### 7.0.0 (Pre-release version)
 
 <strong>Improvements:</strong>
 
