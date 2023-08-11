@@ -21,7 +21,7 @@
   - [Branding](#branding)
   - [Certificate provider](#certificate-provider)
 - [Bouncy castle](#bouncy-castle)
-  - [Supported BC versions](#Supported-BC-versions)
+  - [Supported BouncyCastle versions](#Supported-BouncyCastle-versions)
 - [Animations](#animations)
 - [Supported Architecture](#Supported-Architecture)
   - [arm64-v8a](#arm64-v8a)
@@ -499,14 +499,11 @@ The WebRTC used by our SDK is using the Bouncy Castle third-party dependency. Th
 
 Please check the section  "How to import the SDK" for more details how to integrate the SDK with bouncycastle as an external library
 
-### Supported BC versions 
+### Supported BouncyCastle versions 
 
-Starting with IDnow SDK version 7.0.0, we are supporting bouncycastle as an external library. The default bouncycastle version used into the sdk is 1.64
-
-Bouncycastle supported version is + 1.63
-
-Prior the IDnow SDK version < 7.0.0 we won't provide any more updates and maintenance only with additional reimbursement.
-
+Starting with IDnow SDK version 7.0.0, we are supporting BouncyCastle as an external dependency.
+The default BouncyCastle version used in the SDK is <strong>v1.64</strong>.
+The BouncyCastle versions that are supported are v1.63+.
 	
 ## Animations
 	
