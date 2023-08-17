@@ -9,7 +9,8 @@ Improvements:
     - The minSdkVersion has also been increased to 23 since Android has mentioned that a targetSdkVersion of lower than 23 will not be supported.
     - Declare new permission to use foreground service types.
     
-- Language selector feature: We have introduced a new feature that will allow end-users to choose their preferred language of identification at the beginning of the flow. The choice will be offered depending on the language(s) configured for each customer and the languages supported by the IDnow call center.
+- Language selector feature: We have introduced a new feature that will allow end-users to choose their preferred language of identification at the beginning of the flow. The choice will be offered depending on the language(s) configured for each customer and the languages supported by the IDnow call center. For this feature, we have added a new library: 
+implementation 'com.github.murgupluoglu:flagkit-android:1.0.2
 
 Bug fixes:
 
