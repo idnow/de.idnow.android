@@ -127,10 +127,6 @@ repositories {
 maven {
 url "https://raw.githubusercontent.com/idnow/de.idnow.android/master"
 } 
-// only for pre-release verion 7.0.0
-maven {
-  url "https://raw.githubusercontent.com/idnow/de.idnow.android/sdk_7.0.0"
-       }
 maven { url 'https://jitpack.io' }
 ..
 }
@@ -147,7 +143,7 @@ In the dependencies part of your app.gradle you have to add IDnow SDK dependency
 dependencies {
 ..
 // IDnow SDK lib
-implementation 'de.idnow.sdk:idnow-android-sdk:7.0.0' // pre-release version 
+implementation 'de.idnow.sdk:idnow-android-sdk:x.x.x' 
 
 // Bouncycastle external libs 
 implementation files ('libs/bcprov-jdk15to18-x.x.jar')
@@ -187,8 +183,8 @@ Additional dependencies to add in your app.gradle:
 
 ``` 
 dependencies {
-    // 
-    implementation 'de.idnow.sdk:idnow-android-7.0.0@aar'
+    // 	IDnow SDK
+    implementation 'de.idnow.sdk:idnow-android-x.x.x@aar'
     // Bouncycastle external libs
     implementation files ('libs/bcprov-jdk15to18-x.x.jar')
     implementation files ('libs/bctls-jdk15to18-x.x.jar')
