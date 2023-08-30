@@ -21,6 +21,7 @@
   - [Branding](#branding)
   - [Certificate provider](#certificate-provider)
 - [Bouncy castle](#bouncy-castle)
+  - [Supported BouncyCastle versions](#Supported-BouncyCastle-versions)
 - [Animations](#animations)
 - [Supported Architecture](#Supported-Architecture)
   - [arm64-v8a](#arm64-v8a)
@@ -114,6 +115,9 @@ Moreover, when using an Android LibraryProject, all the Activities, Services and
 
 [![Watch the video](https://github.com/idnow/de.idnow.android/blob/master/docs/screenshot_video1.png)](https://youtu.be/yKOu-luc1x8)
 
+Starting with SDK version 7.0.0 we offer the possibility to integrate bouncycastle as an external library.
+We offer the bouncycastle version 1.64 as a default used version, therefore integrating bouncycastle as external library is optional, in case it's not needed you can skip adding bouncycastle versions into the dependencies 
+
 In your top-level build.gradle project file add the following url under repositories block:
 
 ```
@@ -122,19 +126,29 @@ repositories {
 ..
 maven {
 url "https://raw.githubusercontent.com/idnow/de.idnow.android/master"
-}
+} 
 maven { url 'https://jitpack.io' }
 ..
 }
 }
 ```
 
-and in the dependencies part of your app.gradle add:   
+Copy bouncycastle libraries bcprov-jdk15to18-x.x.jar, bctls-jdk15to18-x.x.jar and bcutil-jdk15to18-x.x.jar into the apps libs folder 
+
+
+
+In the dependencies part of your app.gradle you have to add IDnow SDK dependency alongside with bouncycastle libraries to be used 
 
 ```
 dependencies {
 ..
-implementation 'de.idnow.sdk:idnow-android-sdk:x.x.x'
+// IDnow SDK lib
+implementation 'de.idnow.sdk:idnow-android-sdk:x.x.x' 
+
+// Bouncycastle external libs 
+implementation files ('libs/bcprov-jdk15to18-x.x.jar')
+implementation files ('libs/bctls-jdk15to18-x.x.jar')
+implementation files ('libs/bcutil-jdk15to18-x.x.jar')
 ..
 }
 ```
@@ -143,7 +157,10 @@ implementation 'de.idnow.sdk:idnow-android-sdk:x.x.x'
 
 [![Watch the video](https://github.com/idnow/de.idnow.android/blob/master/docs/Screenshot_video2.png)](https://youtu.be/yMIpthcLRnw)
 
-Copy the idnow-android-.aar into the apps libs folder.
+Starting with SDK version 7.0.0 we offer the possibility to integrate bouncycastle as an external library.
+We offer the bouncycastle version 1.64 as a default used version, therefore integrating bouncycastle as external library is optional, in case it's not needed you can skip adding bouncycastle versions into the dependencies 
+
+Copy the idnow-android-sdk.7.0.0 and bouncycastle libraries(Optional as mentioned above) into the apps libs folder.
 
 In your app.gradle add:
 
@@ -151,7 +168,7 @@ In your app.gradle add:
 repositories {
 	
 maven {
-  url "https://raw.githubusercontent.com/idnow/de.idnow.android/master"
+  url "https://raw.githubusercontent.com/idnow/de.idnow.android/master" 
        }
        
 maven { url 'https://jitpack.io' }
@@ -166,7 +183,13 @@ Additional dependencies to add in your app.gradle:
 
 ``` 
 dependencies {
+    // 	IDnow SDK
     implementation 'de.idnow.sdk:idnow-android-x.x.x@aar'
+    // Bouncycastle external libs
+    implementation files ('libs/bcprov-jdk15to18-x.x.jar')
+    implementation files ('libs/bctls-jdk15to18-x.x.jar')
+    implementation files ('libs/bcutil-jdk15to18-x.x.jar')
+    
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.okhttp3:okhttp:4.9.3'
     implementation 'com.squareup.okhttp3:logging-interceptor:4.9.3'
@@ -462,12 +485,19 @@ http://developer.android.com/ndk/guides/abis.html
 	
 ## Bouncy castle
 	
-The WebRTC used by our SDK is using the Bouncy Castle third-party dependency. This implies that if the same dependency is being used on the integrator’s part, the two versions will conflict. The Bouncy castle version being used in this SDK version is 1.51.
-As a temporary solution to this, we previously had to generate a ‘custom’ version of the SDK, which had this Bouncy Castle dependency removed.
-Starting with one of our upcoming versions (yet to be specified), we will begin offering a more feasible solution to this problem: We will remove the third-party Bouncy Castle dependency, and it will have to be added directly from the integrator app. This implies that in the app.gradle file of the integrator app’s project, we will need to add the following dependency in addition to the existing list of dependencies: 
-```	
-implementation 'org.bouncycastle:bcpkix-jdk15on:1.71’
+The WebRTC used by our SDK is using the Bouncy Castle third-party dependency. This implies that if the same dependency is being used on the integrator’s part, the two versions will conflict. As a solution to this problem, we are using a custom version of our WebRTC that allows us to set BouncyCastle as an external dependency. This implies that the following dependency will also have to be added directly in the app.gradle file of the integrator app’s project, along with other listed dependencies:
+
+```    
+   implementation files ('libs/bcprov-jdk15to18-x,x.jar')
+   implementation files ('libs/bctls-jdk15to18-x.x.jar')
+   implementation files ('libs/bcutil-jdk15to18-x.x.jar')
 ```
+
+### Supported BouncyCastle versions 
+
+- Starting with IDnow SDK version 7.0.0, we are supporting BouncyCastle as an external dependency.
+- The default BouncyCastle version used in the SDK is <strong>v1.64</strong>.
+- The BouncyCastle versions that are supported are v1.63+.
 	
 ## Animations
 	
