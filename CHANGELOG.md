@@ -1,6 +1,6 @@
 # Changelog
 
-### 7.0.0 (Pre-release version)
+### 7.0.0 
 
 <strong>Improvements:</strong>
 
@@ -14,8 +14,7 @@ We will be using the custom version of our WebRTC that allows us to set BouncyCa
 - Add BouncyCastle libs
 
 <strong>IMPORTANT:</strong>
-- This is not the actual release for v7.0.0, instead, this is just a <strong>pre-release SDK upload</strong>. We are simply uploading this SDK so that our customers can try to integrate it and let us know if they face any trouble before we go through with the actual release. The official release is expected to take place at the beginning of September.
-- Please refer to this link to see how to integrate this SDK: https://github.com/idnow/de.idnow.android/tree/sdk_7.0.0#how-to-import-the-sdk
+- Please refer to this link to see how to integrate this SDK: [https://github.com/idnow/de.idnow.android#how-to-import-the-sdk](https://github.com/idnow/de.idnow.android#how-to-import-the-sdk)
 
 
 ### 6.8.0 
