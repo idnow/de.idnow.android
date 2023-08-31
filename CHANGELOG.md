@@ -1,5 +1,12 @@
 # Changelog
 
+
+### 7.1.0 
+
+Bug fixes:
+
+- Fixing UI behaviour on showing the phone number instead of the placeholder for a specific flow using the setting setFullSizeModalSmsWindow
+
 ### 7.0.0 
 
 <strong>Improvements:</strong>
