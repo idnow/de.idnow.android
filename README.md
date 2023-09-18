@@ -3,7 +3,8 @@
 - [Overview](#overview)
   - [Examples](#examples)
   - [Requirements](#requirements)
-  -  [Supported versions](#supported-versions)
+  - [Supported versions](#supported-versions)
+  - [Compatibility Matrix](#compatibility-matrix)
   - [AndroidManifest](#androidmanifest)
 - [Android Studio](#android-studio)
   - [How to import the SDK](#how-to-import-the-sdk)
@@ -73,6 +74,10 @@ Please see https://github.com/idnow/de.idnow.android-sample for a sample applica
 
 - Your current SDK will stop receiving further support by May 21 2020 (VideoIdent SDKs of version 4.2.0 and lower; 4.2.1 and higher continue to be supported)
 - After this time, the old SDK will continue to be operational, but we won’t provide any more updates and maintenance only with additional reimbursement
+
+### Compatibility Matrix
+
+Please refer to the following link to find information about compatibility, end-of-support (EOS) and end-of-life (EOL) dates pertaining to our products: [IDnow Compatibility Matrix: Browser & OS Compatibility guide](https://www.idnow.io/developers/compatibility-overview/)
 
 ### AndroidManifest
 
