@@ -4,7 +4,7 @@
   - [Examples](#examples)
   - [Requirements](#requirements)
   - [Supported versions](#supported-versions)
-  - [Compatibility Matrix](#compatibility-matrix)
+  - [Compatibility, End of Support, End of Life](#compatibility-matrix)
   - [AndroidManifest](#androidmanifest)
 - [Android Studio](#android-studio)
   - [How to import the SDK](#how-to-import-the-sdk)
