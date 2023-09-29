@@ -387,25 +387,23 @@ IDnowSDK.setNewBrand(TRUE);
 ### Certificate Provider
 
 		
-You can set a certificateProvider
+ Starting from SDK version 7.2.0 we offer to set your own DTLS certificates used by the WebRTC connection.
 	
 ```
+	
+IDnowSDK.setDtlsCertificateProvider(customerCertificateProvider)
+	
+```	
+	
+ 
+ 
+ Starting from SDK version 6.5.0 we offer MTLS support for API connections
+
+ ```
 	
 IDnowSDK.setCertificateProvider(customerCertificateProvider)
 	
 ```	
-	
-Supported by the SDK version 3.22.1 or before
-	
-It is used to provide custom DTLS certificates used by the WebRTC connection.
-
- * The certificate provider can be used to provide a custom DTLS certificate and configure which features the underlying WebRTC conference uses
-	- featureCertificate = true
-	- featureFingerPrint = true
-	- featureServerCert = true
- 
- 
- Starting from SDK version 6.5.0 we offer MTLS support for API connections
  
  MTLS enables server/client certificate validation. 
  SDK can provide custom client certificate and several server certificates
