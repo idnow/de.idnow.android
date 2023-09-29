@@ -1,5 +1,12 @@
 # Changelog
 
+### 7.2.0 
+
+- Enhanced security via dTLS: Given our commitment to data privacy and security, we have taken additional measures to make our SDK even more secure to use. A new method (setDtlsCertificateProvider) has been added in the SDK interface in order to support Datagram Transport Layer Security (dTLS).
+
+- Fixed an App crash issue: We had observed a few instances where the last version of our Android SDK was crashing on Android devices below Android 10. This issue has been fixed as part of this release.
+
+- UI/UX enhancements: We have made some small adjustments to our user interface (UI) and user experience (UX) to ensure users have a seamless experience throughout the flow.
 
 ### 7.1.0 
 
