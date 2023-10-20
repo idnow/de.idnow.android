@@ -1,5 +1,12 @@
 # Changelog
 
+### 7.3.0
+
+Seamless video call experience: We have taken additional steps to ensure our end-users have a seamless video call experience
+Enhanced security via dTLS: Given our commitment to data privacy and security, we have taken additional measures to make our SDK even more secure to use. A new method (setDtlsCertificateProvider) has been added in the SDK interface in order to support Datagram Transport Layer Security (dTLS).
+UI/UX enhancements: We have made many adjustments to our user interface (UI) and user experience (UX) to ensure you have a seamless experience throughout the flow.
+Fixed crashes: We have identified and fixed some crashes to offer our end-users a seamless experience
+
 ### 7.2.0 
 
 - Enhanced security via dTLS: Given our commitment to data privacy and security, we have taken additional measures to make our SDK even more secure to use. A new method (setDtlsCertificateProvider) has been added in the SDK interface in order to support Datagram Transport Layer Security (dTLS).
