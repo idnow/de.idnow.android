@@ -551,7 +551,8 @@ Used as background color for the text fields
 #### basicInputField
 Used as text color for the text fields
 
-Even though we strongly recommend our customers to stick to the generic branding color keys list above, it is worth mentioning that for some screens we also offer keys for screen-specific customizations. If you would like to make any such customization, please reach out to us with the details so we can let you know if that is possible.
+Even though we strongly recommend our customers to stick to the generic branding color keys listed above, it is worth mentioning that for some screens we also offer keys for screen-specific customizations. If you would like to make any such customization, please reach out to us with the details so we can let you know if that is possible.
+
 Note: Due to the high number of keys available in the SDK, it is not feasible to mention all of those here.
 
 ### App theme
