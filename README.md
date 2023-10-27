@@ -530,11 +530,7 @@ You must not declare it again in your app manifest.
 
 ### Colors
 
-The IDnow SDK is designed with colors following the IDnow corporate design. You can use the SDK without making any adaptions to the colors at all. If, however you want the SDK screens to appear in different colors.
-
-Our SDK supports Light Mode as well as the Dark Mode version. Currently, if dark mode is enabled on the user's mobile device, the SDK will automatically appear in Dark Mode.
-
-you can make the following adaptions for Light Mode and Dark Mode:
+The IDnow SDK is designed with colors following IDnow's corporate design. You can use the SDK without making any adaptions to these colors. However, if you want the SDK screens to appear in different colors, that can be achieved using the generic branding color keys below:
 
 
 #### primaryColor
@@ -555,7 +551,8 @@ Used as background color for the text fields
 #### basicInputField
 Used as text color for the text fields
 
-We offer as well a customisation for specific screens only for VI (VI+ disabled) such as Overview Check Screen, Call Quality Screen and Success&Error Screen, the color keys for each screen could be provided seperately on demand.  
+Even though we strongly recommend our customers to stick to the generic branding color keys list above, it is worth mentioning that for some screens we also offer keys for screen-specific customizations. If you would like to make any such customization, please reach out to us with the details so we can let you know if that is possible.
+Note: Due to the high number of keys available in the SDK, it is not feasible to mention all of those here.
 
 ### App theme
 
