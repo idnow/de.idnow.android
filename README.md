@@ -210,7 +210,7 @@ dependencies {
     implementation 'androidx.preference:preference:1.2.0'
     implementation "androidx.percentlayout:percentlayout:1.0.0"
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+    implementation 'com.github.barteksc:AndroidPdfViewerV1:1.6.0'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'com.github.murgupluoglu:flagkit-android:1.0.2'
     }
@@ -729,7 +729,7 @@ Dependencies {
     implementation 'androidx.cardview:cardview:1.0.0'
     implementation 'com.google.android.material:material:1.5.0'
     implementation 'com.googlecode.libphonenumber:libphonenumber:8.10.9'
-    implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
+    implementation 'com.github.barteksc:AndroidPdfViewerV1:1.6.0'
     implementation group: 'de.authada.library', name: 'aal', version: '4.15.2'
     testImplementation 'junit:junit:4.12'
 	
