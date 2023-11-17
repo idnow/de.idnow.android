@@ -1,5 +1,11 @@
 # Changelog
 
+### 7.4.0
+
+Refactoring and improving the codebase: We have taken various steps to clean up our code, which makes it easier for us to fix bugs and work on new topics
+Fixed crashes: We have also identified and fixed some crashes in the flow to offer our end-users a seamless experience
+UI/UX enhancements: We have made many adjustments to our user interface (UI) and user experience (UX) to ensure users don't have any trouble going through the flow
+
 ### 7.3.0
 
 Seamless video call experience: We have taken additional steps to ensure our end-users have a seamless video call experience
