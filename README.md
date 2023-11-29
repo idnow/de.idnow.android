@@ -120,8 +120,10 @@ Moreover, when using an Android LibraryProject, all the Activities, Services and
 
 [![Watch the video](https://github.com/idnow/de.idnow.android/blob/master/docs/screenshot_video1.png)](https://youtu.be/yKOu-luc1x8)
 
-Starting with SDK version 7.0.0 we offer the possibility to integrate bouncycastle as an external library.
-We offer the bouncycastle version 1.64 as a default used version, therefore integrating bouncycastle as external library is optional, in case it's not needed you can skip adding bouncycastle versions into the dependencies 
+Starting with SDK version 7.0.0 we offer the possibility to integrate your bouncycastle preferred version as an external library.
+We offer the bouncycastle version 1.64 as a default (only compile) used version, therefore integrating bouncycastle as external library is mandatory for the runtime. 
+If you don't have any Bouncycastle version preferences, you can use the following https://github.com/idnow/de.idnow.android-sample/tree/master/app/libs
+
 
 In your top-level build.gradle project file add the following url under repositories block:
 
@@ -153,7 +155,7 @@ implementation 'de.idnow.sdk:idnow-android-sdk:x.x.x'
 // Bouncycastle external libs 
 implementation files ('libs/bcprov-jdk15to18-x.x.jar')
 implementation files ('libs/bctls-jdk15to18-x.x.jar')
-implementation files ('libs/bcutil-jdk15to18-x.x.jar')
+implementation files ('libs/bcutil-jdk15to18-x.x.jar') //optional
 ..
 }
 ```
@@ -163,9 +165,10 @@ implementation files ('libs/bcutil-jdk15to18-x.x.jar')
 [![Watch the video](https://github.com/idnow/de.idnow.android/blob/master/docs/Screenshot_video2.png)](https://youtu.be/yMIpthcLRnw)
 
 Starting with SDK version 7.0.0 we offer the possibility to integrate bouncycastle as an external library.
-We offer the bouncycastle version 1.64 as a default used version, therefore integrating bouncycastle as external library is optional, in case it's not needed you can skip adding bouncycastle versions into the dependencies 
+We offer the bouncycastle version 1.64 as a default (only compile) used version, therefore integrating bouncycastle as external library is mandatory for the runtime.
 
-Copy the idnow-android-sdk.7.0.0 and bouncycastle libraries(Optional as mentioned above) into the apps libs folder.
+Copy the idnow-android-sdk.7.0.0 and bouncycastle libraries into the apps libs folder.
+If you don't have Bouncycastle version preferences, you can use the following https://github.com/idnow/de.idnow.android-sample/tree/master/app/libs
 
 In your app.gradle add:
 
@@ -193,7 +196,7 @@ dependencies {
     // Bouncycastle external libs
     implementation files ('libs/bcprov-jdk15to18-x.x.jar')
     implementation files ('libs/bctls-jdk15to18-x.x.jar')
-    implementation files ('libs/bcutil-jdk15to18-x.x.jar')
+    implementation files ('libs/bcutil-jdk15to18-x.x.jar') // optional 
     
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.okhttp3:okhttp:4.9.3'
