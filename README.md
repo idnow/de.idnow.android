@@ -502,7 +502,7 @@ The WebRTC used by our SDK is using the Bouncy Castle third-party dependency. Th
 ### Supported BouncyCastle versions 
 
 - Starting with IDnow SDK version 7.0.0, we are supporting BouncyCastle as an external dependency.
-- The default BouncyCastle version used in the SDK is <strong>v1.64</strong>.
+- The default BouncyCastle version used in the SDK is <strong>v1.64</strong> (only compile) a bouncy castle external is still needed.
 - The BouncyCastle versions that are supported are v1.63+.
 	
 ## Animations
