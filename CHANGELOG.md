@@ -45,7 +45,7 @@ We will be using the custom version of our WebRTC that allows us to set BouncyCa
 <strong>Migration Guide:</strong>
 - Update reference to IDnow SDK 7.0.0
 - Update reference eID SDK to 2.7.1
-- Add BouncyCastle libs
+- Add BouncyCastle libs libs e.g. 1.64 as mentioned here [https://github.com/idnow/de.idnow.android/tree/master?tab=readme-ov-file#bouncy-castle] (https://github.com/idnow/de.idnow.android/tree/master?tab=readme-ov-file#bouncy-castle), otherwise a ClassNotFoundException will be thrown.
 
 <strong>IMPORTANT:</strong>
 - Please refer to this link to see how to integrate this SDK: [https://github.com/idnow/de.idnow.android#how-to-import-the-sdk](https://github.com/idnow/de.idnow.android#how-to-import-the-sdk)
