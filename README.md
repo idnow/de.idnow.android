@@ -499,6 +499,8 @@ The WebRTC used by our SDK is using the Bouncy Castle third-party dependency. Th
    implementation files ('libs/bcutil-jdk15to18-x.x.jar')
 ```
 
+N.B Importing IDnow SDK without bouncy castle libs, you will encounter the error ClassNotFoundException 
+
 ### Supported BouncyCastle versions 
 
 - Starting with IDnow SDK version 7.0.0, we are supporting BouncyCastle as an external dependency.
