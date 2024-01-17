@@ -1,5 +1,13 @@
 # Changelog
 
+
+### 7.5.0
+
+UX enhancements: We have made numerous adjustments to our user interface (UI) and user experience (UX) to ensure users have a seamless experience throughout the flow
+Refactoring and improving the codebase: We have taken various steps to clean up our codebase, which helps us speed up the bug resolution process
+Fixed crashes: We have also identified and fixed some crashes in the flow to offer our end-users a seamless experience
+Enhanced security: We have taken additional steps in order to enhance the overall security of our SDK
+
 ### 7.4.1
 
 Fixed crashes: We have also identified and fixed some crashes in the flow to offer our end-users a seamless experience
