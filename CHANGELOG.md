@@ -3,44 +3,44 @@
 
 ### 7.5.0
 
-UX enhancements: We have made numerous adjustments to our user interface (UI) and user experience (UX) to ensure users have a seamless experience throughout the flow
-Refactoring and improving the codebase: We have taken various steps to clean up our codebase, which helps us speed up the bug resolution process
-Fixed crashes: We have also identified and fixed some crashes in the flow to offer our end-users a seamless experience
-Enhanced security: We have taken additional steps in order to enhance the overall security of our SDK
+- **UX enhancements**: We have made numerous adjustments to our user interface (UI) and user experience (UX) to ensure users have a seamless experience throughout the flow
+- **Refactoring and improving the codebase**: We have taken various steps to clean up our codebase, which helps us speed up the bug resolution process
+- **Fixed crashes**: We have also identified and fixed some crashes in the flow to offer our end-users a seamless experience
+- **Enhanced security**: We have taken additional steps in order to enhance the overall security of our SDK
 
 ### 7.4.1
 
-Fixed crashes: We have also identified and fixed some crashes in the flow to offer our end-users a seamless experience
-UI/UX enhancements: We have made many adjustments to our user interface (UI) and user experience (UX) to ensure users don't have any trouble going through the flow
+- **Fixed crashes**: We have also identified and fixed some crashes in the flow to offer our end-users a seamless experience
+- **UI/UX enhancements**: We have made many adjustments to our user interface (UI) and user experience (UX) to ensure users don't have any trouble going through the flow
 
 ### 7.4.0
 
-Refactoring and improving the codebase: We have taken various steps to clean up our code, which makes it easier for us to fix bugs and work on new topics
-Fixed crashes: We have also identified and fixed some crashes in the flow to offer our end-users a seamless experience
-UI/UX enhancements: We have made many adjustments to our user interface (UI) and user experience (UX) to ensure users don't have any trouble going through the flow
+- **Refactoring and improving the codebase**: We have taken various steps to clean up our code, which makes it easier for us to fix bugs and work on new topics
+- **Fixed crashes**: We have also identified and fixed some crashes in the flow to offer our end-users a seamless experience
+-**UI/UX enhancements**: We have made many adjustments to our user interface (UI) and user experience (UX) to ensure users don't have any trouble going through the flow
 
 ### 7.3.0
 
-Seamless video call experience: We have taken additional steps to ensure our end-users have a seamless video call experience
+- **Seamless video call experience**: We have taken additional steps to ensure our end-users have a seamless video call experience
 Enhanced security via dTLS: Given our commitment to data privacy and security, we have taken additional measures to make our SDK even more secure to use. A new method (setDtlsCertificateProvider) has been added in the SDK interface in order to support Datagram Transport Layer Security (dTLS).
-UI/UX enhancements: We have made many adjustments to our user interface (UI) and user experience (UX) to ensure you have a seamless experience throughout the flow.
-Fixed crashes: We have identified and fixed some crashes to offer our end-users a seamless experience
+- **UI/UX enhancements**: We have made many adjustments to our user interface (UI) and user experience (UX) to ensure you have a seamless experience throughout the flow.
+- **Fixed crashes**: We have identified and fixed some crashes to offer our end-users a seamless experience
 
-Update eID intermediary certificate: For our eID solution we have updated the intermediary certificate to match the server certificate
+- **Update eID intermediary certificate**: For our eID solution we have updated the intermediary certificate to match the server certificate
 
 ### 7.2.0 
 
-- Enhanced security via dTLS: Given our commitment to data privacy and security, we have taken additional measures to make our SDK even more secure to use. A new method (setDtlsCertificateProvider) has been added in the SDK interface in order to support Datagram Transport Layer Security (dTLS).
+- **Enhanced security via dTLS**: Given our commitment to data privacy and security, we have taken additional measures to make our SDK even more secure to use. A new method (setDtlsCertificateProvider) has been added in the SDK interface in order to support Datagram Transport Layer Security (dTLS).
 
-- Fixed an App crash issue: We had observed a few instances where the last version of our Android SDK was crashing on Android devices below Android 10. This issue has been fixed as part of this release.
+- **Fixed an App crash issue**: We had observed a few instances where the last version of our Android SDK was crashing on Android devices below Android 10. This issue has been fixed as part of this release.
 
-- UI/UX enhancements: We have made some small adjustments to our user interface (UI) and user experience (UX) to ensure users have a seamless experience throughout the flow.
+- **UI/UX enhancements**: We have made some small adjustments to our user interface (UI) and user experience (UX) to ensure users have a seamless experience throughout the flow.
 
 ### 7.1.0 
 
 Bug fixes:
 
-- Fixing UI behaviour on showing the phone number instead of the placeholder for a specific flow using the setting setFullSizeModalSmsWindow
+- *Fixing UI behaviour on showing the phone number instead of the placeholder for a specific flow using the setting setFullSizeModalSmsWindow
 
 ### 7.0.0 
 
