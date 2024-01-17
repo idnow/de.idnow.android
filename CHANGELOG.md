@@ -40,7 +40,7 @@ Enhanced security via dTLS: Given our commitment to data privacy and security, w
 
 Bug fixes:
 
-- *Fixing UI behaviour on showing the phone number instead of the placeholder for a specific flow using the setting setFullSizeModalSmsWindow
+- Fixing UI behaviour on showing the phone number instead of the placeholder for a specific flow using the setting setFullSizeModalSmsWindow
 
 ### 7.0.0 
 
