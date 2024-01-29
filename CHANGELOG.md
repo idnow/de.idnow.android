@@ -1,5 +1,8 @@
 # Changelog
 
+### 7.6.0
+
+- **Fixed crashes**: We have also identified and fixed some crashes in the eSign flow to offer our end-users a seamless experience
 
 ### 7.5.0
 
