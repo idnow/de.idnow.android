@@ -1,5 +1,12 @@
 # Changelog
 
+### 7.8.0
+
+- **UX enhancements**: We have made numerous adjustments to our user interface (UI) and user experience (UX) to ensure users have a seamless experience throughout the flow.
+Fixed crashes: We have also identified and fixed some crashes in the flow to offer our end-users a seamless experience.
+- **Name-matching for eID+QES**: For the eID QES use case, we have introduced an additional check to compare the user's full name specified during Ident ID creation with the full name received from their eID card
+- **Enhanced security**: We have taken additional steps in order to enhance the overall security of our SDK
+
 ### 7.7.0
 
 - **Language selector feature (v2)**: We have made some modifications to the recently-introduced Language Selector feature in order to ensure that our SaaS customers can also benefit from it.
