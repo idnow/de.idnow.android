@@ -24,8 +24,8 @@
 - [Bouncy castle](#bouncy-castle)
   - [Supported BouncyCastle versions](#Supported-BouncyCastle-versions)
 - [Animations](#animations)
-- [Foreground Services](#Foreground-Services)
-  - [Declaring your foreground service information in Play Console](#Declaring-your-foreground-service-informatio-in-Play-Console)
+- [Foreground Services](#foreground-services)
+  - [Declaring your foreground service information in Play Console](#declaring-your-foreground-service-information-in-play-console)
 - [Supported Architecture](#Supported-Architecture)
   - [arm64-v8a](#arm64-v8a)
   - [armeabi-v7a](#armeabi-v7a)
@@ -515,7 +515,7 @@ N.B Importing IDnow SDK without bouncy castle libs, you will encounter the error
 	
 In order for end-users to have a seamless experience, the device needs to have the animation capability enabled, otherwise screens that contain animations will not function as intended.
 
-## Foreground Service
+## Foreground Services
 
 A foreground service performs operations that are visible to the user, and informs them that the app is performing a task in the foreground and consuming system resources. This can happen even when the user is not directly interacting with the app.
 
