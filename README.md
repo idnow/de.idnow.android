@@ -24,6 +24,8 @@
 - [Bouncy castle](#bouncy-castle)
   - [Supported BouncyCastle versions](#Supported-BouncyCastle-versions)
 - [Animations](#animations)
+- [Foreground Services](#Foreground-Services)
+  - [Declaring your foreground service information in Play Console](#Declaring-your-foreground-service-informatio-in-Play-Console)
 - [Supported Architecture](#Supported-Architecture)
   - [arm64-v8a](#arm64-v8a)
   - [armeabi-v7a](#armeabi-v7a)
@@ -512,6 +514,59 @@ N.B Importing IDnow SDK without bouncy castle libs, you will encounter the error
 ## Animations
 	
 In order for end-users to have a seamless experience, the device needs to have the animation capability enabled, otherwise screens that contain animations will not function as intended.
+
+## Foreground Service
+
+A foreground service performs operations that are visible to the user, and informs them that the app is performing a task in the foreground and consuming system resources. This can happen even when the user is not directly interacting with the app.
+
+We are using foreground services in our SDK to perform a task that is required in the process of connecting the end-user with the identification expert, as it is a prerequisite for the video call.
+
+The aim of this task is to keep the camera and microphone in active mode while the end-user is waiting to get connected to our identification expert. This is important to prevent an empty black screen from showing at the time when the identification expert picks up the call as the user may have put the app in the background while waiting.
+
+<b>Camera</b>:
+
+Continue to access the camera from the background, such as video chat apps that allow for multitasking.
+
+<b>Microphone</b>:
+
+Continue microphone capture from the background, such as voice recorders or communication apps.
+
+To achieve this, we are required to declare permissions to use foreground services. Starting with Android 14, we are obliged to update our service declaration in the AndroidManifest file and specify the correct foreground service type that we are using.
+
+```
+<uses-permission android:name="android.permission.FOREGROUND_SERVICE_CAMERA"/>
+
+<uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE"/>
+
+<manifest xmlns:android="http://schemas.android.com/apk/res/android" ...>
+
+    <service
+
+        android:name=".MyForegroundService"
+
+        android:foregroundServiceType="camera|microphone"
+
+        android:exported="false">
+
+    </service>
+
+</manifest>
+```
+
+### Declaring your foreground service information in Play Console
+
+You’ll need to declare any foreground service types that you use in a new declaration (camera and microphone) on the App content page (Policy > App content) in Play Console .
+
+You’ll need to mention the following undeclared foreground service permissions
+
+```
+FOREGROUND_SERVICE_CAMERA
+FOREGROUND_SERVICE_MICROPHONE
+```
+
+Additionally, a video is often required to demonstrate how the app uses the foreground service.
+
+Please contact the support team in case that video is needed. 
 
 ### Languages
 
