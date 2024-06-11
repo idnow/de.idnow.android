@@ -1,5 +1,13 @@
 # Changelog
 
+### 8.1.0
+
+- **InstantSign feature:** We have introduced a new feature, InstantSign, that allows users to quickly sign documents online without having the need to go through the identity verification process. In order to make this happen, we will require additional information from customers during Ident-Id creation. This will serve as a much faster eSign solution for AML-compliant customers that have previously stored ident data, and is likely to improve user experience and increase conversions.
+- **UX enhancements:** We have made various adjustments to our user interface (UI) and user experience (UX) to ensure users have a seamless experience throughout the flow.
+- **Fixed crashes:** We have also identified and fixed some crashes in the flow to offer our end-users a seamless experience.
+- **Enhanced security:** We have taken additional steps in order to enhance the overall security of our SDK
+Bug fixes: We regularly test our products to assess areas where there is any room for improvement. We identified some bugs and fixed those as part of this release.
+
 ### 7.8.0
 
 - **UX enhancements**: We have made numerous adjustments to our user interface (UI) and user experience (UX) to ensure users have a seamless experience throughout the flow.
