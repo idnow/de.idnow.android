@@ -1,5 +1,9 @@
 # Changelog
 
+### 8.2.0
+
+Bug fix: Ensure that test system works with all test prefixes.
+
 ### 8.1.0
 
 - **InstantSign feature:** We have introduced a new feature, InstantSign, that allows users to quickly sign documents online without having the need to go through the identity verification process. In order to make this happen, we will require additional information from customers during Ident-Id creation. This will serve as a much faster eSign solution for AML-compliant customers that have previously stored ident data, and is likely to improve user experience and increase conversions.
