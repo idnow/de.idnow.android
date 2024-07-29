@@ -1,5 +1,12 @@
 # Changelog
 
+### 8.3.0
+
+- **UI/UX enhancements**: We have made various adjustments to our user interface (UI) and user experience (UX) to ensure users have a consistent experience throughout the flow.
+- **Fixed crashes**: We have also identified and fixed some crashes in the flow to offer our end-users a seamless experience.
+- **Enhanced security**: We have taken additional steps in order to enhance the overall security of our SDK
+- **Bug fixes**: We regularly test our products to assess areas where there is any room for improvement. We identified some minor bugs and fixed those as part of this release.
+
 ### 8.2.0
 
 Bug fix: Ensure that test system works with all test prefixes.
