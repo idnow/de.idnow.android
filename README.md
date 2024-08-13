@@ -51,6 +51,7 @@
      - [Host App settings](#hostappsettings)
         - [How to import eID SDK](#how-to-import-eid-sdk)
         - [Import the SDK as .aar file](#import-the-sdk-as-.aar-file)
+  - [eID usage](#eid-usage)
   - [eID Colors](#eid-colors)
      - [Title Color](#title-color)
      - [Text Color](#text-color)
@@ -798,6 +799,11 @@ Dependencies {
 	
 } 
 ```
+
+### eID usage
+
+eID is not offered as a standalone product. Therefore, in order to use eID, you will need to integrate the VideoIdent SDK. Please refer to the [Usage example](https://github.com/idnow/de.idnow.android?tab=readme-ov-file#usage) in the VideoIdent part of the SDK documentation. No separate installation is needed for eID usage.
+
 ### eID Colors
 
 colors are customisable by overriding the values of a specific key
