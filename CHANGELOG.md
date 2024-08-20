@@ -1,5 +1,11 @@
 # Changelog
 
+### 8.4.0
+
+- **UI/UX enhancements**: We have made various adjustments to our user interface (UI) and user experience (UX) to ensure users have a consistent experience throughout the flow.
+- **Enhanced security**: We have taken additional steps in order to enhance the overall security of our SDK
+- **Bug fixes**: We regularly test our products to assess areas where there is any room for improvement. We identified some minor bugs and fixed those as part of this release.
+
 ### 8.3.0
 
 - **UI/UX enhancements**: We have made various adjustments to our user interface (UI) and user experience (UX) to ensure users have a consistent experience throughout the flow.
