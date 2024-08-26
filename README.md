@@ -45,7 +45,7 @@
   - [Fonts](#fonts)
     - [Action bar](#action-bar)
 - [Texts](#texts)
-- [Supported Platforms](#Supported-Platforms)
+- [Other Supported Platforms](#Other-Supported-Platforms)
   - [Cordova](#Cordova)
   - [React native](#React-native)
 - [IDnow eID SDK](#idnow-eid-sdk)   
@@ -681,19 +681,19 @@ Here an example on how to set custom font
 
 The SDK provides English, German, French, Spanish, Italian, Hungarian, Georgian, Korean, Dutch, Polish, Portuguese, Russian and Chinese    texts.
 
-## Supported Platforms
+## Other Supported Platforms
 
 ### Cordova
 
 Our Cordova plugin offers the possibility of integrating our native Android and iOS SDK into the Cordova-based applications. The plugin offers the possibility to customize and setup of the SDK. At the end of the identification process, the SDK communicates with the plug-in via a callback, allowing the Cordova application to update the flow.
-Please refer to this [link](https://www.npmjs.com/package/com-idnow-plugin) for implementation details.
+Please refer to this [link](https://www.npmjs.com/package/com-idnow-plugin) for implementation details.\
 **Note**: Only VideoIdent and eSign are supported so far. eID is not supported.
 
 ### React native
 
 Our React Native plug-in offers the possibility of integrating our native Android and iOS SDK into the React Native-based applications. It offers the possibility to customize and setup the SDK, and uses the latest expo native modules to create the bridging mechanism.
-Please refer to this [link](https://www.npmjs.com/package/react-native-vi-idnow-library) for implementation details.
-Note: Only VideoIdent and eSign are supported so far. eID is not supported.
+Please refer to this [link](https://www.npmjs.com/package/react-native-vi-idnow-library) for implementation details.\
+**Note**: Only VideoIdent and eSign are supported so far. eID is not supported.
 
 ## IDnow eID SDK
 
