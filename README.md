@@ -803,7 +803,7 @@ Dependencies {
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'com.squareup.retrofit:retrofit:1.9.0'
-    implementation 'com.squareup.okhttp3:okhttp:3.12.1'
+    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
     implementation  'com.google.code.gson:gson:2.8.6'
     implementation 'de.idnow.insights:idnow-android-insights-sdk:1.2.0'
     implementation 'com.airbnb.android:lottie:5.1.1'
