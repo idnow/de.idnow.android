@@ -31,11 +31,9 @@ Download the latest version of the [eID framework](https://github.com/idnow/de.i
 
 #### Step 1: Integrate Authada
 
-Due to technical reasons, we cannot make the following library available on Github: AuthadaAuthenticationLibrary.xcframework. Please contact your customer success manager so that they can provide it to you.
+Due to technical reasons, we cannot make the following library available on Github: ```de.authada.library```. Please contact your customer success manager so that they can provide it to you.
 
-//TODO credentials
-
-#### Step 2: Integrate IDNowSdk
+#### Step 2: Integrate IDnow SDK
 
 We offer 2 ways for importing the SDK:
 
@@ -85,9 +83,9 @@ compile 'de.idnow.android.eid:idnow-android-eid-sdk:x.x.x'
 
 #### Option 2: AAR file
 
-We offer the possibility to import the SDK as an .aar file instead.
+We also offer the possibility to import the SDK as an .aar file instead.
 
-Copy the `idnow-android-x.x.x.aar` and `idnow-android-eid-sdk-x.x.x.aar` files into the libs folder.
+Copy the `idnow-android-x.x.x.aar` and `idnow-android-eid-sdk-x.x.x.aar` files into the `libs``` folder.
 
 ```
 android {
@@ -142,10 +140,10 @@ eID is not offered as a standalone product. Therefore, in order to use eID, you 
 
 | Result code | Description                                                                                              |
 | - | - |
-| Config.RESULT_CODE_SUCCESS | Process has succeeded |
+| Config.RESULT_CODE_SUCCESS | Process has successfully finished |
 | Config.RESULT_CODE_CANCEL | User has cancelled the identification process |
 | Config.RESULT_CODE_FAILED | The identification has failed and the error can be retrieved from the intent using the following key: ```Config.RESULT_DATA_ERROR```  |
-| Config.CHOOSER_SCREEN | User has requested to try other identification method |
+| Config.CHOOSER_SCREEN | User has requested to try a different identification method |
 |||
 
 ## Branding
@@ -156,14 +154,14 @@ All appearance settings are identical to the ones used in VI SDK.
 
 | Parameter Name | Description | Appearance
 | -------------- | ----------- | ------------- |
-| primaryColor | Optional color that replaces the proceed button background color.<br>Default: An orange color | <img src="./screenshots/primaryColor.png" width="250">
-| primaryVariantColor | Optional color that replaces the proceed button background color with a transparent code.<br>Default: An orange color | <img src="./screenshots/primaryVariantColor.png" width="250">
-| bgPrimaryColor | Optional color to be used as the screen background.<br>Default value: Light gray color. | <img src="./screenshots/bgPrimaryColor.png" width="250"> 
-| bgSecondaryColor | Optional color that replaces the default background color of the textfield components.Default: defaultTextColor | <img src="./screenshots/bgSecondaryColor.png" width="250">
-| primarytextColor | Optional color that replaces the default text color.<br>Default: A nearly black color <br> Recommendation: Should be some kind of a dark color that does not collide with white color. | <img src="./screenshots/primarytextColor.png" width="250">
-| buttontextColor | Optional color that replaces the proceed button text color.<br>Default value: White color | <img src="./screenshots/buttonTextColor.png" width="250">
-| basicInputField | Optional color that replaces the default text color of the textfield components.<br>Default: Gray color. | <img src="./screenshots/basicInputField.png" width="250">
-|basicNavStepOn | 	Optional color that replaces the default background color for identification steps.<br>Default: Gray color | <img src="./screenshots/basicNavStepOn.png" width="250">
+| primaryColor | Optional color that replaces the proceed button background color.<br>Default: <a href="#"><img valign='middle' alt='#FF6B40' src='https://readme-swatches.vercel.app/FF6B40?style=round'/></a>#FF6B40 | <img src="./screenshots/primaryColor.png" width="250">
+| primaryVariantColor | Optional color that replaces the proceed button background color with a transparent code.<br>Default: <a href="#"><img valign='middle' alt='#60FF6B40' src='https://readme-swatches.vercel.app/60FF6B40?style=round'/></a>#60FF6B40 | <img src="./screenshots/primaryVariantColor.png" width="250">
+| bgPrimaryColor | Optional color to be used as the screen background.<br>Default: <a href="#"><img valign='middle' alt='#F8F8F8' src='https://readme-swatches.vercel.app/F8F8F8?style=round'/></a>#F8F8F8 | <img src="./screenshots/bgPrimaryColor.png" width="250"> 
+| bgSecondaryColor | Optional color that replaces the default background color of the textfield components.<br>Default: <a href="#"><img valign='middle' alt='#C9C6C4' src='https://readme-swatches.vercel.app/C9C6C4?style=round'/></a>#C9C6C4 | <img src="./screenshots/bgSecondaryColor.png" width="250">
+| primarytextColor | Optional color that replaces the default text color.<br>Default: <a href="#"><img valign='middle' alt='#FFFFFF' src='https://readme-swatches.vercel.app/FFFFFF?style=round'/></a>#FFFFFF <br> Recommendation: Should be some kind of a dark color that does not collide with white color. | <img src="./screenshots/primarytextColor.png" width="250">
+| buttontextColor | Optional color that replaces the proceed button text color.<br>Default value: <a href="#"><img valign='middle' alt='#FFFFFF' src='https://readme-swatches.vercel.app/FFFFFF?style=round'/></a>#FFFFFF | <img src="./screenshots/buttonTextColor.png" width="250">
+| basicInputField | Optional color that replaces the default text color of the textfield components.<br>Default: <a href="#"><img valign='middle' alt='#7B7B7B' src='https://readme-swatches.vercel.app/7B7B7B?style=round'/></a>#7B7B7B | <img src="./screenshots/basicInputField.png" width="250">
+|basicNavStepOn |     Optional color that replaces the default background color for identification steps.<br>Default: <a href="#"><img valign='middle' alt='#FFFFFF' src='https://readme-swatches.vercel.app/FFFFFF?style=round'/></a>#FFFFFF | <img src="./screenshots/basicNavStepOn.png" width="250">
 | usedNewBrand | A flag that specifies if the flow should use the new style (this includes fonts, logo and button corner radius). Default value: ```true```| *usedNewBrand = false*<img src="./screenshots/newBrandDisabled.png" width="250"><br><br>*usedNewBrand = true*<img src="./screenshots/newBrandEnabled.png" width="250">
 |||
 

@@ -63,7 +63,7 @@ Please see https://github.com/idnow/de.idnow.android-sample for a sample applica
 ### Requirements
 
 - minSdkVersion: 23  (Android 6.0)
-- targetSdkVersion:	34 (Android 14.0 beta Upside-Down Cake)
+- targetSdkVersion:    34 (Android 14.0 beta Upside-Down Cake)
 - Internet connection, communication via standard SSL port 443
 
 ### Supported versions
@@ -172,13 +172,13 @@ In your app.gradle add:
 
 ```
 repositories {
-	
+    
 maven {
   url "https://raw.githubusercontent.com/idnow/de.idnow.android/master" 
        }
        
 maven { url 'https://jitpack.io' }
-       	
+           
 flatDir {
 dirs 'libs' //this way we can find the .aar file in libs folder
 }
@@ -189,7 +189,7 @@ Additional dependencies to add in your app.gradle:
 
 ``` 
 dependencies {
-    // 	IDnow SDK
+    //     IDnow SDK
     implementation 'de.idnow.sdk:idnow-android-x.x.x@aar'
     // Bouncycastle external libs
     implementation files ('libs/bcprov-jdk15to18-x.x.jar')
@@ -261,32 +261,32 @@ Here is the full example:
 
 ```java
 try {
-	// Initialize with your activity which will handle the SDK callback and pass the id of your company.
-	//	IDnowSDK is a singleton class, so just call it with IDnowSDK.getInstance()
-	IDnowSDK.getInstance().initialize(StartActivity.this, "ihreBank");
+    // Initialize with your activity which will handle the SDK callback and pass the id of your company.
+    //    IDnowSDK is a singleton class, so just call it with IDnowSDK.getInstance()
+    IDnowSDK.getInstance().initialize(StartActivity.this, "ihreBank");
 
-	// Set the transactionToken, for example from a TextField
-	IDnowSDK.setTransactionToken(editTextToken.getText().toString());
+    // Set the transactionToken, for example from a TextField
+    IDnowSDK.setTransactionToken(editTextToken.getText().toString());
 
-	// You can decide whether to let the user confirm the legal points.
-	IDnowSDK.setShowVideoOverviewCheck(true, context);
+    // You can decide whether to let the user confirm the legal points.
+    IDnowSDK.setShowVideoOverviewCheck(true, context);
 
-	// Same goes to the success screen. If none is shown, the app sends the results right back.
-	// The defaults for the both parameters are "true";
-	IDnowSDK.setShowErrorSuccessScreen(true, context);
+    // Same goes to the success screen. If none is shown, the app sends the results right back.
+    // The defaults for the both parameters are "true";
+    IDnowSDK.setShowErrorSuccessScreen(true, context);
 
-	// Optionally set against which environment the app has to test. Possibilities are DEV, TEST, LIVE, with LIVE being the default.
-	IDnowSDK.setEnvironment( Server.TEST );
-	
-	
-	// Set the custom certificate provider
-	IDnowSDK.setCertificateProvider(new CustomerCertificateProvider(this.context))
+    // Optionally set against which environment the app has to test. Possibilities are DEV, TEST, LIVE, with LIVE being the default.
+    IDnowSDK.setEnvironment( Server.TEST );
+    
+    
+    // Set the custom certificate provider
+    IDnowSDK.setCertificateProvider(new CustomerCertificateProvider(this.context))
 
-	// To actually start the identification process, pass the transactionToken.
-	IDnowSDK.getInstance().start(IDnowSDK.getTransactionToken());
+    // To actually start the identification process, pass the transactionToken.
+    IDnowSDK.getInstance().start(IDnowSDK.getTransactionToken());
 } catch (Exception e) {
-	// The SDK checks the input parameters and throws an exception if they don't seem right.
-	e.printStackTrace();
+    // The SDK checks the input parameters and throws an exception if they don't seem right.
+    e.printStackTrace();
 }
 ```
 
@@ -295,43 +295,43 @@ The SDK checks the input parameters and throws an Exception if something is deem
 To handle the results of the identification, implement the standard onActivityResult function in your activity.:
 
 ```
-	@Override
-	protected void onActivityResult( int requestCode, int resultCode, Intent data )
-	{
-		if ( requestCode == IDnowSDK.REQUEST_ID_NOW_SDK )
-		{
-			if ( resultCode == IDnowSDK.RESULT_CODE_SUCCESS )
-			{
+    @Override
+    protected void onActivityResult( int requestCode, int resultCode, Intent data )
+    {
+        if ( requestCode == IDnowSDK.REQUEST_ID_NOW_SDK )
+        {
+            if ( resultCode == IDnowSDK.RESULT_CODE_SUCCESS )
+            {
                 If ( data != null )
                 {
                     String transactionToken = data.getStringExtra(IDnowSDK.RESULT_DATA_TRANSACTION_TOKEN);
                     Log.v(TAG, "success, transaction token: " + transactionToken);
                 }
-			}
-			else if ( resultCode == IDnowSDK.RESULT_CODE_CANCEL )
-			{
+            }
+            else if ( resultCode == IDnowSDK.RESULT_CODE_CANCEL )
+            {
                 if ( data != null )
                 {
                     String transactionToken = data.getStringExtra(IDnowSDK.RESULT_DATA_TRANSACTION_TOKEN);
                     String errorMessage = data.getStringExtra(IDnowSDK.RESULT_DATA_ERROR);
                     Log.v(TAG, "canceled, transaction token: " + transactionToken + “, error: “ + errorMessage);
                 }
-			}
-			else if ( resultCode == IDnowSDK.RESULT_CODE_FAILED )
-			{
+            }
+            else if ( resultCode == IDnowSDK.RESULT_CODE_FAILED )
+            {
                 if ( data != null )
                 {
                     String transactionToken = data.getStringExtra(IDnowSDK.RESULT_DATA_TRANSACTION_TOKEN);
                     String errorMessage = data.getStringExtra(IDnowSDK.RESULT_DATA_ERROR);
                     Log.v(TAG, "failed, transaction token: " + transactionToken + “, error: “ + errorMessage);
                 }
-			}
-			else
-			{
-				Log.v(TAG, "Result Code: " + resultCode);
-			}
-		}
-	}
+            }
+            else
+            {
+                Log.v(TAG, "Result Code: " + resultCode);
+            }
+        }
+    }
 
 ```
 
@@ -381,29 +381,29 @@ You can set the new branding (Circular background for the buttons)
 
 ```
 IDnowSDK.setNewBrand(TRUE);
-	
+    
 ```
 
 ### Certificate Provider
 
-		
+        
  Starting from SDK version 7.2.0 we offer to set your own DTLS certificates used by the WebRTC connection.
-	
+    
 ```
-	
+    
 IDnowSDK.setDtlsCertificateProvider(customerCertificateProvider)
-	
-```	
-	
+    
+```    
+    
  
  
  Starting from SDK version 6.5.0 we offer MTLS support for API connections
 
  ```
-	
+    
 IDnowSDK.setCertificateProvider(customerCertificateProvider)
-	
-```	
+    
+```    
  
  MTLS enables server/client certificate validation. 
  SDK can provide custom client certificate and several server certificates
@@ -444,22 +444,22 @@ Feature flags for certificate provider allow usage of the corresponding features
     
 
 N.B You can checkout the Sample App https://github.com/idnow/de.idnow.android-sample (branch : set_certificate_provider ) to see the implementation
-	
-	
+    
+    
 ## Supported Architecture
 
 Different Android devices use different CPUs, which in turn support different instruction sets.
 
 As Our SDK is using a 3rd party lib wchich is limiting us to support the same instruction sets.
-	
+    
 Today we don't support the architecture x86_64 and x64 and we only support the following architecture :
-	
+    
 ### arm64-v8a
-	
+    
 This ABI is for ARMv8-A based CPUs, which support the 64-bit AArch64 architecture. It includes the Advanced SIMD (Neon) architecture extensions.
-	
+    
 ### armeabi-v7a
-	
+    
 This ABI is for 32-bit ARM-based CPUs. The Android variant includes Thumb-2 and the VFP hardware floating point instructions, specifically VFPv3-D16, which includes 16 dedicated 64-bit floating point registers.
 
 ## Using IDnow with other native libraries (UnsatisfiedLinkError)
@@ -485,9 +485,9 @@ If it's the other way round (your 3rd party lib ships more than armeabi, armeabi
 
 For further reading:
 http://developer.android.com/ndk/guides/abis.html
-	
+    
 ## Bouncy castle
-	
+    
 The WebRTC used by our SDK is using the Bouncy Castle third-party dependency. This implies that if the same dependency is being used on the integrator’s part, the two versions will conflict. As a solution to this problem, we are using a custom version of our WebRTC that allows us to set BouncyCastle as an external dependency. This implies that the following dependency will also have to be added directly in the app.gradle file of the integrator app’s project, along with other listed dependencies:
 
 ```    
@@ -503,9 +503,9 @@ N.B Importing IDnow SDK without bouncy castle libs, you will encounter the error
 - Starting with IDnow SDK version 7.0.0, we are supporting BouncyCastle as an external dependency.
 - The default BouncyCastle version used in the SDK is <strong>v1.64</strong> (only compile) a bouncy castle external is still needed.
 - The BouncyCastle versions that are supported are v1.63+.
-	
+    
 ## Animations
-	
+    
 In order for end-users to have a seamless experience, the device needs to have the animation capability enabled, otherwise screens that contain animations will not function as intended.
 
 ## Foreground Services
@@ -659,12 +659,12 @@ This is themes.xml of the SDK:
    setDefaultFont(Context context, String staticTypefaceFieldName, String fontAssetName)
 ```
 Here an example on how to set custom font
-	
+    
 ```
   FontsOverride.setDefaultFont(this, "SERIF", "roboto_thin_italic.ttf");
-	
+    
 ```
-	
+    
 ## Texts
 
 The SDK provides English, German, French, Spanish, Italian, Hungarian, Georgian, Korean, Dutch, Polish, Portuguese, Russian and Chinese    texts.
