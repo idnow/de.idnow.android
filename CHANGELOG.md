@@ -1,10 +1,18 @@
 # Changelog
 
-### 8.4.0
+### 8.5.0
 
 - **Removed AndroidPdfViewer**: We have replaced the AndroidPdfViewer library with a native implementation. This helps us get rid of an external library and have more control over our product.
 - **Name verification screen**: We have introduced a new 'Name Verification' screen at the beginning of the flow. The purpose of this screen is to allow users to verify whether or not the name stored against their identification token matches the name on their identification document.
 - **UI/UX enhancements**: We have made various adjustments to our user interface (UI) and user experience (UX) to ensure users have a consistent experience throughout the flow.
+- **Bug fixes**: We regularly test our products to assess areas where there is any room for improvement. We identified some minor bugs and fixed those as part of this release.
+
+### 8.4.0
+
+- **UI/UX enhancements**: We have made various adjustments to our user interface (UI) and user experience (UX) to ensure users have a consistent experience throughout the flow.
+
+- **Enhanced security**: We have taken additional steps in order to enhance the overall security of our SDK
+
 - **Bug fixes**: We regularly test our products to assess areas where there is any room for improvement. We identified some minor bugs and fixed those as part of this release.
 
 ### 8.3.0
