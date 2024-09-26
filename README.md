@@ -1,3 +1,4 @@
+
  # Table of Contents
    
 - [Overview](#overview)
@@ -197,8 +198,8 @@ dependencies {
     implementation files ('libs/bcutil-jdk15to18-x.x.jar') // optional 
     
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.9.3'
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.12.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.annotation:annotation:1.3.0'
@@ -211,7 +212,6 @@ dependencies {
     implementation 'androidx.preference:preference:1.2.0'
     implementation "androidx.percentlayout:percentlayout:1.0.0"
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'com.github.barteksc:android-pdf-viewer:2.6.0'
     implementation 'com.google.android.material:material:1.5.0'
     }
 ```
