@@ -1,5 +1,20 @@
 # Changelog
 
+### 9.0.0
+
+- **Important**: This version consists of changes made to our SDK to ensure that it is compatible with Android 15. In order for your (host) application to be displayed on PlayStore for Android 15 devices, it is mandatory for it to target API Level 35. As you make the required changes to your application to make it compatible with Android 15, you have to make sure to use v9.0.0 (or above) of our Android SDK.
+
+In addition to using v9.0.0 of our Android SDK, you also need to add* the following line of code in your build.gradle files:
+```
+android {
+  ...
+  packagingOptions {
+      jniLibs {
+        useLegacyPackaging true
+      }
+  }
+}
+```
 ### 8.5.0
 
 - **Removed AndroidPdfViewer**: We have replaced the AndroidPdfViewer library with a native implementation. This helps us get rid of an external library and have more control over our product.
