@@ -1,5 +1,9 @@
 # Changelog
 
+### 9.0.1
+
+- As part of this release, we have upgraded the version of Authada library. This is only relevant for customers that are using eID as an identification method.
+  
 ### 9.0.0
 
 **Important:** This version consists of changes made to our SDK to ensure that it is compatible with Android 15. In order for your (host) application to be displayed on PlayStore for Android 15 devices, it is mandatory for it to target API Level 35. As you make the required changes to your application to make it compatible with Android 15, you have to make sure to use v9.0.0 (or above) of our Android SDK.
