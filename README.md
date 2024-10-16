@@ -9,6 +9,7 @@
   - [Import using Maven](#option-1-maven)
   - [Import using AAR file](#option-2-aar-file)
   - [Import BouncyCastle](#2-import-bouncycastle)
+- [Permissions](#permissions)
 - [Usage](#usage)
   - [Setup and run](#setup-and-run)
   - [Additional settings](#additional-settings)
@@ -16,21 +17,11 @@
     - [DTLS](#dtls)
     - [mTLS](#mtls)
 - [Using IDnow with other native libraries (UnsatisfiedLinkError)](#using-idnow-with-other-native-libraries-unsatisfiedlinkerror)
-- [Design configuration](#design-configuration)
-  - [Languages](#languages)
-  - [App icon and logo](#app-icon-and-logo)
-    - [Colors](#colors)
-    - [text_default](#text_default)
-    - [primary](#primary)
-    - [proceed_button_background](#proceed_button_background)
-    - [failure](#failure)
-    - [success](#success)
-    - [screenshots](#screenshots)
-    - [overwriting default colors](#overwriting-default-colors)
-  - [App theme](#app-theme)
+- [Branding](#branding)
+  - [Colors](#colors)
   - [Fonts](#fonts)
-    - [Action bar](#action-bar)
-- [Texts](#texts)
+- [Error codes](#error-codes)
+- [Localization](#localization)
 - [Other Supported Platforms](#other-supported-platforms)
   - [Cordova](#cordova)
   - [React native](#react-native)
@@ -129,6 +120,28 @@ dependencies {
     implementation files('libs/bctls-jdk15to18-164.jar')
 } 
 ```
+
+## Permissions
+
+Our SDK uses the following permissions:
+
+```
+<uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+<uses-permission android:name="android.permission.INTERNET"/>
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+<uses-permission android:name="android.permission.CAMERA" />
+<uses-permission android:name="android.permission.FLASHLIGHT" />
+<uses-permission android:name="android.permission.BLUETOOTH"/>
+<uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+<uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
+//These will be requested when using VideoIdent
+<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+<uses-permission android:name="android.permission.RECORD_AUDIO" />
+//This will be requested when using eID
+<uses-permission android:name="android.permission.NFC" />
+```
+
+**Note:** There permissions don't need to be added to your project's manifest file.
 
 ## Usage
 
@@ -255,7 +268,7 @@ android {
 }
 ```
 
-If it's the other way round (your 3rd party lib ships more than armeabi, armeabi-v7a, arm64-v8a, you have to exclude these folders, so the remaining folders match the Idnow SDK folders.
+If it's the other way round (your 3rd party lib ships more than armeabi, armeabi-v7a, arm64-v8a), you have to exclude these folders, so the remaining folders match the Idnow SDK folders.
 
 For further reading:
 http://developer.android.com/ndk/guides/abis.html
@@ -265,122 +278,52 @@ Additionally, a video is often required to demonstrate how the app uses the fore
 
 Please contact the support team in case that video is needed.
 
-### branding
-
-You can set the new branding (Circular background for the buttons)
-
-```
-IDnowSDK.setNewBrand(TRUE);
-    
-```
-
-### Languages
-
-In case you would like to change the language used by the IDnow SDK at runtime you can do the following in the host App during the initialization:
-
-```
-IDnowSDK.getInstance().initialize( StartActivity.this, "", language);
-```
-Language values are: en (English), de (German), fr (French), es (Spanish), it (Italian), pt (Portuguese), et (Estonian), hr (Croatian), hu (Hungarian), ka (Georgian), ko(Korean), lt(Lithuanian), lv (Latvian), nl (Dutch), pl (Polish),  ru (Russian), zh (Chinese), uk (Ukrainian)
-
-
-### App icon and logo
-
-A single icon is used as the app launcher icon and logo. You can overwrite it, if you provide assets, named "ic_launcher.png",  in the following sizes in the drawable folders:
-
-- mdpi: 48px * 48px
-- hdpi: 72px * 72px
-- xhdpi: 96px * 96px
-- xxhdpi: 144px * 144px
-- xxxhdpi: 192px * 192px
-
-You must not declare it again in your app manifest.
+## Branding
 
 ### Colors
 
-The IDnow SDK is designed with colors following IDnow's corporate design. You can use the SDK without making any adaptions to these colors. However, if you want the SDK screens to appear in different colors, that can be achieved using the generic branding color keys below:
+| Parameter Name | Description | Appearance
+| -------------- | ----------- | ------------- |
+| primaryColor | Optional color that replaces the proceed button background color.<br>Default: <a href="#"><img valign='middle' alt='#FF6B40' src='https://readme-swatches.vercel.app/FF6B40?style=round'/></a>#FF6B40 | <img src="./screenshots/primaryColor.png" width="250">
+| primaryVariantColor | Optional color that replaces the proceed button background color with a transparent code.<br>Default: <a href="#"><img valign='middle' alt='#80FF6B40' src='https://readme-swatches.vercel.app/80FF6B40?style=round'/></a>#80FF6B40 | <img src="./screenshots/primaryVariantColor.png" width="250">
+| bgPrimaryColor | Optional color to be used as the screen background.<br>Default: <a href="#"><img valign='middle' alt='#F8F8F8' src='https://readme-swatches.vercel.app/F8F8F8?style=round'/></a>#F8F8F8 | <img src="./screenshots/bgPrimaryColor.png" width="250"> 
+| bgSecondaryColor | Optional color that replaces the default background color of the textfield components.<br>Default: <a href="#"><img valign='middle' alt='#EEEEEE' src='https://readme-swatches.vercel.app/EEEEEE?style=round'/></a>#EEEEEE | <img src="./screenshots/bgSecondaryColor.png" width="250">
+| primarytextColor | Optional color that replaces the default text color.<br>Default: <a href="#"><img valign='middle' alt='#000000' src='https://readme-swatches.vercel.app/000000?style=round'/></a>#000000 <br> Recommendation: Should be some kind of a dark color that does not collide with white color. | <img src="./screenshots/primarytextColor.png" width="250">
+| buttontextColor | Optional color that replaces the proceed button text color.<br>Default value: <a href="#"><img valign='middle' alt='#FFFFFF' src='https://readme-swatches.vercel.app/FFFFFF?style=round'/></a>#FFFFFF | <img src="./screenshots/buttonTextColor.png" width="250">
+| basicInputField | Optional color that replaces the default text color of the textfield components.<br>Default: <a href="#"><img valign='middle' alt='#7B7B7B' src='https://readme-swatches.vercel.app/7B7B7B?style=round'/></a>#7B7B7B | <img src="./screenshots/basicInputField.png" width="250">
+|basicNavStepOn |     Optional color that replaces the default background color for identification steps.<br>Default: <a href="#"><img valign='middle' alt='#FFFFFF' src='https://readme-swatches.vercel.app/FFFFFF?style=round'/></a>#FFFFFF | <img src="./screenshots/basicNavStepOn.png" width="250">
+|basicNavStepOff |     Optional color that replaces the default background color for disabled identification steps.<br>Default: <a href="#"><img valign='middle' alt='#C9C6C4' src='https://readme-swatches.vercel.app/C9C6C4?style=round'/></a>#C9C6C4 | <img src="./screenshots/basicNavStepOff.png" width="250">
+|||
 
+### Fonts
 
-#### primaryColor
-Used as default color of the App and the component such as the buttons
+The SDK offers the possibility to change the font.
 
-#### primaryVariantColor
-Used as a deactivated color for the buttons, it should use same value as primaryColor with a transparent code.
-
-#### primarytextColor
-Used as a text color for the whole App
-
-#### bgPrimaryColor
-Used as background color for the screens.
-
-#### bgSecondaryColor
-Used as background color for the text fields
-
-#### basicInputField
-Used as text color for the text fields
-
-Even though we strongly recommend our customers to stick to the generic branding color keys listed above, it is worth mentioning that for some screens we also offer keys for screen-specific customizations. If you would like to make any such customization, please reach out to us with the details so we can let you know if that is possible.
-
-Note: Due to the high number of keys available in the SDK, it is not feasible to mention all of those here.
-
-### App theme
-
-This is themes.xml of the SDK:
-
-```
-<resources>
-
-    <!-- IdnowSdkTheme is used when no other theme is applied. You are free to adapt the SDK theme in the App or use your own theme.
-
-    <style name="IdnowSdkTheme" parent="IdnowSdkThemeWithoutBackround">
-        <item name="android:background">@color/bgPrimaryColor</item>
-        <item name ="android:colorBackground">@color/bgPrimaryColor</item>
-    </style>
-    
-        <style name="IdnowSdkThemeWithoutBackround"
-        parent="Theme.AppCompat.DayNight">
-        <item name="android:textColor">@color/primarytextColor</item>
-        <item name="android:editTextStyle">@style/IdnowSdkTheme.EditText</item>
-    </style>
-
-        <style name="IdnowSdkTheme.EditText" parent="android:Widget.EditText">
-        <item name="android:textColor">@color/primarytextColor</item>
-        <item name="android:colorBackground">@color/bgSecondaryColor</item>
-    </style>
-
-</resources>
-```
-
-- By not specifying a theme at all, the SDK's theme is used for the whole app.
-- Inheriting from the SDK's theme. Here is a usage example (themes.xml):
-
-```
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <style name="MyAppTheme"
-           parent="@style/﻿﻿IdnowSdkTheme﻿">
-    <!-- Your definitions here -->
-    </style>
-
-</resources>
-```
-
-#### Fonts
-
-```
-   setDefaultFont(Context context, String staticTypefaceFieldName, String fontAssetName)
-```
-Here an example on how to set custom font
+Example:
 
 ```
   FontsOverride.setDefaultFont(this, "SERIF", "roboto_thin_italic.ttf");
-    
 ```
 
-## Texts
+## Error codes
 
-The SDK provides English, German, French, Spanish, Italian, Hungarian, Georgian, Korean, Dutch, Polish, Portuguese, Russian and Chinese    texts.
+| Result code | Description                                                                                              |
+| - | - |
+| `IDnowSDK.RESULT_CODE_SUCCESS` | Process has successfully finished.<br>Intent contains the identification token (`IDnowSDK.RESULT_DATA_TRANSACTION_TOKEN`) |
+| `IDnowSDK.RESULT_CODE_CANCEL` | User has cancelled the identification process.<br>Intent contains the error message (`IDnowSDK.RESULT_DATA_ERROR`) and identification token (`IDnowSDK.RESULT_DATA_TRANSACTION_TOKEN`) |
+| `IDnowSDK.RESULT_CODE_FAILED` | The identification has failed.<br>Intent contains the error code (`IDnowSDK.RESULT_ERROR_CODE`) and/or message (`IDnowSDK.RESULT_DATA_ERROR`)  |
+| `IDnowSDK.RESULT_CODE_WRONG_IDENT` | User has used a wrong identification token.<br>Intent contains the error message (`IDnowSDK.RESULT_DATA_ERROR`) and identification token (`IDnowSDK.RESULT_DATA_TRANSACTION_TOKEN`) |
+|||
+
+## Localization
+
+In case you would like to change the localization used by the IDnow SDK at runtime you can do it by supplying the language code to the IDnowSettings instance.
+
+Supported values are: en (English), de (German), fr (French), es (Spanish), it (Italian), pt (Portuguese), et (Estonian), hr (Croatian), hu (Hungarian), ka (Georgian), ko(Korean), lt(Lithuanian), lv (Latvian), nl (Dutch), pl (Polish), ua (Ukrainian), zh (Chinese), ru (Russian).
+
+```
+IDnowSDK.setLocale(context, "en");
+```
 
 ## Other supported platforms
 
