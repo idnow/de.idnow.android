@@ -1,25 +1,25 @@
 
-# Table of Contents
-
+ # Table of Contents
+   
 - [Requirements](#requirements)
 - [Supported Architecture](#supported-architecture)
 - [Compatibility, End of Support, End of Life](#compatibility-matrix)
 - [Installation](#installation)
-  - [Import library](#1-import-library)
-  - [Import using Maven](#option-1-maven)
-  - [Import using AAR file](#option-2-aar-file)
-  - [Import BouncyCastle](#2-import-bouncycastle)
+    - [Import library](#1-import-library)
+    - [Import using Maven](#option-1-maven)
+    - [Import using AAR file](#option-2-aar-file)
+    - [Import BouncyCastle](#2-import-bouncycastle)
 - [Permissions](#permissions)
 - [Usage](#usage)
-  - [Setup and run](#setup-and-run)
-  - [Additional settings](#additional-settings)
-  - [Custom certificate providers](#custom-certificate-providers)
-    - [DTLS](#dtls)
-    - [mTLS](#mtls)
+    - [Setup and run](#setup-and-run)
+    - [Additional settings](#additional-settings)
+    - [Custom certificate providers](#custom-certificate-providers)
+        - [DTLS](#dtls)
+        - [mTLS](#mtls)
 - [Using IDnow with other native libraries (UnsatisfiedLinkError)](#using-idnow-with-other-native-libraries-unsatisfiedlinkerror)
 - [Branding](#branding)
-  - [Colors](#colors)
-  - [Fonts](#fonts)
+    - [Colors](#colors)
+    - [Fonts](#fonts)
 - [Error codes](#error-codes)
 - [Localization](#localization)
 - [Other Supported Platforms](#other-supported-platforms)
@@ -27,15 +27,15 @@
   - [React native](#react-native)
 - [eID Framework](#eid-framework)
 - [Examples](#examples)
-
+   
 
 ## Requirements
 
 - Android Studio;
 - Deployment target: Android 6.0 or later;
 - In order for end-users to have a seamless experience, the device needs to have the animation capability enabled, otherwise screens that contain animations will not function as intended;
-- We are using foreground services in our SDK to perform a task that is required in the process of connecting the end-user with the identification expert, as it is a prerequisite for the video call.
-  You’ll need to mention the following foreground service permissions on the App content page (Policy > App content) in Play Console: `FOREGROUND_SERVICE_CAMERA` and `FOREGROUND_SERVICE_MICROPHONE`.
+- We are using foreground services in our SDK to perform a task that is required in the process of connecting the end-user with the identification expert, as it is a prerequisite for the video call. 
+You’ll need to mention the following foreground service permissions on the App content page (Policy > App content) in Play Console: `FOREGROUND_SERVICE_CAMERA` and `FOREGROUND_SERVICE_MICROPHONE`.
 
 ## Supported Architecture
 
@@ -101,7 +101,7 @@ dependencies {
 ### 2. Import BouncyCastle
 
 Starting with SDK version 7.0.0 we offer the possibility to integrate your bouncycastle preferred version as an external library.
-We offer the BouncyCastle version 1.64 as a default (only compile) used version, therefore integrating it as external library is mandatory for the runtime.
+We offer the BouncyCastle version 1.64 as a default (only compile) used version, therefore integrating it as external library is mandatory for the runtime. 
 If you don't have any BouncyCastle version preferences, you can use the following https://github.com/idnow/de.idnow.android-sample/tree/master/app/libs
 
 Copy `bcprov-jdk15to18-164.jar` and `bctls-jdk15to18-164.jar` files into the `libs` folder, then add the following repositories and dependencies to your build.gradle file:
@@ -134,10 +134,12 @@ Our SDK uses the following permissions:
 <uses-permission android:name="android.permission.BLUETOOTH"/>
 <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
 <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
-//These will be requested when using VideoIdent
+
+//requested when using VideoIdent
 <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
 <uses-permission android:name="android.permission.RECORD_AUDIO" />
-//This will be requested when using eID
+
+//requested when using eID
 <uses-permission android:name="android.permission.NFC" />
 ```
 
@@ -238,17 +240,17 @@ Starting from SDK version 6.5.0 we offer MTLS support for API connections.
  ```
  IDnowSDK.setCertificateProvider(certificateProvider);
  ```    
-The certificate provider needs to:
+ The certificate provider needs to:
 - be a subclass of `CertificateProvider`
 - enable  `featureCertificate` flag
 - override `providePrivateKeyBytestream` method (raw data of *.der private key file)
 - override `provideCertificateBytestream` method (raw data of .der certificate file)
 - enable `featureFingerPrint` and/or `featureServerCert` flag(s)
 - override `provideServerFingerPrintByteStreams` and/or `provideServerCertificateBytestreams` method(s) (row data list of fingerprint/certificate files).
-
-**Notes:**
-<br>***- CertificateProvider can validate multiple server certificates/fingerprints.***
-<br>***- Certificates should be imported in .der format.***
+ 
+ **Notes:**
+ <br>***- CertificateProvider can validate multiple server certificates/fingerprints.***
+ <br>***- Certificates should be imported in .der format.***
 
 ## Using IDnow with other native libraries (UnsatisfiedLinkError)
 
@@ -272,11 +274,11 @@ If it's the other way round (your 3rd party lib ships more than armeabi, armeabi
 
 For further reading:
 http://developer.android.com/ndk/guides/abis.html
-
+    
 
 Additionally, a video is often required to demonstrate how the app uses the foreground service.
 
-Please contact the support team in case that video is needed.
+Please contact the support team in case that video is needed. 
 
 ## Branding
 
@@ -289,7 +291,7 @@ Please contact the support team in case that video is needed.
 | bgPrimaryColor | Optional color to be used as the screen background.<br>Default: <a href="#"><img valign='middle' alt='#F8F8F8' src='https://readme-swatches.vercel.app/F8F8F8?style=round'/></a>#F8F8F8 | <img src="./screenshots/bgPrimaryColor.png" width="250"> 
 | bgSecondaryColor | Optional color that replaces the default background color of the textfield components.<br>Default: <a href="#"><img valign='middle' alt='#EEEEEE' src='https://readme-swatches.vercel.app/EEEEEE?style=round'/></a>#EEEEEE | <img src="./screenshots/bgSecondaryColor.png" width="250">
 | primarytextColor | Optional color that replaces the default text color.<br>Default: <a href="#"><img valign='middle' alt='#000000' src='https://readme-swatches.vercel.app/000000?style=round'/></a>#000000 <br> Recommendation: Should be some kind of a dark color that does not collide with white color. | <img src="./screenshots/primarytextColor.png" width="250">
-| buttontextColor | Optional color that replaces the proceed button text color.<br>Default value: <a href="#"><img valign='middle' alt='#FFFFFF' src='https://readme-swatches.vercel.app/FFFFFF?style=round'/></a>#FFFFFF | <img src="./screenshots/buttonTextColor.png" width="250">
+| buttontextColor | Optional color that replaces the proceed button text color.<br>Default value: <a href="#"><img valign='middle' alt='#FFFFFF' src='https://readme-swatches.vercel.app/FFFFFF?style=round'/></a>#FFFFFF | <img src="./screenshots/buttontextColor.png" width="250">
 | basicInputField | Optional color that replaces the default text color of the textfield components.<br>Default: <a href="#"><img valign='middle' alt='#7B7B7B' src='https://readme-swatches.vercel.app/7B7B7B?style=round'/></a>#7B7B7B | <img src="./screenshots/basicInputField.png" width="250">
 |basicNavStepOn |     Optional color that replaces the default background color for identification steps.<br>Default: <a href="#"><img valign='middle' alt='#FFFFFF' src='https://readme-swatches.vercel.app/FFFFFF?style=round'/></a>#FFFFFF | <img src="./screenshots/basicNavStepOn.png" width="250">
 |basicNavStepOff |     Optional color that replaces the default background color for disabled identification steps.<br>Default: <a href="#"><img valign='middle' alt='#C9C6C4' src='https://readme-swatches.vercel.app/C9C6C4?style=round'/></a>#C9C6C4 | <img src="./screenshots/basicNavStepOff.png" width="250">
@@ -299,8 +301,8 @@ Please contact the support team in case that video is needed.
 
 The SDK offers the possibility to change the font.
 
-Example:
-
+Example: 
+    
 ```
   FontsOverride.setDefaultFont(this, "SERIF", "roboto_thin_italic.ttf");
 ```
