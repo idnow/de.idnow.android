@@ -31,7 +31,7 @@ Download the latest version of the [eID framework](https://github.com/idnow/de.i
 
 #### Step 1: Integrate Authada
 
-Due to technical reasons, we cannot make the Authada credentials available on Github . Please contact your customer success manager so that they can provide it to you.
+Due to security reasons, we cannot make the Authada credentials available on Github . Please contact your customer success manager so that they can provide it to you.
 
 #### Step 2: Integrate IDnow SDK
 
