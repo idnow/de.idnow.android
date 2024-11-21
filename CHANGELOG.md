@@ -1,5 +1,15 @@
 # Changelog
 
+
+### 9.1.0
+
+
+- **Picture-in-Picture (PiP)**: We have release the PiP feature that will show the agent's video feed to the user when the user puts the app in the background. The user will continue to see it unless the flow has been explicitly aborted. We are expecting this to improve agent-user communication and reduce the chances of WebSocket connection dropping. Like most features in our SDK, this is a configurable feature and can be enabled/disabled depending on our customers' choosing.
+- **Enhanced security validation**: To reduce the chances of a Man-in-the-Middle (MITM) attack over TLS, we have implemented an additional layer of validation. This increases the security of the communication channel between the backend and client side.
+- **Fixed crashes**: As part of this version we have also identified and fixed some crashes to ensure that users can go through the flow uninterrupted.
+- **UI/UX enhancements**: We have made various adjustments to our user interface (UI) and user experience (UX) to ensure users have a consistent experience throughout the flow.
+-**Bug fixes**: We regularly test our products to assess areas where there is any room for improvement. We identified some minor bugs and fixed those as part of this release as well.
+
 ### 9.0.1
 
 - As part of this release, we have upgraded the version of Authada library. This is only relevant for customers that are using eID as an identification method.

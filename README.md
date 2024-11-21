@@ -63,8 +63,8 @@ Please see https://github.com/idnow/de.idnow.android-sample for a sample applica
 
 ### Requirements
 
-- minSdkVersion: 23  (Android 6.0)
-- targetSdkVersion:    34 (Android 14.0 beta Upside-Down Cake)
+- minSdkVersion: 26  (Android 8.0)
+- targetSdkVersion:    35 (Android 14.0 beta Upside-Down Cake)
 - Internet connection, communication via standard SSL port 443
 
 ### Supported versions
