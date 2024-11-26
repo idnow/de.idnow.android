@@ -1,6 +1,8 @@
-
- # Table of Contents
-   
+# Table of Contents
+- [Overview](#overview)
+    - [VideoIdent](#videoident)
+    - [eSign](#esign)
+    - [eID](#eid)
 - [Requirements](#requirements)
 - [Supported Architecture](#supported-architecture)
 - [Compatibility, End of Support, End of Life](#compatibility-matrix)
@@ -22,12 +24,32 @@
     - [Fonts](#fonts)
 - [Error codes](#error-codes)
 - [Localization](#localization)
+- [Environment](#environment)
 - [Other Supported Platforms](#other-supported-platforms)
   - [Cordova](#cordova)
   - [React native](#react-native)
 - [eID Framework](#eid-framework)
 - [Examples](#examples)
    
+## Overview
+
+Public API documentation is available [here](https://docs-videoident.idnow.io/?version=latest&_gl=1*rur251*_gcl_aw*R0NMLjE3MzE1OTYwMzkuRUFJYUlRb2JDaE1JZ3UtaDg0bmNpUU1WVXBDREJ4MHkzakJqRUFBWUFTQUFFZ0tPeFBEX0J3RQ..*_gcl_au*MTU1OTcyODAxMS4xNzMxNTk2MDM3#107f6d04-34a7-4ac7-a8b4-e0243b9f4450).
+
+### VideoIdent
+
+IDnow VideoIdent allows to verify the identity of a person along with a verification if the document used is genuine in a process guided by an IDnow Ident Specialist. The user and the IDnow Ident Specialist are interacting with each other during this process using a video-chat.
+
+IDnow offers mobile Apps for iOS and Android for this process. IDnow offers mobile SDKs as well to integrate IDnow VideoIdent into customer-specific mobile apps. IDnow VideoIdent can also be used with a web browser by the user.
+
+### eSign
+
+IDnow eSign issues qualified electronic signatures (QES) on one or more PDF documents. The IDnow eSign product relies on the IDnow VideoIdent technology or the German eID scheme to verify the identity of the person signing the PDF documents.
+VideoIdent with eSign is available on mobiles and web browsers; eID with eSign is available on mobiles only.
+
+### eID
+
+German government introduced RFID chip based electronic ID cards in November 2010 and slowly these ID cards have been provided to more and more citizens every year. It is estimated that by end of 2020 all german citizens will possess this new ID card. Usage of this card has been accepted by BSI (Bundesamt für Sicherheit in der Informationstechnik) for digital identification of the citizens.
+IDnow eID product is only available on Mobile channel as of now.
 
 ## Requirements
 
@@ -53,7 +75,7 @@ Please refer to the following link to find information about compatibility, end-
 
 ## Installation
 
-Download the latest version of the [VideoIdent SDK](https://github.com/idnow/de.idnow.android/releases).
+Download the latest version of the [VideoIdent SDK](https://github.com/idnow/de.idnow.android/releases) (see the [changelog]()).
 
 ### 1. Import library
 
@@ -79,14 +101,11 @@ dependencies {
 
 We also offer the possibility to import the SDK as an .aar file instead.
 
-Copy the `idnow-android-sdk-x.x.x.aar` file into the `libs` folder, then add the following repositories and dependency to your build.gradle file:
+Copy the `idnow-android-sdk-x.x.x.aar` file into the `libs` folder, then add the following repositories and dependencies to your build.gradle file:
 
 ```
 allprojects {
     repositories {
-        maven {
-            url "https://raw.githubusercontent.com/idnow/de.idnow.android/master"
-        }
         flatDir {
             dirs 'libs'
         }
@@ -95,6 +114,16 @@ allprojects {
 
 dependencies {
     implementation files('libs/idnow-android-sdk-x.x.x.aar')
+
+    implementation 'de.authada.library:aal:4.23.0'
+    implementation 'de.idnow.insights:idnow-android-insights-sdk:1.2.0'
+    implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+    implementation 'com.googlecode.libphonenumber:libphonenumber:8.10.9'
+    implementation 'com.airbnb.android:lottie:5.1.1'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.12.0'
 } 
 ```
 
@@ -325,6 +354,35 @@ Supported values are: en (English), de (German), fr (French), es (Spanish), it (
 
 ```
 IDnowSDK.setLocale(context, "en");
+```
+
+## Environment
+
+To configure the environment used for the identification process, you can set a specific environment value. If no environment is defined, the default value is ```null```, which means that it will be automatically determined based on the prefix of the transaction token.
+
+Available environments:
+<br>- ```DEV``` → Development environments (```DEV```, ```DEV2```, ```DV3```, ..., ```DV20```);
+<br>- ```TEST``` → Test environments (```TEST```, ```TEST1```, ```TEST2```, ```TEST3```);
+<br>- ```STAGING``` → Staging environment (```SG1```);
+<br>- ```LIVE``` → Production environment (```LIVE```);
+<br>- ```CUSTOM``` → Custom environment (```CUSTOM```).
+
+Example:
+```
+IDnowSDK.setEnvironment(IDnowSDK.Server.DEV);
+```
+<br>If you want to use a custom environment, you need to configure the following properties to establish the connection to the custom servers:
+<br>- API Host
+<br>- WebSocket Host
+<br>- Video Host
+<br>- STUN Host
+
+Example:
+```
+IDnowSDK.setApiHost("YOUR_API_HOST", context);
+IDnowSDK.setWebsocketHost("YOUR_WEBSOCKET_HOST", context);
+IDnowSDK.setVideoHost("YOUR_VIDE_HOST", context);
+IDnowSDK.setStunHost("YOUR_STUN_HOST", context);
 ```
 
 ## Other supported platforms
