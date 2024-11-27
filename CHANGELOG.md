@@ -2,7 +2,7 @@
 
 ### 9.1.1
 
- We noticed a minor UI inconsistency while using the Picture-in-Picture (PiP) feature that was released in the last version i.e. v9.1.0. As part of this hotfix we have fixed that UI inconsistency.
+- We noticed a minor UI inconsistency while using the Picture-in-Picture (PiP) feature that was released in the last version i.e. v9.1.0. As part of this hotfix we have fixed that UI inconsistency.
 
 ### 9.1.0
 
