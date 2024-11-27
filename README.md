@@ -1,4 +1,3 @@
-
  # Table of Contents
 - [Overview](#overview)
     - [VideoIdent](#videoident)
@@ -92,7 +91,7 @@ allprojects {
 } 
 
 dependencies {
-    implementation("de.idnow.sdk:idnow-android:x.x.x")
+    implementation("de.idnow.sdk:idnow-android-sdk:x.x.x")
 }
 ```
 
