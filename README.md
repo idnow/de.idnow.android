@@ -1,4 +1,5 @@
-# Table of Contents
+
+ # Table of Contents
 - [Overview](#overview)
     - [VideoIdent](#videoident)
     - [eSign](#esign)
@@ -86,14 +87,12 @@ Add the following repository and dependency to your build.gradle file:
 ```
 allprojects {
     repositories {
-        maven {
-            url "https://raw.githubusercontent.com/idnow/de.idnow.android/master"
-        }
+        maven("https://raw.githubusercontent.com/idnow/de.idnow.android/master")
     }
 } 
 
 dependencies {
-    implementation('de.idnow.sdk:idnow-android:x.x.x')
+    implementation("de.idnow.sdk:idnow-android:x.x.x")
 }
 ```
 
@@ -106,24 +105,22 @@ Copy the `idnow-android-sdk-x.x.x.aar` file into the `libs` folder, then add the
 ```
 allprojects {
     repositories {
-        flatDir {
-            dirs 'libs'
-        }
+        flatDir { dirs("libs") }
     }
 }
 
 dependencies {
-    implementation files('libs/idnow-android-sdk-x.x.x.aar')
+    implementation(files("libs/idnow-android-sdk-x.x.x.aar"))
 
-    implementation 'de.authada.library:aal:4.23.0'
-    implementation 'de.idnow.insights:idnow-android-insights-sdk:1.2.0'
-    implementation 'com.google.code.gson:gson:2.8.6'
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
-    implementation 'com.googlecode.libphonenumber:libphonenumber:8.10.9'
-    implementation 'com.airbnb.android:lottie:5.1.1'
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.12.0'
+    implementation("de.authada.library:aal:4.23.0")
+    implementation("de.idnow.insights:idnow-android-insights-sdk:1.2.0")
+    implementation("com.google.code.gson:gson:2.8.6")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation("com.googlecode.libphonenumber:libphonenumber:8.10.9")
+    implementation("com.airbnb.android:lottie:5.1.1")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
 } 
 ```
 
@@ -138,15 +135,13 @@ Copy `bcprov-jdk15to18-164.jar` and `bctls-jdk15to18-164.jar` files into the `li
 ```
 allprojects {
     repositories {
-        flatDir {
-            dirs 'libs'
-        }
+        flatDir { dirs("libs") }
     }
 }
 
 dependencies {
-    implementation files('libs/bcprov-jdk15to18-164.jar')
-    implementation files('libs/bctls-jdk15to18-164.jar')
+    implementation(files("libs/bcprov-jdk15to18-164.jar"))
+    implementation(files("libs/bctls-jdk15to18-164.jar"))
 } 
 ```
 
