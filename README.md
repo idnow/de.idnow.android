@@ -1,5 +1,8 @@
+
  # Table of Contents
 - [Overview](#overview)
+    - [Purpose and audience](#purpose-and-audience)
+    - [Applicability](#applicability)
     - [VideoIdent](#videoident)
     - [eSign](#esign)
     - [eID](#eid)
@@ -35,27 +38,36 @@
 
 Public API documentation is available [here](https://docs-videoident.idnow.io/?version=latest&_gl=1*rur251*_gcl_aw*R0NMLjE3MzE1OTYwMzkuRUFJYUlRb2JDaE1JZ3UtaDg0bmNpUU1WVXBDREJ4MHkzakJqRUFBWUFTQUFFZ0tPeFBEX0J3RQ..*_gcl_au*MTU1OTcyODAxMS4xNzMxNTk2MDM3#107f6d04-34a7-4ac7-a8b4-e0243b9f4450).
 
+### Purpose and audience
+
+This guide is designed for developers integrating IDnow SDKs into mobile applications. The guide focuses on simplifying the integration process through clear instructions and practical examples.
+
+
+### Applicability
+This guide covers VideoIdent (VI), eSign, and eID SDKs.
+
+VI and eSign support React Native.
+eID requires native integration and doesn’t support React Native bridges. Use native code examples provided in this guide for integration.
+
 ### VideoIdent
 
-IDnow VideoIdent allows to verify the identity of a person along with a verification if the document used is genuine in a process guided by an IDnow Ident Specialist. The user and the IDnow Ident Specialist are interacting with each other during this process using a video-chat.
+IDnow VideoIdent verifies the identity of a person. The user must submit an accepted ID document, which is verified along with ID holder or user in a process guided by an IDnow Ident Specialist. The user and the IDnow Ident Specialist interact with each other during this process using a video-chat.
 
-IDnow offers mobile Apps for iOS and Android for this process. IDnow offers mobile SDKs as well to integrate IDnow VideoIdent into customer-specific mobile apps. IDnow VideoIdent can also be used with a web browser by the user.
+IDnow offers mobile Apps for iOS and Android for user and userId for the verification process. Users can use IDnow mobile SDKs to integrate VideoIdent into customer-specific mobile apps. VideoIdent can also be used with a web browser by the user.
 
 ### eSign
 
-IDnow eSign issues qualified electronic signatures (QES) on one or more PDF documents. The IDnow eSign product relies on the IDnow VideoIdent technology or the German eID scheme to verify the identity of the person signing the PDF documents.
-VideoIdent with eSign is available on mobiles and web browsers; eID with eSign is available on mobiles only.
+IDnow eSign issues Qualified Electronic Signatures (QES) on one or more PDF documents. The IDnow eSign product relies on the IDnow’s VideoIdent application or the German eID technology to verify the identity of the person signing the PDF documents. VideoIdent with eSign is available on mobiles and web browsers; eID with eSign is available on mobiles only.
 
 ### eID
 
-German government introduced RFID chip based electronic ID cards in November 2010 and slowly these ID cards have been provided to more and more citizens every year. It is estimated that by end of 2020 all german citizens will possess this new ID card. Usage of this card has been accepted by BSI (Bundesamt für Sicherheit in der Informationstechnik) for digital identification of the citizens.
-IDnow eID product is only available on Mobile channel as of now.
+German government introduced RFID chip based electronic ID cards in November 2010. Usage of this card has been accepted by BSI (Bundesamt für Sicherheit in der Informationstechnik) for digital identification of the citizens. IDnow eID product is only available on the mobile channel as of now.
 
 ## Requirements
 
 - Android Studio;
-- Deployment target: Android 6.0 or later;
-- In order for end-users to have a seamless experience, the device needs to have the animation capability enabled, otherwise screens that contain animations will not function as intended;
+- Deployment target: Android 8.0 or higher;
+- The user’s device must have animation capability to have a seamless experience, otherwise screens that contain animations will not function as intended;
 - We are using foreground services in our SDK to perform a task that is required in the process of connecting the end-user with the identification expert, as it is a prerequisite for the video call. 
 You’ll need to mention the following foreground service permissions on the App content page (Policy > App content) in Play Console: `FOREGROUND_SERVICE_CAMERA` and `FOREGROUND_SERVICE_MICROPHONE`.
 
@@ -234,7 +246,7 @@ To handle the results of the identification, implement the standard onActivityRe
 | Property name           | Description       |
 | ------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | setTransactionToken        | A token that will be used for instantiating a video identification.                                                                            | setCompanyId               | Your Company ID provided by IDnow.|
-| setEnvironment             | **Optional:** The environment that should be used for the identification (DEV, TEST, LIVE) The default value is `null`. The used environment will then base on the prefix of the transaction token (DEV -> DEV, TST -> Test, else -> Live). You can use the special IDnowEnvironmentCustom to define a custom IDnow installation. If this is done, you need to set the apiHost and websocketHost. |
+| setEnvironment             | **Optional:** There are three types of environment that can be used for the identification. They are: DEV, TEST, LIVE. The default value is `null`. The  environment used is identified by the prefix of the transaction token (DEV -> DEV, TST -> Test, else -> Live). You can use the special IDnowEnvironmentCustom to define a custom IDnow installation. If this is done, you need to set the apiHost and websocketHost. |
  setShowErrorSuccessScreen  | **Optional:** If set to `false`, the Error-Success-Screen provided by the SDK will not be displayed. <br />The default value of this property is `true`. |
 | setShowVideoOverviewCheck  | **Optional:** If set to `false`, the `Terms and Conditions` screen will not be shown before starting a video identification. <br />The default value of this property is `true`. |
 | setApiHost                 | The target server url for REST calls if custom server is used. |
@@ -277,13 +289,13 @@ Starting from SDK version 6.5.0 we offer MTLS support for API connections.
 
 ## Using IDnow with other native libraries (UnsatisfiedLinkError)
 
-For Videostreaming the Idnow SDK uses IceLink which come with native libs.
+For Videostreaming the IDnow SDK uses IceLink which come with native libs.
 
 If your app uses other 3rd party libs that come with their own native libs, it's possible that you get an UnsatisfiedLinkError.
 
-This means that the native lib folders shipped by your 3rd party lib don't match the native lib folders shipped by the Idnow SDK.
-Currently the Idnow SDK comes with the following folders: armeabi-v7a, arm64-v8a.
-If your 3rd party lib only supports some of the architectures but not others (e.g. armeabi, but not armeabi-v7a), you have to exclude the other folders of the Idnow SDK in your build.gradle (in this example: armeabi-v7a) with the following command:
+This means that the native lib folders shipped by your 3rd party lib don't match the native lib folders shipped by the IDnow SDK.
+Currently the IDnow SDK comes with the following folders: armeabi-v7a, arm64-v8a.
+If your 3rd party library only supports some of the architectures but not others (e.g. armeabi, but not armeabi-v7a), you must exclude the other folders of the IDnow SDK in your build.gradle (in this example: armeabi-v7a) with the following command:
 
 ```
 android {
@@ -309,15 +321,15 @@ Please contact the support team in case that video is needed.
 
 | Parameter Name | Description | Appearance
 | -------------- | ----------- | ------------- |
-| primaryColor | Optional color that replaces the proceed button background color.<br>Default: <a href="#"><img valign='middle' alt='#FF6B40' src='https://readme-swatches.vercel.app/FF6B40?style=round'/></a>#FF6B40 | <img src="./screenshots/primaryColor.png" width="250">
-| primaryVariantColor | Optional color that replaces the proceed button background color with a transparent code.<br>Default: <a href="#"><img valign='middle' alt='#80FF6B40' src='https://readme-swatches.vercel.app/80FF6B40?style=round'/></a>#80FF6B40 | <img src="./screenshots/primaryVariantColor.png" width="250">
+| primaryColor | Optional color that replaces the background color of the Proceed button.<br>Default: <a href="#"><img valign='middle' alt='#FF6B40' src='https://readme-swatches.vercel.app/FF6B40?style=round'/></a>#FF6B40 | <img src="./screenshots/primaryColor.png" width="250">
+| primaryVariantColor | Optional color that replaces the background color of the Proceed button with a transparent code.<br>Default: <a href="#"><img valign='middle' alt='#80FF6B40' src='https://readme-swatches.vercel.app/80FF6B40?style=round'/></a>#80FF6B40 | <img src="./screenshots/primaryVariantColor.png" width="250">
 | bgPrimaryColor | Optional color to be used as the screen background.<br>Default: <a href="#"><img valign='middle' alt='#F8F8F8' src='https://readme-swatches.vercel.app/F8F8F8?style=round'/></a>#F8F8F8 | <img src="./screenshots/bgPrimaryColor.png" width="250"> 
 | bgSecondaryColor | Optional color that replaces the default background color of the textfield components.<br>Default: <a href="#"><img valign='middle' alt='#EEEEEE' src='https://readme-swatches.vercel.app/EEEEEE?style=round'/></a>#EEEEEE | <img src="./screenshots/bgSecondaryColor.png" width="250">
-| primarytextColor | Optional color that replaces the default text color.<br>Default: <a href="#"><img valign='middle' alt='#000000' src='https://readme-swatches.vercel.app/000000?style=round'/></a>#000000 <br> Recommendation: Should be some kind of a dark color that does not collide with white color. | <img src="./screenshots/primarytextColor.png" width="250">
-| buttontextColor | Optional color that replaces the proceed button text color.<br>Default value: <a href="#"><img valign='middle' alt='#FFFFFF' src='https://readme-swatches.vercel.app/FFFFFF?style=round'/></a>#FFFFFF | <img src="./screenshots/buttontextColor.png" width="250">
+| primarytextColor | Optional color that replaces the default text color.<br>Default: <a href="#"><img valign='middle' alt='#000000' src='https://readme-swatches.vercel.app/000000?style=round'/></a>#000000 <br> Recommendation: It must be a dark color that contrasts with the white color. | <img src="./screenshots/primarytextColor.png" width="250">
+| buttontextColor | Optional color that replaces the color of the text in the Proceed button.<br>Default value: <a href="#"><img valign='middle' alt='#FFFFFF' src='https://readme-swatches.vercel.app/FFFFFF?style=round'/></a>#FFFFFF | <img src="./screenshots/buttontextColor.png" width="250">
 | basicInputField | Optional color that replaces the default text color of the textfield components.<br>Default: <a href="#"><img valign='middle' alt='#7B7B7B' src='https://readme-swatches.vercel.app/7B7B7B?style=round'/></a>#7B7B7B | <img src="./screenshots/basicInputField.png" width="250">
-|basicNavStepOn |     Optional color that replaces the default background color for identification steps.<br>Default: <a href="#"><img valign='middle' alt='#FFFFFF' src='https://readme-swatches.vercel.app/FFFFFF?style=round'/></a>#FFFFFF | <img src="./screenshots/basicNavStepOn.png" width="250">
-|basicNavStepOff |     Optional color that replaces the default background color for disabled identification steps.<br>Default: <a href="#"><img valign='middle' alt='#C9C6C4' src='https://readme-swatches.vercel.app/C9C6C4?style=round'/></a>#C9C6C4 | <img src="./screenshots/basicNavStepOff.png" width="250">
+|basicNavStepOn |     Optional color that replaces the default background color of the identification steps when this parameter is activated.<br>Default: <a href="#"><img valign='middle' alt='#FFFFFF' src='https://readme-swatches.vercel.app/FFFFFF?style=round'/></a>#FFFFFF | <img src="./screenshots/basicNavStepOn.png" width="250">
+|basicNavStepOff |     Optional color that replaces the default background color for disabled identification steps when the parameter is deactivated.<br>Default: <a href="#"><img valign='middle' alt='#C9C6C4' src='https://readme-swatches.vercel.app/C9C6C4?style=round'/></a>#C9C6C4 | <img src="./screenshots/basicNavStepOff.png" width="250">
 |||
 
 ### Fonts
@@ -342,9 +354,30 @@ Example:
 
 ## Localization
 
-In case you would like to change the localization used by the IDnow SDK at runtime you can do it by supplying the language code to the IDnowSettings instance.
+In case you would like to change the localization used by the IDnow SDK at runtime you can do it by supplying the language code to the IDnowSettings instance. The languages supported are mentioned below:
 
-Supported values are: en (English), de (German), fr (French), es (Spanish), it (Italian), pt (Portuguese), et (Estonian), hr (Croatian), hu (Hungarian), ka (Georgian), ko(Korean), lt(Lithuanian), lv (Latvian), nl (Dutch), pl (Polish), ua (Ukrainian), zh (Chinese), ru (Russian).
+| Language | Code                                                                                              |
+| - | - |
+| English | en |
+| German | de |
+| French | fr |
+| Spanish | es |
+| Italian | it |
+| Portuguese | pt |
+| Estonian | et |
+| Croatian | hr |
+| Hungarian | hu |
+| Georgian | ka |
+| Korean | ko |
+| Lithuanian | lt |
+| Latvian | lv |
+| Dutch | nl |
+| Polish | pl |
+| Ukrainian | ua |
+| Chinese | zh |
+| Russian | ru |||
+
+For example, if you want to change language to English(en) then follow this setting:
 
 ```
 IDnowSDK.setLocale(context, "en");
@@ -361,15 +394,17 @@ Available environments:
 <br>- ```LIVE``` → Production environment (```LIVE```);
 <br>- ```CUSTOM``` → Custom environment (```CUSTOM```).
 
-Example:
+Example: If Development environment is required, then user must initialize the following setting.
 ```
 IDnowSDK.setEnvironment(IDnowSDK.Server.DEV);
 ```
 <br>If you want to use a custom environment, you need to configure the following properties to establish the connection to the custom servers:
-<br>- API Host
-<br>- WebSocket Host
-<br>- Video Host
-<br>- STUN Host
+| Name | Description | 
+| --- | --- |
+| API Host | The domain name or IP address (IPv4) of the host that serves the API. |
+| WebSocket Host | A WebSocket server that listens to WebSocket connections or channels and handles the communication with clients trying to connect to it. |
+| Video Host | The server that hosts and displays online video. |
+| STUN Host | A STUN (Session Traversal Utilities for NAT) host sends a request to a STUN server, which is located on the public side of the Network Address Translation (NAT). The server responds with the public IP address and port from which the request was seen. |||
 
 Example:
 ```
