@@ -1,5 +1,9 @@
 # Changelog
 
+### 9.1.2
+
+- We had noticed that the version 3.0.1 of the eID SDK was crashing. As part of this version we have made the required changes to prevent that.
+
 ### 9.1.1
 
 - We noticed a minor UI inconsistency while using the Picture-in-Picture (PiP) feature that was released in the last version i.e. v9.1.0. As part of this hotfix we have fixed that UI inconsistency.
