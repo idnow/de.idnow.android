@@ -1,5 +1,9 @@
 # Changelog
 
+### 9.1.3
+
+- In response to an issue that we had noticed as part of v3.0.1 of the eID SDK, we had realized a temporary hack so that users do not get blocked. As part of this version we are releasing the proper fix required to address the eID issue.
+
 ### 9.1.2
 
 - We had noticed that the version 3.0.1 of the eID SDK was crashing. As part of this version we have made the required changes to prevent that.
