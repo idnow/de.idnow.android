@@ -1,84 +1,165 @@
 
  # Table of Contents
-   
 - [Overview](#overview)
-  - [Examples](#examples)
-  - [Requirements](#requirements)
-  - [Supported versions](#supported-versions)
-  - [Compatibility, End of Support, End of Life](#compatibility-matrix)
-  - [AndroidManifest](#androidmanifest)
-- [Android Studio](#android-studio)
-  - [How to import the SDK](#how-to-import-the-sdk)
-  - [How to use the .aar file](#how-to-use-the-aar-file)
-  - [App Bar](#app-bar)
-  - [SDK size](#sdk-size)
-- [Multidex support](#multidex-support)
-- [Proguard support](#proguard-support)
+    - [Purpose and audience](#purpose-and-audience)
+    - [Applicability](#applicability)
+    - [VideoIdent](#videoident)
+    - [eSign](#esign)
+    - [eID](#eid)
+- [Requirements](#requirements)
+- [Supported Architecture](#supported-architecture)
+- [Compatibility, End of Support, End of Life](#compatibility-matrix)
+- [Installation](#installation)
+    - [Import library](#1-import-library)
+    - [Import using Maven](#option-1-maven)
+    - [Import using AAR file](#option-2-aar-file)
+    - [Import BouncyCastle](#2-import-bouncycastle)
+- [Permissions](#permissions)
 - [Usage](#usage)
-- [Additional settings](#additional-settings)
-  - [Connection type](#connection-type)
-  - [Environment](#environment)
-  - [Logging](#logging)
-  - [Servers](#servers)
-  - [Branding](#branding)
-  - [Certificate provider](#certificate-provider)
-- [Bouncy castle](#bouncy-castle)
-  - [Supported BouncyCastle versions](#Supported-BouncyCastle-versions)
-- [Animations](#animations)
-- [Foreground Services](#foreground-services)
-  - [Declaring your foreground service information in Play Console](#declaring-your-foreground-service-information-in-play-console)
-- [Supported Architecture](#Supported-Architecture)
-  - [arm64-v8a](#arm64-v8a)
-  - [armeabi-v7a](#armeabi-v7a)
+    - [Setup and run](#setup-and-run)
+    - [Additional settings](#additional-settings)
+    - [Custom certificate providers](#custom-certificate-providers)
+        - [DTLS](#dtls)
+        - [mTLS](#mtls)
 - [Using IDnow with other native libraries (UnsatisfiedLinkError)](#using-idnow-with-other-native-libraries-unsatisfiedlinkerror)
-- [Design configuration](#design-configuration)
-  - [Languages](#languages)
-  - [App icon and logo](#app-icon-and-logo)
+- [Branding](#branding)
     - [Colors](#colors)
-    - [text_default](#text_default)
-    - [primary](#primary)
-    - [proceed_button_background](#proceed_button_background)
-    - [failure](#failure)
-    - [success](#success)
-    - [screenshots](#screenshots)
-    - [overwriting default colors](#overwriting-default-colors)
-  - [App theme](#app-theme)
-  - [Fonts](#fonts)
-    - [Action bar](#action-bar)
-- [Texts](#texts)
-- [Other Supported Platforms](#Other-Supported-Platforms)
-  - [Cordova](#Cordova)
-  - [React native](#React-native)
-- [eID Framework](#eid-framework)   
+    - [Fonts](#fonts)
+- [Error codes](#error-codes)
+- [Localization](#localization)
+- [Environment](#environment)
+- [Other Supported Platforms](#other-supported-platforms)
+  - [Cordova](#cordova)
+  - [React native](#react-native)
+- [eID Framework](#eid-framework)
+- [Examples](#examples)
    
-
-
 ## Overview
 
-This SDK supports AndroidStudio.
+Public API documentation is available [here](https://docs-videoident.idnow.io/?version=latest&_gl=1*rur251*_gcl_aw*R0NMLjE3MzE1OTYwMzkuRUFJYUlRb2JDaE1JZ3UtaDg0bmNpUU1WVXBDREJ4MHkzakJqRUFBWUFTQUFFZ0tPeFBEX0J3RQ..*_gcl_au*MTU1OTcyODAxMS4xNzMxNTk2MDM3#107f6d04-34a7-4ac7-a8b4-e0243b9f4450).
 
-### Examples
+### Purpose and audience
 
-Please see https://github.com/idnow/de.idnow.android-sample for a sample applications
+This guide is designed for developers integrating IDnow SDKs into mobile applications. The guide focuses on simplifying the integration process through clear instructions and practical examples.
 
-### Requirements
 
-- minSdkVersion: 26  (Android 8.0)
-- targetSdkVersion:    35 (Android 14.0 beta Upside-Down Cake)
-- Internet connection, communication via standard SSL port 443
+### Applicability
 
-### Supported versions
+This guide covers VideoIdent (VI), eSign, and eID SDKs.
 
-- Your current SDK will stop receiving further support by May 21 2020 (VideoIdent SDKs of version 4.2.0 and lower; 4.2.1 and higher continue to be supported)
-- After this time, the old SDK will continue to be operational, but we won’t provide any more updates and maintenance only with additional reimbursement
+VI and eSign support React Native. 
+eID requires native integration and doesn’t support React Native bridges. Use native code examples provided in this guide for integration.
 
-### Compatibility Matrix
+### VideoIdent
+
+IDnow VideoIdent verifies the identity of a person. The user must submit an accepted ID document, which is verified along with ID holder or user in a process guided by an IDnow Ident Specialist. The user and the IDnow Ident Specialist interact with each other during this process using a video-chat.
+
+IDnow offers mobile Apps for iOS and Android for user and userId for the verification process. Users can use IDnow mobile SDKs to integrate VideoIdent into customer-specific mobile apps. VideoIdent can also be used with a web browser by the user.
+
+### eSign
+
+IDnow eSign issues Qualified Electronic Signatures (QES) on one or more PDF documents. The IDnow eSign product relies on the IDnow’s VideoIdent application or the German eID technology to verify the identity of the person signing the PDF documents. VideoIdent with eSign is available on mobiles and web browsers; eID with eSign is available on mobiles only.
+
+### eID
+
+German government introduced RFID chip based electronic ID cards in November 2010. Usage of this card has been accepted by BSI (Bundesamt für Sicherheit in der Informationstechnik) for digital identification of the citizens. IDnow eID product is only available on the mobile channel as of now.
+
+## Requirements
+
+- Android Studio;
+- Deployment target: Android 8.0 or higher;
+- The user’s device must have animation capability to have a seamless experience, otherwise screens that contain animations will not function as intended;
+- We are using foreground services in our SDK to perform a task that is required in the process of connecting the end-user with the identification expert, as it is a prerequisite for the video call. 
+You’ll need to mention the following foreground service permissions on the App content page (Policy > App content) in Play Console: `FOREGROUND_SERVICE_CAMERA` and `FOREGROUND_SERVICE_MICROPHONE`.
+
+## Supported Architecture
+
+Different Android devices use different CPUs, which in turn support different instruction sets.
+
+Currently we support the following architectures:
+- arm64-v8a
+- armeabi-v7a.
+
+For further reading: http://developer.android.com/ndk/guides/abis.html.
+
+## Compatibility Matrix
 
 Please refer to the following link to find information about compatibility, end-of-support (EOS) and end-of-life (EOL) dates pertaining to our products: [IDnow Compatibility Matrix: Browser & OS Compatibility guide](https://www.idnow.io/developers/compatibility-overview/)
 
-### AndroidManifest
+## Installation
 
-The following permissions are required:
+Download the latest version of the [VideoIdent SDK](https://github.com/idnow/de.idnow.android/releases) (see the [changelog]()).
+
+### 1. Import library
+
+#### Option 1: Maven
+
+Add the following repository and dependency to your build.gradle file:
+
+```
+allprojects {
+    repositories {
+        maven("https://raw.githubusercontent.com/idnow/de.idnow.android/master")
+    }
+} 
+
+dependencies {
+    implementation("de.idnow.sdk:idnow-android-sdk:x.x.x")
+}
+```
+
+#### Option 2: AAR file
+
+We also offer the possibility to import the SDK as an .aar file instead.
+
+Copy the `idnow-android-sdk-x.x.x.aar` file into the `libs` folder, then add the following repositories and dependencies to your build.gradle file:
+
+```
+allprojects {
+    repositories {
+        flatDir { dirs("libs") }
+    }
+}
+
+dependencies {
+    implementation(files("libs/idnow-android-sdk-x.x.x.aar"))
+
+    implementation("de.authada.library:aal:4.23.0")
+    implementation("de.idnow.insights:idnow-android-insights-sdk:1.2.0")
+    implementation("com.google.code.gson:gson:2.8.6")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation("com.googlecode.libphonenumber:libphonenumber:8.10.9")
+    implementation("com.airbnb.android:lottie:5.1.1")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+} 
+```
+
+### 2. Import BouncyCastle
+
+Starting with SDK version 7.0.0 we offer the possibility to integrate your bouncycastle preferred version as an external library.
+We offer the BouncyCastle version 1.64 as a default (only compile) used version, therefore integrating it as external library is mandatory for the runtime. 
+If you don't have any BouncyCastle version preferences, you can use the following https://github.com/idnow/de.idnow.android-sample/tree/master/app/libs
+
+Copy `bcprov-jdk15to18-164.jar` and `bctls-jdk15to18-164.jar` files into the `libs` folder, then add the following repositories and dependencies to your build.gradle file:
+
+```
+allprojects {
+    repositories {
+        flatDir { dirs("libs") }
+    }
+}
+
+dependencies {
+    implementation(files("libs/bcprov-jdk15to18-164.jar"))
+    implementation(files("libs/bctls-jdk15to18-164.jar"))
+} 
+```
+
+## Permissions
+
+Our SDK uses the following permissions:
 
 ```
 <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
@@ -86,248 +167,74 @@ The following permissions are required:
 <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
 <uses-permission android:name="android.permission.CAMERA" />
 <uses-permission android:name="android.permission.FLASHLIGHT" />
-```
-
-If Video-Ident will be used, the following permissions are required as well:
-
-
-```
-<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
-<uses-permission android:name="android.permission.RECORD_AUDIO" />
-```
-
-If EID will be used, the following permission is required as well:
-
-```
-<uses-permission android:name="android.permission.NFC" />
-```
-
-Additional permissions for certain audio devices:
-
-```
 <uses-permission android:name="android.permission.BLUETOOTH"/>
 <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
 <uses-permission android:name="android.permission.BLUETOOTH_CONNECT"/>
 
+//requested when using VideoIdent
+<uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
+<uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+//requested when using eID
+<uses-permission android:name="android.permission.NFC" />
 ```
 
-Moreover, when using an Android LibraryProject, all the Activities, Services and <uses-feature> from the LibraryProject (SDK) have to be mentioned in your Apps AndroidManifest. The simplest way is just to copy the corresponding part of the IDnowSDK AndroidManifest.
-
-## Android Studio
-
-### How to import the SDK
-
-[![Watch the video](https://github.com/idnow/de.idnow.android/blob/master/docs/screenshot_video1.png)](https://youtu.be/yKOu-luc1x8)
-
-Starting with SDK version 7.0.0 we offer the possibility to integrate your bouncycastle preferred version as an external library.
-We offer the bouncycastle version 1.64 as a default (only compile) used version, therefore integrating bouncycastle as external library is mandatory for the runtime. 
-If you don't have any Bouncycastle version preferences, you can use the following https://github.com/idnow/de.idnow.android-sample/tree/master/app/libs
-
-
-In your top-level build.gradle project file add the following url under repositories block:
-
-```
-allprojects {
-repositories {
-..
-maven {
-url "https://raw.githubusercontent.com/idnow/de.idnow.android/master"
-} 
-maven { url 'https://jitpack.io' }
-..
-}
-}
-```
-
-Copy bouncycastle libraries bcprov-jdk15to18-x.x.jar, bctls-jdk15to18-x.x.jar and bcutil-jdk15to18-x.x.jar into the apps libs folder 
-
-
-
-In the dependencies part of your app.gradle you have to add IDnow SDK dependency alongside with bouncycastle libraries to be used 
-
-```
-dependencies {
-..
-// IDnow SDK lib
-implementation 'de.idnow.sdk:idnow-android-sdk:x.x.x' 
-
-// Bouncycastle external libs 
-implementation files ('libs/bcprov-jdk15to18-x.x.jar')
-implementation files ('libs/bctls-jdk15to18-x.x.jar')
-implementation files ('libs/bcutil-jdk15to18-x.x.jar') //optional
-..
-}
-```
-
-### How to use the .aar file:
-
-[![Watch the video](https://github.com/idnow/de.idnow.android/blob/master/docs/Screenshot_video2.png)](https://youtu.be/yMIpthcLRnw)
-
-Starting with SDK version 7.0.0 we offer the possibility to integrate bouncycastle as an external library.
-We offer the bouncycastle version 1.64 as a default (only compile) used version, therefore integrating bouncycastle as external library is mandatory for the runtime.
-
-Copy the idnow-android-sdk.7.0.0 and bouncycastle libraries into the apps libs folder.
-If you don't have Bouncycastle version preferences, you can use the following https://github.com/idnow/de.idnow.android-sample/tree/master/app/libs
-
-In your app.gradle add:
-
-```
-repositories {
-    
-maven {
-  url "https://raw.githubusercontent.com/idnow/de.idnow.android/master" 
-       }
-       
-maven { url 'https://jitpack.io' }
-           
-flatDir {
-dirs 'libs' //this way we can find the .aar file in libs folder
-}
-}
-```
-
-Additional dependencies to add in your app.gradle:
-
-``` 
-dependencies {
-    //     IDnow SDK
-    implementation 'de.idnow.sdk:idnow-android-x.x.x@aar'
-    // Bouncycastle external libs
-    implementation files ('libs/bcprov-jdk15to18-x.x.jar')
-    implementation files ('libs/bctls-jdk15to18-x.x.jar')
-    implementation files ('libs/bcutil-jdk15to18-x.x.jar') // optional 
-    
-    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
-    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:4.12.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
-    implementation 'androidx.annotation:annotation:1.3.0'
-    implementation "androidx.constraintlayout:constraintlayout:2.1.3"
-    implementation 'androidx.appcompat:appcompat:1.4.1'
-    implementation 'androidx.recyclerview:recyclerview:1.2.1'
-    implementation 'com.googlecode.libphonenumber:libphonenumber:8.10.9'
-    implementation 'de.idnow.insights:idnow-android-insights-sdk:1.2.0'
-    implementation 'com.airbnb.android:lottie:5.1.1'
-    implementation 'androidx.preference:preference:1.2.0'
-    implementation "androidx.percentlayout:percentlayout:1.0.0"
-    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
-    implementation 'com.google.android.material:material:1.5.0'
-    }
-```
-
-### App Bar
-
-During the use of the SDK the app is NOT showing an App Bar since the ident follows exact predefined steps the user can't influence and because there is nothing to search for.
-
-### SDK size
-
-By default the SDK has a size of roughly 15 mb.
-
-## Multidex support
-
-Your project might require the usage of multidex if it comes over 65k methods. Please see http://developer.android.com/tools/building/multidex.html for details
-
-## Proguard support
-
-A proguard file is supplied in this project as well.
+**Note:** There permissions don't need to be added to your project's manifest file.
 
 ## Usage
 
-The ONLY class in the SDK designated for user access is the IDnowSDK class.
+### Setup and run
 
-To create an instance of the IDnow SDK, perform the following call and provide the companyid, which was provided to you during setup as well as an activity that receives callbacks. IDnowSDK is a singleton class, so whenever you need to call it just do so with IDnowSDK.getInstance().
+After adding the IDnowSDK into your project you need to follow these steps in order to start an identification process.
 
+#### Step 1. Initialize SDK
 ```
 IDnowSDK.getInstance().initialize(<Activity>, "<companyid>");
 ```
 
-Set the static parameters for the SDK usage. Context has to be passed, as parameters are persisted in Preferences. You can decide whether to let the user confirm legal agreements (setShowVideoOverviewCheck).
-You also can decide if after the identification the IDnow Error/SuccessScreen is shown, or if the callback to your app is triggered right after identification is finished.
-
+#### Step 2. Start SDK
 ```
-IDnowSDK.setShowVideoOverviewCheck(<true/false>, <Context>);
-IDnowSDK.setShowErrorSuccessScreen(<true/false>, <Context>);
-```
-
-To actually start the identification pass your transaction token.
-
-```
-IDnowSDK.getInstance().start(<Your transaction token>);
-```
-
-Here is the full example:
-
-
-```java
 try {
-    // Initialize with your activity which will handle the SDK callback and pass the id of your company.
-    //    IDnowSDK is a singleton class, so just call it with IDnowSDK.getInstance()
-    IDnowSDK.getInstance().initialize(StartActivity.this, "ihreBank");
+    IDnowSDK.getInstance().initialize(StartActivity.this, "companyId");
 
-    // Set the transactionToken, for example from a TextField
-    IDnowSDK.setTransactionToken(editTextToken.getText().toString());
+    ...
+    //Additional settings
+    ...
 
-    // You can decide whether to let the user confirm the legal points.
-    IDnowSDK.setShowVideoOverviewCheck(true, context);
-
-    // Same goes to the success screen. If none is shown, the app sends the results right back.
-    // The defaults for the both parameters are "true";
-    IDnowSDK.setShowErrorSuccessScreen(true, context);
-
-    // Optionally set against which environment the app has to test. Possibilities are DEV, TEST, LIVE, with LIVE being the default.
-    IDnowSDK.setEnvironment( Server.TEST );
-    
-    
-    // Set the custom certificate provider
-    IDnowSDK.setCertificateProvider(new CustomerCertificateProvider(this.context))
-
-    // To actually start the identification process, pass the transactionToken.
     IDnowSDK.getInstance().start(IDnowSDK.getTransactionToken());
 } catch (Exception e) {
-    // The SDK checks the input parameters and throws an exception if they don't seem right.
     e.printStackTrace();
 }
 ```
 
 The SDK checks the input parameters and throws an Exception if something is deemed not right, to provide you with quick feedback. Handle it as desired.
 
-To handle the results of the identification, implement the standard onActivityResult function in your activity.:
+To handle the results of the identification, implement the standard onActivityResult function in your activity:
 
 ```
-    @Override
-    protected void onActivityResult( int requestCode, int resultCode, Intent data )
-    {
-        if ( requestCode == IDnowSDK.REQUEST_ID_NOW_SDK )
-        {
-            if ( resultCode == IDnowSDK.RESULT_CODE_SUCCESS )
-            {
-                If ( data != null )
-                {
+     @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == IDnowSDK.REQUEST_ID_NOW_SDK) {
+            if (resultCode == IDnowSDK.RESULT_CODE_SUCCESS) {
+                if (data != null) {
                     String transactionToken = data.getStringExtra(IDnowSDK.RESULT_DATA_TRANSACTION_TOKEN);
                     Log.v(TAG, "success, transaction token: " + transactionToken);
                 }
-            }
-            else if ( resultCode == IDnowSDK.RESULT_CODE_CANCEL )
-            {
-                if ( data != null )
-                {
+            } else if (resultCode == IDnowSDK.RESULT_CODE_CANCEL) {
+                if (data != null) {
                     String transactionToken = data.getStringExtra(IDnowSDK.RESULT_DATA_TRANSACTION_TOKEN);
                     String errorMessage = data.getStringExtra(IDnowSDK.RESULT_DATA_ERROR);
-                    Log.v(TAG, "canceled, transaction token: " + transactionToken + “, error: “ + errorMessage);
+                    Log.v(TAG, "canceled, transaction token: " + transactionToken + ", error: "
+                    +errorMessage);
                 }
-            }
-            else if ( resultCode == IDnowSDK.RESULT_CODE_FAILED )
-            {
-                if ( data != null )
-                {
+            } else if (resultCode == IDnowSDK.RESULT_CODE_FAILED) {
+                if (data != null) {
                     String transactionToken = data.getStringExtra(IDnowSDK.RESULT_DATA_TRANSACTION_TOKEN);
                     String errorMessage = data.getStringExtra(IDnowSDK.RESULT_DATA_ERROR);
-                    Log.v(TAG, "failed, transaction token: " + transactionToken + “, error: “ + errorMessage);
+                    Log.v(TAG, "failed, transaction token: " + transactionToken + ", error: "
+                    +errorMessage);
                 }
-            }
-            else
-            {
+            } else {
                 Log.v(TAG, "Result Code: " + resultCode);
             }
         }
@@ -335,341 +242,180 @@ To handle the results of the identification, implement the standard onActivityRe
 
 ```
 
-## Additional settings
+### Additional settings
 
-### Connection type
+| Property name           | Description       |
+| ------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| setTransactionToken        | A token that will be used for instantiating a video identification.                                                                            | setCompanyId               | Your Company ID provided by IDnow.|
+| setEnvironment             | **Optional:** There are three types of environment that can be used for the identification. They are: DEV, TEST, LIVE. The default value is `null`. The  environment used is identified by the prefix of the transaction token (DEV -> DEV, TST -> Test, else -> Live). You can use the special IDnowEnvironmentCustom to define a custom IDnow installation. If this is done, you need to set the apiHost and websocketHost. |
+ setShowErrorSuccessScreen  | **Optional:** If set to `false`, the Error-Success-Screen provided by the SDK will not be displayed. <br />The default value of this property is `true`. |
+| setShowVideoOverviewCheck  | **Optional:** If set to `false`, the `Terms and Conditions` screen will not be shown before starting a video identification. <br />The default value of this property is `true`. |
+| setApiHost                 | The target server url for REST calls if custom server is used. |
+| setWebsocketHost           | The target server url for websocket calls if custom server is used.                                                                                                                                                                                                                                                                                                                                                    |
+| setConnectionType          | The connection type to use to talk the backend.`ConnectionType` <br />Possible values:<br />- WEBSOCKET *(default)*<br />- LONG_POLLING                                                                                                                                                                                                                                      |
+| setCertificateProvider     | Accepts a subclass of `CertificateProvider`. Used to provide custom mTLS certificates used by the network connections. See [Custom certificate providers](#custom-certificate-providers). |
+| setDtlsCertificateProvider | Accepts a subclass of `CertificateProvider`. Used to provide custom DTLS certificates used by the WebRTC connection. See [Custom certificate providers](#custom-certificate-providers).                                                                                                                            
+| logging | ```enableLogging``` or ```disableLogging``` methods are used to toggle logging.<br> The default value of this property is `true`. |
 
-You can set the connection type to use: websockets.
+### Custom certificate providers
 
+#### DTLS
+
+Starting from SDK version 7.2.0 we offer to set your own DTLS certificates used by the WebRTC connection.
 ```
-IDnowSDK.setConnectionType(IDnowSDK.ConnectionType.WEBSOCKET, context);
-```
-
-### Environment
-
-You can force one of the environments to use. Default is to determine this by the token used.
-
-```
-IDnowSDK.setEnvironment(IDnowSDK.Server.TEST);
-```
-
-### Logging
-
-You can disable logging of the SDK by using
-
-```
-IDnowSDK.disableLogging();
-```
-
-### Servers
-
-You can set to use your own servers. When this setting is enabled, apiHost, webHost and websocketHost must also be set.
-
-```
-IDnowSDK.setEnvironment(IDnowSDK.Server.CUSTOM);
-IDnowSDK.setApiHost("https://api.yourserver.com", context);
-IDnowSDK.setWebHost("https://www.yourserver.com", context);
-IDnowSDK.setWebsocketHost("https://websocket.yourserver.com", context);
-IDnowSDK.setVideoHost("https://video.yourserver.com", context);
-IDnowSDK.setStunHost("video.yourserver.com", context);
-IDnowSDK.setStunPort(3478, context);
-```
-
-### branding
-
-You can set the new branding (Circular background for the buttons)
-
-```
-IDnowSDK.setNewBrand(TRUE);
-    
-```
-
-### Certificate Provider
-
-        
- Starting from SDK version 7.2.0 we offer to set your own DTLS certificates used by the WebRTC connection.
-    
-```
-    
-IDnowSDK.setDtlsCertificateProvider(customerCertificateProvider)
-    
+IDnowSDK.setDtlsCertificateProvider(certificateProvider);
 ```    
-    
- 
- 
- Starting from SDK version 6.5.0 we offer MTLS support for API connections
+The certificate provider needs to:
+- be a subclass of `CertificateProvider`
+- enable  `featureCertificate` flag
+- override `provideCertificateBytestream` method (raw data of the certificate file).
 
+#### mTLS
+
+Starting from SDK version 6.5.0 we offer MTLS support for API connections.
  ```
-    
-IDnowSDK.setCertificateProvider(customerCertificateProvider)
-    
-```    
+ IDnowSDK.setCertificateProvider(certificateProvider);
+ ```    
+ The certificate provider needs to:
+- be a subclass of `CertificateProvider`
+- enable  `featureCertificate` flag
+- override `providePrivateKeyBytestream` method (raw data of *.der private key file)
+- override `provideCertificateBytestream` method (raw data of .der certificate file)
+- enable `featureFingerPrint` and/or `featureServerCert` flag(s)
+- override `provideServerFingerPrintByteStreams` and/or `provideServerCertificateBytestreams` method(s) (row data list of fingerprint/certificate files).
  
- MTLS enables server/client certificate validation. 
- SDK can provide custom client certificate and several server certificates
- 
- What has changed:
-
- - Certificate provider now can validate multiple server certificates/fingerprints
- - REST supports MTLS
- - WebSocket supports MTLS. For this purpose, SRWebsocket implementation was slightly updated. So, now we have a local version of SRWebsocket.
- 
- Certificate Generation :
-Client certificate and private key pair can be generated in a number of ways, for example, with Certificate Sign Request on Mac OS X Keychain.
-
-Client Certificates :
-
-
-- client certificate (x509/ASN.1) should be imported in DER-format. For example, conversion from PEM:
-
-```
-openssl x509 -outform der -in yourcertificate.pem -out yourcertificate.der
-```
-
-- private key (RSA) should also be imported in DER-format
-
- 
-How to do it:
- 
- 1 - Create class similar class to MyMtlsCertificateProvider in android folder
- 2 - Do IDnowSDK.setCertificateProvider(new MyMtlsCertificateProvider(context));
-
-Feature flags for certificate provider allow usage of the corresponding features:
-
-```
-    public boolean featureCertificate() { return true; }  // use client certificate
-    public boolean featureFingerPrint() { return true; } // use server certificate fingerprints
-    public boolean featureServerCert()  { return true; }  // use server certificates
-```    
-    
-
-N.B You can checkout the Sample App https://github.com/idnow/de.idnow.android-sample (branch : set_certificate_provider ) to see the implementation
-    
-    
-## Supported Architecture
-
-Different Android devices use different CPUs, which in turn support different instruction sets.
-
-As Our SDK is using a 3rd party lib wchich is limiting us to support the same instruction sets.
-    
-Today we don't support the architecture x86_64 and x64 and we only support the following architecture :
-    
-### arm64-v8a
-    
-This ABI is for ARMv8-A based CPUs, which support the 64-bit AArch64 architecture. It includes the Advanced SIMD (Neon) architecture extensions.
-    
-### armeabi-v7a
-    
-This ABI is for 32-bit ARM-based CPUs. The Android variant includes Thumb-2 and the VFP hardware floating point instructions, specifically VFPv3-D16, which includes 16 dedicated 64-bit floating point registers.
+ **Notes:**
+ <br>***- CertificateProvider can validate multiple server certificates/fingerprints.***
+ <br>***- Certificates should be imported in .der format.***
 
 ## Using IDnow with other native libraries (UnsatisfiedLinkError)
 
-For Videostreaming the Idnow SDK uses IceLink which come with native libs.
+For Videostreaming the IDnow SDK uses IceLink which come with native libs.
 
 If your app uses other 3rd party libs that come with their own native libs, it's possible that you get an UnsatisfiedLinkError.
 
-This means that the native lib folders shipped by your 3rd party lib don't match the native lib folders shipped by the Idnow SDK.
-Currently the Idnow SDK comes with the following folders: armeabi-v7a, arm64-v8a.
-If your 3rd party lib only supports some of the architectures but not others (e.g. armeabi, but not armeabi-v7a), you have to exclude the other folders of the Idnow SDK in your build.gradle (in this example: armeabi-v7a) with the following command:
+This means that the native lib folders shipped by your 3rd party lib don't match the native lib folders shipped by the IDnow SDK.
+Currently the IDnow SDK comes with the following folders: armeabi-v7a, arm64-v8a.
+If your 3rd party library only supports some of the architectures but not others (e.g. armeabi, but not armeabi-v7a), you must exclude the other folders of the IDnow SDK in your build.gradle (in this example: armeabi-v7a) with the following command:
 
 ```
 android {
-//...
-packagingOptions {
-exclude "lib/armeabi-v7a/"
-//...
+    packagingOptions {
+        exclude "lib/armeabi-v7a/"
+    }
 }
 ```
 
-If it's the other way round (your 3rd party lib ships more than armeabi, armeabi-v7a, arm64-v8a, you have to exclude these folders, so the remaining folders match the Idnow SDK folders.
+If it's the other way round (your 3rd party lib ships more than armeabi, armeabi-v7a, arm64-v8a), you have to exclude these folders, so the remaining folders match the Idnow SDK folders.
 
 For further reading:
 http://developer.android.com/ndk/guides/abis.html
     
-## Bouncy castle
-    
-The WebRTC used by our SDK is using the Bouncy Castle third-party dependency. This implies that if the same dependency is being used on the integrator’s part, the two versions will conflict. As a solution to this problem, we are using a custom version of our WebRTC that allows us to set BouncyCastle as an external dependency. This implies that the following dependency will also have to be added directly in the app.gradle file of the integrator app’s project, along with other listed dependencies:
-
-```    
-   implementation files ('libs/bcprov-jdk15to18-x,x.jar')
-   implementation files ('libs/bctls-jdk15to18-x.x.jar')
-   implementation files ('libs/bcutil-jdk15to18-x.x.jar')
-```
-
-N.B Importing IDnow SDK without bouncy castle libs, you will encounter the error ClassNotFoundException 
-
-### Supported BouncyCastle versions 
-
-- Starting with IDnow SDK version 7.0.0, we are supporting BouncyCastle as an external dependency.
-- The default BouncyCastle version used in the SDK is <strong>v1.64</strong> (only compile) a bouncy castle external is still needed.
-- The BouncyCastle versions that are supported are v1.63+.
-    
-## Animations
-    
-In order for end-users to have a seamless experience, the device needs to have the animation capability enabled, otherwise screens that contain animations will not function as intended.
-
-## Foreground Services
-
-A foreground service performs operations that are visible to the user, and informs them that the app is performing a task in the foreground and consuming system resources. This can happen even when the user is not directly interacting with the app.
-
-We are using foreground services in our SDK to perform a task that is required in the process of connecting the end-user with the identification expert, as it is a prerequisite for the video call.
-
-The aim of this task is to keep the camera and microphone in active mode while the end-user is waiting to get connected to our identification expert. This is important to prevent an empty black screen from showing at the time when the identification expert picks up the call as the user may have put the app in the background while waiting.
-
-<b>Camera</b>:
-
-Continue to access the camera from the background, such as video chat apps that allow for multitasking.
-
-<b>Microphone</b>:
-
-Continue microphone capture from the background, such as voice recorders or communication apps.
-
-To achieve this, we are required to declare permissions to use foreground services. Starting with Android 14, we are obliged to update our service declaration in the AndroidManifest file and specify the correct foreground service type that we are using.
-
-```
-<uses-permission android:name="android.permission.FOREGROUND_SERVICE_CAMERA"/>
-
-<uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE"/>
-
-<manifest xmlns:android="http://schemas.android.com/apk/res/android" ...>
-
-    <service
-
-        android:name=".MyForegroundService"
-
-        android:foregroundServiceType="camera|microphone"
-
-        android:exported="false">
-
-    </service>
-
-</manifest>
-```
-
-### Declaring your foreground service information in Play Console
-
-You’ll need to declare any foreground service types that you use in a new declaration (camera and microphone) on the App content page (Policy > App content) in Play Console .
-
-You’ll need to mention the following undeclared foreground service permissions
-
-```
-FOREGROUND_SERVICE_CAMERA
-FOREGROUND_SERVICE_MICROPHONE
-```
 
 Additionally, a video is often required to demonstrate how the app uses the foreground service.
 
 Please contact the support team in case that video is needed. 
 
-### Languages
-
-In case you would like to change the language used by the IDnow SDK at runtime you can do the following in the host App during the initialization: 
-
-```
-IDnowSDK.getInstance().initialize( StartActivity.this, "", language);
-```
-Language values are: en (English), de (German), fr (French), es (Spanish), it (Italian), pt (Portuguese), et (Estonian), hr (Croatian), hu (Hungarian), ka (Georgian), ko(Korean), lt(Lithuanian), lv (Latvian), nl (Dutch), pl (Polish),  ru (Russian), zh (Chinese), uk (Ukrainian)
-
-
-### App icon and logo
-
-A single icon is used as the app launcher icon and logo. You can overwrite it, if you provide assets, named "ic_launcher.png",  in the following sizes in the drawable folders:
-
-- mdpi: 48px * 48px
-- hdpi: 72px * 72px
-- xhdpi: 96px * 96px
-- xxhdpi: 144px * 144px
-- xxxhdpi: 192px * 192px
-
-You must not declare it again in your app manifest.
+## Branding
 
 ### Colors
 
-The IDnow SDK is designed with colors following IDnow's corporate design. You can use the SDK without making any adaptions to these colors. However, if you want the SDK screens to appear in different colors, that can be achieved using the generic branding color keys below:
+| Parameter Name | Description | Appearance
+| -------------- | ----------- | ------------- |
+| primaryColor | Optional color that replaces the background color of the Proceed button.<br>Default: <a href="#"><img valign='middle' alt='#FF6B40' src='https://readme-swatches.vercel.app/FF6B40?style=round'/></a>#FF6B40 | <img src="./screenshots/primaryColor.png" width="250">
+| primaryVariantColor | Optional color that replaces the background color of the Proceed button with a transparent code.<br>Default: <a href="#"><img valign='middle' alt='#80FF6B40' src='https://readme-swatches.vercel.app/80FF6B40?style=round'/></a>#80FF6B40 | <img src="./screenshots/primaryVariantColor.png" width="250">
+| bgPrimaryColor | Optional color to be used as the screen background.<br>Default: <a href="#"><img valign='middle' alt='#F8F8F8' src='https://readme-swatches.vercel.app/F8F8F8?style=round'/></a>#F8F8F8 | <img src="./screenshots/bgPrimaryColor.png" width="250"> 
+| bgSecondaryColor | Optional color that replaces the default background color of the textfield components.<br>Default: <a href="#"><img valign='middle' alt='#EEEEEE' src='https://readme-swatches.vercel.app/EEEEEE?style=round'/></a>#EEEEEE | <img src="./screenshots/bgSecondaryColor.png" width="250">
+| primarytextColor | Optional color that replaces the default text color.<br>Default: <a href="#"><img valign='middle' alt='#000000' src='https://readme-swatches.vercel.app/000000?style=round'/></a>#000000 <br> Recommendation: It must be a dark color that contrasts with the white color. | <img src="./screenshots/primarytextColor.png" width="250">
+| buttontextColor | Optional color that replaces the color of the text in the Proceed button.<br>Default value: <a href="#"><img valign='middle' alt='#FFFFFF' src='https://readme-swatches.vercel.app/FFFFFF?style=round'/></a>#FFFFFF | <img src="./screenshots/buttontextColor.png" width="250">
+| basicInputField | Optional color that replaces the default text color of the textfield components.<br>Default: <a href="#"><img valign='middle' alt='#7B7B7B' src='https://readme-swatches.vercel.app/7B7B7B?style=round'/></a>#7B7B7B | <img src="./screenshots/basicInputField.png" width="250">
+|basicNavStepOn |     Optional color that replaces the default background color of the identification steps when this parameter is activated.<br>Default: <a href="#"><img valign='middle' alt='#FFFFFF' src='https://readme-swatches.vercel.app/FFFFFF?style=round'/></a>#FFFFFF | <img src="./screenshots/basicNavStepOn.png" width="250">
+|basicNavStepOff |     Optional color that replaces the default background color for disabled identification steps when the parameter is deactivated.<br>Default: <a href="#"><img valign='middle' alt='#C9C6C4' src='https://readme-swatches.vercel.app/C9C6C4?style=round'/></a>#C9C6C4 | <img src="./screenshots/basicNavStepOff.png" width="250">
+|||
 
+### Fonts
 
-#### primaryColor
-Used as default color of the App and the component such as the buttons
+The SDK offers the possibility to change the font.
 
-#### primaryVariantColor
-Used as a deactivated color for the buttons, it should use same value as primaryColor with a transparent code.
-
-#### primarytextColor
-Used as a text color for the whole App
-
-#### bgPrimaryColor
-Used as background color for the screens.
-
-#### bgSecondaryColor
-Used as background color for the text fields
-
-#### basicInputField
-Used as text color for the text fields
-
-Even though we strongly recommend our customers to stick to the generic branding color keys listed above, it is worth mentioning that for some screens we also offer keys for screen-specific customizations. If you would like to make any such customization, please reach out to us with the details so we can let you know if that is possible.
-
-Note: Due to the high number of keys available in the SDK, it is not feasible to mention all of those here.
-
-### App theme
-
-This is themes.xml of the SDK:
-
-```
-<resources>
-
-    <!-- IdnowSdkTheme is used when no other theme is applied. You are free to adapt the SDK theme in the App or use your own theme.
-
-    <style name="IdnowSdkTheme" parent="IdnowSdkThemeWithoutBackround">
-        <item name="android:background">@color/bgPrimaryColor</item>
-        <item name ="android:colorBackground">@color/bgPrimaryColor</item>
-    </style>
-    
-        <style name="IdnowSdkThemeWithoutBackround"
-        parent="Theme.AppCompat.DayNight">
-        <item name="android:textColor">@color/primarytextColor</item>
-        <item name="android:editTextStyle">@style/IdnowSdkTheme.EditText</item>
-    </style>
-
-        <style name="IdnowSdkTheme.EditText" parent="android:Widget.EditText">
-        <item name="android:textColor">@color/primarytextColor</item>
-        <item name="android:colorBackground">@color/bgSecondaryColor</item>
-    </style>
-
-</resources>
-```
-
-- By not specifying a theme at all, the SDK's theme is used for the whole app.
-- Inheriting from the SDK's theme. Here is a usage example (themes.xml):
-
-```
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-
-    <style name="MyAppTheme"
-           parent="@style/﻿﻿IdnowSdkTheme﻿">
-    <!-- Your definitions here -->
-    </style>
-
-</resources>
-```
-
-#### Fonts
-
-```
-   setDefaultFont(Context context, String staticTypefaceFieldName, String fontAssetName)
-```
-Here an example on how to set custom font
+Example: 
     
 ```
   FontsOverride.setDefaultFont(this, "SERIF", "roboto_thin_italic.ttf");
-    
 ```
-    
-## Texts
 
-The SDK provides English, German, French, Spanish, Italian, Hungarian, Georgian, Korean, Dutch, Polish, Portuguese, Russian and Chinese    texts.
+## Error codes
 
-## Other Supported Platforms
+| Result code | Description                                                                                              |
+| - | - |
+| `IDnowSDK.RESULT_CODE_SUCCESS` | Process has successfully finished.<br>Intent contains the identification token (`IDnowSDK.RESULT_DATA_TRANSACTION_TOKEN`) |
+| `IDnowSDK.RESULT_CODE_CANCEL` | User has cancelled the identification process.<br>Intent contains the error message (`IDnowSDK.RESULT_DATA_ERROR`) and identification token (`IDnowSDK.RESULT_DATA_TRANSACTION_TOKEN`) |
+| `IDnowSDK.RESULT_CODE_FAILED` | The identification has failed.<br>Intent contains the error code (`IDnowSDK.RESULT_ERROR_CODE`) and/or message (`IDnowSDK.RESULT_DATA_ERROR`)  |
+| `IDnowSDK.RESULT_CODE_WRONG_IDENT` | User has used a wrong identification token.<br>Intent contains the error message (`IDnowSDK.RESULT_DATA_ERROR`) and identification token (`IDnowSDK.RESULT_DATA_TRANSACTION_TOKEN`) |
+|||
+
+## Localization
+
+In case you would like to change the localization used by the IDnow SDK at runtime you can do it by supplying the language code to the IDnowSettings instance. The languages supported are mentioned below:
+
+| Language | Code                                                                                              |
+| - | - |
+| English | en |
+| German | de |
+| French | fr |
+| Spanish | es |
+| Italian | it |
+| Portuguese | pt |
+| Estonian | et |
+| Croatian | hr |
+| Hungarian | hu |
+| Georgian | ka |
+| Korean | ko |
+| Lithuanian | lt |
+| Latvian | lv |
+| Dutch | nl |
+| Polish | pl |
+| Ukrainian | ua |
+| Chinese | zh |
+| Russian | ru |||
+
+For example, if you want to change language to English(en) then follow this setting:
+
+```
+IDnowSDK.setLocale(context, "en");
+```
+
+## Environment
+
+To configure the environment used for the identification process, you can set a specific environment value. If no environment is defined, the default value is ```null```, which means that it will be automatically determined based on the prefix of the transaction token.
+
+Available environments:
+<br>- ```DEV``` → Development environments (```DEV```, ```DEV2```, ```DV3```, ..., ```DV20```);
+<br>- ```TEST``` → Test environments (```TEST```, ```TEST1```, ```TEST2```, ```TEST3```);
+<br>- ```STAGING``` → Staging environment (```SG1```);
+<br>- ```LIVE``` → Production environment (```LIVE```);
+<br>- ```CUSTOM``` → Custom environment (```CUSTOM```).
+
+Example: If Development environment is required, then user must initialize the following setting.
+```
+IDnowSDK.setEnvironment(IDnowSDK.Server.DEV);
+```
+<br>If you want to use a custom environment, you need to configure the following properties to establish the connection to the custom servers:
+| Name | Description | 
+| --- | --- |
+| API Host | The domain name or IP address (IPv4) of the host that serves the API. |
+| WebSocket Host | A WebSocket server that listens to WebSocket connections or channels and handles the communication with clients trying to connect to it. |
+| Video Host | The server that hosts and displays online video. |
+| STUN Host | A STUN (Session Traversal Utilities for NAT) host sends a request to a STUN server, which is located on the public side of the Network Address Translation (NAT). The server responds with the public IP address and port from which the request was seen. |||
+
+Example:
+```
+IDnowSDK.setApiHost("YOUR_API_HOST", context);
+IDnowSDK.setWebsocketHost("YOUR_WEBSOCKET_HOST", context);
+IDnowSDK.setVideoHost("YOUR_VIDE_HOST", context);
+IDnowSDK.setStunHost("YOUR_STUN_HOST", context);
+```
+
+## Other supported platforms
 
 ### Cordova
 
@@ -688,3 +434,7 @@ Please refer to this [link](https://www.npmjs.com/package/react-native-vi-idnow-
 IDnow eID is an automated and fully AML-compliant identification product. All it requires is an NFC-enabled (Near Field Communication) smartphone and a German ID document (ID card or Residence permit) with an activated eID function or the eID card for EU citizens.
 
 For configuration details, please refer to the [IDnow eID SDK Documentation](./de/idnow/android/eid/README.md)
+
+## Examples
+
+Please see https://github.com/idnow/de.idnow.android-sample for a sample applications.
