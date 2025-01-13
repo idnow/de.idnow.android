@@ -44,9 +44,10 @@ This guide is designed for developers integrating IDnow SDKs into mobile applica
 
 
 ### Applicability
+
 This guide covers VideoIdent (VI), eSign, and eID SDKs.
 
-VI and eSign support React Native.
+VI and eSign support React Native. 
 eID requires native integration and doesn’t support React Native bridges. Use native code examples provided in this guide for integration.
 
 ### VideoIdent

@@ -1,5 +1,26 @@
 # Changelog
 
+### 9.1.3
+
+- In response to an issue that we had noticed as part of v3.0.1 of the eID SDK, we had realized a temporary hack so that users do not get blocked. As part of this version we are releasing the proper fix required to address the eID issue.
+
+### 9.1.2
+
+- We had noticed that the version 3.0.1 of the eID SDK was crashing. As part of this version we have made the required changes to prevent that.
+
+### 9.1.1
+
+- We noticed a minor UI inconsistency while using the Picture-in-Picture (PiP) feature that was released in the last version i.e. v9.1.0. As part of this hotfix we have fixed that UI inconsistency.
+
+### 9.1.0
+
+
+- **Picture-in-Picture (PiP)**: We have release the PiP feature that will show the agent's video feed to the user when the user puts the app in the background. The user will continue to see it unless the flow has been explicitly aborted. We are expecting this to improve agent-user communication and reduce the chances of WebSocket connection dropping. Like most features in our SDK, this is a configurable feature and can be enabled/disabled depending on our customers' choosing.
+- **Enhanced security validation**: To reduce the chances of a Man-in-the-Middle (MITM) attack over TLS, we have implemented an additional layer of validation. This increases the security of the communication channel between the backend and client side.
+- **Fixed crashes**: As part of this version we have also identified and fixed some crashes to ensure that users can go through the flow uninterrupted.
+- **UI/UX enhancements**: We have made various adjustments to our user interface (UI) and user experience (UX) to ensure users have a consistent experience throughout the flow.
+-**Bug fixes**: We regularly test our products to assess areas where there is any room for improvement. We identified some minor bugs and fixed those as part of this release as well.
+
 ### 9.0.1
 
 - As part of this release, we have upgraded the version of Authada library. This is only relevant for customers that are using eID as an identification method.
