@@ -1,5 +1,8 @@
 # Changelog
 
+### 9.2.1
+
+- **Bug fixes**: Contains a fix regarding a layout issue on OTP screen. 
 
 ### 9.2.0
 
