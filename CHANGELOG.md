@@ -1,5 +1,9 @@
 # Changelog
 
+### 9.3.0
+
+- **OTP Step**: We have made the required changes to the flow that allow us to control whether or not the OTP step is displayed to the user.
+
 ### 9.2.1
 
 - **Bug fixes**: Contains a fix regarding a layout issue on OTP screen. 
