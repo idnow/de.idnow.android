@@ -1,5 +1,11 @@
 # Changelog
 
+### 9.4.0
+
+- **Connectivity**: Resolved service issues on Android 10 & 11 and removed unnecessary permissions.
+- **Security**: Fixed security-related issues for better server trust handling.
+- **eID**: Fixed eID scanning on some Samsung devices.
+
 ### 9.3.0
 
 - **OTP Step**: We have made the required changes to the flow that allow us to control whether or not the OTP step is displayed to the user.
