@@ -1,0 +1,197 @@
+{
+  "formatVersion": "1.1",
+  "component": {
+    "group": "de.idnow.android.eid",
+    "module": "idnow-android-eid-sdk",
+    "version": "3.3.0",
+    "attributes": {
+      "org.gradle.status": "release"
+    }
+  },
+  "createdBy": {
+    "gradle": {
+      "version": "8.6"
+    }
+  },
+  "variants": [
+    {
+      "name": "releaseApiElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.usage": "java-api",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "idnow-android-eid-sdk-3.3.0.aar",
+          "url": "idnow-android-eid-sdk-3.3.0.aar",
+          "size": 5610295,
+          "sha512": "4c0a23a404bfaf5fccef690ce6a4e9f4f11efd4f4f14e20605402a0f044e1917dd57c8b3643da9696bf16d2d7d9c480c9763e3d2c923ce4958215187e20c3e89",
+          "sha256": "ca721c775dc5ca5fa4f39460cd4df5b9d52eaed756526a7c3b295cee06b7a57f",
+          "sha1": "7994d6e3ce3333972eed302a8362d53dab83d08d",
+          "md5": "8c9b1d6d5d361fe245f3523db165e345"
+        }
+      ]
+    },
+    {
+      "name": "releaseRuntimeElements-published",
+      "attributes": {
+        "org.gradle.category": "library",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "dependencies": [
+        {
+          "group": "androidx.legacy",
+          "module": "legacy-support-v4",
+          "version": {
+            "requires": "1.0.0"
+          }
+        },
+        {
+          "group": "androidx.annotation",
+          "module": "annotation",
+          "version": {
+            "requires": "1.3.0"
+          }
+        },
+        {
+          "group": "androidx.appcompat",
+          "module": "appcompat",
+          "version": {
+            "requires": "1.4.1"
+          }
+        },
+        {
+          "group": "androidx.constraintlayout",
+          "module": "constraintlayout",
+          "version": {
+            "requires": "2.0.4"
+          }
+        },
+        {
+          "group": "com.squareup.retrofit2",
+          "module": "retrofit",
+          "version": {
+            "requires": "2.9.0"
+          }
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "okhttp",
+          "version": {
+            "requires": "4.12.0"
+          }
+        },
+        {
+          "group": "com.squareup.retrofit2",
+          "module": "converter-gson",
+          "version": {
+            "requires": "2.9.0"
+          }
+        },
+        {
+          "group": "com.squareup.okhttp3",
+          "module": "logging-interceptor",
+          "version": {
+            "requires": "4.12.0"
+          }
+        },
+        {
+          "group": "de.authada.library",
+          "module": "aal",
+          "version": {
+            "requires": "4.24.4"
+          }
+        },
+        {
+          "group": "de.idnow.insights",
+          "module": "idnow-android-insights-sdk",
+          "version": {
+            "requires": "1.2.0"
+          }
+        },
+        {
+          "group": "com.airbnb.android",
+          "module": "lottie",
+          "version": {
+            "requires": "5.1.1"
+          }
+        },
+        {
+          "group": "androidx.cardview",
+          "module": "cardview",
+          "version": {
+            "requires": "1.0.0"
+          }
+        },
+        {
+          "group": "com.google.android.material",
+          "module": "material",
+          "version": {
+            "requires": "1.5.0"
+          }
+        },
+        {
+          "group": "com.googlecode.libphonenumber",
+          "module": "libphonenumber",
+          "version": {
+            "requires": "8.10.9"
+          }
+        },
+        {
+          "group": "org.jetbrains.kotlin",
+          "module": "kotlin-stdlib",
+          "version": {
+            "requires": "2.0.20"
+          }
+        }
+      ],
+      "files": [
+        {
+          "name": "idnow-android-eid-sdk-3.3.0.aar",
+          "url": "idnow-android-eid-sdk-3.3.0.aar",
+          "size": 5610295,
+          "sha512": "4c0a23a404bfaf5fccef690ce6a4e9f4f11efd4f4f14e20605402a0f044e1917dd57c8b3643da9696bf16d2d7d9c480c9763e3d2c923ce4958215187e20c3e89",
+          "sha256": "ca721c775dc5ca5fa4f39460cd4df5b9d52eaed756526a7c3b295cee06b7a57f",
+          "sha1": "7994d6e3ce3333972eed302a8362d53dab83d08d",
+          "md5": "8c9b1d6d5d361fe245f3523db165e345"
+        }
+      ]
+    },
+    {
+      "name": "releaseSourcesElements-published",
+      "attributes": {
+        "org.gradle.category": "documentation",
+        "org.gradle.dependency.bundling": "external",
+        "org.gradle.docstype": "sources",
+        "org.gradle.jvm.environment": "android",
+        "org.gradle.libraryelements": "jar",
+        "org.gradle.usage": "java-runtime",
+        "org.jetbrains.kotlin.platform.type": "androidJvm"
+      },
+      "files": [
+        {
+          "name": "idnow-android-eid-sdk-3.3.0-sources.jar",
+          "url": "idnow-android-eid-sdk-3.3.0-sources.jar",
+          "size": 247919,
+          "sha512": "cfb5fc97e8d4b4955aa4683e2ce196842a6262b3ead6d0891cc1e696259707e7ce72db340455a22253b2c28887edf02eddd50b74b9928867b6bb412f3ba069d6",
+          "sha256": "af5f9da038df2fa8fab16524febf3c139661fbc6721cf0f217fb6b57400af577",
+          "sha1": "01b4d1a64502895bfce78a10750fbdc5f5913be6",
+          "md5": "d73828ea327e516bc4112636d0955fdb"
+        }
+      ]
+    }
+  ]
+}
