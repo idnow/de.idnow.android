@@ -1,5 +1,9 @@
 # Changelog
 
+### 9.4.1
+
+- **Connectivity**: Fixed issue regarding network connectivity service to improve performance and reduce unnecessary network usage.
+
 ### 9.4.0
 
 - **Connectivity**: Resolved service issues on Android 10 & 11 and removed unnecessary permissions.
