@@ -5,7 +5,6 @@
 - **Performance**: Optimized call quality checks.
 - **Security**: Improved obfuscation and permissions handling.
 
-
 ### 9.4.1
 
 - **Connectivity**: Fixed issue regarding network connectivity service to improve performance and reduce unnecessary network usage.
