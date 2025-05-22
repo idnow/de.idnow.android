@@ -1,5 +1,9 @@
 # Changelog
 
+### 9.5.1
+
+- **Security**: Improved obfuscation.
+
 ### 9.5.0
 
 - **Performance**: Optimized call quality checks.
