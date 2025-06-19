@@ -3,7 +3,7 @@
   <groupId>de.idnow.android.eid</groupId>
   <artifactId>idnow-android-eid-sdk</artifactId>
   <versioning>
-    <latest>3.3.1</latest>
+    <latest>3.4.0</latest>
     <versions>
       <version>1.0.0</version>
       <version>1.0.1</version>
@@ -55,7 +55,8 @@
       <version>3.2.0</version>
       <version>3.3.0</version>
       <version>3.3.1</version>
+      <version>3.4.0</version>
     </versions>
-    <lastUpdated>20250516130759</lastUpdated>
+    <lastUpdated>20250619081723</lastUpdated>
   </versioning>
 </metadata>
