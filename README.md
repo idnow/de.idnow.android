@@ -65,11 +65,10 @@ IDnow eSign issues Qualified Electronic Signatures (QES) on one or more PDF docu
 German government introduced RFID chip based electronic ID cards in November 2010. Usage of this card has been accepted by BSI (Bundesamt für Sicherheit in der Informationstechnik) for digital identification of the citizens. IDnow eID product is only available on the mobile channel as of now.
 
 ## Requirements
-[CHANGELOG.md](CHANGELOG.md)
-- Android Studio;[CHANGELOG.md](CHANGELOG.md)
-- Deployment target: Android 8.0 or higher;
+- Android Studio;
+- Deployment target: Android 9.0 (API level 28) or higher;
 - The user’s device must have animation capability to have a seamless experience, otherwise screens that contain animations will not function as intended;
-- We are using foreground services in our SDK to perform a task that is requ[CHANGELOG.md](CHANGELOG.md)ired in the process of connecting the end-user with the identification expert, as it is a prerequisite for the video call. 
+- We are using foreground services in our SDK to perform a task that is required in the process of connecting the end-user with the identification expert, as it is a prerequisite for the video call. 
 You’ll need to mention the following foreground service permissions on the App content page (Policy > App content) in Play Console: `FOREGROUND_SERVICE_CAMERA` and `FOREGROUND_SERVICE_MICROPHONE`.
 
 ## Supported Architecture
