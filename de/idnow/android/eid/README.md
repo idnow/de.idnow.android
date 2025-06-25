@@ -20,7 +20,7 @@
 ## Requirements
 
 - Android Studio
-- Deployment target: Android 6.0 or later (<b>NFC</b> is required)
+- Deployment target: Android 9.0 (API level 28) or later (<b>NFC</b> is required)
 
 
 ## Installation
@@ -77,7 +77,6 @@ allprojects {
 
 Dependencies {
 compile 'de.idnow.sdk:idnow-android:x.x.x'
-compile 'de.idnow.android.eid:idnow-android-eid-sdk:x.x.x'
 }
 ```
 
@@ -128,7 +127,6 @@ dependencies {
     implementation 'de.idnow.insights:idnow-android-insights-sdk:1.2.0'
     implementation group: 'de.authada.library', name: 'aal', version: '4.15.2'
     api files('libs/idnow-android-x.x.x.aar')
-    api files('libs/idnow-android-eid-sdk-x.x.x.aar')
 } 
 ```
 
