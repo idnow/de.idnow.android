@@ -122,7 +122,7 @@ dependencies {
 
 We also offer the possibility to import the SDK as an .aar file instead.
 
-Copy the `idnow-android-sdk-x.x.x.aar` file into the `libs` folder, then add the following repositories and dependencies to your build.gradle file:
+Copy the `idnow-android-sdk-x.x.x.aar` file into the `libs` folder along with the `idnow-android-eid-sdk-x.x.x.aar` file if eID is used, then add the following repositories and dependencies to your build.gradle file:
 
 ```
 allprojects {
