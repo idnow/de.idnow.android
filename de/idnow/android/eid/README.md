@@ -40,25 +40,9 @@ We offer 2 ways for importing the SDK:
 #### Option 1: Maven
 
 ```
-android {
-defaultConfig {
-….
-multiDexEnabled true
-…
-}
-compileOptions {
-    sourceCompatibility 1.8
-    targetCompatibility 1.8
-}
-packagingOptions {
-    exclude 'META-INF/*.kotlin_module'
-}
-}
-
 allprojects {
     repositories {
-        google()
-        jcenter()
+        maven("https://raw.githubusercontent.com/idnow/de.idnow.android/master")
         maven {
             url = uri("https://repo.authada.de/public/")
             authentication {
@@ -69,14 +53,10 @@ allprojects {
                 password "*********"
             }
         }
-        maven {
-            url "https://raw.githubusercontent.com/idnow/de.idnow.android/master"
-        }
     }
-} 
-
+}
 dependencies {
-    implementation("de.idnow.sdk:idnow-android:x.x.x")
+    implementation("de.idnow.sdk:idnow-android-sdk:x.x.x")
 }
 ```
 
