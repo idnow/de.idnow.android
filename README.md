@@ -117,13 +117,24 @@ Copy the `idnow-android-sdk-x.x.x.aar` file into the `libs` folder, then add the
 allprojects {
     repositories {
         flatDir { dirs("libs") }
+        maven {
+            url "https://raw.githubusercontent.com/idnow/de.idnow.android/master"
+        }
+        //needed if eID is used
+        maven {
+            url = uri("https://repo.authada.de/public/")
+            authentication {
+                basic(BasicAuthentication)
+            }
+            credentials {
+                username "*********"
+                password "*********"
+            }
+        }
     }
 }
-
 dependencies {
     implementation(files("libs/idnow-android-sdk-x.x.x.aar"))
-
-    implementation("de.authada.library:aal:4.23.0")
     implementation("de.idnow.insights:idnow-android-insights-sdk:1.2.0")
     implementation("com.google.code.gson:gson:2.8.6")
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
@@ -132,7 +143,11 @@ dependencies {
     implementation("com.googlecode.libphonenumber:libphonenumber:8.10.9")
     implementation("com.airbnb.android:lottie:5.1.1")
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
-} 
+    //needed if eID is used
+    implementation files('libs/idnow-android-eid-sdk-x.x.x.aar')
+    implementation(“com.governikus:ausweisapp:2.2.1”)
+    implementation("de.authada.library:aal:4.23.0")
+}
 ```
 
 ### 2. Import BouncyCastle
