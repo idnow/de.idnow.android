@@ -99,6 +99,17 @@ Add the following repository and dependency to your build.gradle file:
 allprojects {
     repositories {
         maven("https://raw.githubusercontent.com/idnow/de.idnow.android/master")
+        //needed if eID is used
+        maven {
+            url = uri("https://repo.authada.de/public/")
+            authentication {
+                basic(BasicAuthentication)
+            }
+            credentials {
+                username "*********"
+                password "*********"
+            }
+        }
     }
 } 
 
@@ -146,7 +157,7 @@ dependencies {
     //needed if eID is used
     implementation files('libs/idnow-android-eid-sdk-x.x.x.aar')
     implementation(“com.governikus:ausweisapp:2.2.1”)
-    implementation("de.authada.library:aal:4.23.0")
+    implementation("de.authada.library:aal:4.24.4")
 }
 ```
 
