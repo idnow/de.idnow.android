@@ -75,8 +75,8 @@ allprojects {
     }
 } 
 
-Dependencies {
-compile 'de.idnow.sdk:idnow-android:x.x.x'
+dependencies {
+    implementation("de.idnow.sdk:idnow-android:x.x.x")
 }
 ```
 
@@ -87,26 +87,12 @@ We also offer the possibility to import the SDK as an .aar file instead.
 Copy the `idnow-android-x.x.x.aar` and `idnow-android-eid-sdk-x.x.x.aar` files into the `libs``` folder.
 
 ```
-android {
-defaultConfig {
-….
-multiDexEnabled true
-…
-}
-compileOptions {
-    sourceCompatibility 1.8
-    targetCompatibility 1.8
-}
-packagingOptions {
-    exclude 'META-INF/*.kotlin_module'
-}
-}
-
 allprojects {
     repositories {
-        google()
-        jcenter()
-        maven { url 'https://jitpack.io' }
+        flatDir { dirs("libs") }
+        maven {
+            url "https://raw.githubusercontent.com/idnow/de.idnow.android/master"
+        }
         maven {
             url = uri("https://repo.authada.de/public/")
             authentication {
@@ -117,16 +103,21 @@ allprojects {
                 password "*********"
             }
         }
-        flatDir {
-            dirs 'libs'
-        }
     }
 }
-
 dependencies {
-    implementation 'de.idnow.insights:idnow-android-insights-sdk:1.2.0'
-    implementation group: 'de.authada.library', name: 'aal', version: '4.15.2'
-    api files('libs/idnow-android-x.x.x.aar')
+    implementation(files("libs/idnow-android-sdk-x.x.x.aar"))
+    implementation(files("libs/idnow-android-eid-sdk-x.x.x.aar"))
+    implementation("de.idnow.insights:idnow-android-insights-sdk:1.2.0")
+    implementation("com.google.code.gson:gson:2.8.6")
+    implementation("com.squareup.retrofit2:retrofit:2.9.0")
+    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+    implementation("com.squareup.okhttp3:okhttp:4.12.0")
+    implementation("com.googlecode.libphonenumber:libphonenumber:8.10.9")
+    implementation("com.airbnb.android:lottie:5.1.1")
+    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
+    implementation(“com.governikus:ausweisapp:2.2.1”)
+    implementation("de.authada.library:aal:4.24.4")
 } 
 ```
 
