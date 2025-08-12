@@ -1,5 +1,9 @@
 # Changelog
 
+### 9.6.2
+
+- We have made minor improvements and fixed eID dependency handling.
+
 ### 9.6.1
 
 - We have made minor adjustments to the dTLS implementation that were required for everything to work as expected with new certificates.
