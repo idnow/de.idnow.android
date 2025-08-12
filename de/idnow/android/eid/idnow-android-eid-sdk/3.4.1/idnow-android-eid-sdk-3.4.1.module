@@ -35,11 +35,11 @@
         {
           "name": "idnow-android-eid-sdk-3.4.1.aar",
           "url": "idnow-android-eid-sdk-3.4.1.aar",
-          "size": 5726142,
-          "sha512": "fbf24ff4b232c68d3d8afdce508c913e11e00e511a2e5f69960fd793b969ef6531494ea9b964d062f71ba31c1ef12d0eaaea8a99a784a4a74272d079e372cd64",
-          "sha256": "8b00e453e35e4b1f6b0a1b7bf690e3bb4a93c767106d3c0b38d61a15cd192dea",
-          "sha1": "f73cdd1971c79b3f35574317a74a1b09fa991ead",
-          "md5": "26820a65dec5528ef1a23dd9e2243dee"
+          "size": 5722539,
+          "sha512": "46d21dac516ba9739692b2146eb3b9e4abd8c7343c5a97923a5b86050daa5177971d7f2e7db3bfcb4198b8bbfa86fd4445dd1675156cbbfac0e40692115cae7b",
+          "sha256": "6aef21321befd2288c0a90f9b2a4389e6c875a3a927b4c13c20454153dab71bf",
+          "sha1": "191fff005808f89bd6e302033273e7b0b947bb74",
+          "md5": "8e870e1aa921d5adf3b319ebc7a067a3"
         }
       ]
     },
@@ -169,11 +169,11 @@
         {
           "name": "idnow-android-eid-sdk-3.4.1.aar",
           "url": "idnow-android-eid-sdk-3.4.1.aar",
-          "size": 5726142,
-          "sha512": "fbf24ff4b232c68d3d8afdce508c913e11e00e511a2e5f69960fd793b969ef6531494ea9b964d062f71ba31c1ef12d0eaaea8a99a784a4a74272d079e372cd64",
-          "sha256": "8b00e453e35e4b1f6b0a1b7bf690e3bb4a93c767106d3c0b38d61a15cd192dea",
-          "sha1": "f73cdd1971c79b3f35574317a74a1b09fa991ead",
-          "md5": "26820a65dec5528ef1a23dd9e2243dee"
+          "size": 5722539,
+          "sha512": "46d21dac516ba9739692b2146eb3b9e4abd8c7343c5a97923a5b86050daa5177971d7f2e7db3bfcb4198b8bbfa86fd4445dd1675156cbbfac0e40692115cae7b",
+          "sha256": "6aef21321befd2288c0a90f9b2a4389e6c875a3a927b4c13c20454153dab71bf",
+          "sha1": "191fff005808f89bd6e302033273e7b0b947bb74",
+          "md5": "8e870e1aa921d5adf3b319ebc7a067a3"
         }
       ]
     },
@@ -192,11 +192,11 @@
         {
           "name": "idnow-android-eid-sdk-3.4.1-sources.jar",
           "url": "idnow-android-eid-sdk-3.4.1-sources.jar",
-          "size": 292873,
-          "sha512": "30af6daa54f795996e7a6a12fcb19d8c3a11f8b17da219521fb816e501fc47e38cebfad22335f8af35b6fefa43d471a15a20b695be9e7661f8d9fe5710539700",
-          "sha256": "25ea86540f0885446d9a6fd2ef02633f35f43eac4e70355a332a99457db84436",
-          "sha1": "401f797eeb4f842320217085beea2948ce49c5ca",
-          "md5": "66ff263664d152ac5064bb1a7c3a3a89"
+          "size": 291433,
+          "sha512": "b475e0cfdc26c5a82f8e810fc5c040e63dba0dd362dfa80e2f8bf7d83926f577f042ce8c9b7f5ece093034d927c4413891742ab8474fd5d5454469ce7b998ce0",
+          "sha256": "d8f540504ef6321eca0d7e0a059cac207fef1df20f66b269652c5224db06d197",
+          "sha1": "9e5ca6c0d6bef951166d0d61bb911d3ca89bd516",
+          "md5": "df14b356e8025ec8ddf6c7d983816f35"
         }
       ]
     }
