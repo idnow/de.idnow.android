@@ -1,5 +1,11 @@
 # Changelog
 
+### 9.6.3
+
+- **Note**: VIP sdk is compatible with Android 8 (api 26) only if eID is not used, otherwise Android 9 (api 28) is required.
+- We have made the required changes to our SDK to make it compatible with Android's 16 KB page size support requirement.
+- We have made minor bug fixes.
+
 ### 9.6.2
 
 - We have made minor improvements and fixed eID dependency handling.
