@@ -1,5 +1,10 @@
 # Changelog
 
+### 9.6.3
+
+- We have made the required changes to our SDK to make it compatible with Android's 16 KB page size support requirement.
+- We have made minor bug fixes.
+
 ### 9.6.2
 
 - We have made minor improvements and fixed eID dependency handling.
