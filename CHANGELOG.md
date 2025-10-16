@@ -1,5 +1,11 @@
 # Changelog
 
+### 9.7.1
+
+- Support PKCS#1 and PKCS#8 private key formats for DTLS.
+- Resolved problems with camera initialization.
+- Improved obfuscation.
+
 ### 9.6.3
 
 - **Note**: VIP sdk is compatible with Android 8 (api 26) only if eID is not used, otherwise Android 9 (api 28) is required.
