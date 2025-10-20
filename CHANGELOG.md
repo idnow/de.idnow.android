@@ -1,5 +1,9 @@
 # Changelog
 
+### 9.7.2
+
+- Improve dark mode support.
+
 ### 9.7.1
 
 - Support PKCS#1 and PKCS#8 private key formats for DTLS.
