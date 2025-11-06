@@ -1,5 +1,16 @@
 # Changelog
 
+### 9.7.3 & eID 3.4.4
+
+#### eID
+
+- Resolved eID issues with our provider identification flow on Samsung devices running Android 15+.
+
+#### VIP
+- Fixed VIP SDK issues related to camera initialization and AlertDialog thread handling.
+- Corrected language setup issue preventing proper localization selection.
+- Corrected phone number edition when configuration is set to non editable.
+
 ### 9.7.2
 
 - Improve dark mode support.
