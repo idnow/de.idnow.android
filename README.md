@@ -345,6 +345,33 @@ Please contact the support team in case that video is needed.
 
 ## Branding
 
+### Overriding SDK colors in your app
+
+1. In your app module, open or create:
+   - `app/src/main/res/values/colors.xml` (default theme)
+   - `app/src/main/res/values-night/colors.xml` (dark theme, if used)
+2. For each parameter from the table below that you want to customize, declare a color with the **same name** in your app’s `colors.xml`. When names match, your app value overrides the SDK default via Android’s resource merging.
+
+#### Example (default / light theme):
+```xml
+    <!-- app/src/main/res/values/colors.xml -->
+    <resources>
+        <!-- Override SDK colors -->
+        <color name="primaryColor">#123456</color>
+        <color name="bgPrimaryColor">#F5F5F5</color>
+        <color name="buttontextColor">#FFFFFF</color>
+    </resources>
+```
+
+#### Example (dark theme):
+```xml
+    <!-- app/src/main/res/values-night/colors.xml -->
+    <resources>
+        <color name="primaryColor">#FF6B40</color>
+        <color name="bgPrimaryColor">#121212</color>
+    </resources>
+```
+
 ### Colors
 
 | Parameter Name | Description | Appearance
