@@ -156,7 +156,7 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
     //needed if eID is used
     implementation files('libs/idnow-android-eid-sdk-x.x.x.aar')
-    implementation(“com.governikus:ausweisapp:2.2.1”)
+    implementation(“com.governikus:ausweisapp:2.4.0”)
     implementation("de.authada.library:aal:4.24.4")
 }
 ```
