@@ -1,5 +1,9 @@
 # Changelog
 
+### 9.7.4
+
+- Fixed issues with video calls not rendering properly.
+
 ### eID 3.4.5
 - Upgrade Governikus dependency to latest 2.4.0.
 - **Gradle**: useLegacyPackaging is no longer required and needs to be removed to support 16 KB page sizes on Android.
