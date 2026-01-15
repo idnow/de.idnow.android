@@ -1,4 +1,22 @@
 # Changelog
+### VideoIdent 9.7.5
+
+**New Features**
+• Android 16 compatibility support
+• Enhanced security with improved dTLS management
+• Expanded error code handling with standardized error responses across the SDK
+
+**Bug Fixes**
+• Resolved obfuscation rule conflict that prevented the use of customization methods
+
+### eID 3.4.6
+
+**Improvements**
+• Upgraded camera functionality for improved reliability and performance
+• Enhanced service binding management for increased stability
+
+**Bug Fixes**
+• Fixed UI issue with button visibility states (hide/show behavior)
 
 ### 9.7.4
 
@@ -14,8 +32,8 @@
 
 - Resolved eID issues with our provider identification flow on Samsung devices running Android 15+.
 
-#### VIP
-- Fixed VIP SDK issues related to camera initialization and AlertDialog thread handling.
+#### VideoIdent
+- Fixed SDK issues related to camera initialization and AlertDialog thread handling.
 - Corrected language setup issue preventing proper localization selection.
 - Corrected phone number edition when configuration is set to non editable.
 
