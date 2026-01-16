@@ -1,38 +1,45 @@
 
  # Table of Contents
-- [Overview](#overview)
+- [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
     - [Purpose and audience](#purpose-and-audience)
     - [Applicability](#applicability)
     - [VideoIdent](#videoident)
     - [eSign](#esign)
     - [eID](#eid)
-- [Requirements](#requirements)
-- [Supported Architecture](#supported-architecture)
-- [Compatibility, End of Support, End of Life](#compatibility-matrix)
-- [Installation](#installation)
-    - [Import library](#1-import-library)
-    - [Import using Maven](#option-1-maven)
-    - [Import using AAR file](#option-2-aar-file)
-    - [Import BouncyCastle](#2-import-bouncycastle)
-- [Permissions](#permissions)
-- [Usage](#usage)
+  - [Requirements](#requirements)
+  - [Supported Architecture](#supported-architecture)
+  - [Compatibility Matrix](#compatibility-matrix)
+  - [Installation](#installation)
+    - [1. Import library](#1-import-library)
+      - [Option 1: Maven](#option-1-maven)
+      - [Option 2: AAR file](#option-2-aar-file)
+    - [2. Import BouncyCastle](#2-import-bouncycastle)
+  - [Permissions](#permissions)
+  - [Usage](#usage)
     - [Setup and run](#setup-and-run)
+      - [Step 1. Initialize SDK](#step-1-initialize-sdk)
+      - [Step 2. Start SDK](#step-2-start-sdk)
     - [Additional settings](#additional-settings)
     - [Custom certificate providers](#custom-certificate-providers)
-        - [DTLS](#dtls)
-        - [mTLS](#mtls)
-- [Using IDnow with other native libraries (UnsatisfiedLinkError)](#using-idnow-with-other-native-libraries-unsatisfiedlinkerror)
-- [Branding](#branding)
+      - [DTLS](#dtls)
+      - [mTLS](#mtls)
+  - [Using IDnow with other native libraries (UnsatisfiedLinkError)](#using-idnow-with-other-native-libraries-unsatisfiedlinkerror)
+  - [Branding](#branding)
+    - [Overriding SDK colors in your app](#overriding-sdk-colors-in-your-app)
+      - [Example (default / light theme):](#example-default--light-theme)
+      - [Example (dark theme):](#example-dark-theme)
     - [Colors](#colors)
     - [Fonts](#fonts)
-- [Error codes](#error-codes)
-- [Localization](#localization)
-- [Environment](#environment)
-- [Other Supported Platforms](#other-supported-platforms)
-  - [Cordova](#cordova)
-  - [React native](#react-native)
-- [eID Framework](#eid-framework)
-- [Examples](#examples)
+  - [Result codes](#result-codes)
+    - [Error codes](#error-codes)
+  - [Localization](#localization)
+  - [Environment](#environment)
+  - [Other supported platforms](#other-supported-platforms)
+    - [Cordova](#cordova)
+    - [React native](#react-native)
+  - [eID Framework](#eid-framework)
+  - [Examples](#examples)
    
 ## Overview
 
@@ -250,9 +257,12 @@ To handle the results of the identification, implement the standard onActivityRe
             } else if (resultCode == IDnowSDK.RESULT_CODE_CANCEL) {
                 if (data != null) {
                     String transactionToken = data.getStringExtra(IDnowSDK.RESULT_DATA_TRANSACTION_TOKEN);
+                    IDnowErrorCode errorCode = (IDnowErrorCode) data.getSerializableExtra(IDnowSDK.RESULT_ERROR_CODE);
                     String errorMessage = data.getStringExtra(IDnowSDK.RESULT_DATA_ERROR);
-                    Log.v(TAG, "canceled, transaction token: " + transactionToken + ", error: "
-                    +errorMessage);
+                    int serverCode = data.getIntExtra(IDnowSDK.RESULT_SERVER_STATUS_CODE, 0);
+
+                    Log.v(TAG, "failed, transaction token: " + transactionToken + ", error: "
+                        + errorMessage + "Error code: " + errorCode.toString() + " Server status code: " + serverCode);
                 }
             } else if (resultCode == IDnowSDK.RESULT_CODE_FAILED) {
                 if (data != null) {
@@ -384,8 +394,8 @@ Please contact the support team in case that video is needed.
 | buttontextColor | Optional color that replaces the color of the text in the Proceed button.<br>Default value: <a href="#"><img valign='middle' alt='#FFFFFF' src='https://readme-swatches.vercel.app/FFFFFF?style=round'/></a>#FFFFFF | <img src="./screenshots/buttontextColor.png" width="250">
 | basicInputField | Optional color that replaces the default text color of the textfield components.<br>Default: <a href="#"><img valign='middle' alt='#7B7B7B' src='https://readme-swatches.vercel.app/7B7B7B?style=round'/></a>#7B7B7B | <img src="./screenshots/basicInputField.png" width="250">
 |basicNavStepOn |     Optional color that replaces the default background color of the identification steps when this parameter is activated.<br>Default: <a href="#"><img valign='middle' alt='#FFFFFF' src='https://readme-swatches.vercel.app/FFFFFF?style=round'/></a>#FFFFFF | <img src="./screenshots/basicNavStepOn.png" width="250">
-|basicNavStepOff |     Optional color that replaces the default background color for disabled identification steps when the parameter is deactivated.<br>Default: <a href="#"><img valign='middle' alt='#C9C6C4' src='https://readme-swatches.vercel.app/C9C6C4?style=round'/></a>#C9C6C4 | <img src="./screenshots/basicNavStepOff.png" width="250">
-|||
+|basicNavStepOff |     Optional color that replaces the default background color for disabled identification steps when the parameter is deactivated.<br>Default: <a href="#"><img valign='middle' alt='#C9C6C4' src='https://readme-swatches.vercel.app/C9C6C4?style=round'/></a>#C9C6C4 | <img src="./screenshots/basicNavStepOff.png" width="250"> |
+
 
 ### Fonts
 
@@ -397,15 +407,33 @@ Example:
   FontsOverride.setDefaultFont(this, "SERIF", "roboto_thin_italic.ttf");
 ```
 
-## Error codes
+## Result codes
 
 | Result code | Description                                                                                              |
 | - | - |
 | `IDnowSDK.RESULT_CODE_SUCCESS` | Process has successfully finished.<br>Intent contains the identification token (`IDnowSDK.RESULT_DATA_TRANSACTION_TOKEN`) |
 | `IDnowSDK.RESULT_CODE_CANCEL` | User has cancelled the identification process.<br>Intent contains the error message (`IDnowSDK.RESULT_DATA_ERROR`) and identification token (`IDnowSDK.RESULT_DATA_TRANSACTION_TOKEN`) |
-| `IDnowSDK.RESULT_CODE_FAILED` | The identification has failed.<br>Intent contains the error code (`IDnowSDK.RESULT_ERROR_CODE`) and/or message (`IDnowSDK.RESULT_DATA_ERROR`)  |
+| `IDnowSDK.RESULT_CODE_FAILED` | The identification has failed.<br>Intent contains the error code (`IDnowSDK.RESULT_ERROR_CODE`) and a message describing the issue (`IDnowSDK.RESULT_DATA_ERROR`). The possible error codes are listed [below](#error-codes)  |
 | `IDnowSDK.RESULT_CODE_WRONG_IDENT` | User has used a wrong identification token.<br>Intent contains the error message (`IDnowSDK.RESULT_DATA_ERROR`) and identification token (`IDnowSDK.RESULT_DATA_TRANSACTION_TOKEN`) |
-|||
+
+
+### Error codes
+The error codes are sent as a part of the failed identification and can be retieved in the followig way:
+```kotlin
+val errorCode = data.getSerializableExtra(IDnowSDK.RESULT_ERROR_CODE) as IDnowErrorCode
+```
+
+| Error code | Description                                                                                              |
+| - | - |
+| `IDnowErrorOfficeClosed` | Occurs when an identification cannot be initialized because the time is outside business hours. |
+| `IDnowErrorCameraAccessNotGranted` | Occurs when a video ident was requested, but the camera access was not granted by the user. |
+| `IDnowErrorNoInternetConnection` | Occurs when a video ident was requested, but no internet connection is present.  |
+| `IDnowErrorServer` | Can occur at any stage during a communication with the server. Additionally, the resulting data will contain the HTTP response status code that can be retrieved in the following way: `data.getIntExtra(IDnowSDK.RESULT_SERVER_STATUS_CODE, 0)` |
+| `IDnowErrorWebRTC` | Can occur during an identification process (e.g. WebRTC service could not establish a video connection). |
+| `IDnowErrorTokenNotSupported` | The token used for this identification is meant for another product. |
+| `IDnowErrorRootedPhoneNotSupported` | The identification process is not possible on a rooted device due to security limitations. |
+| `IDnowErrorUnsupportedProduct` | The product for this token is no longer supported. |
+| `IDnowUnsupportedDevice` | The identification can't be performed because the device is not compatible. |
 
 ## Localization
 
