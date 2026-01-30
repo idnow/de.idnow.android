@@ -271,6 +271,8 @@ To handle the results of the identification, implement the standard onActivityRe
                     Log.v(TAG, "failed, transaction token: " + transactionToken + ", error: "
                     +errorMessage);
                 }
+            } else if (resultCode == IDnowSDK.RESULT_USER_IN_QUEUE) {
+                Log.v(TAG, "User enrolled into the waiting list and will be notified via SMS ")
             } else {
                 Log.v(TAG, "Result Code: " + resultCode);
             }
@@ -415,6 +417,7 @@ Example:
 | `IDnowSDK.RESULT_CODE_CANCEL` | User has cancelled the identification process.<br>Intent contains the error message (`IDnowSDK.RESULT_DATA_ERROR`) and identification token (`IDnowSDK.RESULT_DATA_TRANSACTION_TOKEN`) |
 | `IDnowSDK.RESULT_CODE_FAILED` | The identification has failed.<br>Intent contains the error code (`IDnowSDK.RESULT_ERROR_CODE`) and a message describing the issue (`IDnowSDK.RESULT_DATA_ERROR`). The possible error codes are listed [below](#error-codes)  |
 | `IDnowSDK.RESULT_CODE_WRONG_IDENT` | User has used a wrong identification token.<br>Intent contains the error message (`IDnowSDK.RESULT_DATA_ERROR`) and identification token (`IDnowSDK.RESULT_DATA_TRANSACTION_TOKEN`) |
+| `IDnowSDK.RESULT_USER_IN_QUEUE` | User has enrolled into the waiting list and will resume the identification once notified via an SMS. Current identification session is finished. |
 
 
 ### Error codes
@@ -423,17 +426,23 @@ The error codes are sent as a part of the failed identification and can be retie
 val errorCode = data.getSerializableExtra(IDnowSDK.RESULT_ERROR_CODE) as IDnowErrorCode
 ```
 
-| Error code | Description                                                                                              |
-| - | - |
+| Error Code | Description |
+| --- | --- |
+| `IDnowErrorMissingTransactionToken` | Occurs when the correct transaction token was not supplied to the SDK during the initialization. |
 | `IDnowErrorOfficeClosed` | Occurs when an identification cannot be initialized because the time is outside business hours. |
+| `IDnowErrorUnsupportedDevice` | The identification can't be performed because the device does not meet the minimal requirements. |
 | `IDnowErrorCameraAccessNotGranted` | Occurs when a video ident was requested, but the camera access was not granted by the user. |
-| `IDnowErrorNoInternetConnection` | Occurs when a video ident was requested, but no internet connection is present.  |
+| `IDnowErrorMicrophoneAccessNotGranted` | Occurs when a video ident was requested, but the microphone access was not granted by the user. |
+| `IDnowErrorNoInternetConnection` | Occurs when a video ident was requested, but no internet connection is present. |
 | `IDnowErrorServer` | Can occur at any stage during a communication with the server. Additionally, the resulting data will contain the HTTP response status code that can be retrieved in the following way: `data.getIntExtra(IDnowSDK.RESULT_SERVER_STATUS_CODE, 0)` |
 | `IDnowErrorWebRTC` | Can occur during an identification process (e.g. WebRTC service could not establish a video connection). |
-| `IDnowErrorTokenNotSupported` | The token used for this identification is meant for another product. |
+| `IDnowErrorIdentificationFailed` | The identification process was finished but the identity verification was not successful. |
 | `IDnowErrorRootedPhoneNotSupported` | The identification process is not possible on a rooted device due to security limitations. |
+| `IDnowErrorHighCallVolumeTryLater` | User agreed to try the identification later due to the high call volume. |
+| `IDnowErrorTokenNotSupported` | The token used for this identification is meant for another product. |
 | `IDnowErrorUnsupportedProduct` | The product for this token is no longer supported. |
-| `IDnowUnsupportedDevice` | The identification can't be performed because the device is not compatible. |
+| `IDnowErrorUnsupportedBluetoothHeadset` | Bluetooth headset was used despite being disabled in the configuration. |
+| `IDnowInstantSignDocumentExpired` | Instant Sign operation rejected, the trusted document is expired. This document is no longer valid. |
 
 ## Localization
 
