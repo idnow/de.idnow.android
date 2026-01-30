@@ -1,4 +1,30 @@
 # Changelog
+### VideoIdent 9.7.6 – (30th January 2026)
+
+### 🚀 Improvements
+#### Unified Error Handling Across Platforms
+We’ve aligned Android error management with our iOS implementation to ensure clearer, more predictable error codes.  
+
+---
+
+### 🐞 Fixes
+#### Consistent “Send Again” and “Confirm” Buttons
+Refined the button styles on the *Enter SMS Code* screen to deliver a more consistent and polished user experience.
+
+#### High Call Volume Screen on Android
+Resolved an issue where the *High Call Volume* screen was not displaying correctly on some Android devices.
+
+---
+
+### ⚙️ SDK Update (Breaking Change eID)
+#### New Brand Always Enabled
+The method `IDnowSDK.setNewBrand(Boolean)` has been removed.  
+The **“New Brand”** experience is now permanently active in the Android SDK.
+
+> **Action required:**  
+> If your integration used this method, please remove any related calls to ensure compatibility.
+
+
 ### VideoIdent 9.7.5
 
 **New Features**
