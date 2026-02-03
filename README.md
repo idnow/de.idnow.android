@@ -440,6 +440,7 @@ val errorCode = data.getSerializableExtra(IDnowSDK.RESULT_ERROR_CODE) as IDnowEr
 | `IDnowErrorRootedPhoneNotSupported` | The identification process is not possible on a rooted device due to security limitations. |
 | `IDnowErrorHighCallVolumeTryLater` | User agreed to try the identification later due to the high call volume. |
 | `IDnowErrorTokenNotSupported` | The token used for this identification is meant for another product. |
+| `IDnowErrorTokenNotSupported_eIDStandalone` | eID standalone tokens cannot be used if the eID SDK is not added to the project. Please follow the  [installation steps](./README.md#installation) to setup the eID library. |
 | `IDnowErrorUnsupportedProduct` | The product for this token is no longer supported. |
 | `IDnowErrorUnsupportedBluetoothHeadset` | Bluetooth headset was used despite being disabled in the configuration. |
 | `IDnowInstantSignDocumentExpired` | Instant Sign operation rejected, the trusted document is expired. This document is no longer valid. |
