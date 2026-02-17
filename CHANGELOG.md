@@ -1,4 +1,19 @@
 # Changelog
+### VideoIdent 9.7.7 & eID 3.5.3 – (19th February 2026)
+
+### 🚀 Improvements
+- **VideoIdent SDK**: Improved performance and reduced slowness during obfuscation. 
+
+---
+
+### 🐞 Fixes
+- **VIP SDK & eID**: Fixed issue where the chooser page was displayed when both modules were enabled. 
+- **eID**: Fixed NFC scanning issue on Samsung devices. 
+- **eID**: Fixed issue when switching between 5-digit and 6-digit PINs. 
+- **eID**: Fixed incorrect `Ident ID` when capturing the front side of the ID document. 
+- **eID**: Fixed unclickable “Done” button on keyboard. 
+- **eID**: Fixed issue with document capture.
+- 
 ### VideoIdent 9.7.6 – (30th January 2026)
 
 ### 🚀 Improvements
