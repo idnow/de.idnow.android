@@ -71,9 +71,6 @@ allprojects {
     repositories {
         flatDir { dirs("libs") }
         maven {
-            url "https://raw.githubusercontent.com/idnow/de.idnow.android/master"
-        }
-        maven {
             url = uri("https://repo.authada.de/public/")
             authentication {
                 basic(BasicAuthentication)
@@ -88,14 +85,6 @@ allprojects {
 dependencies {
     implementation(files("libs/idnow-android-sdk-x.x.x.aar"))
     implementation(files("libs/idnow-android-eid-sdk-x.x.x.aar"))
-    implementation("de.idnow.insights:idnow-android-insights-sdk:1.2.0")
-    implementation("com.google.code.gson:gson:2.8.6")
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("com.squareup.okhttp3:okhttp:4.12.0")
-    implementation("com.googlecode.libphonenumber:libphonenumber:8.10.9")
-    implementation("com.airbnb.android:lottie:5.1.1")
-    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
     implementation(“com.governikus:ausweisapp:2.2.1”)
     implementation("de.authada.library:aal:4.24.4")
 } 
