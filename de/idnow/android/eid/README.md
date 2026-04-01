@@ -20,7 +20,7 @@
 ## Requirements
 
 - Android Studio
-- Deployment target: Android 9.0 (API level 28) or later (<b>NFC</b> is required)
+- Deployment min target: Android 8.0 (API level 26) with Authada and Android 9.0 (API level 28) with Governikus (<b>NFC</b> is required)
 
 
 ## Installation
