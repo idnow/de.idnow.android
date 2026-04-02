@@ -1,4 +1,17 @@
 # Changelog
+### VideoIdent 9.7.8 & eID 3.5.4 – (02nd April 2026)
+
+### 🚀 Improvements
+- **VideoIdent SDK**: Added custom steps feature.
+- **VideoIdent SDK**: Multiple improvements and security enhancement.
+
+---
+
+### 🐞 Fixes
+- **VIP SDK**: Fixed multiple minor issues.
+- **eID**: Fixed PDF viewing issue. 
+- **eID**: Fixed 5 digits PIN Hyperlink.  
+
 ### VideoIdent 9.7.7 & eID 3.5.3 – (19th February 2026)
 
 ### 🚀 Improvements
