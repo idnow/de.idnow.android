@@ -57,6 +57,7 @@ allprojects {
 }
 dependencies {
     implementation("de.idnow.sdk:idnow-android-sdk:x.x.x")
+    implementation("de.idnow.android.eid:idnow-android-eid-sdk:3.4.6")
 }
 ```
 
