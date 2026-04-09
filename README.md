@@ -178,17 +178,11 @@ Our SDK uses the following permissions:
 
 ### Setup and run
 
-After adding the IDnowSDK into your project you need to follow these steps in order to start an identification process.
+After adding the IDnowSDK into your project you can start the identification process like this.
 
-#### Step 1. Initialize SDK
-```
-IDnowSDK.getInstance().initialize(<Activity>, "<companyid>");
-```
-
-#### Step 2. Start SDK
 ```
 try {
-    IDnowSDK.getInstance().initialize(StartActivity.this, "companyId");
+    IDnowSDK.getInstance().initialize(StartActivity.this);
 
     ...
     //Additional settings
@@ -199,8 +193,6 @@ try {
     e.printStackTrace();
 }
 ```
-
-The SDK checks the input parameters and throws an Exception if something is deemed not right, to provide you with quick feedback. Handle it as desired.
 
 To handle the results of the identification, implement the standard onActivityResult function in your activity:
 
