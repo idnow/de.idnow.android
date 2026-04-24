@@ -1,6 +1,6 @@
 # Changelog
 
-### VideoIdent 9.7.8
+### VideoIdent 9.7.9
 - Improved connection stability checks during video call setup.
 
 ### VideoIdent 9.7.8 & eID 3.5.4 – (02nd April 2026)
