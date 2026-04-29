@@ -57,7 +57,7 @@ allprojects {
 }
 dependencies {
     implementation("de.idnow.sdk:idnow-android-sdk:x.x.x")
-    implementation("de.idnow.android.eid:idnow-android-eid-sdk:3.4.6")
+    implementation("de.idnow.android.eid:idnow-android-eid-sdk:x.x.x")
 }
 ```
 
@@ -86,7 +86,7 @@ allprojects {
 dependencies {
     implementation(files("libs/idnow-android-sdk-x.x.x.aar"))
     implementation(files("libs/idnow-android-eid-sdk-x.x.x.aar"))
-    implementation(“com.governikus:ausweisapp:2.2.1”)
+    implementation(“com.governikus:ausweisapp:2.4.1”)
     implementation("de.authada.library:aal:4.24.4")
 } 
 ```

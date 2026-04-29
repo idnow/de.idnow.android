@@ -438,7 +438,7 @@ Available environments:
 <br>- ```LIVE``` → Production environment (```LIVE```);
 <br>- ```CUSTOM``` → Custom environment (```CUSTOM```).
 
-Example: If Development environment is required, then user must initialize the following setting.
+Example: If Development environment is required, then user must initialize the following setting, otherwise it will be set depending on the identification token used.
 ```
 IDnowSDK.setEnvironment(IDnowSDK.Server.DEV);
 ```
