@@ -1,13 +1,30 @@
 # Changelog
+### VideoIdent 9.7.10 & eID 3.5.5 - (1st May 2026)
 
-### VideoIdent 9.7.8
-- Improved connection stability checks during video call setup.
+### 🚀 Improvements
+- **eID**: BREAKING CHANGE: Authada and Governikus must be added explicitly. MinApiSDK can be set to 26 when using Authada now (28 with Governikus)
+- **VIP SDK & eID**: Improve README.md clarity
+
+---
+
+### 🐞 Fixes
+- **VIP SDK**: Crash due to race condition in some cases.
+
+
+### VideoIdent 9.7.9 - (24th April 2026)
+
+### 🚀 Improvements
+- **VIP SDK**: Improved connection stability checks during video call setup.
+- **VIP SDK**: Add proguard rules to avoid warning when VI only is implemented
+- **VIP SDK**: Add missing default string values to avoid warning
+- **VIP SDK**: UI when keyboard is displayed
+
 
 ### VideoIdent 9.7.8 & eID 3.5.4 – (02nd April 2026)
 
 ### 🚀 Improvements
-- **VideoIdent SDK**: Added custom steps feature.
-- **VideoIdent SDK**: Multiple improvements and security enhancement.
+- **VIP SDK**: Added custom steps feature.
+- **VIP SDK**: Multiple improvements and security enhancement.
 
 ---
 
@@ -19,7 +36,7 @@
 ### VideoIdent 9.7.7 & eID 3.5.3 – (19th February 2026)
 
 ### 🚀 Improvements
-- **VideoIdent SDK**: Improved performance and reduced slowness during obfuscation. 
+- **VIP SDK**: Improved performance and reduced slowness during obfuscation. 
 
 ---
 
