@@ -36,7 +36,6 @@
   - [Localization](#localization)
   - [Environment](#environment)
   - [Other supported platforms](#other-supported-platforms)
-    - [Cordova](#cordova)
     - [React native](#react-native)
   - [eID Framework](#eid-framework)
   - [Examples](#examples)
@@ -54,8 +53,8 @@ This guide is designed for developers integrating IDnow SDKs into mobile applica
 
 This guide covers VideoIdent (VI), eSign, and eID SDKs.
 
-VI and eSign support React Native. 
-eID requires native integration and doesn’t support React Native bridges. Use native code examples provided in this guide for integration.
+[React native](#react-native) plugin is available for the complete solution.
+
 
 ### VideoIdent
 
@@ -73,7 +72,7 @@ German government introduced RFID chip based electronic ID cards in November 201
 
 ## Requirements
 - Android Studio;
-- Deployment target: Android 9.0 (API level 28) or higher;
+- Deployment target: Android 9.0 (API level 28) or higher for eID with Governikus or Android 8.0 (level 26) for VI, eSign and eID with Authada
 - The user’s device must have animation capability to have a seamless experience, otherwise screens that contain animations will not function as intended;
 - We are using foreground services in our SDK to perform a task that is required in the process of connecting the end-user with the identification expert, as it is a prerequisite for the video call. 
 You’ll need to mention the following foreground service permissions on the App content page (Policy > App content) in Play Console: `FOREGROUND_SERVICE_CAMERA` and `FOREGROUND_SERVICE_MICROPHONE`.
@@ -106,7 +105,7 @@ Add the following repository and dependency to your build.gradle file:
 allprojects {
     repositories {
         maven("https://raw.githubusercontent.com/idnow/de.idnow.android/master")
-        //needed if eID is used
+        //needed if eID with Authada
         maven {
             url = uri("https://repo.authada.de/public/")
             authentication {
@@ -121,73 +120,33 @@ allprojects {
 } 
 
 dependencies {
+    // VI & eSign
     implementation("de.idnow.sdk:idnow-android-sdk:x.x.x")
+    
+    //eID
+    implementation("de.idnow.android.eid:idnow-android-eid-sdk:3.5.3")
+    
+    //Additionnal dependencies needed
+    
+    //BouncyCastle: use the one adapted to the jdk you are using
+    implementation ("org.bouncycastle:bcprov-jdk15to18:1.83")
+    implementation ("org.bouncycastle:bctls-jdk15to18:1.83")
+    implementation ("org.bouncycastle:bcutil-jdk15to18:1.83")
+    
+    //For eID with Governikus
+    implementation ("com.governikus:ausweisapp:2.4.1")
+    
+    //For eiD with Authada (ask for maven credentials)
+    implementation group: 'de.authada.library', name: 'aal', version: '4.24.4'
+    
 }
 ```
 
 #### Option 2: AAR file
 
-We also offer the possibility to import the SDK as an .aar file instead.
-
-Copy the `idnow-android-sdk-x.x.x.aar` file into the `libs` folder along with the `idnow-android-eid-sdk-x.x.x.aar` file if eID is used, then add the following repositories and dependencies to your build.gradle file:
-
-```
-allprojects {
-    repositories {
-        flatDir { dirs("libs") }
-        maven {
-            url "https://raw.githubusercontent.com/idnow/de.idnow.android/master"
-        }
-        //needed if eID is used
-        maven {
-            url = uri("https://repo.authada.de/public/")
-            authentication {
-                basic(BasicAuthentication)
-            }
-            credentials {
-                username "*********"
-                password "*********"
-            }
-        }
-    }
-}
-dependencies {
-    implementation(files("libs/idnow-android-sdk-x.x.x.aar"))
-    implementation("de.idnow.insights:idnow-android-insights-sdk:1.2.0")
-    implementation("com.google.code.gson:gson:2.8.6")
-    implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
-    implementation("com.squareup.okhttp3:okhttp:4.12.0")
-    implementation("com.googlecode.libphonenumber:libphonenumber:8.10.9")
-    implementation("com.airbnb.android:lottie:5.1.1")
-    implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
-    //needed if eID is used
-    implementation files('libs/idnow-android-eid-sdk-x.x.x.aar')
-    implementation(“com.governikus:ausweisapp:2.4.0”)
-    implementation("de.authada.library:aal:4.24.4")
-}
-```
-
-### 2. Import BouncyCastle
-
-Starting with SDK version 7.0.0 we offer the possibility to integrate your bouncycastle preferred version as an external library.
-We offer the BouncyCastle version 1.64 as a default (only compile) used version, therefore integrating it as external library is mandatory for the runtime. 
-If you don't have any BouncyCastle version preferences, you can use the following https://github.com/idnow/de.idnow.android-sample/tree/master/app/libs
-
-Copy `bcprov-jdk15to18-164.jar` and `bctls-jdk15to18-164.jar` files into the `libs` folder, then add the following repositories and dependencies to your build.gradle file:
-
-```
-allprojects {
-    repositories {
-        flatDir { dirs("libs") }
-    }
-}
-
-dependencies {
-    implementation(files("libs/bcprov-jdk15to18-164.jar"))
-    implementation(files("libs/bctls-jdk15to18-164.jar"))
-} 
-```
+We also offer the possibility to import the SDKs as an .aar file instead.
+You can download it from this repository inside the package de.idnow.android.eid for eID
+and inside de.idnow.sdk for VideoIdent
 
 ## Permissions
 
@@ -219,17 +178,11 @@ Our SDK uses the following permissions:
 
 ### Setup and run
 
-After adding the IDnowSDK into your project you need to follow these steps in order to start an identification process.
+After adding the IDnowSDK into your project you can start the identification process like this.
 
-#### Step 1. Initialize SDK
-```
-IDnowSDK.getInstance().initialize(<Activity>, "<companyid>");
-```
-
-#### Step 2. Start SDK
 ```
 try {
-    IDnowSDK.getInstance().initialize(StartActivity.this, "companyId");
+    IDnowSDK.getInstance().initialize(StartActivity.this);
 
     ...
     //Additional settings
@@ -240,8 +193,6 @@ try {
     e.printStackTrace();
 }
 ```
-
-The SDK checks the input parameters and throws an Exception if something is deemed not right, to provide you with quick feedback. Handle it as desired.
 
 To handle the results of the identification, implement the standard onActivityResult function in your activity:
 
@@ -487,7 +438,7 @@ Available environments:
 <br>- ```LIVE``` → Production environment (```LIVE```);
 <br>- ```CUSTOM``` → Custom environment (```CUSTOM```).
 
-Example: If Development environment is required, then user must initialize the following setting.
+Example: If Development environment is required, then user must initialize the following setting, otherwise it will be set depending on the identification token used.
 ```
 IDnowSDK.setEnvironment(IDnowSDK.Server.DEV);
 ```
@@ -508,19 +459,11 @@ IDnowSDK.setStunHost("YOUR_STUN_HOST", context);
 ```
 
 ## Other supported platforms
-
-### Cordova
-
-Our Cordova plugin offers the possibility of integrating our native Android and iOS SDK into the Cordova-based applications. The plugin offers the possibility to customize and setup of the SDK. At the end of the identification process, the SDK communicates with the plug-in via a callback, allowing the Cordova application to update the flow.
-Please refer to this [link](https://www.npmjs.com/package/com-idnow-plugin) for implementation details.\
-**Note**: Only VideoIdent and eSign are supported so far. eID is not supported.
-
 ### React native
 
 Our React Native plug-in offers the possibility of integrating our native Android and iOS SDK into the React Native-based applications. It offers the possibility to customize and setup the SDK, and uses the latest expo native modules to create the bridging mechanism.
-Please refer to this [link](https://www.npmjs.com/package/react-native-vi-idnow-library) for implementation details.\
-**Note**: Only VideoIdent and eSign are supported so far. eID is not supported.
-
+-  [VI Plugin](https://www.npmjs.com/package/@idnow/react-videoident)
+-  [eID Plugin](https://www.npmjs.com/package/@idnow/react-eid?activeTab=readme)
 ## eID Framework
 
 IDnow eID is an automated and fully AML-compliant identification product. All it requires is an NFC-enabled (Near Field Communication) smartphone and a German ID document (ID card or Residence permit) with an activated eID function or the eID card for EU citizens.
