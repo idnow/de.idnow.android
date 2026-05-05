@@ -1,5 +1,5 @@
 # Changelog
-### VideoIdent 9.7.10 & eID 3.5.5 - (1st May 2026)
+### VideoIdent 9.7.10 & eID 3.5.5 - (30th April 2026)
 
 ### 🚀 Improvements
 - **eID**: BREAKING CHANGE: Authada and Governikus must be added explicitly. MinApiSDK can be set to 26 when using Authada now (28 with Governikus)
