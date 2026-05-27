@@ -1,4 +1,11 @@
 # Changelog
+
+### VideoIdent 9.7.11 - (27th May 2026)
+
+### 🚀 Improvements
+- **VIP SDK**: Improvements of the document signing flow
+
+
 ### VideoIdent 9.7.10 & eID 3.5.5 - (30th April 2026)
 
 ### 🚀 Improvements
