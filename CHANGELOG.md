@@ -1,5 +1,13 @@
 # Changelog
 
+### VideoIdent 9.7.12 - (11th June 2026)
+
+### 🐞 Fixes
+- **VIP SDK**: showIDnowLogo configuration handled correctly
+- **VIP SDK**: Fixe issue on configuration change with Foldable phone on CQC
+- **VIP SDK**: Exit button on waiting screen now working
+- **VIP SDK**: Fixes multiple minor issues
+
 ### VideoIdent 9.7.11 - (27th May 2026)
 
 ### 🚀 Improvements
