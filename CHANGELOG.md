@@ -1,19 +1,5 @@
 # Changelog
 
-### VideoIdent 9.7.13 & eID 3.5.6 – (9 July 2026)
-
-### 🚀 Improvements
-
-    **VIP SDK:** Extend USER_CANCEL event with cancellation-step field 
-
----
-
-### 🐞 Fixes
-
-    **VIP SDK:** Fixed multiple minor issues.
-    **eID SDK:** Fix ID pictures missing in some cases 
-
-
 ### VideoIdent 9.7.12 - (11th June 2026)
 
 ### 🐞 Fixes
