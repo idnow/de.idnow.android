@@ -84,7 +84,7 @@ Please contact the support team in case that video is needed.
 
 Different Android devices use different CPUs, which in turn support different instruction sets.
 
-Currently we support the following architectures:
+Currently, we support the following architectures:
 - arm64-v8a
 - armeabi-v7a.
 
@@ -202,7 +202,7 @@ To handle the results of the identification, implement the standard onActivityRe
 
 ```java
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    void onActivityResult(int requestCode, int resultCode, Intent data) {
         if (requestCode == IDnowSDK.REQUEST_ID_NOW_SDK) {
             if (resultCode == IDnowSDK.RESULT_CODE_SUCCESS) {
                 if (data != null) {
@@ -247,7 +247,7 @@ To handle the results of the identification, implement the standard onActivityRe
 | setWebsocketHost           | The target server url for websocket calls if custom server is used.                                                                                                                                                                                                                                                                                                                                                           |
 | setConnectionType          | The connection type to use to talk to the backend.`ConnectionType` <br />Possible values:<br />- WEBSOCKET *(default)*<br />- LONG_POLLING                                                                                                                                                                                                                                                                                    |
 | setCertificateProvider     | Accepts a subclass of `CertificateProvider`. Used to provide custom mTLS certificates used by the network connections. See [Custom certificate providers](#custom-certificate-providers).                                                                                                                                                                                                                                     |
-| setDtlsCertificateProvider | Accepts a subclass of `CertificateProvider`. Used to provide custom DTLS certificates used by the WebRTC connection. See [Custom certificate providers](#custom-certificate-providers).                                                                                                                                                                                                                                       
+| setDtlsCertificateProvider | Accepts a subclass of `CertificateProvider`. Used to provide custom DTLS certificates used by the WebRTC connection. See [Custom certificate providers](#custom-certificate-providers).                                                                                                                                                                                                                                       |
 | logging                    | ```enableLogging``` or ```disableLogging``` methods are used to toggle logging.<br> The default value of this property is `true`.                                                                                                                                                                                                                                                                                             |
 
 ### Custom certificate providers
@@ -335,17 +335,17 @@ http://developer.android.com/ndk/guides/abis.html
 
 ### Colors
 
-| Parameter Name | Description | Appearance
-| -------------- | ----------- | ------------- |
-| primaryColor | Optional color that replaces the background color of the Proceed button.<br>Default: <a href="#"><img valign='middle' alt='#FF6B40' src='https://readme-swatches.vercel.app/FF6B40?style=round'/></a>#FF6B40 | <img src="./screenshots/primaryColor.png" width="250">
-| primaryVariantColor | Optional color that replaces the background color of the Proceed button with a transparent code.<br>Default: <a href="#"><img valign='middle' alt='#80FF6B40' src='https://readme-swatches.vercel.app/80FF6B40?style=round'/></a>#80FF6B40 | <img src="./screenshots/primaryVariantColor.png" width="250">
-| bgPrimaryColor | Optional color to be used as the screen background.<br>Default: <a href="#"><img valign='middle' alt='#F8F8F8' src='https://readme-swatches.vercel.app/F8F8F8?style=round'/></a>#F8F8F8 | <img src="./screenshots/bgPrimaryColor.png" width="250"> 
-| bgSecondaryColor | Optional color that replaces the default background color of the textfield components.<br>Default: <a href="#"><img valign='middle' alt='#EEEEEE' src='https://readme-swatches.vercel.app/EEEEEE?style=round'/></a>#EEEEEE | <img src="./screenshots/bgSecondaryColor.png" width="250">
-| primarytextColor | Optional color that replaces the default text color.<br>Default: <a href="#"><img valign='middle' alt='#000000' src='https://readme-swatches.vercel.app/000000?style=round'/></a>#000000 <br> Recommendation: It must be a dark color that contrasts with the white color. | <img src="./screenshots/primarytextColor.png" width="250">
-| buttontextColor | Optional color that replaces the color of the text in the Proceed button.<br>Default value: <a href="#"><img valign='middle' alt='#FFFFFF' src='https://readme-swatches.vercel.app/FFFFFF?style=round'/></a>#FFFFFF | <img src="./screenshots/buttontextColor.png" width="250">
-| basicInputField | Optional color that replaces the default text color of the textfield components.<br>Default: <a href="#"><img valign='middle' alt='#7B7B7B' src='https://readme-swatches.vercel.app/7B7B7B?style=round'/></a>#7B7B7B | <img src="./screenshots/basicInputField.png" width="250">
-|basicNavStepOn |     Optional color that replaces the default background color of the identification steps when this parameter is activated.<br>Default: <a href="#"><img valign='middle' alt='#FFFFFF' src='https://readme-swatches.vercel.app/FFFFFF?style=round'/></a>#FFFFFF | <img src="./screenshots/basicNavStepOn.png" width="250">
-|basicNavStepOff |     Optional color that replaces the default background color for disabled identification steps when the parameter is deactivated.<br>Default: <a href="#"><img valign='middle' alt='#C9C6C4' src='https://readme-swatches.vercel.app/C9C6C4?style=round'/></a>#C9C6C4 | <img src="./screenshots/basicNavStepOff.png" width="250"> |
+| Parameter Name      | Description                                                                                                                                                                                                                                                                | Appearance                                                    |
+|---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------------------------------------------------------|
+| primaryColor        | Optional color that replaces the background color of the Proceed button.<br>Default: <a href="#"><img valign='middle' alt='#FF6B40' src='https://readme-swatches.vercel.app/FF6B40?style=round'/></a>#FF6B40                                                               | <img src="./screenshots/primaryColor.png" width="250">        |
+| primaryVariantColor | Optional color that replaces the background color of the Proceed button with a transparent code.<br>Default: <a href="#"><img valign='middle' alt='#80FF6B40' src='https://readme-swatches.vercel.app/80FF6B40?style=round'/></a>#80FF6B40                                 | <img src="./screenshots/primaryVariantColor.png" width="250"> |
+| bgPrimaryColor      | Optional color to be used as the screen background.<br>Default: <a href="#"><img valign='middle' alt='#F8F8F8' src='https://readme-swatches.vercel.app/F8F8F8?style=round'/></a>#F8F8F8                                                                                    | <img src="./screenshots/bgPrimaryColor.png" width="250">      |
+| bgSecondaryColor    | Optional color that replaces the default background color of the textfield components.<br>Default: <a href="#"><img valign='middle' alt='#EEEEEE' src='https://readme-swatches.vercel.app/EEEEEE?style=round'/></a>#EEEEEE                                                 | <img src="./screenshots/bgSecondaryColor.png" width="250">    |
+| primarytextColor    | Optional color that replaces the default text color.<br>Default: <a href="#"><img valign='middle' alt='#000000' src='https://readme-swatches.vercel.app/000000?style=round'/></a>#000000 <br> Recommendation: It must be a dark color that contrasts with the white color. | <img src="./screenshots/primarytextColor.png" width="250">    |
+| buttontextColor     | Optional color that replaces the color of the text in the Proceed button.<br>Default value: <a href="#"><img valign='middle' alt='#FFFFFF' src='https://readme-swatches.vercel.app/FFFFFF?style=round'/></a>#FFFFFF                                                        | <img src="./screenshots/buttontextColor.png" width="250">     |
+| basicInputField     | Optional color that replaces the default text color of the textfield components.<br>Default: <a href="#"><img valign='middle' alt='#7B7B7B' src='https://readme-swatches.vercel.app/7B7B7B?style=round'/></a>#7B7B7B                                                       | <img src="./screenshots/basicInputField.png" width="250">     |
+| basicNavStepOn      | Optional color that replaces the default background color of the identification steps when this parameter is activated.<br>Default: <a href="#"><img valign='middle' alt='#FFFFFF' src='https://readme-swatches.vercel.app/FFFFFF?style=round'/></a>#FFFFFF                | <img src="./screenshots/basicNavStepOn.png" width="250">      |
+| basicNavStepOff     | Optional color that replaces the default background color for disabled identification steps when the parameter is deactivated.<br>Default: <a href="#"><img valign='middle' alt='#C9C6C4' src='https://readme-swatches.vercel.app/C9C6C4?style=round'/></a>#C9C6C4         | <img src="./screenshots/basicNavStepOff.png" width="250">     |
 
 
 ### Fonts
