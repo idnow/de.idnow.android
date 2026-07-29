@@ -1,5 +1,6 @@
+# VI and eID SDK
 
- # Table of Contents
+## Table of Contents
 - [Table of Contents](#table-of-contents)
   - [Overview](#overview)
     - [Purpose and audience](#purpose-and-audience)
@@ -11,30 +12,28 @@
   - [Supported Architecture](#supported-architecture)
   - [Compatibility Matrix](#compatibility-matrix)
   - [Installation](#installation)
-    - [1. Import library](#1-import-library)
+    - [Import library](#import-library)
       - [Option 1: Maven](#option-1-maven)
       - [Option 2: AAR file](#option-2-aar-file)
-    - [2. Import BouncyCastle](#2-import-bouncycastle)
   - [Permissions](#permissions)
   - [Usage](#usage)
     - [Setup and run](#setup-and-run)
-      - [Step 1. Initialize SDK](#step-1-initialize-sdk)
-      - [Step 2. Start SDK](#step-2-start-sdk)
+    - [Retrieve result from the SDK](#retrieve-result-from-the-sdk)
     - [Additional settings](#additional-settings)
     - [Custom certificate providers](#custom-certificate-providers)
       - [DTLS](#dtls)
       - [mTLS](#mtls)
-  - [Using IDnow with other native libraries (UnsatisfiedLinkError)](#using-idnow-with-other-native-libraries-unsatisfiedlinkerror)
+  - [Native libraries conflict (UnsatisfiedLinkError)](#native-libraries-conflict-unsatisfiedlinkerror)
   - [Branding](#branding)
     - [Overriding SDK colors in your app](#overriding-sdk-colors-in-your-app)
-      - [Example (default / light theme):](#example-default--light-theme)
-      - [Example (dark theme):](#example-dark-theme)
+      - [Example (default / light theme)](#example-default--light-theme)
+      - [Example (dark theme)](#example-dark-theme)
     - [Colors](#colors)
     - [Fonts](#fonts)
   - [Result codes](#result-codes)
     - [Error codes](#error-codes)
     - [Handling user cancelation](#handling-user-cancelation)
-    - [Possible cancelation steps](#possible-cancelation-steps)
+      - [Possible cancelation steps](#possible-cancelation-steps)
   - [Localization](#localization)
   - [Environment](#environment)
   - [Other supported platforms](#other-supported-platforms)
@@ -62,7 +61,7 @@ This guide covers VideoIdent (VI), eSign, and eID SDKs.
 
 IDnow VideoIdent verifies the identity of a person. The user must submit an accepted ID document, which is verified along with ID holder or user in a process guided by an IDnow Ident Specialist. The user and the IDnow Ident Specialist interact with each other during this process using a video-chat.
 
-IDnow offers mobile Apps for iOS and Android for user and userId for the verification process. Users can use IDnow mobile SDKs to integrate VideoIdent into customer-specific mobile apps. VideoIdent can also be used with a web browser by the user.
+IDnow offers mobile Apps for iOS and Android. Customers can use IDnow mobile SDKs to integrate VideoIdent into customer-specific mobile apps. VideoIdent can also be used with a web browser by the user.
 
 ### eSign
 
@@ -74,10 +73,12 @@ German government introduced RFID chip based electronic ID cards in November 201
 
 ## Requirements
 - Android Studio;
-- Deployment target: Android 9.0 (API level 28) or higher for eID with Governikus or Android 8.0 (level 26) for VI, eSign and eID with Authada
+- Deployment target: Android 9.0 (API level 28) or higher for eID with Governikus or Android 8.0 (API level 26) for VI, eSign and eID with Authada
 - The user’s device must have animation capability to have a seamless experience, otherwise screens that contain animations will not function as intended;
 - We are using foreground services in our SDK to perform a task that is required in the process of connecting the end-user with the identification expert, as it is a prerequisite for the video call. 
 You’ll need to mention the following foreground service permissions on the App content page (Policy > App content) in Play Console: `FOREGROUND_SERVICE_CAMERA` and `FOREGROUND_SERVICE_MICROPHONE`.
+Additionally, a video is often required to demonstrate how the app uses the foreground service.
+Please contact the support team in case that video is needed.
 
 ## Supported Architecture
 
@@ -95,9 +96,9 @@ Please refer to the following link to find information about compatibility, end-
 
 ## Installation
 
-Download the latest version of the [VideoIdent SDK](https://github.com/idnow/de.idnow.android/releases) (see the [changelog]()).
+Download the latest version of the [VideoIdent SDK](https://github.com/idnow/de.idnow.android/releases) (see the [changelog](./CHANGELOG.md)).
 
-### 1. Import library
+### Import library
 
 #### Option 1: Maven
 
@@ -128,7 +129,7 @@ dependencies {
     //eID
     implementation("de.idnow.android.eid:idnow-android-eid-sdk:x.x.x")
     
-    //Additionnal dependencies needed
+    //Additional dependencies needed
     
     //BouncyCastle: use the one adapted to the jdk you are using
     implementation ("org.bouncycastle:bcprov-jdk15to18:1.83")
@@ -138,7 +139,7 @@ dependencies {
     //For eID with Governikus
     implementation ("com.governikus:ausweisapp:2.4.1")
     
-    //For eiD with Authada (ask for maven credentials)
+    //For eID with Authada (ask for maven credentials)
     implementation group: 'de.authada.library', name: 'aal', version: '4.24.4'
     
 }
@@ -174,7 +175,7 @@ Our SDK uses the following permissions:
 <uses-permission android:name="android.permission.NFC" />
 ```
 
-**Note:** There permissions don't need to be added to your project's manifest file.
+__Note:__ These permissions don't need to be added to your project's manifest file.
 
 ## Usage
 
@@ -196,7 +197,7 @@ try {
 }
 ```
 
-#### Retrieve result from the SDK
+### Retrieve result from the SDK
 To handle the results of the identification, implement the standard onActivityResult function in your activity:
 
 ```java
@@ -224,7 +225,7 @@ To handle the results of the identification, implement the standard onActivityRe
                     +errorMessage);
                 }
             } else if (resultCode == IDnowSDK.RESULT_USER_IN_QUEUE) {
-                Log.v(TAG, "User enrolled into the waiting list and will be notified via SMS ")
+                Log.v(TAG, "User enrolled into the waiting list and will be notified via SMS ");
             } else {
                 Log.v(TAG, "Result Code: " + resultCode);
             }
@@ -235,18 +236,19 @@ To handle the results of the identification, implement the standard onActivityRe
 
 ### Additional settings
 
-| Property name           | Description       |
-| ------------------------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| setTransactionToken        | A token that will be used for instantiating a video identification.                                                                            | setCompanyId               | Your Company ID provided by IDnow.|
+| Property name              | Description                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|----------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| setTransactionToken        | A token that will be used for instantiating a video identification.                                                                                                                                                                                                                                                                                                                                                           |
+| setCompanyId               | Your Company ID provided by IDnow.                                                                                                                                                                                                                                                                                                                                                                                            |
 | setEnvironment             | **Optional:** There are three types of environment that can be used for the identification. They are: DEV, TEST, LIVE. The default value is `null`. The  environment used is identified by the prefix of the transaction token (DEV -> DEV, TST -> Test, else -> Live). You can use the special IDnowEnvironmentCustom to define a custom IDnow installation. If this is done, you need to set the apiHost and websocketHost. |
- setShowErrorSuccessScreen  | **Optional:** If set to `false`, the Error-Success-Screen provided by the SDK will not be displayed. <br />The default value of this property is `true`. |
-| setShowVideoOverviewCheck  | **Optional:** If set to `false`, the `Terms and Conditions` screen will not be shown before starting a video identification. <br />The default value of this property is `true`. |
-| setApiHost                 | The target server url for REST calls if custom server is used. |
-| setWebsocketHost           | The target server url for websocket calls if custom server is used.                                                                                                                                                                                                                                                                                                                                                    |
-| setConnectionType          | The connection type to use to talk the backend.`ConnectionType` <br />Possible values:<br />- WEBSOCKET *(default)*<br />- LONG_POLLING                                                                                                                                                                                                                                      |
-| setCertificateProvider     | Accepts a subclass of `CertificateProvider`. Used to provide custom mTLS certificates used by the network connections. See [Custom certificate providers](#custom-certificate-providers). |
-| setDtlsCertificateProvider | Accepts a subclass of `CertificateProvider`. Used to provide custom DTLS certificates used by the WebRTC connection. See [Custom certificate providers](#custom-certificate-providers).                                                                                                                            
-| logging | ```enableLogging``` or ```disableLogging``` methods are used to toggle logging.<br> The default value of this property is `true`. |
+| setShowErrorSuccessScreen  | **Optional:** If set to `false`, the Error-Success-Screen provided by the SDK will not be displayed. <br />The default value of this property is `true`.                                                                                                                                                                                                                                                                      |
+| setShowVideoOverviewCheck  | **Optional:** If set to `false`, the `Terms and Conditions` screen will not be shown before starting a video identification. <br />The default value of this property is `true`.                                                                                                                                                                                                                                              |
+| setApiHost                 | The target server url for REST calls if custom server is used.                                                                                                                                                                                                                                                                                                                                                                |
+| setWebsocketHost           | The target server url for websocket calls if custom server is used.                                                                                                                                                                                                                                                                                                                                                           |
+| setConnectionType          | The connection type to use to talk to the backend.`ConnectionType` <br />Possible values:<br />- WEBSOCKET *(default)*<br />- LONG_POLLING                                                                                                                                                                                                                                                                                    |
+| setCertificateProvider     | Accepts a subclass of `CertificateProvider`. Used to provide custom mTLS certificates used by the network connections. See [Custom certificate providers](#custom-certificate-providers).                                                                                                                                                                                                                                     |
+| setDtlsCertificateProvider | Accepts a subclass of `CertificateProvider`. Used to provide custom DTLS certificates used by the WebRTC connection. See [Custom certificate providers](#custom-certificate-providers).                                                                                                                                                                                                                                       
+| logging                    | ```enableLogging``` or ```disableLogging``` methods are used to toggle logging.<br> The default value of this property is `true`.                                                                                                                                                                                                                                                                                             |
 
 ### Custom certificate providers
 
@@ -273,15 +275,15 @@ Starting from SDK version 6.5.0 we offer MTLS support for API connections.
 - override `providePrivateKeyBytestream` method (raw data of *.der private key file)
 - override `provideCertificateBytestream` method (raw data of .der certificate file)
 - enable `featureFingerPrint` and/or `featureServerCert` flag(s)
-- override `provideServerFingerPrintByteStreams` and/or `provideServerCertificateBytestreams` method(s) (row data list of fingerprint/certificate files).
+- override `provideServerFingerPrintByteStreams` and/or `provideServerCertificateBytestreams` method(s) (raw data list of fingerprint/certificate files).
  
  **Notes:**
  <br>***- CertificateProvider can validate multiple server certificates/fingerprints.***
  <br>***- Certificates should be imported in .der format.***
 
-## Using IDnow with other native libraries (UnsatisfiedLinkError)
+## Native libraries conflict (UnsatisfiedLinkError)
 
-For Videostreaming the IDnow SDK uses IceLink which come with native libs.
+For Videostreaming the IDnow SDK uses LiveSwitch which come with native libs.
 
 If your app uses other 3rd party libs that come with their own native libs, it's possible that you get an UnsatisfiedLinkError.
 
@@ -301,11 +303,6 @@ If it's the other way round (your 3rd party lib ships more than armeabi, armeabi
 
 For further reading:
 http://developer.android.com/ndk/guides/abis.html
-    
-
-Additionally, a video is often required to demonstrate how the app uses the foreground service.
-
-Please contact the support team in case that video is needed. 
 
 ## Branding
 
@@ -316,7 +313,7 @@ Please contact the support team in case that video is needed.
    - `app/src/main/res/values-night/colors.xml` (dark theme, if used)
 2. For each parameter from the table below that you want to customize, declare a color with the **same name** in your app’s `colors.xml`. When names match, your app value overrides the SDK default via Android’s resource merging.
 
-#### Example (default / light theme):
+#### Example (default / light theme)
 ```xml
     <!-- app/src/main/res/values/colors.xml -->
     <resources>
@@ -327,7 +324,7 @@ Please contact the support team in case that video is needed.
     </resources>
 ```
 
-#### Example (dark theme):
+#### Example (dark theme)
 ```xml
     <!-- app/src/main/res/values-night/colors.xml -->
     <resources>
@@ -391,15 +388,15 @@ val errorCode = data.getSerializableExtra(IDnowSDK.RESULT_ERROR_CODE) as IDnowEr
 | `IDnowErrorIdentificationFailed` | The identification process was finished but the identity verification was not successful. |
 | `IDnowErrorHighCallVolumeTryLater` | User agreed to try the identification later due to the high call volume. |
 | `IDnowErrorTokenNotSupported` | The token used for this identification is meant for another product. |
-| `IDnowErrorTokenNotSupported_eIDStandalone` | eID standalone tokens cannot be used if the eID SDK is not added to the project. Please follow the  [installation steps](./README.md#installation) to setup the eID library. |
+| `IDnowErrorTokenNotSupported_eIDStandalone` | eID standalone tokens cannot be used if the eID SDK is not added to the project. Please follow the [installation steps](./README.md#installation) to setup the eID library. |
 | `IDnowErrorUnsupportedProduct` | The product for this token is no longer supported. |
 | `IDnowErrorUnsupportedBluetoothHeadset` | Bluetooth headset was used despite being disabled in the configuration. |
 | `IDnowInstantSignDocumentExpired` | Instant Sign operation rejected, the trusted document is expired. This document is no longer valid. |
 
-#### Handling user cancelation
+### Handling user cancelation
 
 When the user cancels a VideoIdent+ identification, the SDK reports *where* in the flow the cancelation happened in the intent with the result code `RESULT_CODE_CANCEL` via the extra  `IDnowSDK.RESULT_CANCEL_STEP`.
-Example to retreive the cancelation step [here](#retrieve-result-from-the-sdk)
+Example to retrieve the cancelation step [here](#retrieve-result-from-the-sdk)
 
 #### Possible cancelation steps
 
@@ -443,7 +440,7 @@ In case you would like to change the localization used by the IDnow SDK at runti
 | Polish | pl |
 | Ukrainian | ua |
 | Chinese | zh |
-| Russian | ru |||
+| Russian | ru |
 
 For example, if you want to change language to English(en) then follow this setting:
 
@@ -472,13 +469,13 @@ IDnowSDK.setEnvironment(IDnowSDK.Server.DEV);
 | API Host | The domain name or IP address (IPv4) of the host that serves the API. |
 | WebSocket Host | A WebSocket server that listens to WebSocket connections or channels and handles the communication with clients trying to connect to it. |
 | Video Host | The server that hosts and displays online video. |
-| STUN Host | A STUN (Session Traversal Utilities for NAT) host sends a request to a STUN server, which is located on the public side of the Network Address Translation (NAT). The server responds with the public IP address and port from which the request was seen. |||
+| STUN Host | A STUN (Session Traversal Utilities for NAT) host sends a request to a STUN server, which is located on the public side of the Network Address Translation (NAT). The server responds with the public IP address and port from which the request was seen. |
 
 Example:
 ```
 IDnowSDK.setApiHost("YOUR_API_HOST", context);
 IDnowSDK.setWebsocketHost("YOUR_WEBSOCKET_HOST", context);
-IDnowSDK.setVideoHost("YOUR_VIDE_HOST", context);
+IDnowSDK.setVideoHost("YOUR_VIDEO_HOST", context);
 IDnowSDK.setStunHost("YOUR_STUN_HOST", context);
 ```
 
@@ -488,6 +485,7 @@ IDnowSDK.setStunHost("YOUR_STUN_HOST", context);
 Our React Native plug-in offers the possibility of integrating our native Android and iOS SDK into the React Native-based applications. It offers the possibility to customize and setup the SDK, and uses the latest expo native modules to create the bridging mechanism.
 -  [VI Plugin](https://www.npmjs.com/package/@idnow/react-videoident)
 -  [eID Plugin](https://www.npmjs.com/package/@idnow/react-eid?activeTab=readme)
+
 ## eID Framework
 
 IDnow eID is an automated and fully AML-compliant identification product. All it requires is an NFC-enabled (Near Field Communication) smartphone and a German ID document (ID card or Residence permit) with an activated eID function or the eID card for EU citizens.
@@ -496,4 +494,4 @@ For configuration details, please refer to the [IDnow eID SDK Documentation](./d
 
 ## Examples
 
-Please see https://github.com/idnow/de.idnow.android-sample for a sample applications.
+Please see https://github.com/idnow/de.idnow.android-sample for a sample application.
