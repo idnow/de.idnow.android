@@ -33,6 +33,8 @@
     - [Fonts](#fonts)
   - [Result codes](#result-codes)
     - [Error codes](#error-codes)
+    - [Handling user cancelation](#handling-user-cancelation)
+    - [Possible cancelation steps](#possible-cancelation-steps)
   - [Localization](#localization)
   - [Environment](#environment)
   - [Other supported platforms](#other-supported-platforms)
@@ -394,12 +396,12 @@ val errorCode = data.getSerializableExtra(IDnowSDK.RESULT_ERROR_CODE) as IDnowEr
 | `IDnowErrorUnsupportedBluetoothHeadset` | Bluetooth headset was used despite being disabled in the configuration. |
 | `IDnowInstantSignDocumentExpired` | Instant Sign operation rejected, the trusted document is expired. This document is no longer valid. |
 
-## Handling user cancelation
+#### Handling user cancelation
 
 When the user cancels a VideoIdent+ identification, the SDK reports *where* in the flow the cancelation happened in the intent with the result code `RESULT_CODE_CANCEL` via the extra  `IDnowSDK.RESULT_CANCEL_STEP`.
 Example to retreive the cancelation step [here](#retrieve-result-from-the-sdk)
 
-### Possible cancelation steps
+#### Possible cancelation steps
 
 | Value | Screen the user canceled on |
 | --- | --- |
