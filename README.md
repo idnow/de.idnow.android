@@ -194,6 +194,7 @@ try {
 }
 ```
 
+#### Retrieve result from the SDK
 To handle the results of the identification, implement the standard onActivityResult function in your activity:
 
 ```java
@@ -392,6 +393,30 @@ val errorCode = data.getSerializableExtra(IDnowSDK.RESULT_ERROR_CODE) as IDnowEr
 | `IDnowErrorUnsupportedProduct` | The product for this token is no longer supported. |
 | `IDnowErrorUnsupportedBluetoothHeadset` | Bluetooth headset was used despite being disabled in the configuration. |
 | `IDnowInstantSignDocumentExpired` | Instant Sign operation rejected, the trusted document is expired. This document is no longer valid. |
+
+## Handling user cancelation
+
+When the user cancels a VideoIdent+ identification, the SDK reports *where* in the flow the cancelation happened in the intent with the result code `RESULT_CODE_CANCEL` via the extra  `IDnowSDK.RESULT_CANCEL_STEP`.
+Example to retreive the cancelation step [here](#retrieve-result-from-the-sdk)
+
+### Possible cancelation steps
+
+| Value | Screen the user canceled on |
+| --- | --- |
+| `LANGUAGE_SELECTION` | The agent language selection screen. |
+| `CONSENT` | The `Terms and Conditions` / consent screen shown before the identification starts. |
+| `CALL_QUALITY_CHECK` | The call quality check performed before connecting to an agent. |
+| `INSTRUCTIONS` | The instructions screen shown before starting the video call. |
+| `HIGH_CALL_VOLUME` | The high call volume screen offering the user to try again later. |
+| `WAITING_ROOM` | The waiting screen shown while the user waits to be served. |
+| `WAITING_LIST` | The waiting list screen offering the user to be notified via SMS. |
+| `WAITING_FOR_AGENT` | The video call is established, but no agent has joined the conversation yet. |
+| `AGENT_CONVERSATION` | The video conversation with the IDnow Ident Specialist is in progress. |
+| `DOCUMENT_CLASSIFICATION` | The manual document capture / classification step. |
+| `NAME_VERIFICATION` | The name verification screen. |
+
+__Note:__ These string values are a stable public contract and will not be renamed. New values may be added when new screens are introduced to the flow, so handle unknown values gracefully.
+
 
 ## Localization
 
