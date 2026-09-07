@@ -1,5 +1,19 @@
 # Changelog
 
+### VideoIdent 9.7.15 & eID 3.5.7 - (7 September 2026)
+
+### 🚀 Improvements
+
+- **VIP SDK:** Stability improvements for video calls
+- **VIP SDK:** Redirect URL behavior after a completed ident
+
+---
+
+### 🐞 Fixes
+
+-  **eID SDK:** : Send correct failed Reason on back press/gesture. 
+
+
 ### VideoIdent 9.7.14 – (29 July 2026)
 
 ### 🚀 Improvements
