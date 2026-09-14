@@ -149,7 +149,64 @@ dependencies {
 
 We also offer the possibility to import the SDKs as an .aar file instead.
 You can download it from this repository inside the package de.idnow.android.eid for eID
-and inside de.idnow.sdk for VideoIdent
+and inside de.idnow.sdk for VideoIdent. 
+
+Copy the `idnow-android-sdk-x.x.x.aar` file into the `libs` folder along with the `idnow-android-eid-sdk-x.x.x.aar` file if eID is used,
+then add the following repositories and dependencies to your build.gradle file:
+
+
+```
+allprojects {
+    repositories {
+        flatDir { dirs("libs") }
+        maven {
+            url "https://raw.githubusercontent.com/idnow/de.idnow.android/master"
+        }
+        //needed if eID is used
+        maven {
+            url = uri("https://repo.authada.de/public/")
+            authentication {
+                basic(BasicAuthentication)
+            }
+            credentials {
+                username "*********"
+                password "*********"
+            }
+        }
+    }
+}
+dependencies {
+    implementation(files("libs/idnow-android-sdk-x.x.x.aar"))
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:4.12.0'
+    implementation 'androidx.annotation:annotation:1.9.1'
+    implementation 'androidx.appcompat:appcompat:1.7.1'
+    implementation 'androidx.recyclerview:recyclerview:1.4.0'
+    implementation 'androidx.constraintlayout:constraintlayout:2.2.1'
+    implementation 'com.googlecode.libphonenumber:libphonenumber:9.0.26'
+    implementation 'de.idnow.insights:idnow-android-insights-sdk:1.2.0'
+    implementation 'com.airbnb.android:lottie:6.7.1'
+    implementation 'androidx.activity:activity-ktx:1.13.0'
+    implementation 'androidx.preference:preference:1.2.1'
+    implementation 'com.google.code.gson:gson:2.13.2'
+    implementation 'com.google.android.material:material:1.13.0'
+    implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.10.0'
+    implementation 'androidx.camera:camera-core:1.5.3'
+    implementation 'androidx.camera:camera-camera2:1.5.3'
+    implementation 'androidx.camera:camera-lifecycle:1.5.3'
+    implementation 'androidx.camera:camera-view:1.5.3'
+    implementation 'androidx.camera:camera-video:1.5.3'
+
+    //needed if eID is used
+    implementation files('libs/idnow-android-eid-sdk-x.x.x.aar')
+    implementation(“com.governikus:ausweisapp:2.4.0”)
+    implementation("de.authada.library:aal:4.24.4")
+}
+```
+
+
 
 ## Permissions
 
