@@ -1,5 +1,24 @@
 # Changelog
 
+### VideoIdent 9.7.16 & eID 3.5.8 - (1st October 2026)
+
+### 🚀 Improvements
+
+- **VIP SDK**: Improve R8/proguard optimization
+- **VIP SDK**: Improve the reconnection after a network loss on agent call
+
+---
+
+### 🐞 Fixes
+- **VIP SDK**: Fix crash on VI with camera change on custom steps
+- **VIP SDK**: Fix inconsistency on UI when the device is on dark Mode and the customer config force light mode
+- **VIP SDK**: Add missing token to the result when RESULT_CODE_FAILED is send
+- **VIP SDK**: Fix crash in some edge cases
+- **eID SDK**: Fix crash in some edge cases
+
+
+
+
 ### VideoIdent 9.7.15 & eID 3.5.7 - (7 September 2026)
 
 ### 🚀 Improvements
